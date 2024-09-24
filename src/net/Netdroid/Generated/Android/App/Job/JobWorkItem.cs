@@ -176,7 +176,7 @@ namespace Android.App.Job
         /// <returns><see cref="Android.Content.Intent"/></returns>
         public Android.Content.Intent GetIntent()
         {
-            return IExecuteWithSignature<Android.Content.Intent>("getIntent", "()Landroid/content/Intent;");
+            return IExecute<Android.Content.Intent>("getIntent");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobWorkItem.html#getExtras()"/>
@@ -184,7 +184,7 @@ namespace Android.App.Job
         /// <returns><see cref="Android.Os.PersistableBundle"/></returns>
         public Android.Os.PersistableBundle GetExtras()
         {
-            return IExecuteWithSignature<Android.Os.PersistableBundle>("getExtras", "()Landroid/os/PersistableBundle;");
+            return IExecute<Android.Os.PersistableBundle>("getExtras");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobWorkItem.html#describeContents()"/>
@@ -192,7 +192,7 @@ namespace Android.App.Job
         /// <returns><see cref="int"/></returns>
         public int DescribeContents()
         {
-            return IExecuteWithSignature<int>("describeContents", "()I");
+            return IExecute<int>("describeContents");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobWorkItem.html#getDeliveryCount()"/>
@@ -200,7 +200,7 @@ namespace Android.App.Job
         /// <returns><see cref="int"/></returns>
         public int GetDeliveryCount()
         {
-            return IExecuteWithSignature<int>("getDeliveryCount", "()I");
+            return IExecute<int>("getDeliveryCount");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobWorkItem.html#getEstimatedNetworkDownloadBytes()"/>
@@ -208,7 +208,7 @@ namespace Android.App.Job
         /// <returns><see cref="long"/></returns>
         public long GetEstimatedNetworkDownloadBytes()
         {
-            return IExecuteWithSignature<long>("getEstimatedNetworkDownloadBytes", "()J");
+            return IExecute<long>("getEstimatedNetworkDownloadBytes");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobWorkItem.html#getEstimatedNetworkUploadBytes()"/>
@@ -216,7 +216,7 @@ namespace Android.App.Job
         /// <returns><see cref="long"/></returns>
         public long GetEstimatedNetworkUploadBytes()
         {
-            return IExecuteWithSignature<long>("getEstimatedNetworkUploadBytes", "()J");
+            return IExecute<long>("getEstimatedNetworkUploadBytes");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobWorkItem.html#getMinimumNetworkChunkBytes()"/>
@@ -224,7 +224,7 @@ namespace Android.App.Job
         /// <returns><see cref="long"/></returns>
         public long GetMinimumNetworkChunkBytes()
         {
-            return IExecuteWithSignature<long>("getMinimumNetworkChunkBytes", "()J");
+            return IExecute<long>("getMinimumNetworkChunkBytes");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobWorkItem.html#writeToParcel(android.os.Parcel,int)"/>

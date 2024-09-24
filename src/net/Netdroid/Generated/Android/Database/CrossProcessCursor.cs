@@ -116,7 +116,7 @@ namespace Android.Database
         /// <returns><see cref="Android.Database.CursorWindow"/></returns>
         public Android.Database.CursorWindow GetWindow()
         {
-            return IExecuteWithSignature<Android.Database.CursorWindow>("getWindow", "()Landroid/database/CursorWindow;");
+            return IExecute<Android.Database.CursorWindow>("getWindow");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CrossProcessCursor.html#onMove(int,int)"/>

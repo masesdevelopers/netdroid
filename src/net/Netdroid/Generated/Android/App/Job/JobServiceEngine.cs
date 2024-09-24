@@ -107,7 +107,7 @@ namespace Android.App.Job
         /// <returns><see cref="bool"/></returns>
         public bool OnStartJob(Android.App.Job.JobParameters arg0)
         {
-            return IExecuteWithSignature<bool>("onStartJob", "(Landroid/app/job/JobParameters;)Z", arg0);
+            return IExecute<bool>("onStartJob", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobServiceEngine.html#onStopJob(android.app.job.JobParameters)"/>
@@ -116,7 +116,7 @@ namespace Android.App.Job
         /// <returns><see cref="bool"/></returns>
         public bool OnStopJob(Android.App.Job.JobParameters arg0)
         {
-            return IExecuteWithSignature<bool>("onStopJob", "(Landroid/app/job/JobParameters;)Z", arg0);
+            return IExecute<bool>("onStopJob", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobServiceEngine.html#getBinder()"/>
@@ -124,7 +124,7 @@ namespace Android.App.Job
         /// <returns><see cref="Android.Os.IBinder"/></returns>
         public Android.Os.IBinder GetBinder()
         {
-            return IExecuteWithSignature<Android.Os.IBinder>("getBinder", "()Landroid/os/IBinder;");
+            return IExecute<Android.Os.IBinder>("getBinder");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobServiceEngine.html#jobFinished(android.app.job.JobParameters,boolean)"/>
@@ -141,7 +141,7 @@ namespace Android.App.Job
         /// <param name="arg0"><see cref="Android.App.Job.JobParameters"/></param>
         public void OnNetworkChanged(Android.App.Job.JobParameters arg0)
         {
-            IExecuteWithSignature("onNetworkChanged", "(Landroid/app/job/JobParameters;)V", arg0);
+            IExecute("onNetworkChanged", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobServiceEngine.html#setNotification(android.app.job.JobParameters,int,android.app.Notification,int)"/>

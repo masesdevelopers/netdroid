@@ -285,7 +285,7 @@ namespace Android.App.Job
         /// <returns><see cref="long"/></returns>
         public static long GetMinFlexMillis()
         {
-            return SExecuteWithSignature<long>(LocalBridgeClazz, "getMinFlexMillis", "()J");
+            return SExecute<long>(LocalBridgeClazz, "getMinFlexMillis");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#getMinPeriodMillis()"/>
@@ -293,7 +293,7 @@ namespace Android.App.Job
         /// <returns><see cref="long"/></returns>
         public static long GetMinPeriodMillis()
         {
-            return SExecuteWithSignature<long>(LocalBridgeClazz, "getMinPeriodMillis", "()J");
+            return SExecute<long>(LocalBridgeClazz, "getMinPeriodMillis");
         }
     
         #endregion
@@ -305,7 +305,7 @@ namespace Android.App.Job
         /// <returns><see cref="Android.App.Job.JobInfo.TriggerContentUri"/></returns>
         public Android.App.Job.JobInfo.TriggerContentUri[] GetTriggerContentUris()
         {
-            return IExecuteWithSignatureArray<Android.App.Job.JobInfo.TriggerContentUri>("getTriggerContentUris", "()[Landroid/app/job/JobInfo$TriggerContentUri;");
+            return IExecuteArray<Android.App.Job.JobInfo.TriggerContentUri>("getTriggerContentUris");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#getClipData()"/>
@@ -313,7 +313,7 @@ namespace Android.App.Job
         /// <returns><see cref="Android.Content.ClipData"/></returns>
         public Android.Content.ClipData GetClipData()
         {
-            return IExecuteWithSignature<Android.Content.ClipData>("getClipData", "()Landroid/content/ClipData;");
+            return IExecute<Android.Content.ClipData>("getClipData");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#getService()"/>
@@ -321,7 +321,7 @@ namespace Android.App.Job
         /// <returns><see cref="Android.Content.ComponentName"/></returns>
         public Android.Content.ComponentName GetService()
         {
-            return IExecuteWithSignature<Android.Content.ComponentName>("getService", "()Landroid/content/ComponentName;");
+            return IExecute<Android.Content.ComponentName>("getService");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#getRequiredNetwork()"/>
@@ -329,7 +329,7 @@ namespace Android.App.Job
         /// <returns><see cref="Android.Net.NetworkRequest"/></returns>
         public Android.Net.NetworkRequest GetRequiredNetwork()
         {
-            return IExecuteWithSignature<Android.Net.NetworkRequest>("getRequiredNetwork", "()Landroid/net/NetworkRequest;");
+            return IExecute<Android.Net.NetworkRequest>("getRequiredNetwork");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#getTransientExtras()"/>
@@ -337,7 +337,7 @@ namespace Android.App.Job
         /// <returns><see cref="Android.Os.Bundle"/></returns>
         public Android.Os.Bundle GetTransientExtras()
         {
-            return IExecuteWithSignature<Android.Os.Bundle>("getTransientExtras", "()Landroid/os/Bundle;");
+            return IExecute<Android.Os.Bundle>("getTransientExtras");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#getExtras()"/>
@@ -345,7 +345,7 @@ namespace Android.App.Job
         /// <returns><see cref="Android.Os.PersistableBundle"/></returns>
         public Android.Os.PersistableBundle GetExtras()
         {
-            return IExecuteWithSignature<Android.Os.PersistableBundle>("getExtras", "()Landroid/os/PersistableBundle;");
+            return IExecute<Android.Os.PersistableBundle>("getExtras");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#isExpedited()"/>
@@ -353,7 +353,7 @@ namespace Android.App.Job
         /// <returns><see cref="bool"/></returns>
         public bool IsExpedited()
         {
-            return IExecuteWithSignature<bool>("isExpedited", "()Z");
+            return IExecute<bool>("isExpedited");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#isImportantWhileForeground()"/>
@@ -361,7 +361,7 @@ namespace Android.App.Job
         /// <returns><see cref="bool"/></returns>
         public bool IsImportantWhileForeground()
         {
-            return IExecuteWithSignature<bool>("isImportantWhileForeground", "()Z");
+            return IExecute<bool>("isImportantWhileForeground");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#isPeriodic()"/>
@@ -369,7 +369,7 @@ namespace Android.App.Job
         /// <returns><see cref="bool"/></returns>
         public bool IsPeriodic()
         {
-            return IExecuteWithSignature<bool>("isPeriodic", "()Z");
+            return IExecute<bool>("isPeriodic");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#isPersisted()"/>
@@ -377,7 +377,7 @@ namespace Android.App.Job
         /// <returns><see cref="bool"/></returns>
         public bool IsPersisted()
         {
-            return IExecuteWithSignature<bool>("isPersisted", "()Z");
+            return IExecute<bool>("isPersisted");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#isPrefetch()"/>
@@ -385,7 +385,7 @@ namespace Android.App.Job
         /// <returns><see cref="bool"/></returns>
         public bool IsPrefetch()
         {
-            return IExecuteWithSignature<bool>("isPrefetch", "()Z");
+            return IExecute<bool>("isPrefetch");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#isRequireBatteryNotLow()"/>
@@ -393,7 +393,7 @@ namespace Android.App.Job
         /// <returns><see cref="bool"/></returns>
         public bool IsRequireBatteryNotLow()
         {
-            return IExecuteWithSignature<bool>("isRequireBatteryNotLow", "()Z");
+            return IExecute<bool>("isRequireBatteryNotLow");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#isRequireCharging()"/>
@@ -401,7 +401,7 @@ namespace Android.App.Job
         /// <returns><see cref="bool"/></returns>
         public bool IsRequireCharging()
         {
-            return IExecuteWithSignature<bool>("isRequireCharging", "()Z");
+            return IExecute<bool>("isRequireCharging");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#isRequireDeviceIdle()"/>
@@ -409,7 +409,7 @@ namespace Android.App.Job
         /// <returns><see cref="bool"/></returns>
         public bool IsRequireDeviceIdle()
         {
-            return IExecuteWithSignature<bool>("isRequireDeviceIdle", "()Z");
+            return IExecute<bool>("isRequireDeviceIdle");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#isRequireStorageNotLow()"/>
@@ -417,7 +417,7 @@ namespace Android.App.Job
         /// <returns><see cref="bool"/></returns>
         public bool IsRequireStorageNotLow()
         {
-            return IExecuteWithSignature<bool>("isRequireStorageNotLow", "()Z");
+            return IExecute<bool>("isRequireStorageNotLow");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#isUserInitiated()"/>
@@ -425,7 +425,7 @@ namespace Android.App.Job
         /// <returns><see cref="bool"/></returns>
         public bool IsUserInitiated()
         {
-            return IExecuteWithSignature<bool>("isUserInitiated", "()Z");
+            return IExecute<bool>("isUserInitiated");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#describeContents()"/>
@@ -433,7 +433,7 @@ namespace Android.App.Job
         /// <returns><see cref="int"/></returns>
         public int DescribeContents()
         {
-            return IExecuteWithSignature<int>("describeContents", "()I");
+            return IExecute<int>("describeContents");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#getBackoffPolicy()"/>
@@ -441,7 +441,7 @@ namespace Android.App.Job
         /// <returns><see cref="int"/></returns>
         public int GetBackoffPolicy()
         {
-            return IExecuteWithSignature<int>("getBackoffPolicy", "()I");
+            return IExecute<int>("getBackoffPolicy");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#getClipGrantFlags()"/>
@@ -449,7 +449,7 @@ namespace Android.App.Job
         /// <returns><see cref="int"/></returns>
         public int GetClipGrantFlags()
         {
-            return IExecuteWithSignature<int>("getClipGrantFlags", "()I");
+            return IExecute<int>("getClipGrantFlags");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#getId()"/>
@@ -457,7 +457,7 @@ namespace Android.App.Job
         /// <returns><see cref="int"/></returns>
         public int GetId()
         {
-            return IExecuteWithSignature<int>("getId", "()I");
+            return IExecute<int>("getId");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#getNetworkType()"/>
@@ -466,7 +466,7 @@ namespace Android.App.Job
         [global::System.Obsolete()]
         public int GetNetworkType()
         {
-            return IExecuteWithSignature<int>("getNetworkType", "()I");
+            return IExecute<int>("getNetworkType");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#getPriority()"/>
@@ -474,7 +474,7 @@ namespace Android.App.Job
         /// <returns><see cref="int"/></returns>
         public int GetPriority()
         {
-            return IExecuteWithSignature<int>("getPriority", "()I");
+            return IExecute<int>("getPriority");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#getTraceTag()"/>
@@ -482,7 +482,7 @@ namespace Android.App.Job
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetTraceTag()
         {
-            return IExecuteWithSignature<Java.Lang.String>("getTraceTag", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("getTraceTag");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#getDebugTags()"/>
@@ -490,7 +490,7 @@ namespace Android.App.Job
         /// <returns><see cref="Java.Util.Set"/></returns>
         public Java.Util.Set<Java.Lang.String> GetDebugTags()
         {
-            return IExecuteWithSignature<Java.Util.Set<Java.Lang.String>>("getDebugTags", "()Ljava/util/Set;");
+            return IExecute<Java.Util.Set<Java.Lang.String>>("getDebugTags");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#getEstimatedNetworkDownloadBytes()"/>
@@ -498,7 +498,7 @@ namespace Android.App.Job
         /// <returns><see cref="long"/></returns>
         public long GetEstimatedNetworkDownloadBytes()
         {
-            return IExecuteWithSignature<long>("getEstimatedNetworkDownloadBytes", "()J");
+            return IExecute<long>("getEstimatedNetworkDownloadBytes");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#getEstimatedNetworkUploadBytes()"/>
@@ -506,7 +506,7 @@ namespace Android.App.Job
         /// <returns><see cref="long"/></returns>
         public long GetEstimatedNetworkUploadBytes()
         {
-            return IExecuteWithSignature<long>("getEstimatedNetworkUploadBytes", "()J");
+            return IExecute<long>("getEstimatedNetworkUploadBytes");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#getFlexMillis()"/>
@@ -514,7 +514,7 @@ namespace Android.App.Job
         /// <returns><see cref="long"/></returns>
         public long GetFlexMillis()
         {
-            return IExecuteWithSignature<long>("getFlexMillis", "()J");
+            return IExecute<long>("getFlexMillis");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#getInitialBackoffMillis()"/>
@@ -522,7 +522,7 @@ namespace Android.App.Job
         /// <returns><see cref="long"/></returns>
         public long GetInitialBackoffMillis()
         {
-            return IExecuteWithSignature<long>("getInitialBackoffMillis", "()J");
+            return IExecute<long>("getInitialBackoffMillis");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#getIntervalMillis()"/>
@@ -530,7 +530,7 @@ namespace Android.App.Job
         /// <returns><see cref="long"/></returns>
         public long GetIntervalMillis()
         {
-            return IExecuteWithSignature<long>("getIntervalMillis", "()J");
+            return IExecute<long>("getIntervalMillis");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#getMaxExecutionDelayMillis()"/>
@@ -538,7 +538,7 @@ namespace Android.App.Job
         /// <returns><see cref="long"/></returns>
         public long GetMaxExecutionDelayMillis()
         {
-            return IExecuteWithSignature<long>("getMaxExecutionDelayMillis", "()J");
+            return IExecute<long>("getMaxExecutionDelayMillis");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#getMinimumNetworkChunkBytes()"/>
@@ -546,7 +546,7 @@ namespace Android.App.Job
         /// <returns><see cref="long"/></returns>
         public long GetMinimumNetworkChunkBytes()
         {
-            return IExecuteWithSignature<long>("getMinimumNetworkChunkBytes", "()J");
+            return IExecute<long>("getMinimumNetworkChunkBytes");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#getMinLatencyMillis()"/>
@@ -554,7 +554,7 @@ namespace Android.App.Job
         /// <returns><see cref="long"/></returns>
         public long GetMinLatencyMillis()
         {
-            return IExecuteWithSignature<long>("getMinLatencyMillis", "()J");
+            return IExecute<long>("getMinLatencyMillis");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#getTriggerContentMaxDelay()"/>
@@ -562,7 +562,7 @@ namespace Android.App.Job
         /// <returns><see cref="long"/></returns>
         public long GetTriggerContentMaxDelay()
         {
-            return IExecuteWithSignature<long>("getTriggerContentMaxDelay", "()J");
+            return IExecute<long>("getTriggerContentMaxDelay");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#getTriggerContentUpdateDelay()"/>
@@ -570,7 +570,7 @@ namespace Android.App.Job
         /// <returns><see cref="long"/></returns>
         public long GetTriggerContentUpdateDelay()
         {
-            return IExecuteWithSignature<long>("getTriggerContentUpdateDelay", "()J");
+            return IExecute<long>("getTriggerContentUpdateDelay");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobInfo.html#writeToParcel(android.os.Parcel,int)"/>

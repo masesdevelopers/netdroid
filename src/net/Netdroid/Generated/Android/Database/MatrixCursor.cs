@@ -158,7 +158,7 @@ namespace Android.Database
         /// <returns><see cref="Android.Database.MatrixCursor.RowBuilder"/></returns>
         public Android.Database.MatrixCursor.RowBuilder NewRow()
         {
-            return IExecuteWithSignature<Android.Database.MatrixCursor.RowBuilder>("newRow", "()Landroid/database/MatrixCursor$RowBuilder;");
+            return IExecute<Android.Database.MatrixCursor.RowBuilder>("newRow");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/MatrixCursor.html#addRow(java.lang.Iterable)"/>
@@ -166,7 +166,7 @@ namespace Android.Database
         /// <param name="arg0"><see cref="Java.Lang.Iterable"/></param>
         public void AddRow(Java.Lang.Iterable<object> arg0)
         {
-            IExecuteWithSignature("addRow", "(Ljava/lang/Iterable;)V", arg0);
+            IExecute("addRow", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/MatrixCursor.html#addRow(java.lang.Object[])"/>
@@ -174,7 +174,7 @@ namespace Android.Database
         /// <param name="arg0"><see cref="object"/></param>
         public void AddRow(object[] arg0)
         {
-            IExecuteWithSignature("addRow", "([Ljava/lang/Object;)V", new object[] { arg0 });
+            IExecute("addRow", new object[] { arg0 });
         }
     
         #endregion

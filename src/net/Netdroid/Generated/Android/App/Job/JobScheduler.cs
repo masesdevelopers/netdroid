@@ -219,7 +219,7 @@ namespace Android.App.Job
         /// <returns><see cref="Android.App.Job.JobInfo"/></returns>
         public Android.App.Job.JobInfo GetPendingJob(int arg0)
         {
-            return IExecuteWithSignature<Android.App.Job.JobInfo>("getPendingJob", "(I)Landroid/app/job/JobInfo;", arg0);
+            return IExecute<Android.App.Job.JobInfo>("getPendingJob", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobScheduler.html#enqueue(android.app.job.JobInfo,android.app.job.JobWorkItem)"/>
@@ -238,7 +238,7 @@ namespace Android.App.Job
         /// <returns><see cref="int"/></returns>
         public int Schedule(Android.App.Job.JobInfo arg0)
         {
-            return IExecuteWithSignature<int>("schedule", "(Landroid/app/job/JobInfo;)I", arg0);
+            return IExecute<int>("schedule", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobScheduler.html#getAllPendingJobs()"/>
@@ -246,7 +246,7 @@ namespace Android.App.Job
         /// <returns><see cref="Java.Util.List"/></returns>
         public Java.Util.List<Android.App.Job.JobInfo> GetAllPendingJobs()
         {
-            return IExecuteWithSignature<Java.Util.List<Android.App.Job.JobInfo>>("getAllPendingJobs", "()Ljava/util/List;");
+            return IExecute<Java.Util.List<Android.App.Job.JobInfo>>("getAllPendingJobs");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobScheduler.html#cancel(int)"/>
@@ -254,14 +254,14 @@ namespace Android.App.Job
         /// <param name="arg0"><see cref="int"/></param>
         public void Cancel(int arg0)
         {
-            IExecuteWithSignature("cancel", "(I)V", arg0);
+            IExecute("cancel", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobScheduler.html#cancelAll()"/>
         /// </summary>
         public void CancelAll()
         {
-            IExecuteWithSignature("cancelAll", "()V");
+            IExecute("cancelAll");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobScheduler.html#forNamespace(java.lang.String)"/>
@@ -270,7 +270,7 @@ namespace Android.App.Job
         /// <returns><see cref="Android.App.Job.JobScheduler"/></returns>
         public Android.App.Job.JobScheduler ForNamespace(Java.Lang.String arg0)
         {
-            return IExecuteWithSignature<Android.App.Job.JobScheduler>("forNamespace", "(Ljava/lang/String;)Landroid/app/job/JobScheduler;", arg0);
+            return IExecute<Android.App.Job.JobScheduler>("forNamespace", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobScheduler.html#canRunUserInitiatedJobs()"/>
@@ -278,7 +278,7 @@ namespace Android.App.Job
         /// <returns><see cref="bool"/></returns>
         public bool CanRunUserInitiatedJobs()
         {
-            return IExecuteWithSignature<bool>("canRunUserInitiatedJobs", "()Z");
+            return IExecute<bool>("canRunUserInitiatedJobs");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobScheduler.html#getPendingJobReason(int)"/>
@@ -287,7 +287,7 @@ namespace Android.App.Job
         /// <returns><see cref="int"/></returns>
         public int GetPendingJobReason(int arg0)
         {
-            return IExecuteWithSignature<int>("getPendingJobReason", "(I)I", arg0);
+            return IExecute<int>("getPendingJobReason", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobScheduler.html#getNamespace()"/>
@@ -295,7 +295,7 @@ namespace Android.App.Job
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetNamespace()
         {
-            return IExecuteWithSignature<Java.Lang.String>("getNamespace", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("getNamespace");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobScheduler.html#getPendingJobsInAllNamespaces()"/>
@@ -303,14 +303,14 @@ namespace Android.App.Job
         /// <returns><see cref="Java.Util.Map"/></returns>
         public Java.Util.Map<Java.Lang.String, Java.Util.List<Android.App.Job.JobInfo>> GetPendingJobsInAllNamespaces()
         {
-            return IExecuteWithSignature<Java.Util.Map<Java.Lang.String, Java.Util.List<Android.App.Job.JobInfo>>>("getPendingJobsInAllNamespaces", "()Ljava/util/Map;");
+            return IExecute<Java.Util.Map<Java.Lang.String, Java.Util.List<Android.App.Job.JobInfo>>>("getPendingJobsInAllNamespaces");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobScheduler.html#cancelInAllNamespaces()"/>
         /// </summary>
         public void CancelInAllNamespaces()
         {
-            IExecuteWithSignature("cancelInAllNamespaces", "()V");
+            IExecute("cancelInAllNamespaces");
         }
     
         #endregion

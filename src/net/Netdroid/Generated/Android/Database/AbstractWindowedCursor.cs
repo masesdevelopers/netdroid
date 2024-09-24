@@ -98,7 +98,7 @@ namespace Android.Database
         /// <returns><see cref="bool"/></returns>
         public bool HasWindow()
         {
-            return IExecuteWithSignature<bool>("hasWindow", "()Z");
+            return IExecute<bool>("hasWindow");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/AbstractWindowedCursor.html#isBlob(int)"/>
@@ -108,7 +108,7 @@ namespace Android.Database
         [global::System.Obsolete()]
         public bool IsBlob(int arg0)
         {
-            return IExecuteWithSignature<bool>("isBlob", "(I)Z", arg0);
+            return IExecute<bool>("isBlob", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/AbstractWindowedCursor.html#isFloat(int)"/>
@@ -118,7 +118,7 @@ namespace Android.Database
         [global::System.Obsolete()]
         public bool IsFloat(int arg0)
         {
-            return IExecuteWithSignature<bool>("isFloat", "(I)Z", arg0);
+            return IExecute<bool>("isFloat", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/AbstractWindowedCursor.html#isLong(int)"/>
@@ -128,7 +128,7 @@ namespace Android.Database
         [global::System.Obsolete()]
         public bool IsLong(int arg0)
         {
-            return IExecuteWithSignature<bool>("isLong", "(I)Z", arg0);
+            return IExecute<bool>("isLong", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/AbstractWindowedCursor.html#isString(int)"/>
@@ -138,7 +138,7 @@ namespace Android.Database
         [global::System.Obsolete()]
         public bool IsString(int arg0)
         {
-            return IExecuteWithSignature<bool>("isString", "(I)Z", arg0);
+            return IExecute<bool>("isString", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/AbstractWindowedCursor.html#setWindow(android.database.CursorWindow)"/>
@@ -146,7 +146,7 @@ namespace Android.Database
         /// <param name="arg0"><see cref="Android.Database.CursorWindow"/></param>
         public void SetWindow(Android.Database.CursorWindow arg0)
         {
-            IExecuteWithSignature("setWindow", "(Landroid/database/CursorWindow;)V", arg0);
+            IExecute("setWindow", arg0);
         }
     
         #endregion

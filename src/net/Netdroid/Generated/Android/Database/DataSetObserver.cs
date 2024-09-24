@@ -97,14 +97,14 @@ namespace Android.Database
         /// </summary>
         public void OnChanged()
         {
-            IExecuteWithSignature("onChanged", "()V");
+            IExecute("onChanged");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/DataSetObserver.html#onInvalidated()"/>
         /// </summary>
         public void OnInvalidated()
         {
-            IExecuteWithSignature("onInvalidated", "()V");
+            IExecute("onInvalidated");
         }
     
         #endregion

@@ -117,7 +117,7 @@ namespace Android.App.Job
         /// <returns><see cref="bool"/></returns>
         public bool OnStartJob(Android.App.Job.JobParameters arg0)
         {
-            return IExecuteWithSignature<bool>("onStartJob", "(Landroid/app/job/JobParameters;)Z", arg0);
+            return IExecute<bool>("onStartJob", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobService.html#onStopJob(android.app.job.JobParameters)"/>
@@ -126,7 +126,7 @@ namespace Android.App.Job
         /// <returns><see cref="bool"/></returns>
         public bool OnStopJob(Android.App.Job.JobParameters arg0)
         {
-            return IExecuteWithSignature<bool>("onStopJob", "(Landroid/app/job/JobParameters;)Z", arg0);
+            return IExecute<bool>("onStopJob", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobService.html#jobFinished(android.app.job.JobParameters,boolean)"/>
@@ -196,7 +196,7 @@ namespace Android.App.Job
         /// <param name="arg0"><see cref="Android.App.Job.JobParameters"/></param>
         public void OnNetworkChanged(Android.App.Job.JobParameters arg0)
         {
-            IExecuteWithSignature("onNetworkChanged", "(Landroid/app/job/JobParameters;)V", arg0);
+            IExecute("onNetworkChanged", arg0);
         }
     
         #endregion

@@ -198,7 +198,7 @@ namespace Android.App.Job
         /// <returns><see cref="Android.App.Job.JobWorkItem"/></returns>
         public Android.App.Job.JobWorkItem DequeueWork()
         {
-            return IExecuteWithSignature<Android.App.Job.JobWorkItem>("dequeueWork", "()Landroid/app/job/JobWorkItem;");
+            return IExecute<Android.App.Job.JobWorkItem>("dequeueWork");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobParameters.html#getClipData()"/>
@@ -206,7 +206,7 @@ namespace Android.App.Job
         /// <returns><see cref="Android.Content.ClipData"/></returns>
         public Android.Content.ClipData GetClipData()
         {
-            return IExecuteWithSignature<Android.Content.ClipData>("getClipData", "()Landroid/content/ClipData;");
+            return IExecute<Android.Content.ClipData>("getClipData");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobParameters.html#getNetwork()"/>
@@ -214,7 +214,7 @@ namespace Android.App.Job
         /// <returns><see cref="Android.Net.Network"/></returns>
         public Android.Net.Network GetNetwork()
         {
-            return IExecuteWithSignature<Android.Net.Network>("getNetwork", "()Landroid/net/Network;");
+            return IExecute<Android.Net.Network>("getNetwork");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobParameters.html#getTriggeredContentUris()"/>
@@ -222,7 +222,7 @@ namespace Android.App.Job
         /// <returns><see cref="Android.Net.Uri"/></returns>
         public Android.Net.Uri[] GetTriggeredContentUris()
         {
-            return IExecuteWithSignatureArray<Android.Net.Uri>("getTriggeredContentUris", "()[Landroid/net/Uri;");
+            return IExecuteArray<Android.Net.Uri>("getTriggeredContentUris");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobParameters.html#getTransientExtras()"/>
@@ -230,7 +230,7 @@ namespace Android.App.Job
         /// <returns><see cref="Android.Os.Bundle"/></returns>
         public Android.Os.Bundle GetTransientExtras()
         {
-            return IExecuteWithSignature<Android.Os.Bundle>("getTransientExtras", "()Landroid/os/Bundle;");
+            return IExecute<Android.Os.Bundle>("getTransientExtras");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobParameters.html#getExtras()"/>
@@ -238,7 +238,7 @@ namespace Android.App.Job
         /// <returns><see cref="Android.Os.PersistableBundle"/></returns>
         public Android.Os.PersistableBundle GetExtras()
         {
-            return IExecuteWithSignature<Android.Os.PersistableBundle>("getExtras", "()Landroid/os/PersistableBundle;");
+            return IExecute<Android.Os.PersistableBundle>("getExtras");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobParameters.html#isExpeditedJob()"/>
@@ -246,7 +246,7 @@ namespace Android.App.Job
         /// <returns><see cref="bool"/></returns>
         public bool IsExpeditedJob()
         {
-            return IExecuteWithSignature<bool>("isExpeditedJob", "()Z");
+            return IExecute<bool>("isExpeditedJob");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobParameters.html#isOverrideDeadlineExpired()"/>
@@ -254,7 +254,7 @@ namespace Android.App.Job
         /// <returns><see cref="bool"/></returns>
         public bool IsOverrideDeadlineExpired()
         {
-            return IExecuteWithSignature<bool>("isOverrideDeadlineExpired", "()Z");
+            return IExecute<bool>("isOverrideDeadlineExpired");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobParameters.html#isUserInitiatedJob()"/>
@@ -262,7 +262,7 @@ namespace Android.App.Job
         /// <returns><see cref="bool"/></returns>
         public bool IsUserInitiatedJob()
         {
-            return IExecuteWithSignature<bool>("isUserInitiatedJob", "()Z");
+            return IExecute<bool>("isUserInitiatedJob");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobParameters.html#describeContents()"/>
@@ -270,7 +270,7 @@ namespace Android.App.Job
         /// <returns><see cref="int"/></returns>
         public int DescribeContents()
         {
-            return IExecuteWithSignature<int>("describeContents", "()I");
+            return IExecute<int>("describeContents");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobParameters.html#getClipGrantFlags()"/>
@@ -278,7 +278,7 @@ namespace Android.App.Job
         /// <returns><see cref="int"/></returns>
         public int GetClipGrantFlags()
         {
-            return IExecuteWithSignature<int>("getClipGrantFlags", "()I");
+            return IExecute<int>("getClipGrantFlags");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobParameters.html#getJobId()"/>
@@ -286,7 +286,7 @@ namespace Android.App.Job
         /// <returns><see cref="int"/></returns>
         public int GetJobId()
         {
-            return IExecuteWithSignature<int>("getJobId", "()I");
+            return IExecute<int>("getJobId");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobParameters.html#getStopReason()"/>
@@ -294,7 +294,7 @@ namespace Android.App.Job
         /// <returns><see cref="int"/></returns>
         public int GetStopReason()
         {
-            return IExecuteWithSignature<int>("getStopReason", "()I");
+            return IExecute<int>("getStopReason");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobParameters.html#getJobNamespace()"/>
@@ -302,7 +302,7 @@ namespace Android.App.Job
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetJobNamespace()
         {
-            return IExecuteWithSignature<Java.Lang.String>("getJobNamespace", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("getJobNamespace");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobParameters.html#getTriggeredContentAuthorities()"/>
@@ -310,7 +310,7 @@ namespace Android.App.Job
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String[] GetTriggeredContentAuthorities()
         {
-            return IExecuteWithSignatureArray<Java.Lang.String>("getTriggeredContentAuthorities", "()[Ljava/lang/String;");
+            return IExecuteArray<Java.Lang.String>("getTriggeredContentAuthorities");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobParameters.html#completeWork(android.app.job.JobWorkItem)"/>
@@ -318,7 +318,7 @@ namespace Android.App.Job
         /// <param name="arg0"><see cref="Android.App.Job.JobWorkItem"/></param>
         public void CompleteWork(Android.App.Job.JobWorkItem arg0)
         {
-            IExecuteWithSignature("completeWork", "(Landroid/app/job/JobWorkItem;)V", arg0);
+            IExecute("completeWork", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/job/JobParameters.html#writeToParcel(android.os.Parcel,int)"/>
