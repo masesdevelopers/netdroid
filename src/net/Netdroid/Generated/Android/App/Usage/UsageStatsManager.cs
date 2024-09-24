@@ -169,7 +169,7 @@ namespace Android.App.Usage
         /// <returns><see cref="Android.App.Usage.UsageEvents"/></returns>
         public Android.App.Usage.UsageEvents QueryEvents(Android.App.Usage.UsageEventsQuery arg0)
         {
-            return IExecuteWithSignature<Android.App.Usage.UsageEvents>("queryEvents", "(Landroid/app/usage/UsageEventsQuery;)Landroid/app/usage/UsageEvents;", arg0);
+            return IExecute<Android.App.Usage.UsageEvents>("queryEvents", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/UsageStatsManager.html#queryEvents(long,long)"/>
@@ -198,7 +198,7 @@ namespace Android.App.Usage
         /// <returns><see cref="bool"/></returns>
         public bool IsAppInactive(Java.Lang.String arg0)
         {
-            return IExecuteWithSignature<bool>("isAppInactive", "(Ljava/lang/String;)Z", arg0);
+            return IExecute<bool>("isAppInactive", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/UsageStatsManager.html#getAppStandbyBucket()"/>
@@ -206,7 +206,7 @@ namespace Android.App.Usage
         /// <returns><see cref="int"/></returns>
         public int GetAppStandbyBucket()
         {
-            return IExecuteWithSignature<int>("getAppStandbyBucket", "()I");
+            return IExecute<int>("getAppStandbyBucket");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/UsageStatsManager.html#queryConfigurations(int,long,long)"/>

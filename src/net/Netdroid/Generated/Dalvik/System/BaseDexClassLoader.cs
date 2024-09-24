@@ -108,7 +108,7 @@ namespace Dalvik.System
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String FindLibrary(Java.Lang.String arg0)
         {
-            return IExecuteWithSignature<Java.Lang.String>("findLibrary", "(Ljava/lang/String;)Ljava/lang/String;", arg0);
+            return IExecute<Java.Lang.String>("findLibrary", arg0);
         }
     
         #endregion

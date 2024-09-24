@@ -142,7 +142,7 @@ namespace Android.App.Usage
         /// <returns><see cref="bool"/></returns>
         public bool GetNextBucket(Android.App.Usage.NetworkStats.Bucket arg0)
         {
-            return IExecuteWithSignature<bool>("getNextBucket", "(Landroid/app/usage/NetworkStats$Bucket;)Z", arg0);
+            return IExecute<bool>("getNextBucket", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/NetworkStats.html#hasNextBucket()"/>
@@ -150,14 +150,14 @@ namespace Android.App.Usage
         /// <returns><see cref="bool"/></returns>
         public bool HasNextBucket()
         {
-            return IExecuteWithSignature<bool>("hasNextBucket", "()Z");
+            return IExecute<bool>("hasNextBucket");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/NetworkStats.html#close()"/>
         /// </summary>
         public void Close()
         {
-            IExecuteWithSignature("close", "()V");
+            IExecute("close");
         }
     
         #endregion

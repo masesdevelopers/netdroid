@@ -174,7 +174,7 @@ namespace Dalvik.System
         [global::System.Obsolete()]
         public static bool IsDexOptNeeded(Java.Lang.String arg0)
         {
-            return SExecuteWithSignature<bool>(LocalBridgeClazz, "isDexOptNeeded", "(Ljava/lang/String;)Z", arg0);
+            return SExecute<bool>(LocalBridgeClazz, "isDexOptNeeded", arg0);
         }
     
         #endregion
@@ -198,7 +198,7 @@ namespace Dalvik.System
         [global::System.Obsolete()]
         public Java.Lang.String GetName()
         {
-            return IExecuteWithSignature<Java.Lang.String>("getName", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("getName");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/dalvik/system/DexFile.html#entries()"/>
@@ -207,7 +207,7 @@ namespace Dalvik.System
         [global::System.Obsolete()]
         public Java.Util.Enumeration<Java.Lang.String> Entries()
         {
-            return IExecuteWithSignature<Java.Util.Enumeration<Java.Lang.String>>("entries", "()Ljava/util/Enumeration;");
+            return IExecute<Java.Util.Enumeration<Java.Lang.String>>("entries");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/dalvik/system/DexFile.html#close()"/>
@@ -216,7 +216,7 @@ namespace Dalvik.System
         [global::System.Obsolete()]
         public void Close()
         {
-            IExecuteWithSignature("close", "()V");
+            IExecute("close");
         }
     
         #endregion

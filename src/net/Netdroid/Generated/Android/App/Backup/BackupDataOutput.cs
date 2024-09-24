@@ -96,7 +96,7 @@ namespace Android.App.Backup
         /// <returns><see cref="int"/></returns>
         public int GetTransportFlags()
         {
-            return IExecuteWithSignature<int>("getTransportFlags", "()I");
+            return IExecute<int>("getTransportFlags");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/backup/BackupDataOutput.html#writeEntityData(byte[],int)"/>
@@ -126,7 +126,7 @@ namespace Android.App.Backup
         /// <returns><see cref="long"/></returns>
         public long GetQuota()
         {
-            return IExecuteWithSignature<long>("getQuota", "()J");
+            return IExecute<long>("getQuota");
         }
     
         #endregion

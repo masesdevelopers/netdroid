@@ -92,7 +92,7 @@ namespace Dalvik.System
         /// <returns><see cref="Dalvik.System.DexFile.OptimizationInfo"/></returns>
         public static Dalvik.System.DexFile.OptimizationInfo GetBaseApkOptimizationInfo()
         {
-            return SExecuteWithSignature<Dalvik.System.DexFile.OptimizationInfo>(LocalBridgeClazz, "getBaseApkOptimizationInfo", "()Ldalvik/system/DexFile$OptimizationInfo;");
+            return SExecute<Dalvik.System.DexFile.OptimizationInfo>(LocalBridgeClazz, "getBaseApkOptimizationInfo");
         }
     
         #endregion

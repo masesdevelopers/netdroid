@@ -147,7 +147,7 @@ namespace Android.App.Usage
         /// <returns><see cref="int"/></returns>
         public int DescribeContents()
         {
-            return IExecuteWithSignature<int>("describeContents", "()I");
+            return IExecute<int>("describeContents");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/UsageEventsQuery.html#getEventTypes()"/>
@@ -155,7 +155,7 @@ namespace Android.App.Usage
         /// <returns><see cref="int"/></returns>
         public int[] GetEventTypes()
         {
-            return IExecuteWithSignatureArray<int>("getEventTypes", "()[I");
+            return IExecuteArray<int>("getEventTypes");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/UsageEventsQuery.html#getPackageNames()"/>
@@ -163,7 +163,7 @@ namespace Android.App.Usage
         /// <returns><see cref="Java.Util.Set"/></returns>
         public Java.Util.Set<Java.Lang.String> GetPackageNames()
         {
-            return IExecuteWithSignature<Java.Util.Set<Java.Lang.String>>("getPackageNames", "()Ljava/util/Set;");
+            return IExecute<Java.Util.Set<Java.Lang.String>>("getPackageNames");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/UsageEventsQuery.html#getBeginTimeMillis()"/>
@@ -171,7 +171,7 @@ namespace Android.App.Usage
         /// <returns><see cref="long"/></returns>
         public long GetBeginTimeMillis()
         {
-            return IExecuteWithSignature<long>("getBeginTimeMillis", "()J");
+            return IExecute<long>("getBeginTimeMillis");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/UsageEventsQuery.html#getEndTimeMillis()"/>
@@ -179,7 +179,7 @@ namespace Android.App.Usage
         /// <returns><see cref="long"/></returns>
         public long GetEndTimeMillis()
         {
-            return IExecuteWithSignature<long>("getEndTimeMillis", "()J");
+            return IExecute<long>("getEndTimeMillis");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/UsageEventsQuery.html#writeToParcel(android.os.Parcel,int)"/>

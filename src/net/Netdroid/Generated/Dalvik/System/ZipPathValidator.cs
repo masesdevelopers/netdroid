@@ -138,7 +138,7 @@ namespace Dalvik.System
         /// </summary>
         public static void ClearCallback()
         {
-            SExecuteWithSignature(LocalBridgeClazz, "clearCallback", "()V");
+            SExecute(LocalBridgeClazz, "clearCallback");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/dalvik/system/ZipPathValidator.html#setCallback(dalvik.system.ZipPathValidator.Callback)"/>
@@ -146,7 +146,7 @@ namespace Dalvik.System
         /// <param name="arg0"><see cref="Dalvik.System.ZipPathValidator.Callback"/></param>
         public static void SetCallback(Dalvik.System.ZipPathValidator.Callback arg0)
         {
-            SExecuteWithSignature(LocalBridgeClazz, "setCallback", "(Ldalvik/system/ZipPathValidator$Callback;)V", arg0);
+            SExecute(LocalBridgeClazz, "setCallback", arg0);
         }
     
         #endregion

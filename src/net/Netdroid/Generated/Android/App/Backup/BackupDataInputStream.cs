@@ -96,7 +96,7 @@ namespace Android.App.Backup
         /// <returns><see cref="int"/></returns>
         public int Size()
         {
-            return IExecuteWithSignature<int>("size", "()I");
+            return IExecute<int>("size");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/backup/BackupDataInputStream.html#getKey()"/>
@@ -104,7 +104,7 @@ namespace Android.App.Backup
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetKey()
         {
-            return IExecuteWithSignature<Java.Lang.String>("getKey", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("getKey");
         }
     
         #endregion

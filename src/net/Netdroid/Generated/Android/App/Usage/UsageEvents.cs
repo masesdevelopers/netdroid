@@ -148,7 +148,7 @@ namespace Android.App.Usage
         /// <returns><see cref="bool"/></returns>
         public bool GetNextEvent(Android.App.Usage.UsageEvents.Event arg0)
         {
-            return IExecuteWithSignature<bool>("getNextEvent", "(Landroid/app/usage/UsageEvents$Event;)Z", arg0);
+            return IExecute<bool>("getNextEvent", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/UsageEvents.html#hasNextEvent()"/>
@@ -156,7 +156,7 @@ namespace Android.App.Usage
         /// <returns><see cref="bool"/></returns>
         public bool HasNextEvent()
         {
-            return IExecuteWithSignature<bool>("hasNextEvent", "()Z");
+            return IExecute<bool>("hasNextEvent");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/UsageEvents.html#describeContents()"/>
@@ -164,7 +164,7 @@ namespace Android.App.Usage
         /// <returns><see cref="int"/></returns>
         public int DescribeContents()
         {
-            return IExecuteWithSignature<int>("describeContents", "()I");
+            return IExecute<int>("describeContents");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/UsageEvents.html#writeToParcel(android.os.Parcel,int)"/>

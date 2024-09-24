@@ -107,7 +107,7 @@ namespace Android.App.Backup
         /// <param name="arg0"><see cref="int"/></param>
         public void RestoreFinished(int arg0)
         {
-            IExecuteWithSignature("restoreFinished", "(I)V", arg0);
+            IExecute("restoreFinished", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/backup/RestoreObserver.html#restoreStarting(int)"/>
@@ -115,7 +115,7 @@ namespace Android.App.Backup
         /// <param name="arg0"><see cref="int"/></param>
         public void RestoreStarting(int arg0)
         {
-            IExecuteWithSignature("restoreStarting", "(I)V", arg0);
+            IExecute("restoreStarting", arg0);
         }
     
         #endregion

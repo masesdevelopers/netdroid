@@ -138,7 +138,7 @@ namespace Android.App.Usage
         /// <returns><see cref="int"/></returns>
         public int DescribeContents()
         {
-            return IExecuteWithSignature<int>("describeContents", "()I");
+            return IExecute<int>("describeContents");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/StorageStats.html#getAppBytes()"/>
@@ -146,7 +146,7 @@ namespace Android.App.Usage
         /// <returns><see cref="long"/></returns>
         public long GetAppBytes()
         {
-            return IExecuteWithSignature<long>("getAppBytes", "()J");
+            return IExecute<long>("getAppBytes");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/StorageStats.html#getAppBytesByDataType(int)"/>
@@ -155,7 +155,7 @@ namespace Android.App.Usage
         /// <returns><see cref="long"/></returns>
         public long GetAppBytesByDataType(int arg0)
         {
-            return IExecuteWithSignature<long>("getAppBytesByDataType", "(I)J", arg0);
+            return IExecute<long>("getAppBytesByDataType", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/StorageStats.html#getCacheBytes()"/>
@@ -163,7 +163,7 @@ namespace Android.App.Usage
         /// <returns><see cref="long"/></returns>
         public long GetCacheBytes()
         {
-            return IExecuteWithSignature<long>("getCacheBytes", "()J");
+            return IExecute<long>("getCacheBytes");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/StorageStats.html#getDataBytes()"/>
@@ -171,7 +171,7 @@ namespace Android.App.Usage
         /// <returns><see cref="long"/></returns>
         public long GetDataBytes()
         {
-            return IExecuteWithSignature<long>("getDataBytes", "()J");
+            return IExecute<long>("getDataBytes");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/StorageStats.html#getExternalCacheBytes()"/>
@@ -179,7 +179,7 @@ namespace Android.App.Usage
         /// <returns><see cref="long"/></returns>
         public long GetExternalCacheBytes()
         {
-            return IExecuteWithSignature<long>("getExternalCacheBytes", "()J");
+            return IExecute<long>("getExternalCacheBytes");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/StorageStats.html#writeToParcel(android.os.Parcel,int)"/>

@@ -267,7 +267,7 @@ namespace Android.App.Usage
         /// <param name="arg0"><see cref="Android.App.Usage.NetworkStatsManager.UsageCallback"/></param>
         public void UnregisterUsageCallback(Android.App.Usage.NetworkStatsManager.UsageCallback arg0)
         {
-            IExecuteWithSignature("unregisterUsageCallback", "(Landroid/app/usage/NetworkStatsManager$UsageCallback;)V", arg0);
+            IExecute("unregisterUsageCallback", arg0);
         }
     
         #endregion

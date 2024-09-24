@@ -152,14 +152,14 @@ namespace Android.App.Backup
         /// </summary>
         public void OnCreate()
         {
-            IExecuteWithSignature("onCreate", "()V");
+            IExecute("onCreate");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/backup/BackupAgent.html#onDestroy()"/>
         /// </summary>
         public void OnDestroy()
         {
-            IExecuteWithSignature("onDestroy", "()V");
+            IExecute("onDestroy");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/backup/BackupAgent.html#onFullBackup(android.app.backup.FullBackupDataOutput)"/>
@@ -168,7 +168,7 @@ namespace Android.App.Backup
         /// <exception cref="Java.Io.IOException"/>
         public void OnFullBackup(Android.App.Backup.FullBackupDataOutput arg0)
         {
-            IExecuteWithSignature("onFullBackup", "(Landroid/app/backup/FullBackupDataOutput;)V", arg0);
+            IExecute("onFullBackup", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/backup/BackupAgent.html#onQuotaExceeded(long,long)"/>
@@ -209,7 +209,7 @@ namespace Android.App.Backup
         /// </summary>
         public void OnRestoreFinished()
         {
-            IExecuteWithSignature("onRestoreFinished", "()V");
+            IExecute("onRestoreFinished");
         }
     
         #endregion

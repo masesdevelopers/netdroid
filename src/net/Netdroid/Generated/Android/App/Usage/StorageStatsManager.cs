@@ -144,7 +144,7 @@ namespace Android.App.Usage
         /// <exception cref="Java.Io.IOException"/>
         public long GetFreeBytes(Java.Util.UUID arg0)
         {
-            return IExecuteWithSignature<long>("getFreeBytes", "(Ljava/util/UUID;)J", arg0);
+            return IExecute<long>("getFreeBytes", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/StorageStatsManager.html#getTotalBytes(java.util.UUID)"/>
@@ -154,7 +154,7 @@ namespace Android.App.Usage
         /// <exception cref="Java.Io.IOException"/>
         public long GetTotalBytes(Java.Util.UUID arg0)
         {
-            return IExecuteWithSignature<long>("getTotalBytes", "(Ljava/util/UUID;)J", arg0);
+            return IExecute<long>("getTotalBytes", arg0);
         }
     
         #endregion

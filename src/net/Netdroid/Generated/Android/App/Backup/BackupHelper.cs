@@ -126,7 +126,7 @@ namespace Android.App.Backup
         /// <param name="arg0"><see cref="Android.App.Backup.BackupDataInputStream"/></param>
         public void RestoreEntity(Android.App.Backup.BackupDataInputStream arg0)
         {
-            IExecuteWithSignature("restoreEntity", "(Landroid/app/backup/BackupDataInputStream;)V", arg0);
+            IExecute("restoreEntity", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/backup/BackupHelper.html#writeNewStateDescription(android.os.ParcelFileDescriptor)"/>
@@ -134,7 +134,7 @@ namespace Android.App.Backup
         /// <param name="arg0"><see cref="Android.Os.ParcelFileDescriptor"/></param>
         public void WriteNewStateDescription(Android.Os.ParcelFileDescriptor arg0)
         {
-            IExecuteWithSignature("writeNewStateDescription", "(Landroid/os/ParcelFileDescriptor;)V", arg0);
+            IExecute("writeNewStateDescription", arg0);
         }
     
         #endregion

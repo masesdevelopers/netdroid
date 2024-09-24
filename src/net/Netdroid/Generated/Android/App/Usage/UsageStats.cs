@@ -110,7 +110,7 @@ namespace Android.App.Usage
         /// <returns><see cref="int"/></returns>
         public int DescribeContents()
         {
-            return IExecuteWithSignature<int>("describeContents", "()I");
+            return IExecute<int>("describeContents");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/UsageStats.html#getPackageName()"/>
@@ -118,7 +118,7 @@ namespace Android.App.Usage
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetPackageName()
         {
-            return IExecuteWithSignature<Java.Lang.String>("getPackageName", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("getPackageName");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/UsageStats.html#getFirstTimeStamp()"/>
@@ -126,7 +126,7 @@ namespace Android.App.Usage
         /// <returns><see cref="long"/></returns>
         public long GetFirstTimeStamp()
         {
-            return IExecuteWithSignature<long>("getFirstTimeStamp", "()J");
+            return IExecute<long>("getFirstTimeStamp");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/UsageStats.html#getLastTimeForegroundServiceUsed()"/>
@@ -134,7 +134,7 @@ namespace Android.App.Usage
         /// <returns><see cref="long"/></returns>
         public long GetLastTimeForegroundServiceUsed()
         {
-            return IExecuteWithSignature<long>("getLastTimeForegroundServiceUsed", "()J");
+            return IExecute<long>("getLastTimeForegroundServiceUsed");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/UsageStats.html#getLastTimeStamp()"/>
@@ -142,7 +142,7 @@ namespace Android.App.Usage
         /// <returns><see cref="long"/></returns>
         public long GetLastTimeStamp()
         {
-            return IExecuteWithSignature<long>("getLastTimeStamp", "()J");
+            return IExecute<long>("getLastTimeStamp");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/UsageStats.html#getLastTimeUsed()"/>
@@ -150,7 +150,7 @@ namespace Android.App.Usage
         /// <returns><see cref="long"/></returns>
         public long GetLastTimeUsed()
         {
-            return IExecuteWithSignature<long>("getLastTimeUsed", "()J");
+            return IExecute<long>("getLastTimeUsed");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/UsageStats.html#getLastTimeVisible()"/>
@@ -158,7 +158,7 @@ namespace Android.App.Usage
         /// <returns><see cref="long"/></returns>
         public long GetLastTimeVisible()
         {
-            return IExecuteWithSignature<long>("getLastTimeVisible", "()J");
+            return IExecute<long>("getLastTimeVisible");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/UsageStats.html#getTotalTimeForegroundServiceUsed()"/>
@@ -166,7 +166,7 @@ namespace Android.App.Usage
         /// <returns><see cref="long"/></returns>
         public long GetTotalTimeForegroundServiceUsed()
         {
-            return IExecuteWithSignature<long>("getTotalTimeForegroundServiceUsed", "()J");
+            return IExecute<long>("getTotalTimeForegroundServiceUsed");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/UsageStats.html#getTotalTimeInForeground()"/>
@@ -174,7 +174,7 @@ namespace Android.App.Usage
         /// <returns><see cref="long"/></returns>
         public long GetTotalTimeInForeground()
         {
-            return IExecuteWithSignature<long>("getTotalTimeInForeground", "()J");
+            return IExecute<long>("getTotalTimeInForeground");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/UsageStats.html#getTotalTimeVisible()"/>
@@ -182,7 +182,7 @@ namespace Android.App.Usage
         /// <returns><see cref="long"/></returns>
         public long GetTotalTimeVisible()
         {
-            return IExecuteWithSignature<long>("getTotalTimeVisible", "()J");
+            return IExecute<long>("getTotalTimeVisible");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/UsageStats.html#add(android.app.usage.UsageStats)"/>
@@ -190,7 +190,7 @@ namespace Android.App.Usage
         /// <param name="arg0"><see cref="Android.App.Usage.UsageStats"/></param>
         public void Add(Android.App.Usage.UsageStats arg0)
         {
-            IExecuteWithSignature("add", "(Landroid/app/usage/UsageStats;)V", arg0);
+            IExecute("add", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/UsageStats.html#writeToParcel(android.os.Parcel,int)"/>

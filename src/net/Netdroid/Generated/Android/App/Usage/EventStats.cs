@@ -110,7 +110,7 @@ namespace Android.App.Usage
         /// <returns><see cref="int"/></returns>
         public int DescribeContents()
         {
-            return IExecuteWithSignature<int>("describeContents", "()I");
+            return IExecute<int>("describeContents");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/EventStats.html#getCount()"/>
@@ -118,7 +118,7 @@ namespace Android.App.Usage
         /// <returns><see cref="int"/></returns>
         public int GetCount()
         {
-            return IExecuteWithSignature<int>("getCount", "()I");
+            return IExecute<int>("getCount");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/EventStats.html#getEventType()"/>
@@ -126,7 +126,7 @@ namespace Android.App.Usage
         /// <returns><see cref="int"/></returns>
         public int GetEventType()
         {
-            return IExecuteWithSignature<int>("getEventType", "()I");
+            return IExecute<int>("getEventType");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/EventStats.html#getFirstTimeStamp()"/>
@@ -134,7 +134,7 @@ namespace Android.App.Usage
         /// <returns><see cref="long"/></returns>
         public long GetFirstTimeStamp()
         {
-            return IExecuteWithSignature<long>("getFirstTimeStamp", "()J");
+            return IExecute<long>("getFirstTimeStamp");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/EventStats.html#getLastEventTime()"/>
@@ -142,7 +142,7 @@ namespace Android.App.Usage
         /// <returns><see cref="long"/></returns>
         public long GetLastEventTime()
         {
-            return IExecuteWithSignature<long>("getLastEventTime", "()J");
+            return IExecute<long>("getLastEventTime");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/EventStats.html#getLastTimeStamp()"/>
@@ -150,7 +150,7 @@ namespace Android.App.Usage
         /// <returns><see cref="long"/></returns>
         public long GetLastTimeStamp()
         {
-            return IExecuteWithSignature<long>("getLastTimeStamp", "()J");
+            return IExecute<long>("getLastTimeStamp");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/EventStats.html#getTotalTime()"/>
@@ -158,7 +158,7 @@ namespace Android.App.Usage
         /// <returns><see cref="long"/></returns>
         public long GetTotalTime()
         {
-            return IExecuteWithSignature<long>("getTotalTime", "()J");
+            return IExecute<long>("getTotalTime");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/EventStats.html#add(android.app.usage.EventStats)"/>
@@ -166,7 +166,7 @@ namespace Android.App.Usage
         /// <param name="arg0"><see cref="Android.App.Usage.EventStats"/></param>
         public void Add(Android.App.Usage.EventStats arg0)
         {
-            IExecuteWithSignature("add", "(Landroid/app/usage/EventStats;)V", arg0);
+            IExecute("add", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/usage/EventStats.html#writeToParcel(android.os.Parcel,int)"/>

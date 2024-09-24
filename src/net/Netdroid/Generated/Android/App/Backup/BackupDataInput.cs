@@ -97,7 +97,7 @@ namespace Android.App.Backup
         /// <exception cref="Java.Io.IOException"/>
         public bool ReadNextHeader()
         {
-            return IExecuteWithSignature<bool>("readNextHeader", "()Z");
+            return IExecute<bool>("readNextHeader");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/backup/BackupDataInput.html#getDataSize()"/>
@@ -105,7 +105,7 @@ namespace Android.App.Backup
         /// <returns><see cref="int"/></returns>
         public int GetDataSize()
         {
-            return IExecuteWithSignature<int>("getDataSize", "()I");
+            return IExecute<int>("getDataSize");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/backup/BackupDataInput.html#readEntityData(byte[],int,int)"/>
@@ -125,7 +125,7 @@ namespace Android.App.Backup
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetKey()
         {
-            return IExecuteWithSignature<Java.Lang.String>("getKey", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("getKey");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/backup/BackupDataInput.html#skipEntityData()"/>
@@ -133,7 +133,7 @@ namespace Android.App.Backup
         /// <exception cref="Java.Io.IOException"/>
         public void SkipEntityData()
         {
-            IExecuteWithSignature("skipEntityData", "()V");
+            IExecute("skipEntityData");
         }
     
         #endregion

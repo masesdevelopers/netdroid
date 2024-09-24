@@ -100,7 +100,7 @@ namespace Android.App.Backup
         /// <param name="arg0"><see cref="Java.Lang.String"/></param>
         public static void DataChanged(Java.Lang.String arg0)
         {
-            SExecuteWithSignature(LocalBridgeClazz, "dataChanged", "(Ljava/lang/String;)V", arg0);
+            SExecute(LocalBridgeClazz, "dataChanged", arg0);
         }
     
         #endregion
@@ -113,7 +113,7 @@ namespace Android.App.Backup
         /// <returns><see cref="Android.Os.UserHandle"/></returns>
         public Android.Os.UserHandle GetUserForAncestralSerialNumber(long arg0)
         {
-            return IExecuteWithSignature<Android.Os.UserHandle>("getUserForAncestralSerialNumber", "(J)Landroid/os/UserHandle;", arg0);
+            return IExecute<Android.Os.UserHandle>("getUserForAncestralSerialNumber", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/backup/BackupManager.html#requestRestore(android.app.backup.RestoreObserver)"/>
@@ -123,14 +123,14 @@ namespace Android.App.Backup
         [global::System.Obsolete()]
         public int RequestRestore(Android.App.Backup.RestoreObserver arg0)
         {
-            return IExecuteWithSignature<int>("requestRestore", "(Landroid/app/backup/RestoreObserver;)I", arg0);
+            return IExecute<int>("requestRestore", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/backup/BackupManager.html#dataChanged()"/>
         /// </summary>
         public void DataChanged()
         {
-            IExecuteWithSignature("dataChanged", "()V");
+            IExecute("dataChanged");
         }
     
         #endregion
