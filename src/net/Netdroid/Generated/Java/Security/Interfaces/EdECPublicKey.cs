@@ -124,7 +124,7 @@ namespace Java.Security.Interfaces
         /// <returns><see cref="Java.Security.Spec.EdECPoint"/></returns>
         public Java.Security.Spec.EdECPoint GetPoint()
         {
-            return IExecuteWithSignature<Java.Security.Spec.EdECPoint>("getPoint", "()Ljava/security/spec/EdECPoint;");
+            return IExecute<Java.Security.Spec.EdECPoint>("getPoint");
         }
     
         #endregion

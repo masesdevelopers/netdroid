@@ -131,7 +131,7 @@ namespace Java.Security.Interfaces
         /// <returns><see cref="Java.Math.BigInteger"/></returns>
         public Java.Math.BigInteger GetPrivateExponent()
         {
-            return IExecuteWithSignature<Java.Math.BigInteger>("getPrivateExponent", "()Ljava/math/BigInteger;");
+            return IExecute<Java.Math.BigInteger>("getPrivateExponent");
         }
     
         #endregion

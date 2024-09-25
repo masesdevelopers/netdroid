@@ -139,7 +139,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="Java.Util.RandomNs.RandomGeneratorFactory"/></returns>
         public static Java.Util.RandomNs.RandomGeneratorFactory Of(Java.Lang.String arg0)
         {
-            return SExecuteWithSignature<Java.Util.RandomNs.RandomGeneratorFactory>(LocalBridgeClazz, "of", "(Ljava/lang/String;)Ljava/util/random/RandomGeneratorFactory;", arg0);
+            return SExecute<Java.Util.RandomNs.RandomGeneratorFactory>(LocalBridgeClazz, "of", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#getDefault()"/>
@@ -147,7 +147,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="Java.Util.RandomNs.RandomGeneratorFactory"/></returns>
         public static Java.Util.RandomNs.RandomGeneratorFactory GetDefault()
         {
-            return SExecuteWithSignature<Java.Util.RandomNs.RandomGeneratorFactory>(LocalBridgeClazz, "getDefault", "()Ljava/util/random/RandomGeneratorFactory;");
+            return SExecute<Java.Util.RandomNs.RandomGeneratorFactory>(LocalBridgeClazz, "getDefault");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#all()"/>
@@ -155,7 +155,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="Java.Util.Stream.Stream"/></returns>
         public static Java.Util.Stream.Stream All()
         {
-            return SExecuteWithSignature<Java.Util.Stream.Stream>(LocalBridgeClazz, "all", "()Ljava/util/stream/Stream;");
+            return SExecute<Java.Util.Stream.Stream>(LocalBridgeClazz, "all");
         }
     
         #endregion
@@ -167,7 +167,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="bool"/></returns>
         public bool IsArbitrarilyJumpable()
         {
-            return IExecuteWithSignature<bool>("isArbitrarilyJumpable", "()Z");
+            return IExecute<bool>("isArbitrarilyJumpable");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#isDeprecated()"/>
@@ -175,7 +175,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="bool"/></returns>
         public bool IsDeprecated()
         {
-            return IExecuteWithSignature<bool>("isDeprecated", "()Z");
+            return IExecute<bool>("isDeprecated");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#isHardware()"/>
@@ -183,7 +183,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="bool"/></returns>
         public bool IsHardware()
         {
-            return IExecuteWithSignature<bool>("isHardware", "()Z");
+            return IExecute<bool>("isHardware");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#isJumpable()"/>
@@ -191,7 +191,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="bool"/></returns>
         public bool IsJumpable()
         {
-            return IExecuteWithSignature<bool>("isJumpable", "()Z");
+            return IExecute<bool>("isJumpable");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#isLeapable()"/>
@@ -199,7 +199,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="bool"/></returns>
         public bool IsLeapable()
         {
-            return IExecuteWithSignature<bool>("isLeapable", "()Z");
+            return IExecute<bool>("isLeapable");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#isSplittable()"/>
@@ -207,7 +207,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="bool"/></returns>
         public bool IsSplittable()
         {
-            return IExecuteWithSignature<bool>("isSplittable", "()Z");
+            return IExecute<bool>("isSplittable");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#isStatistical()"/>
@@ -215,7 +215,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="bool"/></returns>
         public bool IsStatistical()
         {
-            return IExecuteWithSignature<bool>("isStatistical", "()Z");
+            return IExecute<bool>("isStatistical");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#isStochastic()"/>
@@ -223,7 +223,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="bool"/></returns>
         public bool IsStochastic()
         {
-            return IExecuteWithSignature<bool>("isStochastic", "()Z");
+            return IExecute<bool>("isStochastic");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#isStreamable()"/>
@@ -231,7 +231,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="bool"/></returns>
         public bool IsStreamable()
         {
-            return IExecuteWithSignature<bool>("isStreamable", "()Z");
+            return IExecute<bool>("isStreamable");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#equidistribution()"/>
@@ -239,7 +239,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="int"/></returns>
         public int Equidistribution()
         {
-            return IExecuteWithSignature<int>("equidistribution", "()I");
+            return IExecute<int>("equidistribution");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#stateBits()"/>
@@ -247,7 +247,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="int"/></returns>
         public int StateBits()
         {
-            return IExecuteWithSignature<int>("stateBits", "()I");
+            return IExecute<int>("stateBits");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#group()"/>
@@ -255,7 +255,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String Group()
         {
-            return IExecuteWithSignature<Java.Lang.String>("group", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("group");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#name()"/>
@@ -263,7 +263,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String Name()
         {
-            return IExecuteWithSignature<Java.Lang.String>("name", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("name");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#period()"/>
@@ -271,7 +271,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="Java.Math.BigInteger"/></returns>
         public Java.Math.BigInteger Period()
         {
-            return IExecuteWithSignature<Java.Math.BigInteger>("period", "()Ljava/math/BigInteger;");
+            return IExecute<Java.Math.BigInteger>("period");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#create()"/>
@@ -279,7 +279,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="Java.Util.RandomNs.RandomGenerator"/></returns>
         public Java.Util.RandomNs.RandomGenerator Create()
         {
-            return IExecuteWithSignature<Java.Util.RandomNs.RandomGenerator>("create", "()Ljava/util/random/RandomGenerator;");
+            return IExecute<Java.Util.RandomNs.RandomGenerator>("create");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#create(byte[])"/>
@@ -288,7 +288,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="Java.Util.RandomNs.RandomGenerator"/></returns>
         public Java.Util.RandomNs.RandomGenerator Create(byte[] arg0)
         {
-            return IExecuteWithSignature<Java.Util.RandomNs.RandomGenerator>("create", "([B)Ljava/util/random/RandomGenerator;", new object[] { arg0 });
+            return IExecute<Java.Util.RandomNs.RandomGenerator>("create", new object[] { arg0 });
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#create(long)"/>
@@ -297,7 +297,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="Java.Util.RandomNs.RandomGenerator"/></returns>
         public Java.Util.RandomNs.RandomGenerator Create(long arg0)
         {
-            return IExecuteWithSignature<Java.Util.RandomNs.RandomGenerator>("create", "(J)Ljava/util/random/RandomGenerator;", arg0);
+            return IExecute<Java.Util.RandomNs.RandomGenerator>("create", arg0);
         }
     
         #endregion
@@ -337,7 +337,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="Java.Util.RandomNs.RandomGeneratorFactory"/></returns>
         public static Java.Util.RandomNs.RandomGeneratorFactory<T> Of(Java.Lang.String arg0)
         {
-            return SExecuteWithSignature<Java.Util.RandomNs.RandomGeneratorFactory<T>>(LocalBridgeClazz, "of", "(Ljava/lang/String;)Ljava/util/random/RandomGeneratorFactory;", arg0);
+            return SExecute<Java.Util.RandomNs.RandomGeneratorFactory<T>>(LocalBridgeClazz, "of", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#getDefault()"/>
@@ -345,7 +345,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="Java.Util.RandomNs.RandomGeneratorFactory"/></returns>
         public static Java.Util.RandomNs.RandomGeneratorFactory<Java.Util.RandomNs.RandomGenerator> GetDefault()
         {
-            return SExecuteWithSignature<Java.Util.RandomNs.RandomGeneratorFactory<Java.Util.RandomNs.RandomGenerator>>(LocalBridgeClazz, "getDefault", "()Ljava/util/random/RandomGeneratorFactory;");
+            return SExecute<Java.Util.RandomNs.RandomGeneratorFactory<Java.Util.RandomNs.RandomGenerator>>(LocalBridgeClazz, "getDefault");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#all()"/>
@@ -353,7 +353,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="Java.Util.Stream.Stream"/></returns>
         public static Java.Util.Stream.Stream<Java.Util.RandomNs.RandomGeneratorFactory<Java.Util.RandomNs.RandomGenerator>> All()
         {
-            return SExecuteWithSignature<Java.Util.Stream.Stream<Java.Util.RandomNs.RandomGeneratorFactory<Java.Util.RandomNs.RandomGenerator>>>(LocalBridgeClazz, "all", "()Ljava/util/stream/Stream;");
+            return SExecute<Java.Util.Stream.Stream<Java.Util.RandomNs.RandomGeneratorFactory<Java.Util.RandomNs.RandomGenerator>>>(LocalBridgeClazz, "all");
         }
     
         #endregion
@@ -365,7 +365,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="bool"/></returns>
         public bool IsArbitrarilyJumpable()
         {
-            return IExecuteWithSignature<bool>("isArbitrarilyJumpable", "()Z");
+            return IExecute<bool>("isArbitrarilyJumpable");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#isDeprecated()"/>
@@ -373,7 +373,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="bool"/></returns>
         public bool IsDeprecated()
         {
-            return IExecuteWithSignature<bool>("isDeprecated", "()Z");
+            return IExecute<bool>("isDeprecated");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#isHardware()"/>
@@ -381,7 +381,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="bool"/></returns>
         public bool IsHardware()
         {
-            return IExecuteWithSignature<bool>("isHardware", "()Z");
+            return IExecute<bool>("isHardware");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#isJumpable()"/>
@@ -389,7 +389,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="bool"/></returns>
         public bool IsJumpable()
         {
-            return IExecuteWithSignature<bool>("isJumpable", "()Z");
+            return IExecute<bool>("isJumpable");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#isLeapable()"/>
@@ -397,7 +397,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="bool"/></returns>
         public bool IsLeapable()
         {
-            return IExecuteWithSignature<bool>("isLeapable", "()Z");
+            return IExecute<bool>("isLeapable");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#isSplittable()"/>
@@ -405,7 +405,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="bool"/></returns>
         public bool IsSplittable()
         {
-            return IExecuteWithSignature<bool>("isSplittable", "()Z");
+            return IExecute<bool>("isSplittable");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#isStatistical()"/>
@@ -413,7 +413,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="bool"/></returns>
         public bool IsStatistical()
         {
-            return IExecuteWithSignature<bool>("isStatistical", "()Z");
+            return IExecute<bool>("isStatistical");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#isStochastic()"/>
@@ -421,7 +421,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="bool"/></returns>
         public bool IsStochastic()
         {
-            return IExecuteWithSignature<bool>("isStochastic", "()Z");
+            return IExecute<bool>("isStochastic");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#isStreamable()"/>
@@ -429,7 +429,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="bool"/></returns>
         public bool IsStreamable()
         {
-            return IExecuteWithSignature<bool>("isStreamable", "()Z");
+            return IExecute<bool>("isStreamable");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#equidistribution()"/>
@@ -437,7 +437,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="int"/></returns>
         public int Equidistribution()
         {
-            return IExecuteWithSignature<int>("equidistribution", "()I");
+            return IExecute<int>("equidistribution");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#stateBits()"/>
@@ -445,7 +445,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="int"/></returns>
         public int StateBits()
         {
-            return IExecuteWithSignature<int>("stateBits", "()I");
+            return IExecute<int>("stateBits");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#group()"/>
@@ -453,7 +453,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String Group()
         {
-            return IExecuteWithSignature<Java.Lang.String>("group", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("group");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#name()"/>
@@ -461,7 +461,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String Name()
         {
-            return IExecuteWithSignature<Java.Lang.String>("name", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("name");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#period()"/>
@@ -469,7 +469,7 @@ namespace Java.Util.RandomNs
         /// <returns><see cref="Java.Math.BigInteger"/></returns>
         public Java.Math.BigInteger Period()
         {
-            return IExecuteWithSignature<Java.Math.BigInteger>("period", "()Ljava/math/BigInteger;");
+            return IExecute<Java.Math.BigInteger>("period");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#create()"/>
@@ -477,7 +477,7 @@ namespace Java.Util.RandomNs
         /// <returns><typeparamref name="T"/></returns>
         public T Create()
         {
-            return IExecuteWithSignature<T>("create", "()Ljava/util/random/RandomGenerator;");
+            return IExecute<T>("create");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#create(byte[])"/>
@@ -486,7 +486,7 @@ namespace Java.Util.RandomNs
         /// <returns><typeparamref name="T"/></returns>
         public T Create(byte[] arg0)
         {
-            return IExecuteWithSignature<T>("create", "([B)Ljava/util/random/RandomGenerator;", new object[] { arg0 });
+            return IExecute<T>("create", new object[] { arg0 });
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/random/RandomGeneratorFactory.html#create(long)"/>
@@ -495,7 +495,7 @@ namespace Java.Util.RandomNs
         /// <returns><typeparamref name="T"/></returns>
         public T Create(long arg0)
         {
-            return IExecuteWithSignature<T>("create", "(J)Ljava/util/random/RandomGenerator;", arg0);
+            return IExecute<T>("create", arg0);
         }
     
         #endregion

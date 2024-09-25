@@ -116,7 +116,7 @@ namespace Java.Security.Interfaces
         /// <returns><see cref="Java.Security.Spec.ECParameterSpec"/></returns>
         public Java.Security.Spec.ECParameterSpec GetParams()
         {
-            return IExecuteWithSignature<Java.Security.Spec.ECParameterSpec>("getParams", "()Ljava/security/spec/ECParameterSpec;");
+            return IExecute<Java.Security.Spec.ECParameterSpec>("getParams");
         }
     
         #endregion

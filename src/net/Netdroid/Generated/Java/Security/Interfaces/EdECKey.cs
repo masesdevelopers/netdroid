@@ -116,7 +116,7 @@ namespace Java.Security.Interfaces
         /// <returns><see cref="Java.Security.Spec.NamedParameterSpec"/></returns>
         public Java.Security.Spec.NamedParameterSpec GetParams()
         {
-            return IExecuteWithSignature<Java.Security.Spec.NamedParameterSpec>("getParams", "()Ljava/security/spec/NamedParameterSpec;");
+            return IExecute<Java.Security.Spec.NamedParameterSpec>("getParams");
         }
     
         #endregion

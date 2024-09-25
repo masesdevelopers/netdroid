@@ -123,7 +123,7 @@ namespace Java.Security.Interfaces
         /// <returns><see cref="Java.Math.BigInteger"/></returns>
         public Java.Math.BigInteger GetCrtCoefficient()
         {
-            return IExecuteWithSignature<Java.Math.BigInteger>("getCrtCoefficient", "()Ljava/math/BigInteger;");
+            return IExecute<Java.Math.BigInteger>("getCrtCoefficient");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/security/interfaces/RSAPrivateCrtKey.html#getPrimeExponentP()"/>
@@ -131,7 +131,7 @@ namespace Java.Security.Interfaces
         /// <returns><see cref="Java.Math.BigInteger"/></returns>
         public Java.Math.BigInteger GetPrimeExponentP()
         {
-            return IExecuteWithSignature<Java.Math.BigInteger>("getPrimeExponentP", "()Ljava/math/BigInteger;");
+            return IExecute<Java.Math.BigInteger>("getPrimeExponentP");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/security/interfaces/RSAPrivateCrtKey.html#getPrimeExponentQ()"/>
@@ -139,7 +139,7 @@ namespace Java.Security.Interfaces
         /// <returns><see cref="Java.Math.BigInteger"/></returns>
         public Java.Math.BigInteger GetPrimeExponentQ()
         {
-            return IExecuteWithSignature<Java.Math.BigInteger>("getPrimeExponentQ", "()Ljava/math/BigInteger;");
+            return IExecute<Java.Math.BigInteger>("getPrimeExponentQ");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/security/interfaces/RSAPrivateCrtKey.html#getPrimeP()"/>
@@ -147,7 +147,7 @@ namespace Java.Security.Interfaces
         /// <returns><see cref="Java.Math.BigInteger"/></returns>
         public Java.Math.BigInteger GetPrimeP()
         {
-            return IExecuteWithSignature<Java.Math.BigInteger>("getPrimeP", "()Ljava/math/BigInteger;");
+            return IExecute<Java.Math.BigInteger>("getPrimeP");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/security/interfaces/RSAPrivateCrtKey.html#getPrimeQ()"/>
@@ -155,7 +155,7 @@ namespace Java.Security.Interfaces
         /// <returns><see cref="Java.Math.BigInteger"/></returns>
         public Java.Math.BigInteger GetPrimeQ()
         {
-            return IExecuteWithSignature<Java.Math.BigInteger>("getPrimeQ", "()Ljava/math/BigInteger;");
+            return IExecute<Java.Math.BigInteger>("getPrimeQ");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/security/interfaces/RSAPrivateCrtKey.html#getPublicExponent()"/>
@@ -163,7 +163,7 @@ namespace Java.Security.Interfaces
         /// <returns><see cref="Java.Math.BigInteger"/></returns>
         public Java.Math.BigInteger GetPublicExponent()
         {
-            return IExecuteWithSignature<Java.Math.BigInteger>("getPublicExponent", "()Ljava/math/BigInteger;");
+            return IExecute<Java.Math.BigInteger>("getPublicExponent");
         }
     
         #endregion

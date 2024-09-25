@@ -131,7 +131,7 @@ namespace Java.Security.Interfaces
         /// <returns><see cref="Java.Math.BigInteger"/></returns>
         public Java.Math.BigInteger GetY()
         {
-            return IExecuteWithSignature<Java.Math.BigInteger>("getY", "()Ljava/math/BigInteger;");
+            return IExecute<Java.Math.BigInteger>("getY");
         }
     
         #endregion

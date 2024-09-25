@@ -116,7 +116,7 @@ namespace Java.Security.Interfaces
         /// <returns><see cref="Java.Math.BigInteger"/></returns>
         public Java.Math.BigInteger GetModulus()
         {
-            return IExecuteWithSignature<Java.Math.BigInteger>("getModulus", "()Ljava/math/BigInteger;");
+            return IExecute<Java.Math.BigInteger>("getModulus");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/security/interfaces/RSAKey.html#getParams()"/>
@@ -124,7 +124,7 @@ namespace Java.Security.Interfaces
         /// <returns><see cref="Java.Security.Spec.AlgorithmParameterSpec"/></returns>
         public Java.Security.Spec.AlgorithmParameterSpec GetParams()
         {
-            return IExecuteWithSignature<Java.Security.Spec.AlgorithmParameterSpec>("getParams", "()Ljava/security/spec/AlgorithmParameterSpec;");
+            return IExecute<Java.Security.Spec.AlgorithmParameterSpec>("getParams");
         }
     
         #endregion

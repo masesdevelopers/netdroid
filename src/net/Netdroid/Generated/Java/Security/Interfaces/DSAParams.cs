@@ -116,7 +116,7 @@ namespace Java.Security.Interfaces
         /// <returns><see cref="Java.Math.BigInteger"/></returns>
         public Java.Math.BigInteger GetG()
         {
-            return IExecuteWithSignature<Java.Math.BigInteger>("getG", "()Ljava/math/BigInteger;");
+            return IExecute<Java.Math.BigInteger>("getG");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/security/interfaces/DSAParams.html#getP()"/>
@@ -124,7 +124,7 @@ namespace Java.Security.Interfaces
         /// <returns><see cref="Java.Math.BigInteger"/></returns>
         public Java.Math.BigInteger GetP()
         {
-            return IExecuteWithSignature<Java.Math.BigInteger>("getP", "()Ljava/math/BigInteger;");
+            return IExecute<Java.Math.BigInteger>("getP");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/security/interfaces/DSAParams.html#getQ()"/>
@@ -132,7 +132,7 @@ namespace Java.Security.Interfaces
         /// <returns><see cref="Java.Math.BigInteger"/></returns>
         public Java.Math.BigInteger GetQ()
         {
-            return IExecuteWithSignature<Java.Math.BigInteger>("getQ", "()Ljava/math/BigInteger;");
+            return IExecute<Java.Math.BigInteger>("getQ");
         }
     
         #endregion

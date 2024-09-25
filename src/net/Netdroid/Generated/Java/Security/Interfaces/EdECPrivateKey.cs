@@ -124,7 +124,7 @@ namespace Java.Security.Interfaces
         /// <returns><see cref="Java.Util.Optional"/></returns>
         public Java.Util.Optional<byte[]> GetBytes()
         {
-            return IExecuteWithSignature<Java.Util.Optional<byte[]>>("getBytes", "()Ljava/util/Optional;");
+            return IExecute<Java.Util.Optional<byte[]>>("getBytes");
         }
     
         #endregion
