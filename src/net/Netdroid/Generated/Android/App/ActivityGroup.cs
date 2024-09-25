@@ -110,13 +110,38 @@ namespace Android.App
             return IExecuteWithSignature<Android.App.Activity>("getCurrentActivity", "()Landroid/app/Activity;");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/ActivityGroup.html#getCurrentActivity()"/>
+        /// </summary>
+        /// <returns><see cref="Android.App.Activity"/></returns>
+        [global::System.Obsolete()]
+        public Android.App.Activity GetCurrentActivityDirect()
+        {
+            return IExecuteWithSignature<Android.App.ActivityDirect, Android.App.Activity>("getCurrentActivity", "()Landroid/app/Activity;");
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/ActivityGroup.html#getLocalActivityManager()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetLocalActivityManager"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.App.LocalActivityManager> OnGetLocalActivityManager { get; set; } = null;
+        
+        bool hasOverrideGetLocalActivityManager = true;
+        void GetLocalActivityManagerEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetLocalActivityManager = true;
+            var methodToExecute = (OnGetLocalActivityManager != null) ? OnGetLocalActivityManager : GetLocalActivityManager;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetLocalActivityManager, executionResult);
+        }
+        
+        /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/ActivityGroup.html#getLocalActivityManager()"/>
         /// </summary>
         /// <returns><see cref="Android.App.LocalActivityManager"/></returns>
         [global::System.Obsolete()]
-        public Android.App.LocalActivityManager GetLocalActivityManager()
+        public virtual Android.App.LocalActivityManager GetLocalActivityManager()
         {
-            return IExecuteWithSignature<Android.App.LocalActivityManager>("getLocalActivityManager", "()Landroid/app/LocalActivityManager;");
+            hasOverrideGetLocalActivityManager = false; return default;
         }
     
         #endregion

@@ -105,14 +105,14 @@ namespace Android.Telephony.Mbms
         /// <param name="arg0"><see cref="Java.Util.List"/></param>
         public void OnFileServicesUpdated(Java.Util.List<Android.Telephony.Mbms.FileServiceInfo> arg0)
         {
-            IExecuteWithSignature("onFileServicesUpdated", "(Ljava/util/List;)V", arg0);
+            IExecute("onFileServicesUpdated", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/MbmsDownloadSessionCallback.html#onMiddlewareReady()"/>
         /// </summary>
         public void OnMiddlewareReady()
         {
-            IExecuteWithSignature("onMiddlewareReady", "()V");
+            IExecute("onMiddlewareReady");
         }
     
         #endregion

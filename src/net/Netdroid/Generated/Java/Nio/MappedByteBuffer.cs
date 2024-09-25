@@ -98,7 +98,7 @@ namespace Java.Nio
         /// <returns><see cref="bool"/></returns>
         public bool IsLoaded()
         {
-            return IExecuteWithSignature<bool>("isLoaded", "()Z");
+            return IExecute<bool>("isLoaded");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/nio/MappedByteBuffer.html#force()"/>
@@ -106,7 +106,7 @@ namespace Java.Nio
         /// <returns><see cref="Java.Nio.MappedByteBuffer"/></returns>
         public Java.Nio.MappedByteBuffer Force()
         {
-            return IExecuteWithSignature<Java.Nio.MappedByteBuffer>("force", "()Ljava/nio/MappedByteBuffer;");
+            return IExecute<Java.Nio.MappedByteBuffer>("force");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/nio/MappedByteBuffer.html#force(int,int)"/>
@@ -124,7 +124,7 @@ namespace Java.Nio
         /// <returns><see cref="Java.Nio.MappedByteBuffer"/></returns>
         public Java.Nio.MappedByteBuffer Load()
         {
-            return IExecuteWithSignature<Java.Nio.MappedByteBuffer>("load", "()Ljava/nio/MappedByteBuffer;");
+            return IExecute<Java.Nio.MappedByteBuffer>("load");
         }
     
         #endregion

@@ -136,7 +136,7 @@ namespace Javax.Crypto
         /// <exception cref="Java.Security.NoSuchAlgorithmException"/>
         public static int GetMaxAllowedKeyLength(Java.Lang.String arg0)
         {
-            return SExecuteWithSignature<int>(LocalBridgeClazz, "getMaxAllowedKeyLength", "(Ljava/lang/String;)I", arg0);
+            return SExecute<int>(LocalBridgeClazz, "getMaxAllowedKeyLength", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/Cipher.html#getMaxAllowedParameterSpec(java.lang.String)"/>
@@ -146,7 +146,7 @@ namespace Javax.Crypto
         /// <exception cref="Java.Security.NoSuchAlgorithmException"/>
         public static Java.Security.Spec.AlgorithmParameterSpec GetMaxAllowedParameterSpec(Java.Lang.String arg0)
         {
-            return SExecuteWithSignature<Java.Security.Spec.AlgorithmParameterSpec>(LocalBridgeClazz, "getMaxAllowedParameterSpec", "(Ljava/lang/String;)Ljava/security/spec/AlgorithmParameterSpec;", arg0);
+            return SExecute<Java.Security.Spec.AlgorithmParameterSpec>(LocalBridgeClazz, "getMaxAllowedParameterSpec", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/Cipher.html#getInstance(java.lang.String,java.lang.String)"/>
@@ -182,7 +182,7 @@ namespace Javax.Crypto
         /// <exception cref="Javax.Crypto.NoSuchPaddingException"/>
         public static Javax.Crypto.Cipher GetInstance(Java.Lang.String arg0)
         {
-            return SExecuteWithSignature<Javax.Crypto.Cipher>(LocalBridgeClazz, "getInstance", "(Ljava/lang/String;)Ljavax/crypto/Cipher;", arg0);
+            return SExecute<Javax.Crypto.Cipher>(LocalBridgeClazz, "getInstance", arg0);
         }
     
         #endregion
@@ -196,7 +196,7 @@ namespace Javax.Crypto
         /// <exception cref="Javax.Crypto.BadPaddingException"/>
         public byte[] DoFinal()
         {
-            return IExecuteWithSignatureArray<byte>("doFinal", "()[B");
+            return IExecuteArray<byte>("doFinal");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/Cipher.html#doFinal(byte[],int,int)"/>
@@ -220,7 +220,7 @@ namespace Javax.Crypto
         /// <exception cref="Javax.Crypto.BadPaddingException"/>
         public byte[] DoFinal(byte[] arg0)
         {
-            return IExecuteWithSignatureArray<byte>("doFinal", "([B)[B", new object[] { arg0 });
+            return IExecuteArray<byte>("doFinal", new object[] { arg0 });
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/Cipher.html#getIV()"/>
@@ -228,7 +228,7 @@ namespace Javax.Crypto
         /// <returns><see cref="byte"/></returns>
         public byte[] GetIV()
         {
-            return IExecuteWithSignatureArray<byte>("getIV", "()[B");
+            return IExecuteArray<byte>("getIV");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/Cipher.html#update(byte[],int,int)"/>
@@ -248,7 +248,7 @@ namespace Javax.Crypto
         /// <returns><see cref="byte"/></returns>
         public byte[] Update(byte[] arg0)
         {
-            return IExecuteWithSignatureArray<byte>("update", "([B)[B", new object[] { arg0 });
+            return IExecuteArray<byte>("update", new object[] { arg0 });
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/Cipher.html#wrap(java.security.Key)"/>
@@ -259,7 +259,7 @@ namespace Javax.Crypto
         /// <exception cref="Java.Security.InvalidKeyException"/>
         public byte[] Wrap(Java.Security.Key arg0)
         {
-            return IExecuteWithSignatureArray<byte>("wrap", "(Ljava/security/Key;)[B", arg0);
+            return IExecuteArray<byte>("wrap", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/Cipher.html#doFinal(byte[],int,int,byte[],int)"/>
@@ -324,7 +324,7 @@ namespace Javax.Crypto
         /// <returns><see cref="int"/></returns>
         public int GetBlockSize()
         {
-            return IExecuteWithSignature<int>("getBlockSize", "()I");
+            return IExecute<int>("getBlockSize");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/Cipher.html#getOutputSize(int)"/>
@@ -333,7 +333,7 @@ namespace Javax.Crypto
         /// <returns><see cref="int"/></returns>
         public int GetOutputSize(int arg0)
         {
-            return IExecuteWithSignature<int>("getOutputSize", "(I)I", arg0);
+            return IExecute<int>("getOutputSize", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/Cipher.html#update(byte[],int,int,byte[],int)"/>
@@ -379,7 +379,7 @@ namespace Javax.Crypto
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetAlgorithm()
         {
-            return IExecuteWithSignature<Java.Lang.String>("getAlgorithm", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("getAlgorithm");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/Cipher.html#getParameters()"/>
@@ -387,7 +387,7 @@ namespace Javax.Crypto
         /// <returns><see cref="Java.Security.AlgorithmParameters"/></returns>
         public Java.Security.AlgorithmParameters GetParameters()
         {
-            return IExecuteWithSignature<Java.Security.AlgorithmParameters>("getParameters", "()Ljava/security/AlgorithmParameters;");
+            return IExecute<Java.Security.AlgorithmParameters>("getParameters");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/Cipher.html#unwrap(byte[],java.lang.String,int)"/>
@@ -408,7 +408,7 @@ namespace Javax.Crypto
         /// <returns><see cref="Java.Security.Provider"/></returns>
         public Java.Security.Provider GetProvider()
         {
-            return IExecuteWithSignature<Java.Security.Provider>("getProvider", "()Ljava/security/Provider;");
+            return IExecute<Java.Security.Provider>("getProvider");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/Cipher.html#getExemptionMechanism()"/>
@@ -416,7 +416,7 @@ namespace Javax.Crypto
         /// <returns><see cref="Javax.Crypto.ExemptionMechanism"/></returns>
         public Javax.Crypto.ExemptionMechanism GetExemptionMechanism()
         {
-            return IExecuteWithSignature<Javax.Crypto.ExemptionMechanism>("getExemptionMechanism", "()Ljavax/crypto/ExemptionMechanism;");
+            return IExecute<Javax.Crypto.ExemptionMechanism>("getExemptionMechanism");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/Cipher.html#init(int,java.security.cert.Certificate,java.security.SecureRandom)"/>
@@ -526,7 +526,7 @@ namespace Javax.Crypto
         /// <param name="arg0"><see cref="byte"/></param>
         public void UpdateAAD(byte[] arg0)
         {
-            IExecuteWithSignature("updateAAD", "([B)V", new object[] { arg0 });
+            IExecute("updateAAD", new object[] { arg0 });
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/Cipher.html#updateAAD(java.nio.ByteBuffer)"/>
@@ -534,7 +534,7 @@ namespace Javax.Crypto
         /// <param name="arg0"><see cref="Java.Nio.ByteBuffer"/></param>
         public void UpdateAAD(Java.Nio.ByteBuffer arg0)
         {
-            IExecuteWithSignature("updateAAD", "(Ljava/nio/ByteBuffer;)V", arg0);
+            IExecute("updateAAD", arg0);
         }
     
         #endregion

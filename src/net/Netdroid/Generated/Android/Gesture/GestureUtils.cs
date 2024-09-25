@@ -93,7 +93,7 @@ namespace Android.Gesture
         /// <returns><see cref="Android.Gesture.OrientedBoundingBox"/></returns>
         public static Android.Gesture.OrientedBoundingBox ComputeOrientedBoundingBox(float[] arg0)
         {
-            return SExecuteWithSignature<Android.Gesture.OrientedBoundingBox>(LocalBridgeClazz, "computeOrientedBoundingBox", "([F)Landroid/gesture/OrientedBoundingBox;", new object[] { arg0 });
+            return SExecute<Android.Gesture.OrientedBoundingBox>(LocalBridgeClazz, "computeOrientedBoundingBox", new object[] { arg0 });
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureUtils.html#computeOrientedBoundingBox(java.util.ArrayList)"/>
@@ -102,7 +102,7 @@ namespace Android.Gesture
         /// <returns><see cref="Android.Gesture.OrientedBoundingBox"/></returns>
         public static Android.Gesture.OrientedBoundingBox ComputeOrientedBoundingBox(Java.Util.ArrayList<Android.Gesture.GesturePoint> arg0)
         {
-            return SExecuteWithSignature<Android.Gesture.OrientedBoundingBox>(LocalBridgeClazz, "computeOrientedBoundingBox", "(Ljava/util/ArrayList;)Landroid/gesture/OrientedBoundingBox;", arg0);
+            return SExecute<Android.Gesture.OrientedBoundingBox>(LocalBridgeClazz, "computeOrientedBoundingBox", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureUtils.html#spatialSampling(android.gesture.Gesture,int,boolean)"/>

@@ -97,7 +97,7 @@ namespace Android.Telephony.Mbms
         /// <returns><see cref="Java.Lang.CharSequence"/></returns>
         public Java.Lang.CharSequence GetNameForLocale(Java.Util.Locale arg0)
         {
-            return IExecuteWithSignature<Java.Lang.CharSequence>("getNameForLocale", "(Ljava/util/Locale;)Ljava/lang/CharSequence;", arg0);
+            return IExecute<Java.Lang.CharSequence>("getNameForLocale", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/ServiceInfo.html#getServiceClassName()"/>
@@ -105,7 +105,7 @@ namespace Android.Telephony.Mbms
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetServiceClassName()
         {
-            return IExecuteWithSignature<Java.Lang.String>("getServiceClassName", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("getServiceClassName");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/ServiceInfo.html#getServiceId()"/>
@@ -113,7 +113,7 @@ namespace Android.Telephony.Mbms
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetServiceId()
         {
-            return IExecuteWithSignature<Java.Lang.String>("getServiceId", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("getServiceId");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/ServiceInfo.html#getSessionEndTime()"/>
@@ -121,7 +121,7 @@ namespace Android.Telephony.Mbms
         /// <returns><see cref="Java.Util.Date"/></returns>
         public Java.Util.Date GetSessionEndTime()
         {
-            return IExecuteWithSignature<Java.Util.Date>("getSessionEndTime", "()Ljava/util/Date;");
+            return IExecute<Java.Util.Date>("getSessionEndTime");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/ServiceInfo.html#getSessionStartTime()"/>
@@ -129,7 +129,7 @@ namespace Android.Telephony.Mbms
         /// <returns><see cref="Java.Util.Date"/></returns>
         public Java.Util.Date GetSessionStartTime()
         {
-            return IExecuteWithSignature<Java.Util.Date>("getSessionStartTime", "()Ljava/util/Date;");
+            return IExecute<Java.Util.Date>("getSessionStartTime");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/ServiceInfo.html#getLocales()"/>
@@ -137,7 +137,7 @@ namespace Android.Telephony.Mbms
         /// <returns><see cref="Java.Util.List"/></returns>
         public Java.Util.List<Java.Util.Locale> GetLocales()
         {
-            return IExecuteWithSignature<Java.Util.List<Java.Util.Locale>>("getLocales", "()Ljava/util/List;");
+            return IExecute<Java.Util.List<Java.Util.Locale>>("getLocales");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/ServiceInfo.html#getNamedContentLocales()"/>
@@ -145,7 +145,7 @@ namespace Android.Telephony.Mbms
         /// <returns><see cref="Java.Util.Set"/></returns>
         public Java.Util.Set<Java.Util.Locale> GetNamedContentLocales()
         {
-            return IExecuteWithSignature<Java.Util.Set<Java.Util.Locale>>("getNamedContentLocales", "()Ljava/util/Set;");
+            return IExecute<Java.Util.Set<Java.Util.Locale>>("getNamedContentLocales");
         }
     
         #endregion

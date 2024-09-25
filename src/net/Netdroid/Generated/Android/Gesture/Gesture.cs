@@ -127,7 +127,7 @@ namespace Android.Gesture
         /// <returns><see cref="Android.Graphics.Path"/></returns>
         public Android.Graphics.Path ToPath()
         {
-            return IExecuteWithSignature<Android.Graphics.Path>("toPath", "()Landroid/graphics/Path;");
+            return IExecute<Android.Graphics.Path>("toPath");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/Gesture.html#toPath(android.graphics.Path,int,int,int,int)"/>
@@ -149,7 +149,7 @@ namespace Android.Gesture
         /// <returns><see cref="Android.Graphics.Path"/></returns>
         public Android.Graphics.Path ToPath(Android.Graphics.Path arg0)
         {
-            return IExecuteWithSignature<Android.Graphics.Path>("toPath", "(Landroid/graphics/Path;)Landroid/graphics/Path;", arg0);
+            return IExecute<Android.Graphics.Path>("toPath", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/Gesture.html#toPath(int,int,int,int)"/>
@@ -169,7 +169,7 @@ namespace Android.Gesture
         /// <returns><see cref="Android.Graphics.RectF"/></returns>
         public Android.Graphics.RectF GetBoundingBox()
         {
-            return IExecuteWithSignature<Android.Graphics.RectF>("getBoundingBox", "()Landroid/graphics/RectF;");
+            return IExecute<Android.Graphics.RectF>("getBoundingBox");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/Gesture.html#getLength()"/>
@@ -177,7 +177,7 @@ namespace Android.Gesture
         /// <returns><see cref="float"/></returns>
         public float GetLength()
         {
-            return IExecuteWithSignature<float>("getLength", "()F");
+            return IExecute<float>("getLength");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/Gesture.html#describeContents()"/>
@@ -185,7 +185,7 @@ namespace Android.Gesture
         /// <returns><see cref="int"/></returns>
         public int DescribeContents()
         {
-            return IExecuteWithSignature<int>("describeContents", "()I");
+            return IExecute<int>("describeContents");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/Gesture.html#getStrokesCount()"/>
@@ -193,7 +193,7 @@ namespace Android.Gesture
         /// <returns><see cref="int"/></returns>
         public int GetStrokesCount()
         {
-            return IExecuteWithSignature<int>("getStrokesCount", "()I");
+            return IExecute<int>("getStrokesCount");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/Gesture.html#getStrokes()"/>
@@ -201,7 +201,7 @@ namespace Android.Gesture
         /// <returns><see cref="Java.Util.ArrayList"/></returns>
         public Java.Util.ArrayList<Android.Gesture.GestureStroke> GetStrokes()
         {
-            return IExecuteWithSignature<Java.Util.ArrayList<Android.Gesture.GestureStroke>>("getStrokes", "()Ljava/util/ArrayList;");
+            return IExecute<Java.Util.ArrayList<Android.Gesture.GestureStroke>>("getStrokes");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/Gesture.html#getID()"/>
@@ -209,7 +209,7 @@ namespace Android.Gesture
         /// <returns><see cref="long"/></returns>
         public long GetID()
         {
-            return IExecuteWithSignature<long>("getID", "()J");
+            return IExecute<long>("getID");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/Gesture.html#addStroke(android.gesture.GestureStroke)"/>
@@ -217,7 +217,7 @@ namespace Android.Gesture
         /// <param name="arg0"><see cref="Android.Gesture.GestureStroke"/></param>
         public void AddStroke(Android.Gesture.GestureStroke arg0)
         {
-            IExecuteWithSignature("addStroke", "(Landroid/gesture/GestureStroke;)V", arg0);
+            IExecute("addStroke", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/Gesture.html#writeToParcel(android.os.Parcel,int)"/>

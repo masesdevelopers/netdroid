@@ -122,7 +122,7 @@ namespace Android.Gesture
         /// <returns><see cref="Android.Gesture.OrientedBoundingBox"/></returns>
         public Android.Gesture.OrientedBoundingBox ComputeOrientedBoundingBox()
         {
-            return IExecuteWithSignature<Android.Gesture.OrientedBoundingBox>("computeOrientedBoundingBox", "()Landroid/gesture/OrientedBoundingBox;");
+            return IExecute<Android.Gesture.OrientedBoundingBox>("computeOrientedBoundingBox");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureStroke.html#getPath()"/>
@@ -130,7 +130,7 @@ namespace Android.Gesture
         /// <returns><see cref="Android.Graphics.Path"/></returns>
         public Android.Graphics.Path GetPath()
         {
-            return IExecuteWithSignature<Android.Graphics.Path>("getPath", "()Landroid/graphics/Path;");
+            return IExecute<Android.Graphics.Path>("getPath");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureStroke.html#toPath(float,float,int)"/>
@@ -148,7 +148,7 @@ namespace Android.Gesture
         /// </summary>
         public void ClearPath()
         {
-            IExecuteWithSignature("clearPath", "()V");
+            IExecute("clearPath");
         }
     
         #endregion

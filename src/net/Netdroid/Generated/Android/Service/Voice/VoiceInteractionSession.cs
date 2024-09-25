@@ -1110,7 +1110,7 @@ namespace Android.Service.Voice
             /// <returns><see cref="Android.App.VoiceInteractor.Prompt"/></returns>
             public Android.App.VoiceInteractor.Prompt GetVoicePrompt()
             {
-                return IExecuteWithSignature<Android.App.VoiceInteractor.Prompt>("getVoicePrompt", "()Landroid/app/VoiceInteractor$Prompt;");
+                return IExecute<Android.App.VoiceInteractor.Prompt>("getVoicePrompt");
             }
             /// <summary>
             /// <see href="https://developer.android.com/reference/android/service/voice/VoiceInteractionSession.AbortVoiceRequest.html#getMessage()"/>
@@ -1119,7 +1119,7 @@ namespace Android.Service.Voice
             [global::System.Obsolete()]
             public Java.Lang.CharSequence GetMessage()
             {
-                return IExecuteWithSignature<Java.Lang.CharSequence>("getMessage", "()Ljava/lang/CharSequence;");
+                return IExecute<Java.Lang.CharSequence>("getMessage");
             }
             /// <summary>
             /// <see href="https://developer.android.com/reference/android/service/voice/VoiceInteractionSession.AbortVoiceRequest.html#sendAbortResult(android.os.Bundle)"/>
@@ -1127,7 +1127,7 @@ namespace Android.Service.Voice
             /// <param name="arg0"><see cref="Android.Os.Bundle"/></param>
             public void SendAbortResult(Android.Os.Bundle arg0)
             {
-                IExecuteWithSignature("sendAbortResult", "(Landroid/os/Bundle;)V", arg0);
+                IExecute("sendAbortResult", arg0);
             }
         
             #endregion
@@ -1197,7 +1197,7 @@ namespace Android.Service.Voice
             /// <returns><see cref="Android.App.Assist.AssistContent"/></returns>
             public Android.App.Assist.AssistContent GetAssistContent()
             {
-                return IExecuteWithSignature<Android.App.Assist.AssistContent>("getAssistContent", "()Landroid/app/assist/AssistContent;");
+                return IExecute<Android.App.Assist.AssistContent>("getAssistContent");
             }
             /// <summary>
             /// <see href="https://developer.android.com/reference/android/service/voice/VoiceInteractionSession.AssistState.html#getAssistStructure()"/>
@@ -1205,7 +1205,7 @@ namespace Android.Service.Voice
             /// <returns><see cref="Android.App.Assist.AssistStructure"/></returns>
             public Android.App.Assist.AssistStructure GetAssistStructure()
             {
-                return IExecuteWithSignature<Android.App.Assist.AssistStructure>("getAssistStructure", "()Landroid/app/assist/AssistStructure;");
+                return IExecute<Android.App.Assist.AssistStructure>("getAssistStructure");
             }
             /// <summary>
             /// <see href="https://developer.android.com/reference/android/service/voice/VoiceInteractionSession.AssistState.html#getAssistData()"/>
@@ -1213,7 +1213,7 @@ namespace Android.Service.Voice
             /// <returns><see cref="Android.Os.Bundle"/></returns>
             public Android.Os.Bundle GetAssistData()
             {
-                return IExecuteWithSignature<Android.Os.Bundle>("getAssistData", "()Landroid/os/Bundle;");
+                return IExecute<Android.Os.Bundle>("getAssistData");
             }
             /// <summary>
             /// <see href="https://developer.android.com/reference/android/service/voice/VoiceInteractionSession.AssistState.html#getActivityId()"/>
@@ -1221,7 +1221,7 @@ namespace Android.Service.Voice
             /// <returns><see cref="Android.Service.Voice.VoiceInteractionSession.ActivityId"/></returns>
             public Android.Service.Voice.VoiceInteractionSession.ActivityId GetActivityId()
             {
-                return IExecuteWithSignature<Android.Service.Voice.VoiceInteractionSession.ActivityId>("getActivityId", "()Landroid/service/voice/VoiceInteractionSession$ActivityId;");
+                return IExecute<Android.Service.Voice.VoiceInteractionSession.ActivityId>("getActivityId");
             }
             /// <summary>
             /// <see href="https://developer.android.com/reference/android/service/voice/VoiceInteractionSession.AssistState.html#isFocused()"/>
@@ -1229,7 +1229,7 @@ namespace Android.Service.Voice
             /// <returns><see cref="bool"/></returns>
             public bool IsFocused()
             {
-                return IExecuteWithSignature<bool>("isFocused", "()Z");
+                return IExecute<bool>("isFocused");
             }
             /// <summary>
             /// <see href="https://developer.android.com/reference/android/service/voice/VoiceInteractionSession.AssistState.html#getCount()"/>
@@ -1237,7 +1237,7 @@ namespace Android.Service.Voice
             /// <returns><see cref="int"/></returns>
             public int GetCount()
             {
-                return IExecuteWithSignature<int>("getCount", "()I");
+                return IExecute<int>("getCount");
             }
             /// <summary>
             /// <see href="https://developer.android.com/reference/android/service/voice/VoiceInteractionSession.AssistState.html#getIndex()"/>
@@ -1245,7 +1245,7 @@ namespace Android.Service.Voice
             /// <returns><see cref="int"/></returns>
             public int GetIndex()
             {
-                return IExecuteWithSignature<int>("getIndex", "()I");
+                return IExecute<int>("getIndex");
             }
         
             #endregion
@@ -1284,7 +1284,7 @@ namespace Android.Service.Voice
             /// <returns><see cref="Java.Lang.String"/></returns>
             public Java.Lang.String GetCommand()
             {
-                return IExecuteWithSignature<Java.Lang.String>("getCommand", "()Ljava/lang/String;");
+                return IExecute<Java.Lang.String>("getCommand");
             }
             /// <summary>
             /// <see href="https://developer.android.com/reference/android/service/voice/VoiceInteractionSession.CommandRequest.html#sendIntermediateResult(android.os.Bundle)"/>
@@ -1292,7 +1292,7 @@ namespace Android.Service.Voice
             /// <param name="arg0"><see cref="Android.Os.Bundle"/></param>
             public void SendIntermediateResult(Android.Os.Bundle arg0)
             {
-                IExecuteWithSignature("sendIntermediateResult", "(Landroid/os/Bundle;)V", arg0);
+                IExecute("sendIntermediateResult", arg0);
             }
             /// <summary>
             /// <see href="https://developer.android.com/reference/android/service/voice/VoiceInteractionSession.CommandRequest.html#sendResult(android.os.Bundle)"/>
@@ -1300,7 +1300,7 @@ namespace Android.Service.Voice
             /// <param name="arg0"><see cref="Android.Os.Bundle"/></param>
             public void SendResult(Android.Os.Bundle arg0)
             {
-                IExecuteWithSignature("sendResult", "(Landroid/os/Bundle;)V", arg0);
+                IExecute("sendResult", arg0);
             }
         
             #endregion
@@ -1339,7 +1339,7 @@ namespace Android.Service.Voice
             /// <returns><see cref="Android.App.VoiceInteractor.Prompt"/></returns>
             public Android.App.VoiceInteractor.Prompt GetVoicePrompt()
             {
-                return IExecuteWithSignature<Android.App.VoiceInteractor.Prompt>("getVoicePrompt", "()Landroid/app/VoiceInteractor$Prompt;");
+                return IExecute<Android.App.VoiceInteractor.Prompt>("getVoicePrompt");
             }
             /// <summary>
             /// <see href="https://developer.android.com/reference/android/service/voice/VoiceInteractionSession.CompleteVoiceRequest.html#getMessage()"/>
@@ -1348,7 +1348,7 @@ namespace Android.Service.Voice
             [global::System.Obsolete()]
             public Java.Lang.CharSequence GetMessage()
             {
-                return IExecuteWithSignature<Java.Lang.CharSequence>("getMessage", "()Ljava/lang/CharSequence;");
+                return IExecute<Java.Lang.CharSequence>("getMessage");
             }
             /// <summary>
             /// <see href="https://developer.android.com/reference/android/service/voice/VoiceInteractionSession.CompleteVoiceRequest.html#sendCompleteResult(android.os.Bundle)"/>
@@ -1356,7 +1356,7 @@ namespace Android.Service.Voice
             /// <param name="arg0"><see cref="Android.Os.Bundle"/></param>
             public void SendCompleteResult(Android.Os.Bundle arg0)
             {
-                IExecuteWithSignature("sendCompleteResult", "(Landroid/os/Bundle;)V", arg0);
+                IExecute("sendCompleteResult", arg0);
             }
         
             #endregion
@@ -1395,7 +1395,7 @@ namespace Android.Service.Voice
             /// <returns><see cref="Android.App.VoiceInteractor.Prompt"/></returns>
             public Android.App.VoiceInteractor.Prompt GetVoicePrompt()
             {
-                return IExecuteWithSignature<Android.App.VoiceInteractor.Prompt>("getVoicePrompt", "()Landroid/app/VoiceInteractor$Prompt;");
+                return IExecute<Android.App.VoiceInteractor.Prompt>("getVoicePrompt");
             }
             /// <summary>
             /// <see href="https://developer.android.com/reference/android/service/voice/VoiceInteractionSession.ConfirmationRequest.html#getPrompt()"/>
@@ -1404,7 +1404,7 @@ namespace Android.Service.Voice
             [global::System.Obsolete()]
             public Java.Lang.CharSequence GetPrompt()
             {
-                return IExecuteWithSignature<Java.Lang.CharSequence>("getPrompt", "()Ljava/lang/CharSequence;");
+                return IExecute<Java.Lang.CharSequence>("getPrompt");
             }
             /// <summary>
             /// <see href="https://developer.android.com/reference/android/service/voice/VoiceInteractionSession.ConfirmationRequest.html#sendConfirmationResult(boolean,android.os.Bundle)"/>
@@ -1517,7 +1517,7 @@ namespace Android.Service.Voice
             /// <returns><see cref="Android.App.VoiceInteractor.PickOptionRequest.Option"/></returns>
             public Android.App.VoiceInteractor.PickOptionRequest.Option[] GetOptions()
             {
-                return IExecuteWithSignatureArray<Android.App.VoiceInteractor.PickOptionRequest.Option>("getOptions", "()[Landroid/app/VoiceInteractor$PickOptionRequest$Option;");
+                return IExecuteArray<Android.App.VoiceInteractor.PickOptionRequest.Option>("getOptions");
             }
             /// <summary>
             /// <see href="https://developer.android.com/reference/android/service/voice/VoiceInteractionSession.PickOptionRequest.html#getVoicePrompt()"/>
@@ -1525,7 +1525,7 @@ namespace Android.Service.Voice
             /// <returns><see cref="Android.App.VoiceInteractor.Prompt"/></returns>
             public Android.App.VoiceInteractor.Prompt GetVoicePrompt()
             {
-                return IExecuteWithSignature<Android.App.VoiceInteractor.Prompt>("getVoicePrompt", "()Landroid/app/VoiceInteractor$Prompt;");
+                return IExecute<Android.App.VoiceInteractor.Prompt>("getVoicePrompt");
             }
             /// <summary>
             /// <see href="https://developer.android.com/reference/android/service/voice/VoiceInteractionSession.PickOptionRequest.html#getPrompt()"/>
@@ -1534,7 +1534,7 @@ namespace Android.Service.Voice
             [global::System.Obsolete()]
             public Java.Lang.CharSequence GetPrompt()
             {
-                return IExecuteWithSignature<Java.Lang.CharSequence>("getPrompt", "()Ljava/lang/CharSequence;");
+                return IExecute<Java.Lang.CharSequence>("getPrompt");
             }
             /// <summary>
             /// <see href="https://developer.android.com/reference/android/service/voice/VoiceInteractionSession.PickOptionRequest.html#sendIntermediatePickOptionResult(android.app.VoiceInteractor.PickOptionRequest.Option[],android.os.Bundle)"/>
@@ -1591,7 +1591,7 @@ namespace Android.Service.Voice
             /// <returns><see cref="Android.Os.Bundle"/></returns>
             public Android.Os.Bundle GetExtras()
             {
-                return IExecuteWithSignature<Android.Os.Bundle>("getExtras", "()Landroid/os/Bundle;");
+                return IExecute<Android.Os.Bundle>("getExtras");
             }
             /// <summary>
             /// <see href="https://developer.android.com/reference/android/service/voice/VoiceInteractionSession.Request.html#isActive()"/>
@@ -1599,7 +1599,7 @@ namespace Android.Service.Voice
             /// <returns><see cref="bool"/></returns>
             public bool IsActive()
             {
-                return IExecuteWithSignature<bool>("isActive", "()Z");
+                return IExecute<bool>("isActive");
             }
             /// <summary>
             /// <see href="https://developer.android.com/reference/android/service/voice/VoiceInteractionSession.Request.html#getCallingUid()"/>
@@ -1607,7 +1607,7 @@ namespace Android.Service.Voice
             /// <returns><see cref="int"/></returns>
             public int GetCallingUid()
             {
-                return IExecuteWithSignature<int>("getCallingUid", "()I");
+                return IExecute<int>("getCallingUid");
             }
             /// <summary>
             /// <see href="https://developer.android.com/reference/android/service/voice/VoiceInteractionSession.Request.html#getCallingPackage()"/>
@@ -1615,14 +1615,14 @@ namespace Android.Service.Voice
             /// <returns><see cref="Java.Lang.String"/></returns>
             public Java.Lang.String GetCallingPackage()
             {
-                return IExecuteWithSignature<Java.Lang.String>("getCallingPackage", "()Ljava/lang/String;");
+                return IExecute<Java.Lang.String>("getCallingPackage");
             }
             /// <summary>
             /// <see href="https://developer.android.com/reference/android/service/voice/VoiceInteractionSession.Request.html#cancel()"/>
             /// </summary>
             public void Cancel()
             {
-                IExecuteWithSignature("cancel", "()V");
+                IExecute("cancel");
             }
         
             #endregion
@@ -1661,7 +1661,7 @@ namespace Android.Service.Voice
             /// <param name="arg0"><see cref="Android.Service.Voice.VoiceInteractionSession.ActivityId"/></param>
             public void OnInvisible(Android.Service.Voice.VoiceInteractionSession.ActivityId arg0)
             {
-                IExecuteWithSignature("onInvisible", "(Landroid/service/voice/VoiceInteractionSession$ActivityId;)V", arg0);
+                IExecute("onInvisible", arg0);
             }
             /// <summary>
             /// <see href="https://developer.android.com/reference/android/service/voice/VoiceInteractionSession.VisibleActivityCallback.html#onVisible(android.service.voice.VisibleActivityInfo)"/>
@@ -1669,7 +1669,7 @@ namespace Android.Service.Voice
             /// <param name="arg0"><see cref="Android.Service.Voice.VisibleActivityInfo"/></param>
             public void OnVisible(Android.Service.Voice.VisibleActivityInfo arg0)
             {
-                IExecuteWithSignature("onVisible", "(Landroid/service/voice/VisibleActivityInfo;)V", arg0);
+                IExecute("onVisible", arg0);
             }
         
             #endregion

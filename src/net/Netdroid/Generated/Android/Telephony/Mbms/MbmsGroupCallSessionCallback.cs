@@ -133,7 +133,7 @@ namespace Android.Telephony.Mbms
         /// </summary>
         public void OnMiddlewareReady()
         {
-            IExecuteWithSignature("onMiddlewareReady", "()V");
+            IExecute("onMiddlewareReady");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/MbmsGroupCallSessionCallback.html#onServiceInterfaceAvailable(java.lang.String,int)"/>

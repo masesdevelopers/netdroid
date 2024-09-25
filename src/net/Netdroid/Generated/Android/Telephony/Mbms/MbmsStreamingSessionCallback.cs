@@ -104,7 +104,7 @@ namespace Android.Telephony.Mbms
         /// </summary>
         public void OnMiddlewareReady()
         {
-            IExecuteWithSignature("onMiddlewareReady", "()V");
+            IExecute("onMiddlewareReady");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/MbmsStreamingSessionCallback.html#onStreamingServicesUpdated(java.util.List)"/>
@@ -112,7 +112,7 @@ namespace Android.Telephony.Mbms
         /// <param name="arg0"><see cref="Java.Util.List"/></param>
         public void OnStreamingServicesUpdated(Java.Util.List<Android.Telephony.Mbms.StreamingServiceInfo> arg0)
         {
-            IExecuteWithSignature("onStreamingServicesUpdated", "(Ljava/util/List;)V", arg0);
+            IExecute("onStreamingServicesUpdated", arg0);
         }
     
         #endregion

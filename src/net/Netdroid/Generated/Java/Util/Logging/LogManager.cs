@@ -98,7 +98,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="Java.Util.Logging.LogManager"/></returns>
         public static Java.Util.Logging.LogManager GetLogManager()
         {
-            return SExecuteWithSignature<Java.Util.Logging.LogManager>(LocalBridgeClazz, "getLogManager", "()Ljava/util/logging/LogManager;");
+            return SExecute<Java.Util.Logging.LogManager>(LocalBridgeClazz, "getLogManager");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/LogManager.html#getLoggingMXBean()"/>
@@ -107,7 +107,7 @@ namespace Java.Util.Logging
         [global::System.Obsolete()]
         public static Java.Util.Logging.LoggingMXBean GetLoggingMXBean()
         {
-            return SExecuteWithSignature<Java.Util.Logging.LoggingMXBean>(LocalBridgeClazz, "getLoggingMXBean", "()Ljava/util/logging/LoggingMXBean;");
+            return SExecute<Java.Util.Logging.LoggingMXBean>(LocalBridgeClazz, "getLoggingMXBean");
         }
     
         #endregion
@@ -120,7 +120,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="bool"/></returns>
         public bool AddLogger(Java.Util.Logging.Logger arg0)
         {
-            return IExecuteWithSignature<bool>("addLogger", "(Ljava/util/logging/Logger;)Z", arg0);
+            return IExecute<bool>("addLogger", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/LogManager.html#getProperty(java.lang.String)"/>
@@ -129,7 +129,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetProperty(Java.Lang.String arg0)
         {
-            return IExecuteWithSignature<Java.Lang.String>("getProperty", "(Ljava/lang/String;)Ljava/lang/String;", arg0);
+            return IExecute<Java.Lang.String>("getProperty", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/LogManager.html#getLoggerNames()"/>
@@ -137,7 +137,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="Java.Util.Enumeration"/></returns>
         public Java.Util.Enumeration<Java.Lang.String> GetLoggerNames()
         {
-            return IExecuteWithSignature<Java.Util.Enumeration<Java.Lang.String>>("getLoggerNames", "()Ljava/util/Enumeration;");
+            return IExecute<Java.Util.Enumeration<Java.Lang.String>>("getLoggerNames");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/LogManager.html#getLogger(java.lang.String)"/>
@@ -146,7 +146,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="Java.Util.Logging.Logger"/></returns>
         public Java.Util.Logging.Logger GetLogger(Java.Lang.String arg0)
         {
-            return IExecuteWithSignature<Java.Util.Logging.Logger>("getLogger", "(Ljava/lang/String;)Ljava/util/logging/Logger;", arg0);
+            return IExecute<Java.Util.Logging.Logger>("getLogger", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/LogManager.html#addConfigurationListener(java.lang.Runnable)"/>
@@ -155,7 +155,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="Java.Util.Logging.LogManager"/></returns>
         public Java.Util.Logging.LogManager AddConfigurationListener(Java.Lang.Runnable arg0)
         {
-            return IExecuteWithSignature<Java.Util.Logging.LogManager>("addConfigurationListener", "(Ljava/lang/Runnable;)Ljava/util/logging/LogManager;", arg0);
+            return IExecute<Java.Util.Logging.LogManager>("addConfigurationListener", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/LogManager.html#checkAccess()"/>
@@ -164,7 +164,7 @@ namespace Java.Util.Logging
         [global::System.Obsolete()]
         public void CheckAccess()
         {
-            IExecuteWithSignature("checkAccess", "()V");
+            IExecute("checkAccess");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/LogManager.html#readConfiguration()"/>
@@ -173,7 +173,7 @@ namespace Java.Util.Logging
         /// <exception cref="Java.Lang.SecurityException"/>
         public void ReadConfiguration()
         {
-            IExecuteWithSignature("readConfiguration", "()V");
+            IExecute("readConfiguration");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/LogManager.html#readConfiguration(java.io.InputStream)"/>
@@ -183,7 +183,7 @@ namespace Java.Util.Logging
         /// <exception cref="Java.Lang.SecurityException"/>
         public void ReadConfiguration(Java.Io.InputStream arg0)
         {
-            IExecuteWithSignature("readConfiguration", "(Ljava/io/InputStream;)V", arg0);
+            IExecute("readConfiguration", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/LogManager.html#removeConfigurationListener(java.lang.Runnable)"/>
@@ -191,7 +191,7 @@ namespace Java.Util.Logging
         /// <param name="arg0"><see cref="Java.Lang.Runnable"/></param>
         public void RemoveConfigurationListener(Java.Lang.Runnable arg0)
         {
-            IExecuteWithSignature("removeConfigurationListener", "(Ljava/lang/Runnable;)V", arg0);
+            IExecute("removeConfigurationListener", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/LogManager.html#reset()"/>
@@ -199,7 +199,7 @@ namespace Java.Util.Logging
         /// <exception cref="Java.Lang.SecurityException"/>
         public void Reset()
         {
-            IExecuteWithSignature("reset", "()V");
+            IExecute("reset");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/LogManager.html#updateConfiguration(java.io.InputStream,java.util.function.Function)"/>
@@ -218,7 +218,7 @@ namespace Java.Util.Logging
         /// <exception cref="Java.Io.IOException"/>
         public void UpdateConfiguration(Java.Util.Function.Function<Java.Lang.String, Java.Util.Function.BiFunction<Java.Lang.String, Java.Lang.String, Java.Lang.String>> arg0)
         {
-            IExecuteWithSignature("updateConfiguration", "(Ljava/util/function/Function;)V", arg0);
+            IExecute("updateConfiguration", arg0);
         }
     
         #endregion

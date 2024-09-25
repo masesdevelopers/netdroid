@@ -107,7 +107,7 @@ namespace Java.Beans
         /// <returns><see cref="object"/></returns>
         public object GetNewValue()
         {
-            return IExecuteWithSignature("getNewValue", "()Ljava/lang/Object;");
+            return IExecute("getNewValue");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/beans/PropertyChangeEvent.html#getOldValue()"/>
@@ -115,7 +115,7 @@ namespace Java.Beans
         /// <returns><see cref="object"/></returns>
         public object GetOldValue()
         {
-            return IExecuteWithSignature("getOldValue", "()Ljava/lang/Object;");
+            return IExecute("getOldValue");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/beans/PropertyChangeEvent.html#getPropagationId()"/>
@@ -123,7 +123,7 @@ namespace Java.Beans
         /// <returns><see cref="object"/></returns>
         public object GetPropagationId()
         {
-            return IExecuteWithSignature("getPropagationId", "()Ljava/lang/Object;");
+            return IExecute("getPropagationId");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/beans/PropertyChangeEvent.html#getPropertyName()"/>
@@ -131,7 +131,7 @@ namespace Java.Beans
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetPropertyName()
         {
-            return IExecuteWithSignature<Java.Lang.String>("getPropertyName", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("getPropertyName");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/beans/PropertyChangeEvent.html#setPropagationId(java.lang.Object)"/>
@@ -139,7 +139,7 @@ namespace Java.Beans
         /// <param name="arg0"><see cref="object"/></param>
         public void SetPropagationId(object arg0)
         {
-            IExecuteWithSignature("setPropagationId", "(Ljava/lang/Object;)V", arg0);
+            IExecute("setPropagationId", arg0);
         }
     
         #endregion

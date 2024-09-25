@@ -106,7 +106,7 @@ namespace Android.Telephony.Mbms
         /// <returns><see cref="int"/></returns>
         public int DescribeContents()
         {
-            return IExecuteWithSignature<int>("describeContents", "()I");
+            return IExecute<int>("describeContents");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/StreamingServiceInfo.html#writeToParcel(android.os.Parcel,int)"/>

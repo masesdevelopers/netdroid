@@ -108,7 +108,7 @@ namespace Java.Beans
         /// <returns><see cref="int"/></returns>
         public int GetIndex()
         {
-            return IExecuteWithSignature<int>("getIndex", "()I");
+            return IExecute<int>("getIndex");
         }
     
         #endregion

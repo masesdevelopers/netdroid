@@ -117,7 +117,7 @@ namespace Javax.Crypto
         /// <exception cref="Java.Security.NoSuchAlgorithmException"/>
         public static Javax.Crypto.SecretKeyFactory GetInstance(Java.Lang.String arg0)
         {
-            return SExecuteWithSignature<Javax.Crypto.SecretKeyFactory>(LocalBridgeClazz, "getInstance", "(Ljava/lang/String;)Ljavax/crypto/SecretKeyFactory;", arg0);
+            return SExecute<Javax.Crypto.SecretKeyFactory>(LocalBridgeClazz, "getInstance", arg0);
         }
     
         #endregion
@@ -129,7 +129,7 @@ namespace Javax.Crypto
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetAlgorithm()
         {
-            return IExecuteWithSignature<Java.Lang.String>("getAlgorithm", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("getAlgorithm");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/SecretKeyFactory.html#getProvider()"/>
@@ -137,7 +137,7 @@ namespace Javax.Crypto
         /// <returns><see cref="Java.Security.Provider"/></returns>
         public Java.Security.Provider GetProvider()
         {
-            return IExecuteWithSignature<Java.Security.Provider>("getProvider", "()Ljava/security/Provider;");
+            return IExecute<Java.Security.Provider>("getProvider");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/SecretKeyFactory.html#getKeySpec(javax.crypto.SecretKey,java.lang.Class)"/>
@@ -158,7 +158,7 @@ namespace Javax.Crypto
         /// <exception cref="Java.Security.Spec.InvalidKeySpecException"/>
         public Javax.Crypto.SecretKey GenerateSecret(Java.Security.Spec.KeySpec arg0)
         {
-            return IExecuteWithSignature<Javax.Crypto.SecretKey>("generateSecret", "(Ljava/security/spec/KeySpec;)Ljavax/crypto/SecretKey;", arg0);
+            return IExecute<Javax.Crypto.SecretKey>("generateSecret", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/SecretKeyFactory.html#translateKey(javax.crypto.SecretKey)"/>
@@ -168,7 +168,7 @@ namespace Javax.Crypto
         /// <exception cref="Java.Security.InvalidKeyException"/>
         public Javax.Crypto.SecretKey TranslateKey(Javax.Crypto.SecretKey arg0)
         {
-            return IExecuteWithSignature<Javax.Crypto.SecretKey>("translateKey", "(Ljavax/crypto/SecretKey;)Ljavax/crypto/SecretKey;", arg0);
+            return IExecute<Javax.Crypto.SecretKey>("translateKey", arg0);
         }
     
         #endregion

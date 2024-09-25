@@ -104,7 +104,7 @@ namespace Android.Database
         /// <returns><see cref="Android.Database.Cursor"/></returns>
         public Android.Database.Cursor GetWrappedCursor()
         {
-            return IExecuteWithSignature<Android.Database.Cursor>("getWrappedCursor", "()Landroid/database/Cursor;");
+            return IExecute<Android.Database.Cursor>("getWrappedCursor");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#getNotificationUri()"/>
@@ -112,7 +112,7 @@ namespace Android.Database
         /// <returns><see cref="Android.Net.Uri"/></returns>
         public Android.Net.Uri GetNotificationUri()
         {
-            return IExecuteWithSignature<Android.Net.Uri>("getNotificationUri", "()Landroid/net/Uri;");
+            return IExecute<Android.Net.Uri>("getNotificationUri");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#getExtras()"/>
@@ -120,7 +120,7 @@ namespace Android.Database
         /// <returns><see cref="Android.Os.Bundle"/></returns>
         public Android.Os.Bundle GetExtras()
         {
-            return IExecuteWithSignature<Android.Os.Bundle>("getExtras", "()Landroid/os/Bundle;");
+            return IExecute<Android.Os.Bundle>("getExtras");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#respond(android.os.Bundle)"/>
@@ -129,7 +129,7 @@ namespace Android.Database
         /// <returns><see cref="Android.Os.Bundle"/></returns>
         public Android.Os.Bundle Respond(Android.Os.Bundle arg0)
         {
-            return IExecuteWithSignature<Android.Os.Bundle>("respond", "(Landroid/os/Bundle;)Landroid/os/Bundle;", arg0);
+            return IExecute<Android.Os.Bundle>("respond", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#getWantsAllOnMoveCalls()"/>
@@ -137,7 +137,7 @@ namespace Android.Database
         /// <returns><see cref="bool"/></returns>
         public bool GetWantsAllOnMoveCalls()
         {
-            return IExecuteWithSignature<bool>("getWantsAllOnMoveCalls", "()Z");
+            return IExecute<bool>("getWantsAllOnMoveCalls");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#isAfterLast()"/>
@@ -145,7 +145,7 @@ namespace Android.Database
         /// <returns><see cref="bool"/></returns>
         public bool IsAfterLast()
         {
-            return IExecuteWithSignature<bool>("isAfterLast", "()Z");
+            return IExecute<bool>("isAfterLast");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#isBeforeFirst()"/>
@@ -153,7 +153,7 @@ namespace Android.Database
         /// <returns><see cref="bool"/></returns>
         public bool IsBeforeFirst()
         {
-            return IExecuteWithSignature<bool>("isBeforeFirst", "()Z");
+            return IExecute<bool>("isBeforeFirst");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#isClosed()"/>
@@ -161,7 +161,7 @@ namespace Android.Database
         /// <returns><see cref="bool"/></returns>
         public bool IsClosed()
         {
-            return IExecuteWithSignature<bool>("isClosed", "()Z");
+            return IExecute<bool>("isClosed");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#isFirst()"/>
@@ -169,7 +169,7 @@ namespace Android.Database
         /// <returns><see cref="bool"/></returns>
         public bool IsFirst()
         {
-            return IExecuteWithSignature<bool>("isFirst", "()Z");
+            return IExecute<bool>("isFirst");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#isLast()"/>
@@ -177,7 +177,7 @@ namespace Android.Database
         /// <returns><see cref="bool"/></returns>
         public bool IsLast()
         {
-            return IExecuteWithSignature<bool>("isLast", "()Z");
+            return IExecute<bool>("isLast");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#isNull(int)"/>
@@ -186,7 +186,7 @@ namespace Android.Database
         /// <returns><see cref="bool"/></returns>
         public bool IsNull(int arg0)
         {
-            return IExecuteWithSignature<bool>("isNull", "(I)Z", arg0);
+            return IExecute<bool>("isNull", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#move(int)"/>
@@ -195,7 +195,7 @@ namespace Android.Database
         /// <returns><see cref="bool"/></returns>
         public bool Move(int arg0)
         {
-            return IExecuteWithSignature<bool>("move", "(I)Z", arg0);
+            return IExecute<bool>("move", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#moveToFirst()"/>
@@ -203,7 +203,7 @@ namespace Android.Database
         /// <returns><see cref="bool"/></returns>
         public bool MoveToFirst()
         {
-            return IExecuteWithSignature<bool>("moveToFirst", "()Z");
+            return IExecute<bool>("moveToFirst");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#moveToLast()"/>
@@ -211,7 +211,7 @@ namespace Android.Database
         /// <returns><see cref="bool"/></returns>
         public bool MoveToLast()
         {
-            return IExecuteWithSignature<bool>("moveToLast", "()Z");
+            return IExecute<bool>("moveToLast");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#moveToNext()"/>
@@ -219,7 +219,7 @@ namespace Android.Database
         /// <returns><see cref="bool"/></returns>
         public bool MoveToNext()
         {
-            return IExecuteWithSignature<bool>("moveToNext", "()Z");
+            return IExecute<bool>("moveToNext");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#moveToPosition(int)"/>
@@ -228,7 +228,7 @@ namespace Android.Database
         /// <returns><see cref="bool"/></returns>
         public bool MoveToPosition(int arg0)
         {
-            return IExecuteWithSignature<bool>("moveToPosition", "(I)Z", arg0);
+            return IExecute<bool>("moveToPosition", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#moveToPrevious()"/>
@@ -236,7 +236,7 @@ namespace Android.Database
         /// <returns><see cref="bool"/></returns>
         public bool MoveToPrevious()
         {
-            return IExecuteWithSignature<bool>("moveToPrevious", "()Z");
+            return IExecute<bool>("moveToPrevious");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#requery()"/>
@@ -245,7 +245,7 @@ namespace Android.Database
         [global::System.Obsolete()]
         public bool Requery()
         {
-            return IExecuteWithSignature<bool>("requery", "()Z");
+            return IExecute<bool>("requery");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#getBlob(int)"/>
@@ -254,7 +254,7 @@ namespace Android.Database
         /// <returns><see cref="byte"/></returns>
         public byte[] GetBlob(int arg0)
         {
-            return IExecuteWithSignatureArray<byte>("getBlob", "(I)[B", arg0);
+            return IExecuteArray<byte>("getBlob", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#getDouble(int)"/>
@@ -263,7 +263,7 @@ namespace Android.Database
         /// <returns><see cref="double"/></returns>
         public double GetDouble(int arg0)
         {
-            return IExecuteWithSignature<double>("getDouble", "(I)D", arg0);
+            return IExecute<double>("getDouble", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#getFloat(int)"/>
@@ -272,7 +272,7 @@ namespace Android.Database
         /// <returns><see cref="float"/></returns>
         public float GetFloat(int arg0)
         {
-            return IExecuteWithSignature<float>("getFloat", "(I)F", arg0);
+            return IExecute<float>("getFloat", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#getColumnCount()"/>
@@ -280,7 +280,7 @@ namespace Android.Database
         /// <returns><see cref="int"/></returns>
         public int GetColumnCount()
         {
-            return IExecuteWithSignature<int>("getColumnCount", "()I");
+            return IExecute<int>("getColumnCount");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#getColumnIndex(java.lang.String)"/>
@@ -289,7 +289,7 @@ namespace Android.Database
         /// <returns><see cref="int"/></returns>
         public int GetColumnIndex(Java.Lang.String arg0)
         {
-            return IExecuteWithSignature<int>("getColumnIndex", "(Ljava/lang/String;)I", arg0);
+            return IExecute<int>("getColumnIndex", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#getColumnIndexOrThrow(java.lang.String)"/>
@@ -299,7 +299,7 @@ namespace Android.Database
         /// <exception cref="Java.Lang.IllegalArgumentException"/>
         public int GetColumnIndexOrThrow(Java.Lang.String arg0)
         {
-            return IExecuteWithSignature<int>("getColumnIndexOrThrow", "(Ljava/lang/String;)I", arg0);
+            return IExecute<int>("getColumnIndexOrThrow", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#getCount()"/>
@@ -307,7 +307,7 @@ namespace Android.Database
         /// <returns><see cref="int"/></returns>
         public int GetCount()
         {
-            return IExecuteWithSignature<int>("getCount", "()I");
+            return IExecute<int>("getCount");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#getInt(int)"/>
@@ -316,7 +316,7 @@ namespace Android.Database
         /// <returns><see cref="int"/></returns>
         public int GetInt(int arg0)
         {
-            return IExecuteWithSignature<int>("getInt", "(I)I", arg0);
+            return IExecute<int>("getInt", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#getPosition()"/>
@@ -324,7 +324,7 @@ namespace Android.Database
         /// <returns><see cref="int"/></returns>
         public int GetPosition()
         {
-            return IExecuteWithSignature<int>("getPosition", "()I");
+            return IExecute<int>("getPosition");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#getType(int)"/>
@@ -333,7 +333,7 @@ namespace Android.Database
         /// <returns><see cref="int"/></returns>
         public int GetType(int arg0)
         {
-            return IExecuteWithSignature<int>("getType", "(I)I", arg0);
+            return IExecute<int>("getType", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#getColumnName(int)"/>
@@ -342,7 +342,7 @@ namespace Android.Database
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetColumnName(int arg0)
         {
-            return IExecuteWithSignature<Java.Lang.String>("getColumnName", "(I)Ljava/lang/String;", arg0);
+            return IExecute<Java.Lang.String>("getColumnName", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#getString(int)"/>
@@ -351,7 +351,7 @@ namespace Android.Database
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetString(int arg0)
         {
-            return IExecuteWithSignature<Java.Lang.String>("getString", "(I)Ljava/lang/String;", arg0);
+            return IExecute<Java.Lang.String>("getString", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#getColumnNames()"/>
@@ -359,7 +359,7 @@ namespace Android.Database
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String[] GetColumnNames()
         {
-            return IExecuteWithSignatureArray<Java.Lang.String>("getColumnNames", "()[Ljava/lang/String;");
+            return IExecuteArray<Java.Lang.String>("getColumnNames");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#getNotificationUris()"/>
@@ -367,7 +367,7 @@ namespace Android.Database
         /// <returns><see cref="Java.Util.List"/></returns>
         public Java.Util.List<Android.Net.Uri> GetNotificationUris()
         {
-            return IExecuteWithSignature<Java.Util.List<Android.Net.Uri>>("getNotificationUris", "()Ljava/util/List;");
+            return IExecute<Java.Util.List<Android.Net.Uri>>("getNotificationUris");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#getLong(int)"/>
@@ -376,7 +376,7 @@ namespace Android.Database
         /// <returns><see cref="long"/></returns>
         public long GetLong(int arg0)
         {
-            return IExecuteWithSignature<long>("getLong", "(I)J", arg0);
+            return IExecute<long>("getLong", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#getShort(int)"/>
@@ -385,14 +385,14 @@ namespace Android.Database
         /// <returns><see cref="short"/></returns>
         public short GetShort(int arg0)
         {
-            return IExecuteWithSignature<short>("getShort", "(I)S", arg0);
+            return IExecute<short>("getShort", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#close()"/>
         /// </summary>
         public void Close()
         {
-            IExecuteWithSignature("close", "()V");
+            IExecute("close");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#copyStringToBuffer(int,android.database.CharArrayBuffer)"/>
@@ -409,7 +409,7 @@ namespace Android.Database
         [global::System.Obsolete()]
         public void Deactivate()
         {
-            IExecuteWithSignature("deactivate", "()V");
+            IExecute("deactivate");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#registerContentObserver(android.database.ContentObserver)"/>
@@ -417,7 +417,7 @@ namespace Android.Database
         /// <param name="arg0"><see cref="Android.Database.ContentObserver"/></param>
         public void RegisterContentObserver(Android.Database.ContentObserver arg0)
         {
-            IExecuteWithSignature("registerContentObserver", "(Landroid/database/ContentObserver;)V", arg0);
+            IExecute("registerContentObserver", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#registerDataSetObserver(android.database.DataSetObserver)"/>
@@ -425,7 +425,7 @@ namespace Android.Database
         /// <param name="arg0"><see cref="Android.Database.DataSetObserver"/></param>
         public void RegisterDataSetObserver(Android.Database.DataSetObserver arg0)
         {
-            IExecuteWithSignature("registerDataSetObserver", "(Landroid/database/DataSetObserver;)V", arg0);
+            IExecute("registerDataSetObserver", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#setExtras(android.os.Bundle)"/>
@@ -433,7 +433,7 @@ namespace Android.Database
         /// <param name="arg0"><see cref="Android.Os.Bundle"/></param>
         public void SetExtras(Android.Os.Bundle arg0)
         {
-            IExecuteWithSignature("setExtras", "(Landroid/os/Bundle;)V", arg0);
+            IExecute("setExtras", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#setNotificationUri(android.content.ContentResolver,android.net.Uri)"/>
@@ -459,7 +459,7 @@ namespace Android.Database
         /// <param name="arg0"><see cref="Android.Database.ContentObserver"/></param>
         public void UnregisterContentObserver(Android.Database.ContentObserver arg0)
         {
-            IExecuteWithSignature("unregisterContentObserver", "(Landroid/database/ContentObserver;)V", arg0);
+            IExecute("unregisterContentObserver", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWrapper.html#unregisterDataSetObserver(android.database.DataSetObserver)"/>
@@ -467,7 +467,7 @@ namespace Android.Database
         /// <param name="arg0"><see cref="Android.Database.DataSetObserver"/></param>
         public void UnregisterDataSetObserver(Android.Database.DataSetObserver arg0)
         {
-            IExecuteWithSignature("unregisterDataSetObserver", "(Landroid/database/DataSetObserver;)V", arg0);
+            IExecute("unregisterDataSetObserver", arg0);
         }
     
         #endregion

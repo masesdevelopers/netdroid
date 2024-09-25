@@ -146,14 +146,14 @@ namespace Android.Database
         /// <param name="arg0"><see cref="object"/></param>
         public void RegisterObserver(object arg0)
         {
-            IExecuteWithSignature("registerObserver", "(Ljava/lang/Object;)V", arg0);
+            IExecute("registerObserver", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/Observable.html#unregisterAll()"/>
         /// </summary>
         public void UnregisterAll()
         {
-            IExecuteWithSignature("unregisterAll", "()V");
+            IExecute("unregisterAll");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/Observable.html#unregisterObserver(java.lang.Object)"/>
@@ -161,7 +161,7 @@ namespace Android.Database
         /// <param name="arg0"><see cref="object"/></param>
         public void UnregisterObserver(object arg0)
         {
-            IExecuteWithSignature("unregisterObserver", "(Ljava/lang/Object;)V", arg0);
+            IExecute("unregisterObserver", arg0);
         }
     
         #endregion
@@ -204,14 +204,14 @@ namespace Android.Database
         /// <param name="arg0"><typeparamref name="T"/></param>
         public void RegisterObserver(T arg0)
         {
-            IExecuteWithSignature("registerObserver", "(Ljava/lang/Object;)V", arg0);
+            IExecute("registerObserver", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/Observable.html#unregisterAll()"/>
         /// </summary>
         public void UnregisterAll()
         {
-            IExecuteWithSignature("unregisterAll", "()V");
+            IExecute("unregisterAll");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/Observable.html#unregisterObserver(java.lang.Object)"/>
@@ -219,7 +219,7 @@ namespace Android.Database
         /// <param name="arg0"><typeparamref name="T"/></param>
         public void UnregisterObserver(T arg0)
         {
-            IExecuteWithSignature("unregisterObserver", "(Ljava/lang/Object;)V", arg0);
+            IExecute("unregisterObserver", arg0);
         }
     
         #endregion

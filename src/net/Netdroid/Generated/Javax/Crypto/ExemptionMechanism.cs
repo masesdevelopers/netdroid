@@ -117,7 +117,7 @@ namespace Javax.Crypto
         /// <exception cref="Java.Security.NoSuchAlgorithmException"/>
         public static Javax.Crypto.ExemptionMechanism GetInstance(Java.Lang.String arg0)
         {
-            return SExecuteWithSignature<Javax.Crypto.ExemptionMechanism>(LocalBridgeClazz, "getInstance", "(Ljava/lang/String;)Ljavax/crypto/ExemptionMechanism;", arg0);
+            return SExecute<Javax.Crypto.ExemptionMechanism>(LocalBridgeClazz, "getInstance", arg0);
         }
     
         #endregion
@@ -131,7 +131,7 @@ namespace Javax.Crypto
         /// <exception cref="Javax.Crypto.ExemptionMechanismException"/>
         public bool IsCryptoAllowed(Java.Security.Key arg0)
         {
-            return IExecuteWithSignature<bool>("isCryptoAllowed", "(Ljava/security/Key;)Z", arg0);
+            return IExecute<bool>("isCryptoAllowed", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/ExemptionMechanism.html#genExemptionBlob()"/>
@@ -141,7 +141,7 @@ namespace Javax.Crypto
         /// <exception cref="Javax.Crypto.ExemptionMechanismException"/>
         public byte[] GenExemptionBlob()
         {
-            return IExecuteWithSignatureArray<byte>("genExemptionBlob", "()[B");
+            return IExecuteArray<byte>("genExemptionBlob");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/ExemptionMechanism.html#genExemptionBlob(byte[],int)"/>
@@ -166,7 +166,7 @@ namespace Javax.Crypto
         /// <exception cref="Javax.Crypto.ExemptionMechanismException"/>
         public int GenExemptionBlob(byte[] arg0)
         {
-            return IExecuteWithSignature<int>("genExemptionBlob", "([B)I", new object[] { arg0 });
+            return IExecute<int>("genExemptionBlob", new object[] { arg0 });
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/ExemptionMechanism.html#getOutputSize(int)"/>
@@ -176,7 +176,7 @@ namespace Javax.Crypto
         /// <exception cref="Java.Lang.IllegalStateException"/>
         public int GetOutputSize(int arg0)
         {
-            return IExecuteWithSignature<int>("getOutputSize", "(I)I", arg0);
+            return IExecute<int>("getOutputSize", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/ExemptionMechanism.html#getName()"/>
@@ -184,7 +184,7 @@ namespace Javax.Crypto
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetName()
         {
-            return IExecuteWithSignature<Java.Lang.String>("getName", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("getName");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/ExemptionMechanism.html#getProvider()"/>
@@ -192,7 +192,7 @@ namespace Javax.Crypto
         /// <returns><see cref="Java.Security.Provider"/></returns>
         public Java.Security.Provider GetProvider()
         {
-            return IExecuteWithSignature<Java.Security.Provider>("getProvider", "()Ljava/security/Provider;");
+            return IExecute<Java.Security.Provider>("getProvider");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/ExemptionMechanism.html#init(java.security.Key,java.security.AlgorithmParameters)"/>
@@ -226,7 +226,7 @@ namespace Javax.Crypto
         /// <exception cref="Javax.Crypto.ExemptionMechanismException"/>
         public void Init(Java.Security.Key arg0)
         {
-            IExecuteWithSignature("init", "(Ljava/security/Key;)V", arg0);
+            IExecute("init", arg0);
         }
     
         #endregion

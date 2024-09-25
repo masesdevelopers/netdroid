@@ -106,7 +106,7 @@ namespace Android.Telephony.Mbms
         /// <returns><see cref="int"/></returns>
         public int DescribeContents()
         {
-            return IExecuteWithSignature<int>("describeContents", "()I");
+            return IExecute<int>("describeContents");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/FileServiceInfo.html#getFiles()"/>
@@ -114,7 +114,7 @@ namespace Android.Telephony.Mbms
         /// <returns><see cref="Java.Util.List"/></returns>
         public Java.Util.List<Android.Telephony.Mbms.FileInfo> GetFiles()
         {
-            return IExecuteWithSignature<Java.Util.List<Android.Telephony.Mbms.FileInfo>>("getFiles", "()Ljava/util/List;");
+            return IExecute<Java.Util.List<Android.Telephony.Mbms.FileInfo>>("getFiles");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/FileServiceInfo.html#writeToParcel(android.os.Parcel,int)"/>

@@ -105,7 +105,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="Java.Util.Logging.Logger"/></returns>
         public static Java.Util.Logging.Logger GetGlobal()
         {
-            return SExecuteWithSignature<Java.Util.Logging.Logger>(LocalBridgeClazz, "getGlobal", "()Ljava/util/logging/Logger;");
+            return SExecute<Java.Util.Logging.Logger>(LocalBridgeClazz, "getGlobal");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#getAnonymousLogger()"/>
@@ -113,7 +113,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="Java.Util.Logging.Logger"/></returns>
         public static Java.Util.Logging.Logger GetAnonymousLogger()
         {
-            return SExecuteWithSignature<Java.Util.Logging.Logger>(LocalBridgeClazz, "getAnonymousLogger", "()Ljava/util/logging/Logger;");
+            return SExecute<Java.Util.Logging.Logger>(LocalBridgeClazz, "getAnonymousLogger");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#getAnonymousLogger(java.lang.String)"/>
@@ -122,7 +122,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="Java.Util.Logging.Logger"/></returns>
         public static Java.Util.Logging.Logger GetAnonymousLogger(Java.Lang.String arg0)
         {
-            return SExecuteWithSignature<Java.Util.Logging.Logger>(LocalBridgeClazz, "getAnonymousLogger", "(Ljava/lang/String;)Ljava/util/logging/Logger;", arg0);
+            return SExecute<Java.Util.Logging.Logger>(LocalBridgeClazz, "getAnonymousLogger", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#getLogger(java.lang.String,java.lang.String)"/>
@@ -141,7 +141,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="Java.Util.Logging.Logger"/></returns>
         public static Java.Util.Logging.Logger GetLogger(Java.Lang.String arg0)
         {
-            return SExecuteWithSignature<Java.Util.Logging.Logger>(LocalBridgeClazz, "getLogger", "(Ljava/lang/String;)Ljava/util/logging/Logger;", arg0);
+            return SExecute<Java.Util.Logging.Logger>(LocalBridgeClazz, "getLogger", arg0);
         }
     
         #endregion
@@ -153,7 +153,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="bool"/></returns>
         public bool GetUseParentHandlers()
         {
-            return IExecuteWithSignature<bool>("getUseParentHandlers", "()Z");
+            return IExecute<bool>("getUseParentHandlers");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#isLoggable(java.util.logging.Level)"/>
@@ -162,7 +162,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="bool"/></returns>
         public bool IsLoggable(Java.Util.Logging.Level arg0)
         {
-            return IExecuteWithSignature<bool>("isLoggable", "(Ljava/util/logging/Level;)Z", arg0);
+            return IExecute<bool>("isLoggable", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#getName()"/>
@@ -170,7 +170,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetName()
         {
-            return IExecuteWithSignature<Java.Lang.String>("getName", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("getName");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#getResourceBundleName()"/>
@@ -178,7 +178,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetResourceBundleName()
         {
-            return IExecuteWithSignature<Java.Lang.String>("getResourceBundleName", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("getResourceBundleName");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#getFilter()"/>
@@ -186,7 +186,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="Java.Util.Logging.Filter"/></returns>
         public Java.Util.Logging.Filter GetFilter()
         {
-            return IExecuteWithSignature<Java.Util.Logging.Filter>("getFilter", "()Ljava/util/logging/Filter;");
+            return IExecute<Java.Util.Logging.Filter>("getFilter");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#getHandlers()"/>
@@ -194,7 +194,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="Java.Util.Logging.Handler"/></returns>
         public Java.Util.Logging.Handler[] GetHandlers()
         {
-            return IExecuteWithSignatureArray<Java.Util.Logging.Handler>("getHandlers", "()[Ljava/util/logging/Handler;");
+            return IExecuteArray<Java.Util.Logging.Handler>("getHandlers");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#getLevel()"/>
@@ -202,7 +202,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="Java.Util.Logging.Level"/></returns>
         public Java.Util.Logging.Level GetLevel()
         {
-            return IExecuteWithSignature<Java.Util.Logging.Level>("getLevel", "()Ljava/util/logging/Level;");
+            return IExecute<Java.Util.Logging.Level>("getLevel");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#getParent()"/>
@@ -210,7 +210,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="Java.Util.Logging.Logger"/></returns>
         public Java.Util.Logging.Logger GetParent()
         {
-            return IExecuteWithSignature<Java.Util.Logging.Logger>("getParent", "()Ljava/util/logging/Logger;");
+            return IExecute<Java.Util.Logging.Logger>("getParent");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#getResourceBundle()"/>
@@ -218,7 +218,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="Java.Util.ResourceBundle"/></returns>
         public Java.Util.ResourceBundle GetResourceBundle()
         {
-            return IExecuteWithSignature<Java.Util.ResourceBundle>("getResourceBundle", "()Ljava/util/ResourceBundle;");
+            return IExecute<Java.Util.ResourceBundle>("getResourceBundle");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#addHandler(java.util.logging.Handler)"/>
@@ -227,7 +227,7 @@ namespace Java.Util.Logging
         /// <exception cref="Java.Lang.SecurityException"/>
         public void AddHandler(Java.Util.Logging.Handler arg0)
         {
-            IExecuteWithSignature("addHandler", "(Ljava/util/logging/Handler;)V", arg0);
+            IExecute("addHandler", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#config(java.lang.String)"/>
@@ -235,7 +235,7 @@ namespace Java.Util.Logging
         /// <param name="arg0"><see cref="Java.Lang.String"/></param>
         public void Config(Java.Lang.String arg0)
         {
-            IExecuteWithSignature("config", "(Ljava/lang/String;)V", arg0);
+            IExecute("config", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#config(java.util.function.Supplier)"/>
@@ -243,7 +243,7 @@ namespace Java.Util.Logging
         /// <param name="arg0"><see cref="Java.Util.Function.Supplier"/></param>
         public void Config(Java.Util.Function.Supplier<Java.Lang.String> arg0)
         {
-            IExecuteWithSignature("config", "(Ljava/util/function/Supplier;)V", arg0);
+            IExecute("config", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#entering(java.lang.String,java.lang.String,java.lang.Object)"/>
@@ -299,7 +299,7 @@ namespace Java.Util.Logging
         /// <param name="arg0"><see cref="Java.Lang.String"/></param>
         public void Fine(Java.Lang.String arg0)
         {
-            IExecuteWithSignature("fine", "(Ljava/lang/String;)V", arg0);
+            IExecute("fine", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#fine(java.util.function.Supplier)"/>
@@ -307,7 +307,7 @@ namespace Java.Util.Logging
         /// <param name="arg0"><see cref="Java.Util.Function.Supplier"/></param>
         public void Fine(Java.Util.Function.Supplier<Java.Lang.String> arg0)
         {
-            IExecuteWithSignature("fine", "(Ljava/util/function/Supplier;)V", arg0);
+            IExecute("fine", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#finer(java.lang.String)"/>
@@ -315,7 +315,7 @@ namespace Java.Util.Logging
         /// <param name="arg0"><see cref="Java.Lang.String"/></param>
         public void Finer(Java.Lang.String arg0)
         {
-            IExecuteWithSignature("finer", "(Ljava/lang/String;)V", arg0);
+            IExecute("finer", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#finer(java.util.function.Supplier)"/>
@@ -323,7 +323,7 @@ namespace Java.Util.Logging
         /// <param name="arg0"><see cref="Java.Util.Function.Supplier"/></param>
         public void Finer(Java.Util.Function.Supplier<Java.Lang.String> arg0)
         {
-            IExecuteWithSignature("finer", "(Ljava/util/function/Supplier;)V", arg0);
+            IExecute("finer", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#finest(java.lang.String)"/>
@@ -331,7 +331,7 @@ namespace Java.Util.Logging
         /// <param name="arg0"><see cref="Java.Lang.String"/></param>
         public void Finest(Java.Lang.String arg0)
         {
-            IExecuteWithSignature("finest", "(Ljava/lang/String;)V", arg0);
+            IExecute("finest", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#finest(java.util.function.Supplier)"/>
@@ -339,7 +339,7 @@ namespace Java.Util.Logging
         /// <param name="arg0"><see cref="Java.Util.Function.Supplier"/></param>
         public void Finest(Java.Util.Function.Supplier<Java.Lang.String> arg0)
         {
-            IExecuteWithSignature("finest", "(Ljava/util/function/Supplier;)V", arg0);
+            IExecute("finest", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#info(java.lang.String)"/>
@@ -347,7 +347,7 @@ namespace Java.Util.Logging
         /// <param name="arg0"><see cref="Java.Lang.String"/></param>
         public void Info(Java.Lang.String arg0)
         {
-            IExecuteWithSignature("info", "(Ljava/lang/String;)V", arg0);
+            IExecute("info", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#info(java.util.function.Supplier)"/>
@@ -355,7 +355,7 @@ namespace Java.Util.Logging
         /// <param name="arg0"><see cref="Java.Util.Function.Supplier"/></param>
         public void Info(Java.Util.Function.Supplier<Java.Lang.String> arg0)
         {
-            IExecuteWithSignature("info", "(Ljava/util/function/Supplier;)V", arg0);
+            IExecute("info", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#log(java.util.logging.Level,java.lang.String,java.lang.Object)"/>
@@ -421,7 +421,7 @@ namespace Java.Util.Logging
         /// <param name="arg0"><see cref="Java.Util.Logging.LogRecord"/></param>
         public void Log(Java.Util.Logging.LogRecord arg0)
         {
-            IExecuteWithSignature("log", "(Ljava/util/logging/LogRecord;)V", arg0);
+            IExecute("log", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#logp(java.util.logging.Level,java.lang.String,java.lang.String,java.lang.String,java.lang.Object)"/>
@@ -603,7 +603,7 @@ namespace Java.Util.Logging
         /// <exception cref="Java.Lang.SecurityException"/>
         public void RemoveHandler(Java.Util.Logging.Handler arg0)
         {
-            IExecuteWithSignature("removeHandler", "(Ljava/util/logging/Handler;)V", arg0);
+            IExecute("removeHandler", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#setFilter(java.util.logging.Filter)"/>
@@ -612,7 +612,7 @@ namespace Java.Util.Logging
         /// <exception cref="Java.Lang.SecurityException"/>
         public void SetFilter(Java.Util.Logging.Filter arg0)
         {
-            IExecuteWithSignature("setFilter", "(Ljava/util/logging/Filter;)V", arg0);
+            IExecute("setFilter", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#setLevel(java.util.logging.Level)"/>
@@ -621,7 +621,7 @@ namespace Java.Util.Logging
         /// <exception cref="Java.Lang.SecurityException"/>
         public void SetLevel(Java.Util.Logging.Level arg0)
         {
-            IExecuteWithSignature("setLevel", "(Ljava/util/logging/Level;)V", arg0);
+            IExecute("setLevel", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#setParent(java.util.logging.Logger)"/>
@@ -629,7 +629,7 @@ namespace Java.Util.Logging
         /// <param name="arg0"><see cref="Java.Util.Logging.Logger"/></param>
         public void SetParent(Java.Util.Logging.Logger arg0)
         {
-            IExecuteWithSignature("setParent", "(Ljava/util/logging/Logger;)V", arg0);
+            IExecute("setParent", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#setResourceBundle(java.util.ResourceBundle)"/>
@@ -637,7 +637,7 @@ namespace Java.Util.Logging
         /// <param name="arg0"><see cref="Java.Util.ResourceBundle"/></param>
         public void SetResourceBundle(Java.Util.ResourceBundle arg0)
         {
-            IExecuteWithSignature("setResourceBundle", "(Ljava/util/ResourceBundle;)V", arg0);
+            IExecute("setResourceBundle", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#setUseParentHandlers(boolean)"/>
@@ -645,7 +645,7 @@ namespace Java.Util.Logging
         /// <param name="arg0"><see cref="bool"/></param>
         public void SetUseParentHandlers(bool arg0)
         {
-            IExecuteWithSignature("setUseParentHandlers", "(Z)V", arg0);
+            IExecute("setUseParentHandlers", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#severe(java.lang.String)"/>
@@ -653,7 +653,7 @@ namespace Java.Util.Logging
         /// <param name="arg0"><see cref="Java.Lang.String"/></param>
         public void Severe(Java.Lang.String arg0)
         {
-            IExecuteWithSignature("severe", "(Ljava/lang/String;)V", arg0);
+            IExecute("severe", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#severe(java.util.function.Supplier)"/>
@@ -661,7 +661,7 @@ namespace Java.Util.Logging
         /// <param name="arg0"><see cref="Java.Util.Function.Supplier"/></param>
         public void Severe(Java.Util.Function.Supplier<Java.Lang.String> arg0)
         {
-            IExecuteWithSignature("severe", "(Ljava/util/function/Supplier;)V", arg0);
+            IExecute("severe", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#throwing(java.lang.String,java.lang.String,java.lang.Throwable)"/>
@@ -679,7 +679,7 @@ namespace Java.Util.Logging
         /// <param name="arg0"><see cref="Java.Lang.String"/></param>
         public void Warning(Java.Lang.String arg0)
         {
-            IExecuteWithSignature("warning", "(Ljava/lang/String;)V", arg0);
+            IExecute("warning", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Logger.html#warning(java.util.function.Supplier)"/>
@@ -687,7 +687,7 @@ namespace Java.Util.Logging
         /// <param name="arg0"><see cref="Java.Util.Function.Supplier"/></param>
         public void Warning(Java.Util.Function.Supplier<Java.Lang.String> arg0)
         {
-            IExecuteWithSignature("warning", "(Ljava/util/function/Supplier;)V", arg0);
+            IExecute("warning", arg0);
         }
     
         #endregion

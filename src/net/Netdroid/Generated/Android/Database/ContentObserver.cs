@@ -106,7 +106,7 @@ namespace Android.Database
         /// <returns><see cref="bool"/></returns>
         public bool DeliverSelfNotifications()
         {
-            return IExecuteWithSignature<bool>("deliverSelfNotifications", "()Z");
+            return IExecute<bool>("deliverSelfNotifications");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/ContentObserver.html#dispatchChange(boolean,android.net.Uri,int)"/>
@@ -144,7 +144,7 @@ namespace Android.Database
         [global::System.Obsolete()]
         public void DispatchChange(bool arg0)
         {
-            IExecuteWithSignature("dispatchChange", "(Z)V", arg0);
+            IExecute("dispatchChange", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/ContentObserver.html#onChange(boolean,android.net.Uri,int)"/>
@@ -181,7 +181,7 @@ namespace Android.Database
         /// <param name="arg0"><see cref="bool"/></param>
         public void OnChange(bool arg0)
         {
-            IExecuteWithSignature("onChange", "(Z)V", arg0);
+            IExecute("onChange", arg0);
         }
     
         #endregion

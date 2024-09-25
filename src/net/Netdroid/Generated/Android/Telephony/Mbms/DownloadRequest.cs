@@ -143,7 +143,7 @@ namespace Android.Telephony.Mbms
         /// <returns><see cref="int"/></returns>
         public static int GetMaxAppIntentSize()
         {
-            return SExecuteWithSignature<int>(LocalBridgeClazz, "getMaxAppIntentSize", "()I");
+            return SExecute<int>(LocalBridgeClazz, "getMaxAppIntentSize");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/DownloadRequest.html#getMaxDestinationUriSize()"/>
@@ -151,7 +151,7 @@ namespace Android.Telephony.Mbms
         /// <returns><see cref="int"/></returns>
         public static int GetMaxDestinationUriSize()
         {
-            return SExecuteWithSignature<int>(LocalBridgeClazz, "getMaxDestinationUriSize", "()I");
+            return SExecute<int>(LocalBridgeClazz, "getMaxDestinationUriSize");
         }
     
         #endregion
@@ -163,7 +163,7 @@ namespace Android.Telephony.Mbms
         /// <returns><see cref="Android.Net.Uri"/></returns>
         public Android.Net.Uri GetDestinationUri()
         {
-            return IExecuteWithSignature<Android.Net.Uri>("getDestinationUri", "()Landroid/net/Uri;");
+            return IExecute<Android.Net.Uri>("getDestinationUri");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/DownloadRequest.html#getSourceUri()"/>
@@ -171,7 +171,7 @@ namespace Android.Telephony.Mbms
         /// <returns><see cref="Android.Net.Uri"/></returns>
         public Android.Net.Uri GetSourceUri()
         {
-            return IExecuteWithSignature<Android.Net.Uri>("getSourceUri", "()Landroid/net/Uri;");
+            return IExecute<Android.Net.Uri>("getSourceUri");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/DownloadRequest.html#toByteArray()"/>
@@ -179,7 +179,7 @@ namespace Android.Telephony.Mbms
         /// <returns><see cref="byte"/></returns>
         public byte[] ToByteArray()
         {
-            return IExecuteWithSignatureArray<byte>("toByteArray", "()[B");
+            return IExecuteArray<byte>("toByteArray");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/DownloadRequest.html#describeContents()"/>
@@ -187,7 +187,7 @@ namespace Android.Telephony.Mbms
         /// <returns><see cref="int"/></returns>
         public int DescribeContents()
         {
-            return IExecuteWithSignature<int>("describeContents", "()I");
+            return IExecute<int>("describeContents");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/DownloadRequest.html#getSubscriptionId()"/>
@@ -195,7 +195,7 @@ namespace Android.Telephony.Mbms
         /// <returns><see cref="int"/></returns>
         public int GetSubscriptionId()
         {
-            return IExecuteWithSignature<int>("getSubscriptionId", "()I");
+            return IExecute<int>("getSubscriptionId");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/DownloadRequest.html#getFileServiceId()"/>
@@ -203,7 +203,7 @@ namespace Android.Telephony.Mbms
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetFileServiceId()
         {
-            return IExecuteWithSignature<Java.Lang.String>("getFileServiceId", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("getFileServiceId");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/DownloadRequest.html#writeToParcel(android.os.Parcel,int)"/>

@@ -96,7 +96,7 @@ namespace Android.Database
         /// <param name="arg0"><see cref="Android.Database.Sqlite.SQLiteDatabase"/></param>
         public void OnCorruption(Android.Database.Sqlite.SQLiteDatabase arg0)
         {
-            IExecuteWithSignature("onCorruption", "(Landroid/database/sqlite/SQLiteDatabase;)V", arg0);
+            IExecute("onCorruption", arg0);
         }
     
         #endregion

@@ -150,14 +150,14 @@ namespace Android.Telephony.Mbms
         /// <returns><see cref="long"/></returns>
         public long GetTmgi()
         {
-            return IExecuteWithSignature<long>("getTmgi", "()J");
+            return IExecute<long>("getTmgi");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/GroupCall.html#close()"/>
         /// </summary>
         public void Close()
         {
-            IExecuteWithSignature("close", "()V");
+            IExecute("close");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/GroupCall.html#updateGroupCall(java.util.List,java.util.List)"/>

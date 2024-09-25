@@ -228,7 +228,7 @@ namespace Android.Database
         /// <param name="arg0"><see cref="Android.Os.Parcel"/></param>
         public static void ReadExceptionFromParcel(Android.Os.Parcel arg0)
         {
-            SExecuteWithSignature(LocalBridgeClazz, "readExceptionFromParcel", "(Landroid/os/Parcel;)V", arg0);
+            SExecute(LocalBridgeClazz, "readExceptionFromParcel", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/DatabaseUtils.html#writeExceptionToParcel(android.os.Parcel,java.lang.Exception)"/>
@@ -246,7 +246,7 @@ namespace Android.Database
         /// <returns><see cref="int"/></returns>
         public static int GetSqlStatementType(Java.Lang.String arg0)
         {
-            return SExecuteWithSignature<int>(LocalBridgeClazz, "getSqlStatementType", "(Ljava/lang/String;)I", arg0);
+            return SExecute<int>(LocalBridgeClazz, "getSqlStatementType", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/DatabaseUtils.html#concatenateWhere(java.lang.String,java.lang.String)"/>
@@ -265,7 +265,7 @@ namespace Android.Database
         /// <returns><see cref="Java.Lang.String"/></returns>
         public static Java.Lang.String DumpCurrentRowToString(Android.Database.Cursor arg0)
         {
-            return SExecuteWithSignature<Java.Lang.String>(LocalBridgeClazz, "dumpCurrentRowToString", "(Landroid/database/Cursor;)Ljava/lang/String;", arg0);
+            return SExecute<Java.Lang.String>(LocalBridgeClazz, "dumpCurrentRowToString", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/DatabaseUtils.html#dumpCursorToString(android.database.Cursor)"/>
@@ -274,7 +274,7 @@ namespace Android.Database
         /// <returns><see cref="Java.Lang.String"/></returns>
         public static Java.Lang.String DumpCursorToString(Android.Database.Cursor arg0)
         {
-            return SExecuteWithSignature<Java.Lang.String>(LocalBridgeClazz, "dumpCursorToString", "(Landroid/database/Cursor;)Ljava/lang/String;", arg0);
+            return SExecute<Java.Lang.String>(LocalBridgeClazz, "dumpCursorToString", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/DatabaseUtils.html#getCollationKey(java.lang.String)"/>
@@ -283,7 +283,7 @@ namespace Android.Database
         /// <returns><see cref="Java.Lang.String"/></returns>
         public static Java.Lang.String GetCollationKey(Java.Lang.String arg0)
         {
-            return SExecuteWithSignature<Java.Lang.String>(LocalBridgeClazz, "getCollationKey", "(Ljava/lang/String;)Ljava/lang/String;", arg0);
+            return SExecute<Java.Lang.String>(LocalBridgeClazz, "getCollationKey", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/DatabaseUtils.html#getHexCollationKey(java.lang.String)"/>
@@ -292,7 +292,7 @@ namespace Android.Database
         /// <returns><see cref="Java.Lang.String"/></returns>
         public static Java.Lang.String GetHexCollationKey(Java.Lang.String arg0)
         {
-            return SExecuteWithSignature<Java.Lang.String>(LocalBridgeClazz, "getHexCollationKey", "(Ljava/lang/String;)Ljava/lang/String;", arg0);
+            return SExecute<Java.Lang.String>(LocalBridgeClazz, "getHexCollationKey", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/DatabaseUtils.html#sqlEscapeString(java.lang.String)"/>
@@ -301,7 +301,7 @@ namespace Android.Database
         /// <returns><see cref="Java.Lang.String"/></returns>
         public static Java.Lang.String SqlEscapeString(Java.Lang.String arg0)
         {
-            return SExecuteWithSignature<Java.Lang.String>(LocalBridgeClazz, "sqlEscapeString", "(Ljava/lang/String;)Ljava/lang/String;", arg0);
+            return SExecute<Java.Lang.String>(LocalBridgeClazz, "sqlEscapeString", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/DatabaseUtils.html#stringForQuery(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.String[])"/>
@@ -606,7 +606,7 @@ namespace Android.Database
         /// <param name="arg0"><see cref="Android.Database.Cursor"/></param>
         public static void DumpCurrentRow(Android.Database.Cursor arg0)
         {
-            SExecuteWithSignature(LocalBridgeClazz, "dumpCurrentRow", "(Landroid/database/Cursor;)V", arg0);
+            SExecute(LocalBridgeClazz, "dumpCurrentRow", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/DatabaseUtils.html#dumpCursor(android.database.Cursor,java.io.PrintStream)"/>
@@ -632,7 +632,7 @@ namespace Android.Database
         /// <param name="arg0"><see cref="Android.Database.Cursor"/></param>
         public static void DumpCursor(Android.Database.Cursor arg0)
         {
-            SExecuteWithSignature(LocalBridgeClazz, "dumpCursor", "(Landroid/database/Cursor;)V", arg0);
+            SExecute(LocalBridgeClazz, "dumpCursor", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/DatabaseUtils.html#readExceptionWithFileNotFoundExceptionFromParcel(android.os.Parcel)"/>
@@ -641,7 +641,7 @@ namespace Android.Database
         /// <exception cref="Java.Io.FileNotFoundException"/>
         public static void ReadExceptionWithFileNotFoundExceptionFromParcel(Android.Os.Parcel arg0)
         {
-            SExecuteWithSignature(LocalBridgeClazz, "readExceptionWithFileNotFoundExceptionFromParcel", "(Landroid/os/Parcel;)V", arg0);
+            SExecute(LocalBridgeClazz, "readExceptionWithFileNotFoundExceptionFromParcel", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/DatabaseUtils.html#readExceptionWithOperationApplicationExceptionFromParcel(android.os.Parcel)"/>
@@ -650,7 +650,7 @@ namespace Android.Database
         /// <exception cref="Android.Content.OperationApplicationException"/>
         public static void ReadExceptionWithOperationApplicationExceptionFromParcel(Android.Os.Parcel arg0)
         {
-            SExecuteWithSignature(LocalBridgeClazz, "readExceptionWithOperationApplicationExceptionFromParcel", "(Landroid/os/Parcel;)V", arg0);
+            SExecute(LocalBridgeClazz, "readExceptionWithOperationApplicationExceptionFromParcel", arg0);
         }
     
         #endregion

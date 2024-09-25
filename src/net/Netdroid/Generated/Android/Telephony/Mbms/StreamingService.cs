@@ -168,7 +168,7 @@ namespace Android.Telephony.Mbms
         /// <returns><see cref="Android.Net.Uri"/></returns>
         public Android.Net.Uri GetPlaybackUri()
         {
-            return IExecuteWithSignature<Android.Net.Uri>("getPlaybackUri", "()Landroid/net/Uri;");
+            return IExecute<Android.Net.Uri>("getPlaybackUri");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/StreamingService.html#getInfo()"/>
@@ -176,14 +176,14 @@ namespace Android.Telephony.Mbms
         /// <returns><see cref="Android.Telephony.Mbms.StreamingServiceInfo"/></returns>
         public Android.Telephony.Mbms.StreamingServiceInfo GetInfo()
         {
-            return IExecuteWithSignature<Android.Telephony.Mbms.StreamingServiceInfo>("getInfo", "()Landroid/telephony/mbms/StreamingServiceInfo;");
+            return IExecute<Android.Telephony.Mbms.StreamingServiceInfo>("getInfo");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/StreamingService.html#close()"/>
         /// </summary>
         public void Close()
         {
-            IExecuteWithSignature("close", "()V");
+            IExecute("close");
         }
     
         #endregion

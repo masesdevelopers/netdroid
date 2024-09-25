@@ -29,23 +29,48 @@ namespace Android.App
     /// <summary>
     /// <see href="https://developer.android.com/reference/android/app/NativeActivity.html"/>
     /// </summary>
-    public partial class NativeActivity : Android.App.Activity
+    public partial class NativeActivity : MASES.JCOBridge.C2JBridge.JVMBridgeListener
     {
-        const string _bridgeClassName = "android.app.NativeActivity";
         /// <summary>
         /// Default constructor: even if the corresponding Java class does not have one, it is mandatory for JCOBridge
         /// </summary>
-        public NativeActivity() { }
-        /// <summary>
-        /// Generic constructor: it is useful for JCOBridge when there is a derived class which needs to pass arguments to the highest JVMBridgeBase class
-        /// </summary>
-        public NativeActivity(params object[] args) : base(args) { }
+        public NativeActivity() { InitializeHandlers(); }
     
+        const string _bridgeClassName = "org.mases.netdroid.generated.android.app.NativeActivity";
+        private static readonly MASES.JCOBridge.C2JBridge.JVMInterop.IJavaType _LocalBridgeClazz = ClazzOf(_bridgeClassName);
+        private static MASES.JCOBridge.C2JBridge.JVMInterop.IJavaType LocalBridgeClazz => _LocalBridgeClazz ?? throw new global::System.InvalidOperationException($"Class {_bridgeClassName} was not found.");
+        
+        /// <summary>
+        /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeListener_BridgeClassName.htm"/>
+        /// </summary>
+        public override string BridgeClassName => _bridgeClassName;
+    
+    
+        // TODO: complete the class
+    
+    }
+    #endregion
+    
+    #region NativeActivityDirect declaration
+    /// <summary>
+    /// Direct override of <see cref="NativeActivity"/> or its generic type if there is one
+    /// </summary>
+    public partial class NativeActivityDirect : NativeActivity
+    {
+        /// <summary>
+        /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeListener_AutoInit.htm"/>
+        /// </summary>
+        public override bool AutoInit => false;
+    
+        /// <inheritdoc />
+        protected override void InitializeHandlers() { }
+    
+        const string _bridgeClassName = "android.app.NativeActivity";
         private static readonly MASES.JCOBridge.C2JBridge.JVMInterop.IJavaType _LocalBridgeClazz = JVMBridgeBase.ClazzOf(_bridgeClassName);
         private static MASES.JCOBridge.C2JBridge.JVMInterop.IJavaType LocalBridgeClazz => _LocalBridgeClazz ?? throw new global::System.InvalidOperationException($"Class {_bridgeClassName} was not found.");
     
         /// <summary>
-        /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_BridgeClassName.htm"/>
+        /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeListener_BridgeClassName.htm"/>
         /// </summary>
         public override string BridgeClassName => _bridgeClassName;
         /// <summary>
@@ -64,9 +89,6 @@ namespace Android.App
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeStatic.htm"/>
         /// </summary>
         public override bool IsBridgeStatic => false;
-    
-        // TODO: complete the class
-    
     }
     #endregion
 
@@ -82,18 +104,6 @@ namespace Android.App
         #endregion
     
         #region Fields
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/android/app/NativeActivity.html#META_DATA_FUNC_NAME"/>
-        /// </summary>
-        public static Java.Lang.String META_DATA_FUNC_NAME { get { if (!_META_DATA_FUNC_NAMEReady) { _META_DATA_FUNC_NAMEContent = SGetField<Java.Lang.String>(LocalBridgeClazz, "META_DATA_FUNC_NAME"); _META_DATA_FUNC_NAMEReady = true; } return _META_DATA_FUNC_NAMEContent; } }
-        private static Java.Lang.String _META_DATA_FUNC_NAMEContent = default;
-        private static bool _META_DATA_FUNC_NAMEReady = false; // this is used because in case of generics 
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/android/app/NativeActivity.html#META_DATA_LIB_NAME"/>
-        /// </summary>
-        public static Java.Lang.String META_DATA_LIB_NAME { get { if (!_META_DATA_LIB_NAMEReady) { _META_DATA_LIB_NAMEContent = SGetField<Java.Lang.String>(LocalBridgeClazz, "META_DATA_LIB_NAME"); _META_DATA_LIB_NAMEReady = true; } return _META_DATA_LIB_NAMEContent; } }
-        private static Java.Lang.String _META_DATA_LIB_NAMEContent = default;
-        private static bool _META_DATA_LIB_NAMEReady = false; // this is used because in case of generics 
     
         #endregion
     
@@ -103,27 +113,5907 @@ namespace Android.App
     
         #region Instance methods
         /// <summary>
+        /// Handlers initializer for <see cref="NativeActivity"/>
+        /// </summary>
+        protected virtual void InitializeHandlers()
+        {
+            AddEventHandler("getActionBar", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetActionBarEventHandler));
+            AddEventHandler("getLoaderManager", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetLoaderManagerEventHandler));
+            AddEventHandler("getVoiceInteractor", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetVoiceInteractorEventHandler));
+            AddEventHandler("getComponentName", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetComponentNameEventHandler));
+            AddEventHandler("getBaseContext", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetBaseContextEventHandler));
+            AddEventHandler("onProvideReferrer", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnProvideReferrerEventHandler));
+            AddEventHandler("getContentScene", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetContentSceneEventHandler));
+            AddEventHandler("getContentTransitionManager", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetContentTransitionManagerEventHandler));
+            AddEventHandler("onWindowStartingActionMode", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnWindowStartingActionModeEventHandler));
+            AddEventHandler("onWindowStartingActionMode1", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnWindowStartingActionMode1EventHandler));
+            AddEventHandler("startActionMode", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(StartActionModeEventHandler));
+            AddEventHandler("startActionMode1", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(StartActionMode1EventHandler));
+            AddEventHandler("requestDragAndDropPermissions", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(RequestDragAndDropPermissionsEventHandler));
+            AddEventHandler("getLayoutInflater", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetLayoutInflaterEventHandler));
+            AddEventHandler("getCurrentFocus", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetCurrentFocusEventHandler));
+            AddEventHandler("onCreatePanelView", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnCreatePanelViewEventHandler));
+            AddEventHandler("onCreateView", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnCreateViewEventHandler));
+            AddEventHandler("onCreateView3", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnCreateView3EventHandler));
+            AddEventHandler("getWindow", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetWindowEventHandler));
+            AddEventHandler("getWindowManager", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetWindowManagerEventHandler));
+            AddEventHandler("getOnBackInvokedDispatcher", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetOnBackInvokedDispatcherEventHandler));
+            AddEventHandler("dispatchGenericMotionEvent", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(DispatchGenericMotionEventEventHandler));
+            AddEventHandler("dispatchKeyShortcutEvent", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(DispatchKeyShortcutEventEventHandler));
+            AddEventHandler("dispatchPopulateAccessibilityEvent", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(DispatchPopulateAccessibilityEventEventHandler));
+            AddEventHandler("dispatchTouchEvent", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(DispatchTouchEventEventHandler));
+            AddEventHandler("enterPictureInPictureMode", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(EnterPictureInPictureModeEventHandler));
+            AddEventHandler("hasWindowFocus", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(HasWindowFocusEventHandler));
+            AddEventHandler("isActivityTransitionRunning", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(IsActivityTransitionRunningEventHandler));
+            AddEventHandler("isChangingConfigurations", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(IsChangingConfigurationsEventHandler));
+            AddEventHandler("isDestroyed", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(IsDestroyedEventHandler));
+            AddEventHandler("isInMultiWindowMode", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(IsInMultiWindowModeEventHandler));
+            AddEventHandler("isInPictureInPictureMode", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(IsInPictureInPictureModeEventHandler));
+            AddEventHandler("isLaunchedFromBubble", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(IsLaunchedFromBubbleEventHandler));
+            AddEventHandler("isLocalVoiceInteractionSupported", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(IsLocalVoiceInteractionSupportedEventHandler));
+            AddEventHandler("isTaskRoot", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(IsTaskRootEventHandler));
+            AddEventHandler("isVoiceInteraction", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(IsVoiceInteractionEventHandler));
+            AddEventHandler("isVoiceInteractionRoot", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(IsVoiceInteractionRootEventHandler));
+            AddEventHandler("moveTaskToBack", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(MoveTaskToBackEventHandler));
+            AddEventHandler("navigateUpTo", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(NavigateUpToEventHandler));
+            AddEventHandler("navigateUpToFromChild", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(NavigateUpToFromChildEventHandler));
+            AddEventHandler("onContextItemSelected", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnContextItemSelectedEventHandler));
+            AddEventHandler("onCreateOptionsMenu", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnCreateOptionsMenuEventHandler));
+            AddEventHandler("onCreatePanelMenu", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnCreatePanelMenuEventHandler));
+            AddEventHandler("onCreateThumbnail", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnCreateThumbnailEventHandler));
+            AddEventHandler("onGenericMotionEvent", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnGenericMotionEventEventHandler));
+            AddEventHandler("onKeyDown", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnKeyDownEventHandler));
+            AddEventHandler("onKeyLongPress", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnKeyLongPressEventHandler));
+            AddEventHandler("onKeyMultiple", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnKeyMultipleEventHandler));
+            AddEventHandler("onKeyShortcut", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnKeyShortcutEventHandler));
+            AddEventHandler("onKeyUp", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnKeyUpEventHandler));
+            AddEventHandler("onMenuItemSelected", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnMenuItemSelectedEventHandler));
+            AddEventHandler("onMenuOpened", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnMenuOpenedEventHandler));
+            AddEventHandler("onNavigateUp", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnNavigateUpEventHandler));
+            AddEventHandler("onNavigateUpFromChild", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnNavigateUpFromChildEventHandler));
+            AddEventHandler("onOptionsItemSelected", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnOptionsItemSelectedEventHandler));
+            AddEventHandler("onPictureInPictureRequested", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnPictureInPictureRequestedEventHandler));
+            AddEventHandler("onPrepareOptionsMenu", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnPrepareOptionsMenuEventHandler));
+            AddEventHandler("onPreparePanel", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnPreparePanelEventHandler));
+            AddEventHandler("onSearchRequested", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnSearchRequestedEventHandler));
+            AddEventHandler("onSearchRequested1", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnSearchRequested1EventHandler));
+            AddEventHandler("onTouchEvent", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnTouchEventEventHandler));
+            AddEventHandler("onTrackballEvent", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnTrackballEventEventHandler));
+            AddEventHandler("shouldDockBigOverlays", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(ShouldDockBigOverlaysEventHandler));
+            AddEventHandler("shouldShowRequestPermissionRationale", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(ShouldShowRequestPermissionRationaleEventHandler));
+            AddEventHandler("shouldShowRequestPermissionRationale1", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(ShouldShowRequestPermissionRationale1EventHandler));
+            AddEventHandler("shouldUpRecreateTask", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(ShouldUpRecreateTaskEventHandler));
+            AddEventHandler("showAssist", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(ShowAssistEventHandler));
+            AddEventHandler("bindIsolatedService", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(BindIsolatedServiceEventHandler));
+            AddEventHandler("onPointerCaptureChanged", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnPointerCaptureChangedEventHandler));
+            AddEventHandler("getApplication", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetApplicationEventHandler));
+            AddEventHandler("getColorStateList", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetColorStateListEventHandler));
+            AddEventHandler("obtainStyledAttributes", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(ObtainStyledAttributesEventHandler));
+            AddEventHandler("obtainStyledAttributes2", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(ObtainStyledAttributes2EventHandler));
+            AddEventHandler("obtainStyledAttributes2_2", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(ObtainStyledAttributes2_2EventHandler));
+            AddEventHandler("obtainStyledAttributes1_3", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(ObtainStyledAttributes1_3EventHandler));
+            AddEventHandler("getMediaController", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetMediaControllerEventHandler));
+            AddEventHandler("requestWindowFeature", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(RequestWindowFeatureEventHandler));
+            AddEventHandler("showDialog", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(ShowDialogEventHandler));
+            AddEventHandler("getTitleColor", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetTitleColorEventHandler));
+            AddEventHandler("getVolumeControlStream", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetVolumeControlStreamEventHandler));
+            AddEventHandler("getColor", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetColorEventHandler));
+            AddEventHandler("dismissDialog", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(DismissDialogEventHandler));
+            AddEventHandler("dismissKeyboardShortcutsHelper", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(DismissKeyboardShortcutsHelperEventHandler));
+            AddEventHandler("removeDialog", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(RemoveDialogEventHandler));
+            AddEventHandler("requestPermissions", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(RequestPermissionsEventHandler));
+            AddEventHandler("requestPermissions2", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(RequestPermissions2EventHandler));
+            AddEventHandler("requestShowKeyboardShortcuts", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(RequestShowKeyboardShortcutsEventHandler));
+            AddEventHandler("setDefaultKeyMode", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetDefaultKeyModeEventHandler));
+            AddEventHandler("setFeatureDrawableResource", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetFeatureDrawableResourceEventHandler));
+            AddEventHandler("setMediaController", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetMediaControllerEventHandler));
+            AddEventHandler("setProgress", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetProgressEventHandler));
+            AddEventHandler("setProgressBarIndeterminate", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetProgressBarIndeterminateEventHandler));
+            AddEventHandler("setProgressBarIndeterminateVisibility", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetProgressBarIndeterminateVisibilityEventHandler));
+            AddEventHandler("setProgressBarVisibility", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetProgressBarVisibilityEventHandler));
+            AddEventHandler("setSecondaryProgress", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetSecondaryProgressEventHandler));
+            AddEventHandler("setVolumeControlStream", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetVolumeControlStreamEventHandler));
+            AddEventHandler("showDialog1", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(ShowDialog1EventHandler));
+            AddEventHandler("getChangingConfigurations", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetChangingConfigurationsEventHandler));
+            AddEventHandler("getLaunchedFromUid", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetLaunchedFromUidEventHandler));
+            AddEventHandler("getMaxNumPictureInPictureActions", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetMaxNumPictureInPictureActionsEventHandler));
+            AddEventHandler("getRequestedOrientation", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetRequestedOrientationEventHandler));
+            AddEventHandler("onCreateDescription", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnCreateDescriptionEventHandler));
+            AddEventHandler("getLastNonConfigurationInstance", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetLastNonConfigurationInstanceEventHandler));
+            AddEventHandler("onRetainNonConfigurationInstance", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnRetainNonConfigurationInstanceEventHandler));
+            AddEventHandler("getLaunchedFromPackage", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetLaunchedFromPackageEventHandler));
+            AddEventHandler("getLocalClassName", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(GetLocalClassNameEventHandler));
+            AddEventHandler("addContentView", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(AddContentViewEventHandler));
+            AddEventHandler("clearOverrideActivityTransition", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(ClearOverrideActivityTransitionEventHandler));
+            AddEventHandler("closeContextMenu", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(CloseContextMenuEventHandler));
+            AddEventHandler("closeOptionsMenu", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(CloseOptionsMenuEventHandler));
+            AddEventHandler("enterPictureInPictureMode0", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(EnterPictureInPictureMode0EventHandler));
+            AddEventHandler("finishActivityFromChild", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(FinishActivityFromChildEventHandler));
+            AddEventHandler("finishAfterTransition", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(FinishAfterTransitionEventHandler));
+            AddEventHandler("finishAndRemoveTask", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(FinishAndRemoveTaskEventHandler));
+            AddEventHandler("finishFromChild", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(FinishFromChildEventHandler));
+            AddEventHandler("invalidateOptionsMenu", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(InvalidateOptionsMenuEventHandler));
+            AddEventHandler("onActionModeFinished", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnActionModeFinishedEventHandler));
+            AddEventHandler("onActionModeStarted", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnActionModeStartedEventHandler));
+            AddEventHandler("onActivityReenter", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnActivityReenterEventHandler));
+            AddEventHandler("onActivityResult", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnActivityResultEventHandler));
+            AddEventHandler("onAttachedToWindow", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnAttachedToWindowEventHandler));
+            AddEventHandler("onAttachFragment", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnAttachFragmentEventHandler));
+            AddEventHandler("onBackPressed", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnBackPressedEventHandler));
+            AddEventHandler("onContentChanged", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnContentChangedEventHandler));
+            AddEventHandler("onContextMenuClosed", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnContextMenuClosedEventHandler));
+            AddEventHandler("onCreate", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnCreateEventHandler));
+            AddEventHandler("onCreateContextMenu", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnCreateContextMenuEventHandler));
+            AddEventHandler("onCreateNavigateUpTaskStack", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnCreateNavigateUpTaskStackEventHandler));
+            AddEventHandler("onDetachedFromWindow", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnDetachedFromWindowEventHandler));
+            AddEventHandler("onEnterAnimationComplete", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnEnterAnimationCompleteEventHandler));
+            AddEventHandler("onGetDirectActions", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnGetDirectActionsEventHandler));
+            AddEventHandler("onLocalVoiceInteractionStarted", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnLocalVoiceInteractionStartedEventHandler));
+            AddEventHandler("onLocalVoiceInteractionStopped", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnLocalVoiceInteractionStoppedEventHandler));
+            AddEventHandler("onMultiWindowModeChanged", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnMultiWindowModeChangedEventHandler));
+            AddEventHandler("onMultiWindowModeChanged1", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnMultiWindowModeChanged1EventHandler));
+            AddEventHandler("onNewIntent", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnNewIntentEventHandler));
+            AddEventHandler("onOptionsMenuClosed", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnOptionsMenuClosedEventHandler));
+            AddEventHandler("onPanelClosed", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnPanelClosedEventHandler));
+            AddEventHandler("onPerformDirectAction", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnPerformDirectActionEventHandler));
+            AddEventHandler("onPictureInPictureModeChanged", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnPictureInPictureModeChangedEventHandler));
+            AddEventHandler("onPictureInPictureModeChanged1", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnPictureInPictureModeChanged1EventHandler));
+            AddEventHandler("onPictureInPictureUiStateChanged", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnPictureInPictureUiStateChangedEventHandler));
+            AddEventHandler("onPostCreate", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnPostCreateEventHandler));
+            AddEventHandler("onPrepareNavigateUpTaskStack", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnPrepareNavigateUpTaskStackEventHandler));
+            AddEventHandler("onProvideAssistContent", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnProvideAssistContentEventHandler));
+            AddEventHandler("onProvideAssistData", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnProvideAssistDataEventHandler));
+            AddEventHandler("onProvideKeyboardShortcuts", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnProvideKeyboardShortcutsEventHandler));
+            AddEventHandler("onRequestPermissionsResult", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnRequestPermissionsResultEventHandler));
+            AddEventHandler("onRequestPermissionsResult3", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnRequestPermissionsResult3EventHandler));
+            AddEventHandler("onRestoreInstanceState", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnRestoreInstanceStateEventHandler));
+            AddEventHandler("onSaveInstanceState", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnSaveInstanceStateEventHandler));
+            AddEventHandler("onStateNotSaved", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnStateNotSavedEventHandler));
+            AddEventHandler("onTopResumedActivityChanged", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnTopResumedActivityChangedEventHandler));
+            AddEventHandler("onTrimMemory", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnTrimMemoryEventHandler));
+            AddEventHandler("onUserInteraction", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnUserInteractionEventHandler));
+            AddEventHandler("onVisibleBehindCanceled", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnVisibleBehindCanceledEventHandler));
+            AddEventHandler("onWindowAttributesChanged", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnWindowAttributesChangedEventHandler));
+            AddEventHandler("openContextMenu", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OpenContextMenuEventHandler));
+            AddEventHandler("openOptionsMenu", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OpenOptionsMenuEventHandler));
+            AddEventHandler("overrideActivityTransition", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OverrideActivityTransitionEventHandler));
+            AddEventHandler("overrideActivityTransition3", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OverrideActivityTransition3EventHandler));
+            AddEventHandler("overridePendingTransition", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OverridePendingTransitionEventHandler));
+            AddEventHandler("overridePendingTransition2", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OverridePendingTransition2EventHandler));
+            AddEventHandler("postponeEnterTransition", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(PostponeEnterTransitionEventHandler));
+            AddEventHandler("registerForContextMenu", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(RegisterForContextMenuEventHandler));
+            AddEventHandler("reportFullyDrawn", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(ReportFullyDrawnEventHandler));
+            AddEventHandler("requestFullscreenMode", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(RequestFullscreenModeEventHandler));
+            AddEventHandler("setActionBar", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetActionBarEventHandler));
+            AddEventHandler("setAllowCrossUidActivitySwitchFromBelow", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetAllowCrossUidActivitySwitchFromBelowEventHandler));
+            AddEventHandler("setContentTransitionManager", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetContentTransitionManagerEventHandler));
+            AddEventHandler("setContentView", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetContentViewEventHandler));
+            AddEventHandler("setContentView1", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetContentView1EventHandler));
+            AddEventHandler("setContentView1_2", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetContentView1_2EventHandler));
+            AddEventHandler("setFinishOnTouchOutside", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetFinishOnTouchOutsideEventHandler));
+            AddEventHandler("setInheritShowWhenLocked", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetInheritShowWhenLockedEventHandler));
+            AddEventHandler("setLocusContext", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetLocusContextEventHandler));
+            AddEventHandler("setRecentsScreenshotEnabled", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetRecentsScreenshotEnabledEventHandler));
+            AddEventHandler("setRequestedOrientation", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetRequestedOrientationEventHandler));
+            AddEventHandler("setShouldDockBigOverlays", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetShouldDockBigOverlaysEventHandler));
+            AddEventHandler("setShowWhenLocked", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetShowWhenLockedEventHandler));
+            AddEventHandler("setTaskDescription", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetTaskDescriptionEventHandler));
+            AddEventHandler("setTitleColor", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetTitleColorEventHandler));
+            AddEventHandler("setVrModeEnabled", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SetVrModeEnabledEventHandler));
+            AddEventHandler("showLockTaskEscapeMessage", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(ShowLockTaskEscapeMessageEventHandler));
+            AddEventHandler("startActivityForResult", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(StartActivityForResultEventHandler));
+            AddEventHandler("startActivityForResult2", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(StartActivityForResult2EventHandler));
+            AddEventHandler("startActivityFromChild", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(StartActivityFromChildEventHandler));
+            AddEventHandler("startActivityFromChild3", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(StartActivityFromChild3EventHandler));
+            AddEventHandler("startActivityFromFragment", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(StartActivityFromFragmentEventHandler));
+            AddEventHandler("startActivityFromFragment3", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(StartActivityFromFragment3EventHandler));
+            AddEventHandler("startIntentSenderForResult", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(StartIntentSenderForResultEventHandler));
+            AddEventHandler("startIntentSenderForResult6", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(StartIntentSenderForResult6EventHandler));
+            AddEventHandler("startIntentSenderFromChild", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(StartIntentSenderFromChildEventHandler));
+            AddEventHandler("startIntentSenderFromChild7", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(StartIntentSenderFromChild7EventHandler));
+            AddEventHandler("startLocalVoiceInteraction", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(StartLocalVoiceInteractionEventHandler));
+            AddEventHandler("startLockTask", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(StartLockTaskEventHandler));
+            AddEventHandler("startManagingCursor", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(StartManagingCursorEventHandler));
+            AddEventHandler("startPostponedEnterTransition", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(StartPostponedEnterTransitionEventHandler));
+            AddEventHandler("stopLocalVoiceInteraction", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(StopLocalVoiceInteractionEventHandler));
+            AddEventHandler("stopLockTask", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(StopLockTaskEventHandler));
+            AddEventHandler("stopManagingCursor", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(StopManagingCursorEventHandler));
+            AddEventHandler("unregisterForContextMenu", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(UnregisterForContextMenuEventHandler));
+            AddEventHandler("onGlobalLayout", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnGlobalLayoutEventHandler));
+            AddEventHandler("onInputQueueCreated", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnInputQueueCreatedEventHandler));
+            AddEventHandler("onInputQueueDestroyed", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(OnInputQueueDestroyedEventHandler));
+            AddEventHandler("surfaceDestroyed", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SurfaceDestroyedEventHandler));
+            AddEventHandler("revokeSelfPermissionOnKill", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(RevokeSelfPermissionOnKillEventHandler));
+            AddEventHandler("sendBroadcastWithMultiplePermissions", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SendBroadcastWithMultiplePermissionsEventHandler));
+            AddEventHandler("sendOrderedBroadcast", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(SendOrderedBroadcastEventHandler));
+            AddEventHandler("applyOverrideConfiguration", new global::System.EventHandler<CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>>>(ApplyOverrideConfigurationEventHandler));
+
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#findViewById(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <typeparam name="T"><see cref="Android.View.View"/></typeparam>
+        /// <returns><typeparamref name="T"/></returns>
+        public T FindViewById<T>(int arg0) where T : Android.View.View
+        {
+            return IExecute<T>("findViewById", arg0);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#getActionBar()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetActionBar"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.App.ActionBar> OnGetActionBar { get; set; } = null;
+        
+        bool hasOverrideGetActionBar = true;
+        void GetActionBarEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetActionBar = true;
+            var methodToExecute = (OnGetActionBar != null) ? OnGetActionBar : GetActionBar;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetActionBar, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getActionBar()"/>
+        /// </summary>
+        /// <returns><see cref="Android.App.ActionBar"/></returns>
+        public virtual Android.App.ActionBar GetActionBar()
+        {
+            hasOverrideGetActionBar = false; return default;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getCaller()"/>
+        /// </summary>
+        /// <returns><see cref="Android.App.ComponentCaller"/></returns>
+        public Android.App.ComponentCaller GetCaller()
+        {
+            return IExecute<Android.App.ComponentCaller>("getCaller");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getCurrentCaller()"/>
+        /// </summary>
+        /// <returns><see cref="Android.App.ComponentCaller"/></returns>
+        public Android.App.ComponentCaller GetCurrentCaller()
+        {
+            return IExecute<Android.App.ComponentCaller>("getCurrentCaller");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getInitialCaller()"/>
+        /// </summary>
+        /// <returns><see cref="Android.App.ComponentCaller"/></returns>
+        public Android.App.ComponentCaller GetInitialCaller()
+        {
+            return IExecute<Android.App.ComponentCaller>("getInitialCaller");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getFragmentManager()"/>
+        /// </summary>
+        /// <returns><see cref="Android.App.FragmentManager"/></returns>
+        [global::System.Obsolete()]
+        public Android.App.FragmentManager GetFragmentManager()
+        {
+            return IExecute<Android.App.FragmentManager>("getFragmentManager");
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#getLoaderManager()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetLoaderManager"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.App.LoaderManager> OnGetLoaderManager { get; set; } = null;
+        
+        bool hasOverrideGetLoaderManager = true;
+        void GetLoaderManagerEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetLoaderManager = true;
+            var methodToExecute = (OnGetLoaderManager != null) ? OnGetLoaderManager : GetLoaderManager;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetLoaderManager, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getLoaderManager()"/>
+        /// </summary>
+        /// <returns><see cref="Android.App.LoaderManager"/></returns>
+        [global::System.Obsolete()]
+        public virtual Android.App.LoaderManager GetLoaderManager()
+        {
+            hasOverrideGetLoaderManager = false; return default;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#createPendingResult(int,android.content.Intent,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="Android.Content.Intent"/></param>
+        /// <param name="arg2"><see cref="int"/></param>
+        /// <returns><see cref="Android.App.PendingIntent"/></returns>
+        public Android.App.PendingIntent CreatePendingResult(int arg0, Android.Content.Intent arg1, int arg2)
+        {
+            return IExecute<Android.App.PendingIntent>("createPendingResult", arg0, arg1, arg2);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#getVoiceInteractor()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetVoiceInteractor"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.App.VoiceInteractor> OnGetVoiceInteractor { get; set; } = null;
+        
+        bool hasOverrideGetVoiceInteractor = true;
+        void GetVoiceInteractorEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetVoiceInteractor = true;
+            var methodToExecute = (OnGetVoiceInteractor != null) ? OnGetVoiceInteractor : GetVoiceInteractor;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetVoiceInteractor, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getVoiceInteractor()"/>
+        /// </summary>
+        /// <returns><see cref="Android.App.VoiceInteractor"/></returns>
+        public virtual Android.App.VoiceInteractor GetVoiceInteractor()
+        {
+            hasOverrideGetVoiceInteractor = false; return default;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getCallingActivity()"/>
+        /// </summary>
+        /// <returns><see cref="Android.Content.ComponentName"/></returns>
+        public Android.Content.ComponentName GetCallingActivity()
+        {
+            return IExecute<Android.Content.ComponentName>("getCallingActivity");
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#getComponentName()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetComponentName"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.Content.ComponentName> OnGetComponentName { get; set; } = null;
+        
+        bool hasOverrideGetComponentName = true;
+        void GetComponentNameEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetComponentName = true;
+            var methodToExecute = (OnGetComponentName != null) ? OnGetComponentName : GetComponentName;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetComponentName, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getComponentName()"/>
+        /// </summary>
+        /// <returns><see cref="Android.Content.ComponentName"/></returns>
+        public virtual Android.Content.ComponentName GetComponentName()
+        {
+            hasOverrideGetComponentName = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/content/ContextWrapper.html#getBaseContext()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetBaseContext"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.Content.Context> OnGetBaseContext { get; set; } = null;
+        
+        bool hasOverrideGetBaseContext = true;
+        void GetBaseContextEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetBaseContext = true;
+            var methodToExecute = (OnGetBaseContext != null) ? OnGetBaseContext : GetBaseContext;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetBaseContext, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/content/ContextWrapper.html#getBaseContext()"/>
+        /// </summary>
+        /// <returns><see cref="Android.Content.Context"/></returns>
+        public virtual Android.Content.Context GetBaseContext()
+        {
+            hasOverrideGetBaseContext = false; return default;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getIntent()"/>
+        /// </summary>
+        /// <returns><see cref="Android.Content.Intent"/></returns>
+        public Android.Content.Intent GetIntent()
+        {
+            return IExecute<Android.Content.Intent>("getIntent");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getParentActivityIntent()"/>
+        /// </summary>
+        /// <returns><see cref="Android.Content.Intent"/></returns>
+        public Android.Content.Intent GetParentActivityIntent()
+        {
+            return IExecute<Android.Content.Intent>("getParentActivityIntent");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getPreferences(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <returns><see cref="Android.Content.SharedPreferences"/></returns>
+        public Android.Content.SharedPreferences GetPreferences(int arg0)
+        {
+            return IExecute<Android.Content.SharedPreferences>("getPreferences", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getReferrer()"/>
+        /// </summary>
+        /// <returns><see cref="Android.Net.Uri"/></returns>
+        public Android.Net.Uri GetReferrer()
+        {
+            return IExecute<Android.Net.Uri>("getReferrer");
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onProvideReferrer()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnProvideReferrer"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.Net.Uri> OnOnProvideReferrer { get; set; } = null;
+        
+        bool hasOverrideOnProvideReferrer = true;
+        void OnProvideReferrerEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnProvideReferrer = true;
+            var methodToExecute = (OnOnProvideReferrer != null) ? OnOnProvideReferrer : OnProvideReferrer;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnProvideReferrer, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onProvideReferrer()"/>
+        /// </summary>
+        /// <returns><see cref="Android.Net.Uri"/></returns>
+        public virtual Android.Net.Uri OnProvideReferrer()
+        {
+            hasOverrideOnProvideReferrer = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#getContentScene()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetContentScene"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.Transition.Scene> OnGetContentScene { get; set; } = null;
+        
+        bool hasOverrideGetContentScene = true;
+        void GetContentSceneEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetContentScene = true;
+            var methodToExecute = (OnGetContentScene != null) ? OnGetContentScene : GetContentScene;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetContentScene, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getContentScene()"/>
+        /// </summary>
+        /// <returns><see cref="Android.Transition.Scene"/></returns>
+        public virtual Android.Transition.Scene GetContentScene()
+        {
+            hasOverrideGetContentScene = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#getContentTransitionManager()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetContentTransitionManager"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.Transition.TransitionManager> OnGetContentTransitionManager { get; set; } = null;
+        
+        bool hasOverrideGetContentTransitionManager = true;
+        void GetContentTransitionManagerEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetContentTransitionManager = true;
+            var methodToExecute = (OnGetContentTransitionManager != null) ? OnGetContentTransitionManager : GetContentTransitionManager;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetContentTransitionManager, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getContentTransitionManager()"/>
+        /// </summary>
+        /// <returns><see cref="Android.Transition.TransitionManager"/></returns>
+        public virtual Android.Transition.TransitionManager GetContentTransitionManager()
+        {
+            hasOverrideGetContentTransitionManager = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onWindowStartingActionMode(android.view.ActionMode.Callback,int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnWindowStartingActionMode"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.View.ActionMode.Callback, int, Android.View.ActionMode> OnOnWindowStartingActionMode { get; set; } = null;
+        
+        bool hasOverrideOnWindowStartingActionMode = true;
+        void OnWindowStartingActionModeEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnWindowStartingActionMode = true;
+            var methodToExecute = (OnOnWindowStartingActionMode != null) ? OnOnWindowStartingActionMode : OnWindowStartingActionMode;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.View.ActionMode.Callback>(0), data.EventData.GetAt<int>(1));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnWindowStartingActionMode, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onWindowStartingActionMode(android.view.ActionMode.Callback,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.ActionMode.Callback"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <returns><see cref="Android.View.ActionMode"/></returns>
+        public virtual Android.View.ActionMode OnWindowStartingActionMode(Android.View.ActionMode.Callback arg0, int arg1)
+        {
+            hasOverrideOnWindowStartingActionMode = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onWindowStartingActionMode(android.view.ActionMode.Callback)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnWindowStartingActionMode1"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.View.ActionMode.Callback, Android.View.ActionMode> OnOnWindowStartingActionMode1 { get; set; } = null;
+        
+        bool hasOverrideOnWindowStartingActionMode1 = true;
+        void OnWindowStartingActionMode1EventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnWindowStartingActionMode1 = true;
+            var methodToExecute = (OnOnWindowStartingActionMode1 != null) ? OnOnWindowStartingActionMode1 : OnWindowStartingActionMode;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.View.ActionMode.Callback>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnWindowStartingActionMode1, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onWindowStartingActionMode(android.view.ActionMode.Callback)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.ActionMode.Callback"/></param>
+        /// <returns><see cref="Android.View.ActionMode"/></returns>
+        public virtual Android.View.ActionMode OnWindowStartingActionMode(Android.View.ActionMode.Callback arg0)
+        {
+            hasOverrideOnWindowStartingActionMode1 = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#startActionMode(android.view.ActionMode.Callback,int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnStartActionMode"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.View.ActionMode.Callback, int, Android.View.ActionMode> OnStartActionMode { get; set; } = null;
+        
+        bool hasOverrideStartActionMode = true;
+        void StartActionModeEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideStartActionMode = true;
+            var methodToExecute = (OnStartActionMode != null) ? OnStartActionMode : StartActionMode;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.View.ActionMode.Callback>(0), data.EventData.GetAt<int>(1));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideStartActionMode, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#startActionMode(android.view.ActionMode.Callback,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.ActionMode.Callback"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <returns><see cref="Android.View.ActionMode"/></returns>
+        public virtual Android.View.ActionMode StartActionMode(Android.View.ActionMode.Callback arg0, int arg1)
+        {
+            hasOverrideStartActionMode = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#startActionMode(android.view.ActionMode.Callback)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnStartActionMode1"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.View.ActionMode.Callback, Android.View.ActionMode> OnStartActionMode1 { get; set; } = null;
+        
+        bool hasOverrideStartActionMode1 = true;
+        void StartActionMode1EventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideStartActionMode1 = true;
+            var methodToExecute = (OnStartActionMode1 != null) ? OnStartActionMode1 : StartActionMode;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.View.ActionMode.Callback>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideStartActionMode1, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#startActionMode(android.view.ActionMode.Callback)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.ActionMode.Callback"/></param>
+        /// <returns><see cref="Android.View.ActionMode"/></returns>
+        public virtual Android.View.ActionMode StartActionMode(Android.View.ActionMode.Callback arg0)
+        {
+            hasOverrideStartActionMode1 = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#requestDragAndDropPermissions(android.view.DragEvent)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnRequestDragAndDropPermissions"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.View.DragEvent, Android.View.DragAndDropPermissions> OnRequestDragAndDropPermissions { get; set; } = null;
+        
+        bool hasOverrideRequestDragAndDropPermissions = true;
+        void RequestDragAndDropPermissionsEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideRequestDragAndDropPermissions = true;
+            var methodToExecute = (OnRequestDragAndDropPermissions != null) ? OnRequestDragAndDropPermissions : RequestDragAndDropPermissions;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.View.DragEvent>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideRequestDragAndDropPermissions, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#requestDragAndDropPermissions(android.view.DragEvent)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.DragEvent"/></param>
+        /// <returns><see cref="Android.View.DragAndDropPermissions"/></returns>
+        public virtual Android.View.DragAndDropPermissions RequestDragAndDropPermissions(Android.View.DragEvent arg0)
+        {
+            hasOverrideRequestDragAndDropPermissions = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#getLayoutInflater()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetLayoutInflater"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.View.LayoutInflater> OnGetLayoutInflater { get; set; } = null;
+        
+        bool hasOverrideGetLayoutInflater = true;
+        void GetLayoutInflaterEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetLayoutInflater = true;
+            var methodToExecute = (OnGetLayoutInflater != null) ? OnGetLayoutInflater : GetLayoutInflater;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetLayoutInflater, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getLayoutInflater()"/>
+        /// </summary>
+        /// <returns><see cref="Android.View.LayoutInflater"/></returns>
+        public virtual Android.View.LayoutInflater GetLayoutInflater()
+        {
+            hasOverrideGetLayoutInflater = false; return default;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getMenuInflater()"/>
+        /// </summary>
+        /// <returns><see cref="Android.View.MenuInflater"/></returns>
+        public Android.View.MenuInflater GetMenuInflater()
+        {
+            return IExecute<Android.View.MenuInflater>("getMenuInflater");
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#getCurrentFocus()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetCurrentFocus"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.View.View> OnGetCurrentFocus { get; set; } = null;
+        
+        bool hasOverrideGetCurrentFocus = true;
+        void GetCurrentFocusEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetCurrentFocus = true;
+            var methodToExecute = (OnGetCurrentFocus != null) ? OnGetCurrentFocus : GetCurrentFocus;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetCurrentFocus, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getCurrentFocus()"/>
+        /// </summary>
+        /// <returns><see cref="Android.View.View"/></returns>
+        public virtual Android.View.View GetCurrentFocus()
+        {
+            hasOverrideGetCurrentFocus = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onCreatePanelView(int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnCreatePanelView"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<int, Android.View.View> OnOnCreatePanelView { get; set; } = null;
+        
+        bool hasOverrideOnCreatePanelView = true;
+        void OnCreatePanelViewEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnCreatePanelView = true;
+            var methodToExecute = (OnOnCreatePanelView != null) ? OnOnCreatePanelView : OnCreatePanelView;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<int>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnCreatePanelView, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onCreatePanelView(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <returns><see cref="Android.View.View"/></returns>
+        public virtual Android.View.View OnCreatePanelView(int arg0)
+        {
+            hasOverrideOnCreatePanelView = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onCreateView(android.view.View,java.lang.String,android.content.Context,android.util.AttributeSet)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnCreateView"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.View.View, Java.Lang.String, Android.Content.Context, Android.Util.AttributeSet, Android.View.View> OnOnCreateView { get; set; } = null;
+        
+        bool hasOverrideOnCreateView = true;
+        void OnCreateViewEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnCreateView = true;
+            var methodToExecute = (OnOnCreateView != null) ? OnOnCreateView : OnCreateView;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.View.View>(0), data.EventData.GetAt<Java.Lang.String>(1), data.EventData.GetAt<Android.Content.Context>(2), data.EventData.GetAt<Android.Util.AttributeSet>(3));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnCreateView, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onCreateView(android.view.View,java.lang.String,android.content.Context,android.util.AttributeSet)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.View"/></param>
+        /// <param name="arg1"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg2"><see cref="Android.Content.Context"/></param>
+        /// <param name="arg3"><see cref="Android.Util.AttributeSet"/></param>
+        /// <returns><see cref="Android.View.View"/></returns>
+        public virtual Android.View.View OnCreateView(Android.View.View arg0, Java.Lang.String arg1, Android.Content.Context arg2, Android.Util.AttributeSet arg3)
+        {
+            hasOverrideOnCreateView = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onCreateView(java.lang.String,android.content.Context,android.util.AttributeSet)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnCreateView3"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Java.Lang.String, Android.Content.Context, Android.Util.AttributeSet, Android.View.View> OnOnCreateView3 { get; set; } = null;
+        
+        bool hasOverrideOnCreateView3 = true;
+        void OnCreateView3EventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnCreateView3 = true;
+            var methodToExecute = (OnOnCreateView3 != null) ? OnOnCreateView3 : OnCreateView;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Java.Lang.String>(0), data.EventData.GetAt<Android.Content.Context>(1), data.EventData.GetAt<Android.Util.AttributeSet>(2));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnCreateView3, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onCreateView(java.lang.String,android.content.Context,android.util.AttributeSet)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg1"><see cref="Android.Content.Context"/></param>
+        /// <param name="arg2"><see cref="Android.Util.AttributeSet"/></param>
+        /// <returns><see cref="Android.View.View"/></returns>
+        public virtual Android.View.View OnCreateView(Java.Lang.String arg0, Android.Content.Context arg1, Android.Util.AttributeSet arg2)
+        {
+            hasOverrideOnCreateView3 = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#getWindow()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetWindow"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.View.Window> OnGetWindow { get; set; } = null;
+        
+        bool hasOverrideGetWindow = true;
+        void GetWindowEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetWindow = true;
+            var methodToExecute = (OnGetWindow != null) ? OnGetWindow : GetWindow;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetWindow, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getWindow()"/>
+        /// </summary>
+        /// <returns><see cref="Android.View.Window"/></returns>
+        public virtual Android.View.Window GetWindow()
+        {
+            hasOverrideGetWindow = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#getWindowManager()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetWindowManager"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.View.WindowManager> OnGetWindowManager { get; set; } = null;
+        
+        bool hasOverrideGetWindowManager = true;
+        void GetWindowManagerEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetWindowManager = true;
+            var methodToExecute = (OnGetWindowManager != null) ? OnGetWindowManager : GetWindowManager;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetWindowManager, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getWindowManager()"/>
+        /// </summary>
+        /// <returns><see cref="Android.View.WindowManager"/></returns>
+        public virtual Android.View.WindowManager GetWindowManager()
+        {
+            hasOverrideGetWindowManager = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#getOnBackInvokedDispatcher()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetOnBackInvokedDispatcher"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.Window.OnBackInvokedDispatcher> OnGetOnBackInvokedDispatcher { get; set; } = null;
+        
+        bool hasOverrideGetOnBackInvokedDispatcher = true;
+        void GetOnBackInvokedDispatcherEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetOnBackInvokedDispatcher = true;
+            var methodToExecute = (OnGetOnBackInvokedDispatcher != null) ? OnGetOnBackInvokedDispatcher : GetOnBackInvokedDispatcher;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetOnBackInvokedDispatcher, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getOnBackInvokedDispatcher()"/>
+        /// </summary>
+        /// <returns><see cref="Android.Window.OnBackInvokedDispatcher"/></returns>
+        public virtual Android.Window.OnBackInvokedDispatcher GetOnBackInvokedDispatcher()
+        {
+            hasOverrideGetOnBackInvokedDispatcher = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#dispatchGenericMotionEvent(android.view.MotionEvent)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnDispatchGenericMotionEvent"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.View.MotionEvent, bool> OnDispatchGenericMotionEvent { get; set; } = null;
+        
+        bool hasOverrideDispatchGenericMotionEvent = true;
+        void DispatchGenericMotionEventEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideDispatchGenericMotionEvent = true;
+            var methodToExecute = (OnDispatchGenericMotionEvent != null) ? OnDispatchGenericMotionEvent : DispatchGenericMotionEvent;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.View.MotionEvent>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideDispatchGenericMotionEvent, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#dispatchGenericMotionEvent(android.view.MotionEvent)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.MotionEvent"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool DispatchGenericMotionEvent(Android.View.MotionEvent arg0)
+        {
+            hasOverrideDispatchGenericMotionEvent = false; return default;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#dispatchKeyEvent(android.view.KeyEvent)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.KeyEvent"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public bool DispatchKeyEvent(Android.View.KeyEvent arg0)
+        {
+            return IExecute<bool>("dispatchKeyEvent", arg0);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#dispatchKeyShortcutEvent(android.view.KeyEvent)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnDispatchKeyShortcutEvent"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.View.KeyEvent, bool> OnDispatchKeyShortcutEvent { get; set; } = null;
+        
+        bool hasOverrideDispatchKeyShortcutEvent = true;
+        void DispatchKeyShortcutEventEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideDispatchKeyShortcutEvent = true;
+            var methodToExecute = (OnDispatchKeyShortcutEvent != null) ? OnDispatchKeyShortcutEvent : DispatchKeyShortcutEvent;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.View.KeyEvent>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideDispatchKeyShortcutEvent, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#dispatchKeyShortcutEvent(android.view.KeyEvent)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.KeyEvent"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool DispatchKeyShortcutEvent(Android.View.KeyEvent arg0)
+        {
+            hasOverrideDispatchKeyShortcutEvent = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#dispatchPopulateAccessibilityEvent(android.view.accessibility.AccessibilityEvent)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnDispatchPopulateAccessibilityEvent"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.View.Accessibility.AccessibilityEvent, bool> OnDispatchPopulateAccessibilityEvent { get; set; } = null;
+        
+        bool hasOverrideDispatchPopulateAccessibilityEvent = true;
+        void DispatchPopulateAccessibilityEventEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideDispatchPopulateAccessibilityEvent = true;
+            var methodToExecute = (OnDispatchPopulateAccessibilityEvent != null) ? OnDispatchPopulateAccessibilityEvent : DispatchPopulateAccessibilityEvent;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.View.Accessibility.AccessibilityEvent>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideDispatchPopulateAccessibilityEvent, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#dispatchPopulateAccessibilityEvent(android.view.accessibility.AccessibilityEvent)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.Accessibility.AccessibilityEvent"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool DispatchPopulateAccessibilityEvent(Android.View.Accessibility.AccessibilityEvent arg0)
+        {
+            hasOverrideDispatchPopulateAccessibilityEvent = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#dispatchTouchEvent(android.view.MotionEvent)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnDispatchTouchEvent"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.View.MotionEvent, bool> OnDispatchTouchEvent { get; set; } = null;
+        
+        bool hasOverrideDispatchTouchEvent = true;
+        void DispatchTouchEventEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideDispatchTouchEvent = true;
+            var methodToExecute = (OnDispatchTouchEvent != null) ? OnDispatchTouchEvent : DispatchTouchEvent;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.View.MotionEvent>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideDispatchTouchEvent, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#dispatchTouchEvent(android.view.MotionEvent)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.MotionEvent"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool DispatchTouchEvent(Android.View.MotionEvent arg0)
+        {
+            hasOverrideDispatchTouchEvent = false; return default;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#dispatchTrackballEvent(android.view.MotionEvent)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.MotionEvent"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public bool DispatchTrackballEvent(Android.View.MotionEvent arg0)
+        {
+            return IExecute<bool>("dispatchTrackballEvent", arg0);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#enterPictureInPictureMode(android.app.PictureInPictureParams)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnEnterPictureInPictureMode"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.App.PictureInPictureParams, bool> OnEnterPictureInPictureMode { get; set; } = null;
+        
+        bool hasOverrideEnterPictureInPictureMode = true;
+        void EnterPictureInPictureModeEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideEnterPictureInPictureMode = true;
+            var methodToExecute = (OnEnterPictureInPictureMode != null) ? OnEnterPictureInPictureMode : EnterPictureInPictureMode;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.App.PictureInPictureParams>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideEnterPictureInPictureMode, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#enterPictureInPictureMode(android.app.PictureInPictureParams)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.App.PictureInPictureParams"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool EnterPictureInPictureMode(Android.App.PictureInPictureParams arg0)
+        {
+            hasOverrideEnterPictureInPictureMode = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#hasWindowFocus()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnHasWindowFocus"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<bool> OnHasWindowFocus { get; set; } = null;
+        
+        bool hasOverrideHasWindowFocus = true;
+        void HasWindowFocusEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideHasWindowFocus = true;
+            var methodToExecute = (OnHasWindowFocus != null) ? OnHasWindowFocus : HasWindowFocus;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideHasWindowFocus, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#hasWindowFocus()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool HasWindowFocus()
+        {
+            hasOverrideHasWindowFocus = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#isActivityTransitionRunning()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnIsActivityTransitionRunning"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<bool> OnIsActivityTransitionRunning { get; set; } = null;
+        
+        bool hasOverrideIsActivityTransitionRunning = true;
+        void IsActivityTransitionRunningEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideIsActivityTransitionRunning = true;
+            var methodToExecute = (OnIsActivityTransitionRunning != null) ? OnIsActivityTransitionRunning : IsActivityTransitionRunning;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideIsActivityTransitionRunning, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#isActivityTransitionRunning()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool IsActivityTransitionRunning()
+        {
+            hasOverrideIsActivityTransitionRunning = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#isChangingConfigurations()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnIsChangingConfigurations"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<bool> OnIsChangingConfigurations { get; set; } = null;
+        
+        bool hasOverrideIsChangingConfigurations = true;
+        void IsChangingConfigurationsEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideIsChangingConfigurations = true;
+            var methodToExecute = (OnIsChangingConfigurations != null) ? OnIsChangingConfigurations : IsChangingConfigurations;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideIsChangingConfigurations, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#isChangingConfigurations()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool IsChangingConfigurations()
+        {
+            hasOverrideIsChangingConfigurations = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#isDestroyed()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnIsDestroyed"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<bool> OnIsDestroyed { get; set; } = null;
+        
+        bool hasOverrideIsDestroyed = true;
+        void IsDestroyedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideIsDestroyed = true;
+            var methodToExecute = (OnIsDestroyed != null) ? OnIsDestroyed : IsDestroyed;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideIsDestroyed, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#isDestroyed()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool IsDestroyed()
+        {
+            hasOverrideIsDestroyed = false; return default;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#isFinishing()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public bool IsFinishing()
+        {
+            return IExecute<bool>("isFinishing");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#isImmersive()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public bool IsImmersive()
+        {
+            return IExecute<bool>("isImmersive");
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#isInMultiWindowMode()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnIsInMultiWindowMode"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<bool> OnIsInMultiWindowMode { get; set; } = null;
+        
+        bool hasOverrideIsInMultiWindowMode = true;
+        void IsInMultiWindowModeEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideIsInMultiWindowMode = true;
+            var methodToExecute = (OnIsInMultiWindowMode != null) ? OnIsInMultiWindowMode : IsInMultiWindowMode;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideIsInMultiWindowMode, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#isInMultiWindowMode()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool IsInMultiWindowMode()
+        {
+            hasOverrideIsInMultiWindowMode = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#isInPictureInPictureMode()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnIsInPictureInPictureMode"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<bool> OnIsInPictureInPictureMode { get; set; } = null;
+        
+        bool hasOverrideIsInPictureInPictureMode = true;
+        void IsInPictureInPictureModeEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideIsInPictureInPictureMode = true;
+            var methodToExecute = (OnIsInPictureInPictureMode != null) ? OnIsInPictureInPictureMode : IsInPictureInPictureMode;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideIsInPictureInPictureMode, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#isInPictureInPictureMode()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool IsInPictureInPictureMode()
+        {
+            hasOverrideIsInPictureInPictureMode = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#isLaunchedFromBubble()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnIsLaunchedFromBubble"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<bool> OnIsLaunchedFromBubble { get; set; } = null;
+        
+        bool hasOverrideIsLaunchedFromBubble = true;
+        void IsLaunchedFromBubbleEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideIsLaunchedFromBubble = true;
+            var methodToExecute = (OnIsLaunchedFromBubble != null) ? OnIsLaunchedFromBubble : IsLaunchedFromBubble;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideIsLaunchedFromBubble, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#isLaunchedFromBubble()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool IsLaunchedFromBubble()
+        {
+            hasOverrideIsLaunchedFromBubble = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#isLocalVoiceInteractionSupported()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnIsLocalVoiceInteractionSupported"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<bool> OnIsLocalVoiceInteractionSupported { get; set; } = null;
+        
+        bool hasOverrideIsLocalVoiceInteractionSupported = true;
+        void IsLocalVoiceInteractionSupportedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideIsLocalVoiceInteractionSupported = true;
+            var methodToExecute = (OnIsLocalVoiceInteractionSupported != null) ? OnIsLocalVoiceInteractionSupported : IsLocalVoiceInteractionSupported;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideIsLocalVoiceInteractionSupported, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#isLocalVoiceInteractionSupported()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool IsLocalVoiceInteractionSupported()
+        {
+            hasOverrideIsLocalVoiceInteractionSupported = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#isTaskRoot()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnIsTaskRoot"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<bool> OnIsTaskRoot { get; set; } = null;
+        
+        bool hasOverrideIsTaskRoot = true;
+        void IsTaskRootEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideIsTaskRoot = true;
+            var methodToExecute = (OnIsTaskRoot != null) ? OnIsTaskRoot : IsTaskRoot;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideIsTaskRoot, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#isTaskRoot()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool IsTaskRoot()
+        {
+            hasOverrideIsTaskRoot = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#isVoiceInteraction()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnIsVoiceInteraction"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<bool> OnIsVoiceInteraction { get; set; } = null;
+        
+        bool hasOverrideIsVoiceInteraction = true;
+        void IsVoiceInteractionEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideIsVoiceInteraction = true;
+            var methodToExecute = (OnIsVoiceInteraction != null) ? OnIsVoiceInteraction : IsVoiceInteraction;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideIsVoiceInteraction, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#isVoiceInteraction()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool IsVoiceInteraction()
+        {
+            hasOverrideIsVoiceInteraction = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#isVoiceInteractionRoot()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnIsVoiceInteractionRoot"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<bool> OnIsVoiceInteractionRoot { get; set; } = null;
+        
+        bool hasOverrideIsVoiceInteractionRoot = true;
+        void IsVoiceInteractionRootEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideIsVoiceInteractionRoot = true;
+            var methodToExecute = (OnIsVoiceInteractionRoot != null) ? OnIsVoiceInteractionRoot : IsVoiceInteractionRoot;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideIsVoiceInteractionRoot, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#isVoiceInteractionRoot()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool IsVoiceInteractionRoot()
+        {
+            hasOverrideIsVoiceInteractionRoot = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#moveTaskToBack(boolean)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnMoveTaskToBack"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<bool, bool> OnMoveTaskToBack { get; set; } = null;
+        
+        bool hasOverrideMoveTaskToBack = true;
+        void MoveTaskToBackEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideMoveTaskToBack = true;
+            var methodToExecute = (OnMoveTaskToBack != null) ? OnMoveTaskToBack : MoveTaskToBack;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<bool>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideMoveTaskToBack, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#moveTaskToBack(boolean)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="bool"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool MoveTaskToBack(bool arg0)
+        {
+            hasOverrideMoveTaskToBack = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#navigateUpTo(android.content.Intent)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnNavigateUpTo"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.Content.Intent, bool> OnNavigateUpTo { get; set; } = null;
+        
+        bool hasOverrideNavigateUpTo = true;
+        void NavigateUpToEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideNavigateUpTo = true;
+            var methodToExecute = (OnNavigateUpTo != null) ? OnNavigateUpTo : NavigateUpTo;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.Content.Intent>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideNavigateUpTo, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#navigateUpTo(android.content.Intent)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Content.Intent"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool NavigateUpTo(Android.Content.Intent arg0)
+        {
+            hasOverrideNavigateUpTo = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#navigateUpToFromChild(android.app.Activity,android.content.Intent)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnNavigateUpToFromChild"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.App.Activity, Android.Content.Intent, bool> OnNavigateUpToFromChild { get; set; } = null;
+        
+        bool hasOverrideNavigateUpToFromChild = true;
+        void NavigateUpToFromChildEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideNavigateUpToFromChild = true;
+            var methodToExecute = (OnNavigateUpToFromChild != null) ? OnNavigateUpToFromChild : NavigateUpToFromChild;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.App.Activity>(0), data.EventData.GetAt<Android.Content.Intent>(1));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideNavigateUpToFromChild, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#navigateUpToFromChild(android.app.Activity,android.content.Intent)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.App.Activity"/></param>
+        /// <param name="arg1"><see cref="Android.Content.Intent"/></param>
+        /// <returns><see cref="bool"/></returns>
+        [global::System.Obsolete()]
+        public virtual bool NavigateUpToFromChild(Android.App.Activity arg0, Android.Content.Intent arg1)
+        {
+            hasOverrideNavigateUpToFromChild = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onContextItemSelected(android.view.MenuItem)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnContextItemSelected"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.View.MenuItem, bool> OnOnContextItemSelected { get; set; } = null;
+        
+        bool hasOverrideOnContextItemSelected = true;
+        void OnContextItemSelectedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnContextItemSelected = true;
+            var methodToExecute = (OnOnContextItemSelected != null) ? OnOnContextItemSelected : OnContextItemSelected;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.View.MenuItem>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnContextItemSelected, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onContextItemSelected(android.view.MenuItem)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.MenuItem"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool OnContextItemSelected(Android.View.MenuItem arg0)
+        {
+            hasOverrideOnContextItemSelected = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onCreateOptionsMenu(android.view.Menu)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnCreateOptionsMenu"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.View.Menu, bool> OnOnCreateOptionsMenu { get; set; } = null;
+        
+        bool hasOverrideOnCreateOptionsMenu = true;
+        void OnCreateOptionsMenuEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnCreateOptionsMenu = true;
+            var methodToExecute = (OnOnCreateOptionsMenu != null) ? OnOnCreateOptionsMenu : OnCreateOptionsMenu;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.View.Menu>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnCreateOptionsMenu, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onCreateOptionsMenu(android.view.Menu)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.Menu"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool OnCreateOptionsMenu(Android.View.Menu arg0)
+        {
+            hasOverrideOnCreateOptionsMenu = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onCreatePanelMenu(int,android.view.Menu)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnCreatePanelMenu"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<int, Android.View.Menu, bool> OnOnCreatePanelMenu { get; set; } = null;
+        
+        bool hasOverrideOnCreatePanelMenu = true;
+        void OnCreatePanelMenuEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnCreatePanelMenu = true;
+            var methodToExecute = (OnOnCreatePanelMenu != null) ? OnOnCreatePanelMenu : OnCreatePanelMenu;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<int>(0), data.EventData.GetAt<Android.View.Menu>(1));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnCreatePanelMenu, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onCreatePanelMenu(int,android.view.Menu)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="Android.View.Menu"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool OnCreatePanelMenu(int arg0, Android.View.Menu arg1)
+        {
+            hasOverrideOnCreatePanelMenu = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onCreateThumbnail(android.graphics.Bitmap,android.graphics.Canvas)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnCreateThumbnail"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.Graphics.Bitmap, Android.Graphics.Canvas, bool> OnOnCreateThumbnail { get; set; } = null;
+        
+        bool hasOverrideOnCreateThumbnail = true;
+        void OnCreateThumbnailEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnCreateThumbnail = true;
+            var methodToExecute = (OnOnCreateThumbnail != null) ? OnOnCreateThumbnail : OnCreateThumbnail;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.Graphics.Bitmap>(0), data.EventData.GetAt<Android.Graphics.Canvas>(1));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnCreateThumbnail, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onCreateThumbnail(android.graphics.Bitmap,android.graphics.Canvas)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Graphics.Bitmap"/></param>
+        /// <param name="arg1"><see cref="Android.Graphics.Canvas"/></param>
+        /// <returns><see cref="bool"/></returns>
+        [global::System.Obsolete()]
+        public virtual bool OnCreateThumbnail(Android.Graphics.Bitmap arg0, Android.Graphics.Canvas arg1)
+        {
+            hasOverrideOnCreateThumbnail = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onGenericMotionEvent(android.view.MotionEvent)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnGenericMotionEvent"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.View.MotionEvent, bool> OnOnGenericMotionEvent { get; set; } = null;
+        
+        bool hasOverrideOnGenericMotionEvent = true;
+        void OnGenericMotionEventEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnGenericMotionEvent = true;
+            var methodToExecute = (OnOnGenericMotionEvent != null) ? OnOnGenericMotionEvent : OnGenericMotionEvent;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.View.MotionEvent>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnGenericMotionEvent, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onGenericMotionEvent(android.view.MotionEvent)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.MotionEvent"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool OnGenericMotionEvent(Android.View.MotionEvent arg0)
+        {
+            hasOverrideOnGenericMotionEvent = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onKeyDown(int,android.view.KeyEvent)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnKeyDown"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<int, Android.View.KeyEvent, bool> OnOnKeyDown { get; set; } = null;
+        
+        bool hasOverrideOnKeyDown = true;
+        void OnKeyDownEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnKeyDown = true;
+            var methodToExecute = (OnOnKeyDown != null) ? OnOnKeyDown : OnKeyDown;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<int>(0), data.EventData.GetAt<Android.View.KeyEvent>(1));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnKeyDown, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onKeyDown(int,android.view.KeyEvent)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="Android.View.KeyEvent"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool OnKeyDown(int arg0, Android.View.KeyEvent arg1)
+        {
+            hasOverrideOnKeyDown = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onKeyLongPress(int,android.view.KeyEvent)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnKeyLongPress"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<int, Android.View.KeyEvent, bool> OnOnKeyLongPress { get; set; } = null;
+        
+        bool hasOverrideOnKeyLongPress = true;
+        void OnKeyLongPressEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnKeyLongPress = true;
+            var methodToExecute = (OnOnKeyLongPress != null) ? OnOnKeyLongPress : OnKeyLongPress;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<int>(0), data.EventData.GetAt<Android.View.KeyEvent>(1));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnKeyLongPress, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onKeyLongPress(int,android.view.KeyEvent)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="Android.View.KeyEvent"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool OnKeyLongPress(int arg0, Android.View.KeyEvent arg1)
+        {
+            hasOverrideOnKeyLongPress = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onKeyMultiple(int,int,android.view.KeyEvent)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnKeyMultiple"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<int, int, Android.View.KeyEvent, bool> OnOnKeyMultiple { get; set; } = null;
+        
+        bool hasOverrideOnKeyMultiple = true;
+        void OnKeyMultipleEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnKeyMultiple = true;
+            var methodToExecute = (OnOnKeyMultiple != null) ? OnOnKeyMultiple : OnKeyMultiple;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<int>(0), data.EventData.GetAt<int>(1), data.EventData.GetAt<Android.View.KeyEvent>(2));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnKeyMultiple, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onKeyMultiple(int,int,android.view.KeyEvent)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <param name="arg2"><see cref="Android.View.KeyEvent"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool OnKeyMultiple(int arg0, int arg1, Android.View.KeyEvent arg2)
+        {
+            hasOverrideOnKeyMultiple = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onKeyShortcut(int,android.view.KeyEvent)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnKeyShortcut"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<int, Android.View.KeyEvent, bool> OnOnKeyShortcut { get; set; } = null;
+        
+        bool hasOverrideOnKeyShortcut = true;
+        void OnKeyShortcutEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnKeyShortcut = true;
+            var methodToExecute = (OnOnKeyShortcut != null) ? OnOnKeyShortcut : OnKeyShortcut;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<int>(0), data.EventData.GetAt<Android.View.KeyEvent>(1));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnKeyShortcut, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onKeyShortcut(int,android.view.KeyEvent)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="Android.View.KeyEvent"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool OnKeyShortcut(int arg0, Android.View.KeyEvent arg1)
+        {
+            hasOverrideOnKeyShortcut = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onKeyUp(int,android.view.KeyEvent)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnKeyUp"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<int, Android.View.KeyEvent, bool> OnOnKeyUp { get; set; } = null;
+        
+        bool hasOverrideOnKeyUp = true;
+        void OnKeyUpEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnKeyUp = true;
+            var methodToExecute = (OnOnKeyUp != null) ? OnOnKeyUp : OnKeyUp;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<int>(0), data.EventData.GetAt<Android.View.KeyEvent>(1));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnKeyUp, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onKeyUp(int,android.view.KeyEvent)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="Android.View.KeyEvent"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool OnKeyUp(int arg0, Android.View.KeyEvent arg1)
+        {
+            hasOverrideOnKeyUp = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onMenuItemSelected(int,android.view.MenuItem)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnMenuItemSelected"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<int, Android.View.MenuItem, bool> OnOnMenuItemSelected { get; set; } = null;
+        
+        bool hasOverrideOnMenuItemSelected = true;
+        void OnMenuItemSelectedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnMenuItemSelected = true;
+            var methodToExecute = (OnOnMenuItemSelected != null) ? OnOnMenuItemSelected : OnMenuItemSelected;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<int>(0), data.EventData.GetAt<Android.View.MenuItem>(1));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnMenuItemSelected, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onMenuItemSelected(int,android.view.MenuItem)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="Android.View.MenuItem"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool OnMenuItemSelected(int arg0, Android.View.MenuItem arg1)
+        {
+            hasOverrideOnMenuItemSelected = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onMenuOpened(int,android.view.Menu)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnMenuOpened"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<int, Android.View.Menu, bool> OnOnMenuOpened { get; set; } = null;
+        
+        bool hasOverrideOnMenuOpened = true;
+        void OnMenuOpenedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnMenuOpened = true;
+            var methodToExecute = (OnOnMenuOpened != null) ? OnOnMenuOpened : OnMenuOpened;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<int>(0), data.EventData.GetAt<Android.View.Menu>(1));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnMenuOpened, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onMenuOpened(int,android.view.Menu)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="Android.View.Menu"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool OnMenuOpened(int arg0, Android.View.Menu arg1)
+        {
+            hasOverrideOnMenuOpened = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onNavigateUp()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnNavigateUp"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<bool> OnOnNavigateUp { get; set; } = null;
+        
+        bool hasOverrideOnNavigateUp = true;
+        void OnNavigateUpEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnNavigateUp = true;
+            var methodToExecute = (OnOnNavigateUp != null) ? OnOnNavigateUp : OnNavigateUp;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnNavigateUp, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onNavigateUp()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool OnNavigateUp()
+        {
+            hasOverrideOnNavigateUp = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onNavigateUpFromChild(android.app.Activity)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnNavigateUpFromChild"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.App.Activity, bool> OnOnNavigateUpFromChild { get; set; } = null;
+        
+        bool hasOverrideOnNavigateUpFromChild = true;
+        void OnNavigateUpFromChildEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnNavigateUpFromChild = true;
+            var methodToExecute = (OnOnNavigateUpFromChild != null) ? OnOnNavigateUpFromChild : OnNavigateUpFromChild;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.App.Activity>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnNavigateUpFromChild, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onNavigateUpFromChild(android.app.Activity)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.App.Activity"/></param>
+        /// <returns><see cref="bool"/></returns>
+        [global::System.Obsolete()]
+        public virtual bool OnNavigateUpFromChild(Android.App.Activity arg0)
+        {
+            hasOverrideOnNavigateUpFromChild = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onOptionsItemSelected(android.view.MenuItem)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnOptionsItemSelected"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.View.MenuItem, bool> OnOnOptionsItemSelected { get; set; } = null;
+        
+        bool hasOverrideOnOptionsItemSelected = true;
+        void OnOptionsItemSelectedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnOptionsItemSelected = true;
+            var methodToExecute = (OnOnOptionsItemSelected != null) ? OnOnOptionsItemSelected : OnOptionsItemSelected;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.View.MenuItem>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnOptionsItemSelected, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onOptionsItemSelected(android.view.MenuItem)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.MenuItem"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool OnOptionsItemSelected(Android.View.MenuItem arg0)
+        {
+            hasOverrideOnOptionsItemSelected = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onPictureInPictureRequested()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnPictureInPictureRequested"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<bool> OnOnPictureInPictureRequested { get; set; } = null;
+        
+        bool hasOverrideOnPictureInPictureRequested = true;
+        void OnPictureInPictureRequestedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnPictureInPictureRequested = true;
+            var methodToExecute = (OnOnPictureInPictureRequested != null) ? OnOnPictureInPictureRequested : OnPictureInPictureRequested;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnPictureInPictureRequested, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onPictureInPictureRequested()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool OnPictureInPictureRequested()
+        {
+            hasOverrideOnPictureInPictureRequested = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onPrepareOptionsMenu(android.view.Menu)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnPrepareOptionsMenu"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.View.Menu, bool> OnOnPrepareOptionsMenu { get; set; } = null;
+        
+        bool hasOverrideOnPrepareOptionsMenu = true;
+        void OnPrepareOptionsMenuEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnPrepareOptionsMenu = true;
+            var methodToExecute = (OnOnPrepareOptionsMenu != null) ? OnOnPrepareOptionsMenu : OnPrepareOptionsMenu;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.View.Menu>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnPrepareOptionsMenu, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onPrepareOptionsMenu(android.view.Menu)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.Menu"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool OnPrepareOptionsMenu(Android.View.Menu arg0)
+        {
+            hasOverrideOnPrepareOptionsMenu = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onPreparePanel(int,android.view.View,android.view.Menu)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnPreparePanel"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<int, Android.View.View, Android.View.Menu, bool> OnOnPreparePanel { get; set; } = null;
+        
+        bool hasOverrideOnPreparePanel = true;
+        void OnPreparePanelEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnPreparePanel = true;
+            var methodToExecute = (OnOnPreparePanel != null) ? OnOnPreparePanel : OnPreparePanel;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<int>(0), data.EventData.GetAt<Android.View.View>(1), data.EventData.GetAt<Android.View.Menu>(2));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnPreparePanel, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onPreparePanel(int,android.view.View,android.view.Menu)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="Android.View.View"/></param>
+        /// <param name="arg2"><see cref="Android.View.Menu"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool OnPreparePanel(int arg0, Android.View.View arg1, Android.View.Menu arg2)
+        {
+            hasOverrideOnPreparePanel = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onSearchRequested()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnSearchRequested"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<bool> OnOnSearchRequested { get; set; } = null;
+        
+        bool hasOverrideOnSearchRequested = true;
+        void OnSearchRequestedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnSearchRequested = true;
+            var methodToExecute = (OnOnSearchRequested != null) ? OnOnSearchRequested : OnSearchRequested;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnSearchRequested, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onSearchRequested()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool OnSearchRequested()
+        {
+            hasOverrideOnSearchRequested = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onSearchRequested(android.view.SearchEvent)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnSearchRequested1"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.View.SearchEvent, bool> OnOnSearchRequested1 { get; set; } = null;
+        
+        bool hasOverrideOnSearchRequested1 = true;
+        void OnSearchRequested1EventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnSearchRequested1 = true;
+            var methodToExecute = (OnOnSearchRequested1 != null) ? OnOnSearchRequested1 : OnSearchRequested;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.View.SearchEvent>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnSearchRequested1, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onSearchRequested(android.view.SearchEvent)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.SearchEvent"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool OnSearchRequested(Android.View.SearchEvent arg0)
+        {
+            hasOverrideOnSearchRequested1 = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onTouchEvent(android.view.MotionEvent)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnTouchEvent"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.View.MotionEvent, bool> OnOnTouchEvent { get; set; } = null;
+        
+        bool hasOverrideOnTouchEvent = true;
+        void OnTouchEventEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnTouchEvent = true;
+            var methodToExecute = (OnOnTouchEvent != null) ? OnOnTouchEvent : OnTouchEvent;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.View.MotionEvent>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnTouchEvent, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onTouchEvent(android.view.MotionEvent)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.MotionEvent"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool OnTouchEvent(Android.View.MotionEvent arg0)
+        {
+            hasOverrideOnTouchEvent = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onTrackballEvent(android.view.MotionEvent)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnTrackballEvent"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.View.MotionEvent, bool> OnOnTrackballEvent { get; set; } = null;
+        
+        bool hasOverrideOnTrackballEvent = true;
+        void OnTrackballEventEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnTrackballEvent = true;
+            var methodToExecute = (OnOnTrackballEvent != null) ? OnOnTrackballEvent : OnTrackballEvent;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.View.MotionEvent>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnTrackballEvent, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onTrackballEvent(android.view.MotionEvent)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.MotionEvent"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool OnTrackballEvent(Android.View.MotionEvent arg0)
+        {
+            hasOverrideOnTrackballEvent = false; return default;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#releaseInstance()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public bool ReleaseInstance()
+        {
+            return IExecute<bool>("releaseInstance");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#requestVisibleBehind(boolean)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="bool"/></param>
+        /// <returns><see cref="bool"/></returns>
+        [global::System.Obsolete()]
+        public bool RequestVisibleBehind(bool arg0)
+        {
+            return IExecute<bool>("requestVisibleBehind", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setTranslucent(boolean)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="bool"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public bool SetTranslucent(bool arg0)
+        {
+            return IExecute<bool>("setTranslucent", arg0);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#shouldDockBigOverlays()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnShouldDockBigOverlays"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<bool> OnShouldDockBigOverlays { get; set; } = null;
+        
+        bool hasOverrideShouldDockBigOverlays = true;
+        void ShouldDockBigOverlaysEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideShouldDockBigOverlays = true;
+            var methodToExecute = (OnShouldDockBigOverlays != null) ? OnShouldDockBigOverlays : ShouldDockBigOverlays;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideShouldDockBigOverlays, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#shouldDockBigOverlays()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool ShouldDockBigOverlays()
+        {
+            hasOverrideShouldDockBigOverlays = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#shouldShowRequestPermissionRationale(java.lang.String,int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnShouldShowRequestPermissionRationale"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Java.Lang.String, int, bool> OnShouldShowRequestPermissionRationale { get; set; } = null;
+        
+        bool hasOverrideShouldShowRequestPermissionRationale = true;
+        void ShouldShowRequestPermissionRationaleEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideShouldShowRequestPermissionRationale = true;
+            var methodToExecute = (OnShouldShowRequestPermissionRationale != null) ? OnShouldShowRequestPermissionRationale : ShouldShowRequestPermissionRationale;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Java.Lang.String>(0), data.EventData.GetAt<int>(1));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideShouldShowRequestPermissionRationale, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#shouldShowRequestPermissionRationale(java.lang.String,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool ShouldShowRequestPermissionRationale(Java.Lang.String arg0, int arg1)
+        {
+            hasOverrideShouldShowRequestPermissionRationale = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#shouldShowRequestPermissionRationale(java.lang.String)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnShouldShowRequestPermissionRationale1"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Java.Lang.String, bool> OnShouldShowRequestPermissionRationale1 { get; set; } = null;
+        
+        bool hasOverrideShouldShowRequestPermissionRationale1 = true;
+        void ShouldShowRequestPermissionRationale1EventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideShouldShowRequestPermissionRationale1 = true;
+            var methodToExecute = (OnShouldShowRequestPermissionRationale1 != null) ? OnShouldShowRequestPermissionRationale1 : ShouldShowRequestPermissionRationale;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Java.Lang.String>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideShouldShowRequestPermissionRationale1, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#shouldShowRequestPermissionRationale(java.lang.String)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool ShouldShowRequestPermissionRationale(Java.Lang.String arg0)
+        {
+            hasOverrideShouldShowRequestPermissionRationale1 = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#shouldUpRecreateTask(android.content.Intent)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnShouldUpRecreateTask"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.Content.Intent, bool> OnShouldUpRecreateTask { get; set; } = null;
+        
+        bool hasOverrideShouldUpRecreateTask = true;
+        void ShouldUpRecreateTaskEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideShouldUpRecreateTask = true;
+            var methodToExecute = (OnShouldUpRecreateTask != null) ? OnShouldUpRecreateTask : ShouldUpRecreateTask;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.Content.Intent>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideShouldUpRecreateTask, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#shouldUpRecreateTask(android.content.Intent)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Content.Intent"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool ShouldUpRecreateTask(Android.Content.Intent arg0)
+        {
+            hasOverrideShouldUpRecreateTask = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#showAssist(android.os.Bundle)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnShowAssist"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.Os.Bundle, bool> OnShowAssist { get; set; } = null;
+        
+        bool hasOverrideShowAssist = true;
+        void ShowAssistEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideShowAssist = true;
+            var methodToExecute = (OnShowAssist != null) ? OnShowAssist : ShowAssist;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.Os.Bundle>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideShowAssist, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#showAssist(android.os.Bundle)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Os.Bundle"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool ShowAssist(Android.Os.Bundle arg0)
+        {
+            hasOverrideShowAssist = false; return default;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#startActivityIfNeeded(android.content.Intent,int,android.os.Bundle)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Content.Intent"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <param name="arg2"><see cref="Android.Os.Bundle"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public bool StartActivityIfNeeded(Android.Content.Intent arg0, int arg1, Android.Os.Bundle arg2)
+        {
+            return IExecute<bool>("startActivityIfNeeded", arg0, arg1, arg2);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#startActivityIfNeeded(android.content.Intent,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Content.Intent"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public bool StartActivityIfNeeded(Android.Content.Intent arg0, int arg1)
+        {
+            return IExecute<bool>("startActivityIfNeeded", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#startNextMatchingActivity(android.content.Intent,android.os.Bundle)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Content.Intent"/></param>
+        /// <param name="arg1"><see cref="Android.Os.Bundle"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public bool StartNextMatchingActivity(Android.Content.Intent arg0, Android.Os.Bundle arg1)
+        {
+            return IExecute<bool>("startNextMatchingActivity", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#startNextMatchingActivity(android.content.Intent)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Content.Intent"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public bool StartNextMatchingActivity(Android.Content.Intent arg0)
+        {
+            return IExecute<bool>("startNextMatchingActivity", arg0);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/content/Context.html#bindIsolatedService(android.content.Intent,android.content.Context.BindServiceFlags,java.lang.String,java.util.concurrent.Executor,android.content.ServiceConnection)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnBindIsolatedService"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.Content.Intent, Android.Content.Context.BindServiceFlags, Java.Lang.String, Java.Util.Concurrent.Executor, Android.Content.ServiceConnection, bool> OnBindIsolatedService { get; set; } = null;
+        
+        bool hasOverrideBindIsolatedService = true;
+        void BindIsolatedServiceEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideBindIsolatedService = true;
+            var methodToExecute = (OnBindIsolatedService != null) ? OnBindIsolatedService : BindIsolatedService;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.Content.Intent>(0), data.EventData.GetAt<Android.Content.Context.BindServiceFlags>(1), data.EventData.GetAt<Java.Lang.String>(2), data.EventData.GetAt<Java.Util.Concurrent.Executor>(3), data.EventData.GetAt<Android.Content.ServiceConnection>(4));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideBindIsolatedService, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/content/Context.html#bindIsolatedService(android.content.Intent,android.content.Context.BindServiceFlags,java.lang.String,java.util.concurrent.Executor,android.content.ServiceConnection)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Content.Intent"/></param>
+        /// <param name="arg1"><see cref="Android.Content.Context.BindServiceFlags"/></param>
+        /// <param name="arg2"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg3"><see cref="Java.Util.Concurrent.Executor"/></param>
+        /// <param name="arg4"><see cref="Android.Content.ServiceConnection"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool BindIsolatedService(Android.Content.Intent arg0, Android.Content.Context.BindServiceFlags arg1, Java.Lang.String arg2, Java.Util.Concurrent.Executor arg3, Android.Content.ServiceConnection arg4)
+        {
+            hasOverrideBindIsolatedService = false; return default;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/view/SurfaceHolder.Callback2.html#surfaceRedrawNeededAsync(android.view.SurfaceHolder,java.lang.Runnable)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.SurfaceHolder"/></param>
+        /// <param name="arg1"><see cref="Java.Lang.Runnable"/></param>
+        public void SurfaceRedrawNeededAsync(Android.View.SurfaceHolder arg0, Java.Lang.Runnable arg1)
+        {
+            IExecute("surfaceRedrawNeededAsync", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/view/Window.Callback.html#onPointerCaptureChanged(boolean)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="bool"/></param>
+        /// <remarks>The method invokes the default implementation in the JVM interface</remarks>
+        public void OnPointerCaptureChangedDefault(bool arg0)
+        {
+            IExecute("onPointerCaptureChangedDefault", arg0);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/view/Window.Callback.html#onPointerCaptureChanged(boolean)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnPointerCaptureChanged"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<bool> OnOnPointerCaptureChanged { get; set; } = null;
+        
+        bool hasOverrideOnPointerCaptureChanged = true;
+        void OnPointerCaptureChangedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnPointerCaptureChanged = true;
+            var methodToExecute = (OnOnPointerCaptureChanged != null) ? OnOnPointerCaptureChanged : OnPointerCaptureChanged;
+            methodToExecute.Invoke(data.EventData.GetAt<bool>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnPointerCaptureChanged;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/view/Window.Callback.html#onPointerCaptureChanged(boolean)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="bool"/></param>
+        /// <remarks>The method invokes the default implementation in the JVM interface using <see cref="OnPointerCaptureChangedDefault"/>; override the method to implement a different behavior</remarks>
+        public virtual void OnPointerCaptureChanged(bool arg0)
+        {
+            hasOverrideOnPointerCaptureChanged = false;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#requireViewById(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <typeparam name="T"><see cref="Android.View.View"/></typeparam>
+        /// <returns><typeparamref name="T"/></returns>
+        public T RequireViewById<T>(int arg0) where T : Android.View.View
+        {
+            return IExecute<T>("requireViewById", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/content/Context.html#getSystemService(java.lang.Class)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.Class"/></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns><typeparamref name="T"/></returns>
+        public T GetSystemService<T>(Java.Lang.Class arg0)
+        {
+            return IExecute<T>("getSystemService", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getParent()"/>
+        /// </summary>
+        /// <returns><see cref="Android.App.Activity"/></returns>
+        [global::System.Obsolete()]
+        public Android.App.Activity GetParent()
+        {
+            return IExecute<Android.App.Activity>("getParent");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getParent()"/>
+        /// </summary>
+        /// <returns><see cref="Android.App.Activity"/></returns>
+        [global::System.Obsolete()]
+        public Android.App.Activity GetParentDirect()
+        {
+            return IExecute<Android.App.ActivityDirect, Android.App.Activity>("getParent");
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#getApplication()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetApplication"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.App.Application> OnGetApplication { get; set; } = null;
+        
+        bool hasOverrideGetApplication = true;
+        void GetApplicationEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetApplication = true;
+            var methodToExecute = (OnGetApplication != null) ? OnGetApplication : GetApplication;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetApplication, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getApplication()"/>
+        /// </summary>
+        /// <returns><see cref="Android.App.Application"/></returns>
+        public virtual Android.App.Application GetApplication()
+        {
+            hasOverrideGetApplication = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/content/Context.html#getColorStateList(int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetColorStateList"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<int, Android.Content.Res.ColorStateList> OnGetColorStateList { get; set; } = null;
+        
+        bool hasOverrideGetColorStateList = true;
+        void GetColorStateListEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetColorStateList = true;
+            var methodToExecute = (OnGetColorStateList != null) ? OnGetColorStateList : GetColorStateList;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<int>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetColorStateList, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/content/Context.html#getColorStateList(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <returns><see cref="Android.Content.Res.ColorStateList"/></returns>
+        public virtual Android.Content.Res.ColorStateList GetColorStateList(int arg0)
+        {
+            hasOverrideGetColorStateList = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/content/Context.html#obtainStyledAttributes(android.util.AttributeSet,int[],int,int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnObtainStyledAttributes"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.Util.AttributeSet, int[], int, int, Android.Content.Res.TypedArray> OnObtainStyledAttributes { get; set; } = null;
+        
+        bool hasOverrideObtainStyledAttributes = true;
+        void ObtainStyledAttributesEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideObtainStyledAttributes = true;
+            var methodToExecute = (OnObtainStyledAttributes != null) ? OnObtainStyledAttributes : ObtainStyledAttributes;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.Util.AttributeSet>(0), data.EventData.GetAt<int[]>(1), data.EventData.GetAt<int>(2), data.EventData.GetAt<int>(3));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideObtainStyledAttributes, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/content/Context.html#obtainStyledAttributes(android.util.AttributeSet,int[],int,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Util.AttributeSet"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <param name="arg2"><see cref="int"/></param>
+        /// <param name="arg3"><see cref="int"/></param>
+        /// <returns><see cref="Android.Content.Res.TypedArray"/></returns>
+        public virtual Android.Content.Res.TypedArray ObtainStyledAttributes(Android.Util.AttributeSet arg0, int[] arg1, int arg2, int arg3)
+        {
+            hasOverrideObtainStyledAttributes = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/content/Context.html#obtainStyledAttributes(android.util.AttributeSet,int[])"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnObtainStyledAttributes2"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.Util.AttributeSet, int[], Android.Content.Res.TypedArray> OnObtainStyledAttributes2 { get; set; } = null;
+        
+        bool hasOverrideObtainStyledAttributes2 = true;
+        void ObtainStyledAttributes2EventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideObtainStyledAttributes2 = true;
+            var methodToExecute = (OnObtainStyledAttributes2 != null) ? OnObtainStyledAttributes2 : ObtainStyledAttributes;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<Android.Util.AttributeSet>(0), data.EventData.GetAt<int[]>(1));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideObtainStyledAttributes2, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/content/Context.html#obtainStyledAttributes(android.util.AttributeSet,int[])"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Util.AttributeSet"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <returns><see cref="Android.Content.Res.TypedArray"/></returns>
+        public virtual Android.Content.Res.TypedArray ObtainStyledAttributes(Android.Util.AttributeSet arg0, int[] arg1)
+        {
+            hasOverrideObtainStyledAttributes2 = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/content/Context.html#obtainStyledAttributes(int,int[])"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnObtainStyledAttributes2_2"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<int, int[], Android.Content.Res.TypedArray> OnObtainStyledAttributes2_2 { get; set; } = null;
+        
+        bool hasOverrideObtainStyledAttributes2_2 = true;
+        void ObtainStyledAttributes2_2EventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideObtainStyledAttributes2_2 = true;
+            var methodToExecute = (OnObtainStyledAttributes2_2 != null) ? OnObtainStyledAttributes2_2 : ObtainStyledAttributes;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<int>(0), data.EventData.GetAt<int[]>(1));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideObtainStyledAttributes2_2, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/content/Context.html#obtainStyledAttributes(int,int[])"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <returns><see cref="Android.Content.Res.TypedArray"/></returns>
+        /// <exception cref="Android.Content.Res.Resources.NotFoundException"/>
+        public virtual Android.Content.Res.TypedArray ObtainStyledAttributes(int arg0, int[] arg1)
+        {
+            hasOverrideObtainStyledAttributes2_2 = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/content/Context.html#obtainStyledAttributes(int[])"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnObtainStyledAttributes1_3"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<int[], Android.Content.Res.TypedArray> OnObtainStyledAttributes1_3 { get; set; } = null;
+        
+        bool hasOverrideObtainStyledAttributes1_3 = true;
+        void ObtainStyledAttributes1_3EventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideObtainStyledAttributes1_3 = true;
+            var methodToExecute = (OnObtainStyledAttributes1_3 != null) ? OnObtainStyledAttributes1_3 : ObtainStyledAttributes;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<int[]>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideObtainStyledAttributes1_3, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/content/Context.html#obtainStyledAttributes(int[])"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <returns><see cref="Android.Content.Res.TypedArray"/></returns>
+        public virtual Android.Content.Res.TypedArray ObtainStyledAttributes(int[] arg0)
+        {
+            hasOverrideObtainStyledAttributes1_3 = false; return default;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#managedQuery(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Net.Uri"/></param>
+        /// <param name="arg1"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg2"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg3"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg4"><see cref="Java.Lang.String"/></param>
+        /// <returns><see cref="Android.Database.Cursor"/></returns>
+        [global::System.Obsolete()]
+        public Android.Database.Cursor ManagedQuery(Android.Net.Uri arg0, Java.Lang.String[] arg1, Java.Lang.String arg2, Java.Lang.String[] arg3, Java.Lang.String arg4)
+        {
+            return IExecute<Android.Database.Cursor>("managedQuery", arg0, arg1, arg2, arg3, arg4);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/content/Context.html#getDrawable(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <returns><see cref="Android.Graphics.Drawable.Drawable"/></returns>
+        public Android.Graphics.Drawable.Drawable GetDrawable(int arg0)
+        {
+            return IExecute<Android.Graphics.Drawable.Drawable>("getDrawable", arg0);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#getMediaController()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetMediaController"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Android.Media.Session.MediaController> OnGetMediaController { get; set; } = null;
+        
+        bool hasOverrideGetMediaController = true;
+        void GetMediaControllerEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetMediaController = true;
+            var methodToExecute = (OnGetMediaController != null) ? OnGetMediaController : GetMediaController;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetMediaController, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getMediaController()"/>
+        /// </summary>
+        /// <returns><see cref="Android.Media.Session.MediaController"/></returns>
+        public virtual Android.Media.Session.MediaController GetMediaController()
+        {
+            hasOverrideGetMediaController = false; return default;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getSearchEvent()"/>
+        /// </summary>
+        /// <returns><see cref="Android.View.SearchEvent"/></returns>
+        public Android.View.SearchEvent GetSearchEvent()
+        {
+            return IExecute<Android.View.SearchEvent>("getSearchEvent");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getSplashScreen()"/>
+        /// </summary>
+        /// <returns><see cref="Android.Window.SplashScreen"/></returns>
+        public Android.Window.SplashScreen GetSplashScreen()
+        {
+            return IExecute<Android.Window.SplashScreen>("getSplashScreen");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#isChild()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        [global::System.Obsolete()]
+        public bool IsChild()
+        {
+            return IExecute<bool>("isChild");
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#requestWindowFeature(int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnRequestWindowFeature"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<int, bool> OnRequestWindowFeature { get; set; } = null;
+        
+        bool hasOverrideRequestWindowFeature = true;
+        void RequestWindowFeatureEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideRequestWindowFeature = true;
+            var methodToExecute = (OnRequestWindowFeature != null) ? OnRequestWindowFeature : RequestWindowFeature;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<int>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideRequestWindowFeature, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#requestWindowFeature(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public virtual bool RequestWindowFeature(int arg0)
+        {
+            hasOverrideRequestWindowFeature = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#showDialog(int,android.os.Bundle)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnShowDialog"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<int, Android.Os.Bundle, bool> OnShowDialog { get; set; } = null;
+        
+        bool hasOverrideShowDialog = true;
+        void ShowDialogEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideShowDialog = true;
+            var methodToExecute = (OnShowDialog != null) ? OnShowDialog : ShowDialog;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<int>(0), data.EventData.GetAt<Android.Os.Bundle>(1));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideShowDialog, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#showDialog(int,android.os.Bundle)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="Android.Os.Bundle"/></param>
+        /// <returns><see cref="bool"/></returns>
+        [global::System.Obsolete()]
+        public virtual bool ShowDialog(int arg0, Android.Os.Bundle arg1)
+        {
+            hasOverrideShowDialog = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#getTitleColor()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetTitleColor"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<int> OnGetTitleColor { get; set; } = null;
+        
+        bool hasOverrideGetTitleColor = true;
+        void GetTitleColorEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetTitleColor = true;
+            var methodToExecute = (OnGetTitleColor != null) ? OnGetTitleColor : GetTitleColor;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetTitleColor, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getTitleColor()"/>
+        /// </summary>
+        /// <returns><see cref="int"/></returns>
+        public virtual int GetTitleColor()
+        {
+            hasOverrideGetTitleColor = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#getVolumeControlStream()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetVolumeControlStream"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<int> OnGetVolumeControlStream { get; set; } = null;
+        
+        bool hasOverrideGetVolumeControlStream = true;
+        void GetVolumeControlStreamEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetVolumeControlStream = true;
+            var methodToExecute = (OnGetVolumeControlStream != null) ? OnGetVolumeControlStream : GetVolumeControlStream;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetVolumeControlStream, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getVolumeControlStream()"/>
+        /// </summary>
+        /// <returns><see cref="int"/></returns>
+        public virtual int GetVolumeControlStream()
+        {
+            hasOverrideGetVolumeControlStream = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/content/Context.html#getColor(int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetColor"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<int, int> OnGetColor { get; set; } = null;
+        
+        bool hasOverrideGetColor = true;
+        void GetColorEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetColor = true;
+            var methodToExecute = (OnGetColor != null) ? OnGetColor : GetColor;
+            var executionResult = methodToExecute.Invoke(data.EventData.GetAt<int>(0));
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetColor, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/content/Context.html#getColor(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <returns><see cref="int"/></returns>
+        public virtual int GetColor(int arg0)
+        {
+            hasOverrideGetColor = false; return default;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getTitle()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Lang.CharSequence"/></returns>
+        public Java.Lang.CharSequence GetTitle()
+        {
+            return IExecute<Java.Lang.CharSequence>("getTitle");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/content/Context.html#getText(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <returns><see cref="Java.Lang.CharSequence"/></returns>
+        public Java.Lang.CharSequence GetText(int arg0)
+        {
+            return IExecute<Java.Lang.CharSequence>("getText", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/content/Context.html#getString(int,java.lang.Object[])"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="object"/></param>
+        /// <returns><see cref="Java.Lang.String"/></returns>
+        public Java.Lang.String GetString(int arg0, params object[] arg1)
+        {
+            if (arg1.Length == 0) return IExecute<Java.Lang.String>("getString", arg0); else return IExecute<Java.Lang.String>("getString", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/content/Context.html#getString(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <returns><see cref="Java.Lang.String"/></returns>
+        public Java.Lang.String GetString(int arg0)
+        {
+            return IExecute<Java.Lang.String>("getString", arg0);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#dismissDialog(int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnDismissDialog"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<int> OnDismissDialog { get; set; } = null;
+        
+        bool hasOverrideDismissDialog = true;
+        void DismissDialogEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideDismissDialog = true;
+            var methodToExecute = (OnDismissDialog != null) ? OnDismissDialog : DismissDialog;
+            methodToExecute.Invoke(data.EventData.GetAt<int>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideDismissDialog;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#dismissDialog(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        [global::System.Obsolete()]
+        public virtual void DismissDialog(int arg0)
+        {
+            hasOverrideDismissDialog = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#dismissKeyboardShortcutsHelper()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnDismissKeyboardShortcutsHelper"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnDismissKeyboardShortcutsHelper { get; set; } = null;
+        
+        bool hasOverrideDismissKeyboardShortcutsHelper = true;
+        void DismissKeyboardShortcutsHelperEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideDismissKeyboardShortcutsHelper = true;
+            var methodToExecute = (OnDismissKeyboardShortcutsHelper != null) ? OnDismissKeyboardShortcutsHelper : DismissKeyboardShortcutsHelper;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideDismissKeyboardShortcutsHelper;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#dismissKeyboardShortcutsHelper()"/>
+        /// </summary>
+        public virtual void DismissKeyboardShortcutsHelper()
+        {
+            hasOverrideDismissKeyboardShortcutsHelper = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#removeDialog(int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnRemoveDialog"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<int> OnRemoveDialog { get; set; } = null;
+        
+        bool hasOverrideRemoveDialog = true;
+        void RemoveDialogEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideRemoveDialog = true;
+            var methodToExecute = (OnRemoveDialog != null) ? OnRemoveDialog : RemoveDialog;
+            methodToExecute.Invoke(data.EventData.GetAt<int>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideRemoveDialog;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#removeDialog(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        [global::System.Obsolete()]
+        public virtual void RemoveDialog(int arg0)
+        {
+            hasOverrideRemoveDialog = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#requestPermissions(java.lang.String[],int,int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnRequestPermissions"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Java.Lang.String[], int, int> OnRequestPermissions { get; set; } = null;
+        
+        bool hasOverrideRequestPermissions = true;
+        void RequestPermissionsEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideRequestPermissions = true;
+            var methodToExecute = (OnRequestPermissions != null) ? OnRequestPermissions : RequestPermissions;
+            methodToExecute.Invoke(data.EventData.GetAt<Java.Lang.String[]>(0), data.EventData.GetAt<int>(1), data.EventData.GetAt<int>(2));
+            data.EventData.TypedEventData.HasOverride = hasOverrideRequestPermissions;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#requestPermissions(java.lang.String[],int,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <param name="arg2"><see cref="int"/></param>
+        public virtual void RequestPermissions(Java.Lang.String[] arg0, int arg1, int arg2)
+        {
+            hasOverrideRequestPermissions = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#requestPermissions(java.lang.String[],int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnRequestPermissions2"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Java.Lang.String[], int> OnRequestPermissions2 { get; set; } = null;
+        
+        bool hasOverrideRequestPermissions2 = true;
+        void RequestPermissions2EventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideRequestPermissions2 = true;
+            var methodToExecute = (OnRequestPermissions2 != null) ? OnRequestPermissions2 : RequestPermissions;
+            methodToExecute.Invoke(data.EventData.GetAt<Java.Lang.String[]>(0), data.EventData.GetAt<int>(1));
+            data.EventData.TypedEventData.HasOverride = hasOverrideRequestPermissions2;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#requestPermissions(java.lang.String[],int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        public virtual void RequestPermissions(Java.Lang.String[] arg0, int arg1)
+        {
+            hasOverrideRequestPermissions2 = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#requestShowKeyboardShortcuts()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnRequestShowKeyboardShortcuts"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnRequestShowKeyboardShortcuts { get; set; } = null;
+        
+        bool hasOverrideRequestShowKeyboardShortcuts = true;
+        void RequestShowKeyboardShortcutsEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideRequestShowKeyboardShortcuts = true;
+            var methodToExecute = (OnRequestShowKeyboardShortcuts != null) ? OnRequestShowKeyboardShortcuts : RequestShowKeyboardShortcuts;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideRequestShowKeyboardShortcuts;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#requestShowKeyboardShortcuts()"/>
+        /// </summary>
+        public virtual void RequestShowKeyboardShortcuts()
+        {
+            hasOverrideRequestShowKeyboardShortcuts = false;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#runOnUiThread(java.lang.Runnable)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.Runnable"/></param>
+        public void RunOnUiThread(Java.Lang.Runnable arg0)
+        {
+            IExecute("runOnUiThread", arg0);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setDefaultKeyMode(int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetDefaultKeyMode"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<int> OnSetDefaultKeyMode { get; set; } = null;
+        
+        bool hasOverrideSetDefaultKeyMode = true;
+        void SetDefaultKeyModeEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetDefaultKeyMode = true;
+            var methodToExecute = (OnSetDefaultKeyMode != null) ? OnSetDefaultKeyMode : SetDefaultKeyMode;
+            methodToExecute.Invoke(data.EventData.GetAt<int>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetDefaultKeyMode;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setDefaultKeyMode(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        public virtual void SetDefaultKeyMode(int arg0)
+        {
+            hasOverrideSetDefaultKeyMode = false;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setFeatureDrawable(int,android.graphics.drawable.Drawable)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="Android.Graphics.Drawable.Drawable"/></param>
+        public void SetFeatureDrawable(int arg0, Android.Graphics.Drawable.Drawable arg1)
+        {
+            IExecute("setFeatureDrawable", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setFeatureDrawableAlpha(int,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        public void SetFeatureDrawableAlpha(int arg0, int arg1)
+        {
+            IExecute("setFeatureDrawableAlpha", arg0, arg1);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setFeatureDrawableResource(int,int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetFeatureDrawableResource"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<int, int> OnSetFeatureDrawableResource { get; set; } = null;
+        
+        bool hasOverrideSetFeatureDrawableResource = true;
+        void SetFeatureDrawableResourceEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetFeatureDrawableResource = true;
+            var methodToExecute = (OnSetFeatureDrawableResource != null) ? OnSetFeatureDrawableResource : SetFeatureDrawableResource;
+            methodToExecute.Invoke(data.EventData.GetAt<int>(0), data.EventData.GetAt<int>(1));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetFeatureDrawableResource;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setFeatureDrawableResource(int,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        public virtual void SetFeatureDrawableResource(int arg0, int arg1)
+        {
+            hasOverrideSetFeatureDrawableResource = false;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setFeatureDrawableUri(int,android.net.Uri)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="Android.Net.Uri"/></param>
+        public void SetFeatureDrawableUri(int arg0, Android.Net.Uri arg1)
+        {
+            IExecute("setFeatureDrawableUri", arg0, arg1);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setMediaController(android.media.session.MediaController)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetMediaController"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.Media.Session.MediaController> OnSetMediaController { get; set; } = null;
+        
+        bool hasOverrideSetMediaController = true;
+        void SetMediaControllerEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetMediaController = true;
+            var methodToExecute = (OnSetMediaController != null) ? OnSetMediaController : SetMediaController;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.Media.Session.MediaController>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetMediaController;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setMediaController(android.media.session.MediaController)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Media.Session.MediaController"/></param>
+        public virtual void SetMediaController(Android.Media.Session.MediaController arg0)
+        {
+            hasOverrideSetMediaController = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setProgress(int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetProgress"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<int> OnSetProgress { get; set; } = null;
+        
+        bool hasOverrideSetProgress = true;
+        void SetProgressEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetProgress = true;
+            var methodToExecute = (OnSetProgress != null) ? OnSetProgress : SetProgress;
+            methodToExecute.Invoke(data.EventData.GetAt<int>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetProgress;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setProgress(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        [global::System.Obsolete()]
+        public virtual void SetProgress(int arg0)
+        {
+            hasOverrideSetProgress = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setProgressBarIndeterminate(boolean)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetProgressBarIndeterminate"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<bool> OnSetProgressBarIndeterminate { get; set; } = null;
+        
+        bool hasOverrideSetProgressBarIndeterminate = true;
+        void SetProgressBarIndeterminateEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetProgressBarIndeterminate = true;
+            var methodToExecute = (OnSetProgressBarIndeterminate != null) ? OnSetProgressBarIndeterminate : SetProgressBarIndeterminate;
+            methodToExecute.Invoke(data.EventData.GetAt<bool>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetProgressBarIndeterminate;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setProgressBarIndeterminate(boolean)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="bool"/></param>
+        [global::System.Obsolete()]
+        public virtual void SetProgressBarIndeterminate(bool arg0)
+        {
+            hasOverrideSetProgressBarIndeterminate = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setProgressBarIndeterminateVisibility(boolean)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetProgressBarIndeterminateVisibility"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<bool> OnSetProgressBarIndeterminateVisibility { get; set; } = null;
+        
+        bool hasOverrideSetProgressBarIndeterminateVisibility = true;
+        void SetProgressBarIndeterminateVisibilityEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetProgressBarIndeterminateVisibility = true;
+            var methodToExecute = (OnSetProgressBarIndeterminateVisibility != null) ? OnSetProgressBarIndeterminateVisibility : SetProgressBarIndeterminateVisibility;
+            methodToExecute.Invoke(data.EventData.GetAt<bool>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetProgressBarIndeterminateVisibility;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setProgressBarIndeterminateVisibility(boolean)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="bool"/></param>
+        [global::System.Obsolete()]
+        public virtual void SetProgressBarIndeterminateVisibility(bool arg0)
+        {
+            hasOverrideSetProgressBarIndeterminateVisibility = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setProgressBarVisibility(boolean)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetProgressBarVisibility"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<bool> OnSetProgressBarVisibility { get; set; } = null;
+        
+        bool hasOverrideSetProgressBarVisibility = true;
+        void SetProgressBarVisibilityEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetProgressBarVisibility = true;
+            var methodToExecute = (OnSetProgressBarVisibility != null) ? OnSetProgressBarVisibility : SetProgressBarVisibility;
+            methodToExecute.Invoke(data.EventData.GetAt<bool>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetProgressBarVisibility;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setProgressBarVisibility(boolean)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="bool"/></param>
+        [global::System.Obsolete()]
+        public virtual void SetProgressBarVisibility(bool arg0)
+        {
+            hasOverrideSetProgressBarVisibility = false;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setResult(int,android.content.Intent)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="Android.Content.Intent"/></param>
+        public void SetResult(int arg0, Android.Content.Intent arg1)
+        {
+            IExecute("setResult", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setResult(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        public void SetResult(int arg0)
+        {
+            IExecute("setResult", arg0);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setSecondaryProgress(int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetSecondaryProgress"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<int> OnSetSecondaryProgress { get; set; } = null;
+        
+        bool hasOverrideSetSecondaryProgress = true;
+        void SetSecondaryProgressEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetSecondaryProgress = true;
+            var methodToExecute = (OnSetSecondaryProgress != null) ? OnSetSecondaryProgress : SetSecondaryProgress;
+            methodToExecute.Invoke(data.EventData.GetAt<int>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetSecondaryProgress;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setSecondaryProgress(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        [global::System.Obsolete()]
+        public virtual void SetSecondaryProgress(int arg0)
+        {
+            hasOverrideSetSecondaryProgress = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setVolumeControlStream(int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetVolumeControlStream"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<int> OnSetVolumeControlStream { get; set; } = null;
+        
+        bool hasOverrideSetVolumeControlStream = true;
+        void SetVolumeControlStreamEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetVolumeControlStream = true;
+            var methodToExecute = (OnSetVolumeControlStream != null) ? OnSetVolumeControlStream : SetVolumeControlStream;
+            methodToExecute.Invoke(data.EventData.GetAt<int>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetVolumeControlStream;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setVolumeControlStream(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        public virtual void SetVolumeControlStream(int arg0)
+        {
+            hasOverrideSetVolumeControlStream = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#showDialog(int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnShowDialog1"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<int> OnShowDialog1 { get; set; } = null;
+        
+        bool hasOverrideShowDialog1 = true;
+        void ShowDialog1EventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideShowDialog1 = true;
+            var methodToExecute = (OnShowDialog1 != null) ? OnShowDialog1 : ShowDialog;
+            methodToExecute.Invoke(data.EventData.GetAt<int>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideShowDialog1;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#showDialog(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        [global::System.Obsolete()]
+        public virtual void ShowDialog(int arg0)
+        {
+            hasOverrideShowDialog1 = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#getChangingConfigurations()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetChangingConfigurations"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<int> OnGetChangingConfigurations { get; set; } = null;
+        
+        bool hasOverrideGetChangingConfigurations = true;
+        void GetChangingConfigurationsEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetChangingConfigurations = true;
+            var methodToExecute = (OnGetChangingConfigurations != null) ? OnGetChangingConfigurations : GetChangingConfigurations;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetChangingConfigurations, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getChangingConfigurations()"/>
+        /// </summary>
+        /// <returns><see cref="int"/></returns>
+        public virtual int GetChangingConfigurations()
+        {
+            hasOverrideGetChangingConfigurations = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#getLaunchedFromUid()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetLaunchedFromUid"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<int> OnGetLaunchedFromUid { get; set; } = null;
+        
+        bool hasOverrideGetLaunchedFromUid = true;
+        void GetLaunchedFromUidEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetLaunchedFromUid = true;
+            var methodToExecute = (OnGetLaunchedFromUid != null) ? OnGetLaunchedFromUid : GetLaunchedFromUid;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetLaunchedFromUid, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getLaunchedFromUid()"/>
+        /// </summary>
+        /// <returns><see cref="int"/></returns>
+        public virtual int GetLaunchedFromUid()
+        {
+            hasOverrideGetLaunchedFromUid = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#getMaxNumPictureInPictureActions()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetMaxNumPictureInPictureActions"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<int> OnGetMaxNumPictureInPictureActions { get; set; } = null;
+        
+        bool hasOverrideGetMaxNumPictureInPictureActions = true;
+        void GetMaxNumPictureInPictureActionsEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetMaxNumPictureInPictureActions = true;
+            var methodToExecute = (OnGetMaxNumPictureInPictureActions != null) ? OnGetMaxNumPictureInPictureActions : GetMaxNumPictureInPictureActions;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetMaxNumPictureInPictureActions, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getMaxNumPictureInPictureActions()"/>
+        /// </summary>
+        /// <returns><see cref="int"/></returns>
+        public virtual int GetMaxNumPictureInPictureActions()
+        {
+            hasOverrideGetMaxNumPictureInPictureActions = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#getRequestedOrientation()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetRequestedOrientation"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<int> OnGetRequestedOrientation { get; set; } = null;
+        
+        bool hasOverrideGetRequestedOrientation = true;
+        void GetRequestedOrientationEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetRequestedOrientation = true;
+            var methodToExecute = (OnGetRequestedOrientation != null) ? OnGetRequestedOrientation : GetRequestedOrientation;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetRequestedOrientation, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getRequestedOrientation()"/>
+        /// </summary>
+        /// <returns><see cref="int"/></returns>
+        public virtual int GetRequestedOrientation()
+        {
+            hasOverrideGetRequestedOrientation = false; return default;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getTaskId()"/>
+        /// </summary>
+        /// <returns><see cref="int"/></returns>
+        public int GetTaskId()
+        {
+            return IExecute<int>("getTaskId");
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onCreateDescription()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnCreateDescription"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Java.Lang.CharSequence> OnOnCreateDescription { get; set; } = null;
+        
+        bool hasOverrideOnCreateDescription = true;
+        void OnCreateDescriptionEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnCreateDescription = true;
+            var methodToExecute = (OnOnCreateDescription != null) ? OnOnCreateDescription : OnCreateDescription;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnCreateDescription, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onCreateDescription()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Lang.CharSequence"/></returns>
+        public virtual Java.Lang.CharSequence OnCreateDescription()
+        {
+            hasOverrideOnCreateDescription = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#getLastNonConfigurationInstance()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetLastNonConfigurationInstance"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<object> OnGetLastNonConfigurationInstance { get; set; } = null;
+        
+        bool hasOverrideGetLastNonConfigurationInstance = true;
+        void GetLastNonConfigurationInstanceEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetLastNonConfigurationInstance = true;
+            var methodToExecute = (OnGetLastNonConfigurationInstance != null) ? OnGetLastNonConfigurationInstance : GetLastNonConfigurationInstance;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetLastNonConfigurationInstance, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getLastNonConfigurationInstance()"/>
+        /// </summary>
+        /// <returns><see cref="object"/></returns>
+        public virtual object GetLastNonConfigurationInstance()
+        {
+            hasOverrideGetLastNonConfigurationInstance = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onRetainNonConfigurationInstance()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnRetainNonConfigurationInstance"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<object> OnOnRetainNonConfigurationInstance { get; set; } = null;
+        
+        bool hasOverrideOnRetainNonConfigurationInstance = true;
+        void OnRetainNonConfigurationInstanceEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnRetainNonConfigurationInstance = true;
+            var methodToExecute = (OnOnRetainNonConfigurationInstance != null) ? OnOnRetainNonConfigurationInstance : OnRetainNonConfigurationInstance;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideOnRetainNonConfigurationInstance, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onRetainNonConfigurationInstance()"/>
+        /// </summary>
+        /// <returns><see cref="object"/></returns>
+        public virtual object OnRetainNonConfigurationInstance()
+        {
+            hasOverrideOnRetainNonConfigurationInstance = false; return default;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getCallingPackage()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Lang.String"/></returns>
+        public Java.Lang.String GetCallingPackage()
+        {
+            return IExecute<Java.Lang.String>("getCallingPackage");
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#getLaunchedFromPackage()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetLaunchedFromPackage"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Java.Lang.String> OnGetLaunchedFromPackage { get; set; } = null;
+        
+        bool hasOverrideGetLaunchedFromPackage = true;
+        void GetLaunchedFromPackageEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetLaunchedFromPackage = true;
+            var methodToExecute = (OnGetLaunchedFromPackage != null) ? OnGetLaunchedFromPackage : GetLaunchedFromPackage;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetLaunchedFromPackage, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getLaunchedFromPackage()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Lang.String"/></returns>
+        public virtual Java.Lang.String GetLaunchedFromPackage()
+        {
+            hasOverrideGetLaunchedFromPackage = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#getLocalClassName()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetLocalClassName"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<Java.Lang.String> OnGetLocalClassName { get; set; } = null;
+        
+        bool hasOverrideGetLocalClassName = true;
+        void GetLocalClassNameEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetLocalClassName = true;
+            var methodToExecute = (OnGetLocalClassName != null) ? OnGetLocalClassName : GetLocalClassName;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetLocalClassName, executionResult);
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#getLocalClassName()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Lang.String"/></returns>
+        public virtual Java.Lang.String GetLocalClassName()
+        {
+            hasOverrideGetLocalClassName = false; return default;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#addContentView(android.view.View,android.view.ViewGroup.LayoutParams)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnAddContentView"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.View.View, Android.View.ViewGroup.LayoutParams> OnAddContentView { get; set; } = null;
+        
+        bool hasOverrideAddContentView = true;
+        void AddContentViewEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideAddContentView = true;
+            var methodToExecute = (OnAddContentView != null) ? OnAddContentView : AddContentView;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.View.View>(0), data.EventData.GetAt<Android.View.ViewGroup.LayoutParams>(1));
+            data.EventData.TypedEventData.HasOverride = hasOverrideAddContentView;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#addContentView(android.view.View,android.view.ViewGroup.LayoutParams)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.View"/></param>
+        /// <param name="arg1"><see cref="Android.View.ViewGroup.LayoutParams"/></param>
+        public virtual void AddContentView(Android.View.View arg0, Android.View.ViewGroup.LayoutParams arg1)
+        {
+            hasOverrideAddContentView = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#clearOverrideActivityTransition(int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnClearOverrideActivityTransition"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<int> OnClearOverrideActivityTransition { get; set; } = null;
+        
+        bool hasOverrideClearOverrideActivityTransition = true;
+        void ClearOverrideActivityTransitionEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideClearOverrideActivityTransition = true;
+            var methodToExecute = (OnClearOverrideActivityTransition != null) ? OnClearOverrideActivityTransition : ClearOverrideActivityTransition;
+            methodToExecute.Invoke(data.EventData.GetAt<int>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideClearOverrideActivityTransition;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#clearOverrideActivityTransition(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        public virtual void ClearOverrideActivityTransition(int arg0)
+        {
+            hasOverrideClearOverrideActivityTransition = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#closeContextMenu()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnCloseContextMenu"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnCloseContextMenu { get; set; } = null;
+        
+        bool hasOverrideCloseContextMenu = true;
+        void CloseContextMenuEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideCloseContextMenu = true;
+            var methodToExecute = (OnCloseContextMenu != null) ? OnCloseContextMenu : CloseContextMenu;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideCloseContextMenu;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#closeContextMenu()"/>
+        /// </summary>
+        public virtual void CloseContextMenu()
+        {
+            hasOverrideCloseContextMenu = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#closeOptionsMenu()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnCloseOptionsMenu"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnCloseOptionsMenu { get; set; } = null;
+        
+        bool hasOverrideCloseOptionsMenu = true;
+        void CloseOptionsMenuEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideCloseOptionsMenu = true;
+            var methodToExecute = (OnCloseOptionsMenu != null) ? OnCloseOptionsMenu : CloseOptionsMenu;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideCloseOptionsMenu;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#closeOptionsMenu()"/>
+        /// </summary>
+        public virtual void CloseOptionsMenu()
+        {
+            hasOverrideCloseOptionsMenu = false;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg1"><see cref="Java.Io.FileDescriptor"/></param>
+        /// <param name="arg2"><see cref="Java.Io.PrintWriter"/></param>
+        /// <param name="arg3"><see cref="Java.Lang.String"/></param>
+        public void Dump(Java.Lang.String arg0, Java.Io.FileDescriptor arg1, Java.Io.PrintWriter arg2, Java.Lang.String[] arg3)
+        {
+            IExecute("dump", arg0, arg1, arg2, arg3);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#enterPictureInPictureMode()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnEnterPictureInPictureMode0"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnEnterPictureInPictureMode0 { get; set; } = null;
+        
+        bool hasOverrideEnterPictureInPictureMode0 = true;
+        void EnterPictureInPictureMode0EventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideEnterPictureInPictureMode0 = true;
+            var methodToExecute = (OnEnterPictureInPictureMode0 != null) ? OnEnterPictureInPictureMode0 : EnterPictureInPictureMode;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideEnterPictureInPictureMode0;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#enterPictureInPictureMode()"/>
+        /// </summary>
+        [global::System.Obsolete()]
+        public virtual void EnterPictureInPictureMode()
+        {
+            hasOverrideEnterPictureInPictureMode0 = false;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#finish()"/>
+        /// </summary>
+        public void Finish()
+        {
+            IExecute("finish");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#finishActivity(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        public void FinishActivity(int arg0)
+        {
+            IExecute("finishActivity", arg0);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#finishActivityFromChild(android.app.Activity,int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnFinishActivityFromChild"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.App.Activity, int> OnFinishActivityFromChild { get; set; } = null;
+        
+        bool hasOverrideFinishActivityFromChild = true;
+        void FinishActivityFromChildEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideFinishActivityFromChild = true;
+            var methodToExecute = (OnFinishActivityFromChild != null) ? OnFinishActivityFromChild : FinishActivityFromChild;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.App.Activity>(0), data.EventData.GetAt<int>(1));
+            data.EventData.TypedEventData.HasOverride = hasOverrideFinishActivityFromChild;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#finishActivityFromChild(android.app.Activity,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.App.Activity"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        [global::System.Obsolete()]
+        public virtual void FinishActivityFromChild(Android.App.Activity arg0, int arg1)
+        {
+            hasOverrideFinishActivityFromChild = false;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#finishAffinity()"/>
+        /// </summary>
+        public void FinishAffinity()
+        {
+            IExecute("finishAffinity");
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#finishAfterTransition()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnFinishAfterTransition"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnFinishAfterTransition { get; set; } = null;
+        
+        bool hasOverrideFinishAfterTransition = true;
+        void FinishAfterTransitionEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideFinishAfterTransition = true;
+            var methodToExecute = (OnFinishAfterTransition != null) ? OnFinishAfterTransition : FinishAfterTransition;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideFinishAfterTransition;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#finishAfterTransition()"/>
+        /// </summary>
+        public virtual void FinishAfterTransition()
+        {
+            hasOverrideFinishAfterTransition = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#finishAndRemoveTask()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnFinishAndRemoveTask"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnFinishAndRemoveTask { get; set; } = null;
+        
+        bool hasOverrideFinishAndRemoveTask = true;
+        void FinishAndRemoveTaskEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideFinishAndRemoveTask = true;
+            var methodToExecute = (OnFinishAndRemoveTask != null) ? OnFinishAndRemoveTask : FinishAndRemoveTask;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideFinishAndRemoveTask;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#finishAndRemoveTask()"/>
+        /// </summary>
+        public virtual void FinishAndRemoveTask()
+        {
+            hasOverrideFinishAndRemoveTask = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#finishFromChild(android.app.Activity)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnFinishFromChild"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.App.Activity> OnFinishFromChild { get; set; } = null;
+        
+        bool hasOverrideFinishFromChild = true;
+        void FinishFromChildEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideFinishFromChild = true;
+            var methodToExecute = (OnFinishFromChild != null) ? OnFinishFromChild : FinishFromChild;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.App.Activity>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideFinishFromChild;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#finishFromChild(android.app.Activity)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.App.Activity"/></param>
+        [global::System.Obsolete()]
+        public virtual void FinishFromChild(Android.App.Activity arg0)
+        {
+            hasOverrideFinishFromChild = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#invalidateOptionsMenu()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnInvalidateOptionsMenu"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnInvalidateOptionsMenu { get; set; } = null;
+        
+        bool hasOverrideInvalidateOptionsMenu = true;
+        void InvalidateOptionsMenuEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideInvalidateOptionsMenu = true;
+            var methodToExecute = (OnInvalidateOptionsMenu != null) ? OnInvalidateOptionsMenu : InvalidateOptionsMenu;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideInvalidateOptionsMenu;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#invalidateOptionsMenu()"/>
+        /// </summary>
+        public virtual void InvalidateOptionsMenu()
+        {
+            hasOverrideInvalidateOptionsMenu = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onActionModeFinished(android.view.ActionMode)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnActionModeFinished"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.View.ActionMode> OnOnActionModeFinished { get; set; } = null;
+        
+        bool hasOverrideOnActionModeFinished = true;
+        void OnActionModeFinishedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnActionModeFinished = true;
+            var methodToExecute = (OnOnActionModeFinished != null) ? OnOnActionModeFinished : OnActionModeFinished;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.View.ActionMode>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnActionModeFinished;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onActionModeFinished(android.view.ActionMode)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.ActionMode"/></param>
+        public virtual void OnActionModeFinished(Android.View.ActionMode arg0)
+        {
+            hasOverrideOnActionModeFinished = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onActionModeStarted(android.view.ActionMode)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnActionModeStarted"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.View.ActionMode> OnOnActionModeStarted { get; set; } = null;
+        
+        bool hasOverrideOnActionModeStarted = true;
+        void OnActionModeStartedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnActionModeStarted = true;
+            var methodToExecute = (OnOnActionModeStarted != null) ? OnOnActionModeStarted : OnActionModeStarted;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.View.ActionMode>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnActionModeStarted;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onActionModeStarted(android.view.ActionMode)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.ActionMode"/></param>
+        public virtual void OnActionModeStarted(Android.View.ActionMode arg0)
+        {
+            hasOverrideOnActionModeStarted = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onActivityReenter(int,android.content.Intent)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnActivityReenter"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<int, Android.Content.Intent> OnOnActivityReenter { get; set; } = null;
+        
+        bool hasOverrideOnActivityReenter = true;
+        void OnActivityReenterEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnActivityReenter = true;
+            var methodToExecute = (OnOnActivityReenter != null) ? OnOnActivityReenter : OnActivityReenter;
+            methodToExecute.Invoke(data.EventData.GetAt<int>(0), data.EventData.GetAt<Android.Content.Intent>(1));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnActivityReenter;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onActivityReenter(int,android.content.Intent)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="Android.Content.Intent"/></param>
+        public virtual void OnActivityReenter(int arg0, Android.Content.Intent arg1)
+        {
+            hasOverrideOnActivityReenter = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onActivityResult(int,int,android.content.Intent,android.app.ComponentCaller)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnActivityResult"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<int, int, Android.Content.Intent, Android.App.ComponentCaller> OnOnActivityResult { get; set; } = null;
+        
+        bool hasOverrideOnActivityResult = true;
+        void OnActivityResultEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnActivityResult = true;
+            var methodToExecute = (OnOnActivityResult != null) ? OnOnActivityResult : OnActivityResult;
+            methodToExecute.Invoke(data.EventData.GetAt<int>(0), data.EventData.GetAt<int>(1), data.EventData.GetAt<Android.Content.Intent>(2), data.EventData.GetAt<Android.App.ComponentCaller>(3));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnActivityResult;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onActivityResult(int,int,android.content.Intent,android.app.ComponentCaller)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <param name="arg2"><see cref="Android.Content.Intent"/></param>
+        /// <param name="arg3"><see cref="Android.App.ComponentCaller"/></param>
+        public virtual void OnActivityResult(int arg0, int arg1, Android.Content.Intent arg2, Android.App.ComponentCaller arg3)
+        {
+            hasOverrideOnActivityResult = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onAttachedToWindow()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnAttachedToWindow"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnOnAttachedToWindow { get; set; } = null;
+        
+        bool hasOverrideOnAttachedToWindow = true;
+        void OnAttachedToWindowEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnAttachedToWindow = true;
+            var methodToExecute = (OnOnAttachedToWindow != null) ? OnOnAttachedToWindow : OnAttachedToWindow;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnAttachedToWindow;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onAttachedToWindow()"/>
+        /// </summary>
+        public virtual void OnAttachedToWindow()
+        {
+            hasOverrideOnAttachedToWindow = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onAttachFragment(android.app.Fragment)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnAttachFragment"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.App.Fragment> OnOnAttachFragment { get; set; } = null;
+        
+        bool hasOverrideOnAttachFragment = true;
+        void OnAttachFragmentEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnAttachFragment = true;
+            var methodToExecute = (OnOnAttachFragment != null) ? OnOnAttachFragment : OnAttachFragment;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.App.Fragment>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnAttachFragment;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onAttachFragment(android.app.Fragment)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.App.Fragment"/></param>
+        [global::System.Obsolete()]
+        public virtual void OnAttachFragment(Android.App.Fragment arg0)
+        {
+            hasOverrideOnAttachFragment = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onBackPressed()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnBackPressed"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnOnBackPressed { get; set; } = null;
+        
+        bool hasOverrideOnBackPressed = true;
+        void OnBackPressedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnBackPressed = true;
+            var methodToExecute = (OnOnBackPressed != null) ? OnOnBackPressed : OnBackPressed;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnBackPressed;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onBackPressed()"/>
+        /// </summary>
+        [global::System.Obsolete()]
+        public virtual void OnBackPressed()
+        {
+            hasOverrideOnBackPressed = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onContentChanged()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnContentChanged"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnOnContentChanged { get; set; } = null;
+        
+        bool hasOverrideOnContentChanged = true;
+        void OnContentChangedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnContentChanged = true;
+            var methodToExecute = (OnOnContentChanged != null) ? OnOnContentChanged : OnContentChanged;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnContentChanged;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onContentChanged()"/>
+        /// </summary>
+        public virtual void OnContentChanged()
+        {
+            hasOverrideOnContentChanged = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onContextMenuClosed(android.view.Menu)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnContextMenuClosed"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.View.Menu> OnOnContextMenuClosed { get; set; } = null;
+        
+        bool hasOverrideOnContextMenuClosed = true;
+        void OnContextMenuClosedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnContextMenuClosed = true;
+            var methodToExecute = (OnOnContextMenuClosed != null) ? OnOnContextMenuClosed : OnContextMenuClosed;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.View.Menu>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnContextMenuClosed;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onContextMenuClosed(android.view.Menu)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.Menu"/></param>
+        public virtual void OnContextMenuClosed(Android.View.Menu arg0)
+        {
+            hasOverrideOnContextMenuClosed = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onCreate(android.os.Bundle,android.os.PersistableBundle)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnCreate"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.Os.Bundle, Android.Os.PersistableBundle> OnOnCreate { get; set; } = null;
+        
+        bool hasOverrideOnCreate = true;
+        void OnCreateEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnCreate = true;
+            var methodToExecute = (OnOnCreate != null) ? OnOnCreate : OnCreate;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.Os.Bundle>(0), data.EventData.GetAt<Android.Os.PersistableBundle>(1));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnCreate;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onCreate(android.os.Bundle,android.os.PersistableBundle)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Os.Bundle"/></param>
+        /// <param name="arg1"><see cref="Android.Os.PersistableBundle"/></param>
+        public virtual void OnCreate(Android.Os.Bundle arg0, Android.Os.PersistableBundle arg1)
+        {
+            hasOverrideOnCreate = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu.ContextMenuInfo)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnCreateContextMenu"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.View.ContextMenu, Android.View.View, Android.View.ContextMenu.ContextMenuInfo> OnOnCreateContextMenu { get; set; } = null;
+        
+        bool hasOverrideOnCreateContextMenu = true;
+        void OnCreateContextMenuEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnCreateContextMenu = true;
+            var methodToExecute = (OnOnCreateContextMenu != null) ? OnOnCreateContextMenu : OnCreateContextMenu;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.View.ContextMenu>(0), data.EventData.GetAt<Android.View.View>(1), data.EventData.GetAt<Android.View.ContextMenu.ContextMenuInfo>(2));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnCreateContextMenu;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu.ContextMenuInfo)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.ContextMenu"/></param>
+        /// <param name="arg1"><see cref="Android.View.View"/></param>
+        /// <param name="arg2"><see cref="Android.View.ContextMenu.ContextMenuInfo"/></param>
+        public virtual void OnCreateContextMenu(Android.View.ContextMenu arg0, Android.View.View arg1, Android.View.ContextMenu.ContextMenuInfo arg2)
+        {
+            hasOverrideOnCreateContextMenu = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onCreateNavigateUpTaskStack(android.app.TaskStackBuilder)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnCreateNavigateUpTaskStack"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.App.TaskStackBuilder> OnOnCreateNavigateUpTaskStack { get; set; } = null;
+        
+        bool hasOverrideOnCreateNavigateUpTaskStack = true;
+        void OnCreateNavigateUpTaskStackEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnCreateNavigateUpTaskStack = true;
+            var methodToExecute = (OnOnCreateNavigateUpTaskStack != null) ? OnOnCreateNavigateUpTaskStack : OnCreateNavigateUpTaskStack;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.App.TaskStackBuilder>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnCreateNavigateUpTaskStack;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onCreateNavigateUpTaskStack(android.app.TaskStackBuilder)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.App.TaskStackBuilder"/></param>
+        public virtual void OnCreateNavigateUpTaskStack(Android.App.TaskStackBuilder arg0)
+        {
+            hasOverrideOnCreateNavigateUpTaskStack = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onDetachedFromWindow()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnDetachedFromWindow"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnOnDetachedFromWindow { get; set; } = null;
+        
+        bool hasOverrideOnDetachedFromWindow = true;
+        void OnDetachedFromWindowEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnDetachedFromWindow = true;
+            var methodToExecute = (OnOnDetachedFromWindow != null) ? OnOnDetachedFromWindow : OnDetachedFromWindow;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnDetachedFromWindow;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onDetachedFromWindow()"/>
+        /// </summary>
+        public virtual void OnDetachedFromWindow()
+        {
+            hasOverrideOnDetachedFromWindow = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onEnterAnimationComplete()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnEnterAnimationComplete"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnOnEnterAnimationComplete { get; set; } = null;
+        
+        bool hasOverrideOnEnterAnimationComplete = true;
+        void OnEnterAnimationCompleteEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnEnterAnimationComplete = true;
+            var methodToExecute = (OnOnEnterAnimationComplete != null) ? OnOnEnterAnimationComplete : OnEnterAnimationComplete;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnEnterAnimationComplete;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onEnterAnimationComplete()"/>
+        /// </summary>
+        public virtual void OnEnterAnimationComplete()
+        {
+            hasOverrideOnEnterAnimationComplete = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onGetDirectActions(android.os.CancellationSignal,java.util.function.Consumer)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnGetDirectActions"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.Os.CancellationSignal, Java.Util.Function.Consumer<Java.Util.List<Android.App.DirectAction>>> OnOnGetDirectActions { get; set; } = null;
+        
+        bool hasOverrideOnGetDirectActions = true;
+        void OnGetDirectActionsEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnGetDirectActions = true;
+            var methodToExecute = (OnOnGetDirectActions != null) ? OnOnGetDirectActions : OnGetDirectActions;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.Os.CancellationSignal>(0), data.EventData.GetAt<Java.Util.Function.Consumer<Java.Util.List<Android.App.DirectAction>>>(1));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnGetDirectActions;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onGetDirectActions(android.os.CancellationSignal,java.util.function.Consumer)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Os.CancellationSignal"/></param>
+        /// <param name="arg1"><see cref="Java.Util.Function.Consumer"/></param>
+        public virtual void OnGetDirectActions(Android.Os.CancellationSignal arg0, Java.Util.Function.Consumer<Java.Util.List<Android.App.DirectAction>> arg1)
+        {
+            hasOverrideOnGetDirectActions = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onLocalVoiceInteractionStarted()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnLocalVoiceInteractionStarted"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnOnLocalVoiceInteractionStarted { get; set; } = null;
+        
+        bool hasOverrideOnLocalVoiceInteractionStarted = true;
+        void OnLocalVoiceInteractionStartedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnLocalVoiceInteractionStarted = true;
+            var methodToExecute = (OnOnLocalVoiceInteractionStarted != null) ? OnOnLocalVoiceInteractionStarted : OnLocalVoiceInteractionStarted;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnLocalVoiceInteractionStarted;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onLocalVoiceInteractionStarted()"/>
+        /// </summary>
+        public virtual void OnLocalVoiceInteractionStarted()
+        {
+            hasOverrideOnLocalVoiceInteractionStarted = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onLocalVoiceInteractionStopped()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnLocalVoiceInteractionStopped"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnOnLocalVoiceInteractionStopped { get; set; } = null;
+        
+        bool hasOverrideOnLocalVoiceInteractionStopped = true;
+        void OnLocalVoiceInteractionStoppedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnLocalVoiceInteractionStopped = true;
+            var methodToExecute = (OnOnLocalVoiceInteractionStopped != null) ? OnOnLocalVoiceInteractionStopped : OnLocalVoiceInteractionStopped;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnLocalVoiceInteractionStopped;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onLocalVoiceInteractionStopped()"/>
+        /// </summary>
+        public virtual void OnLocalVoiceInteractionStopped()
+        {
+            hasOverrideOnLocalVoiceInteractionStopped = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onMultiWindowModeChanged(boolean,android.content.res.Configuration)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnMultiWindowModeChanged"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<bool, Android.Content.Res.Configuration> OnOnMultiWindowModeChanged { get; set; } = null;
+        
+        bool hasOverrideOnMultiWindowModeChanged = true;
+        void OnMultiWindowModeChangedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnMultiWindowModeChanged = true;
+            var methodToExecute = (OnOnMultiWindowModeChanged != null) ? OnOnMultiWindowModeChanged : OnMultiWindowModeChanged;
+            methodToExecute.Invoke(data.EventData.GetAt<bool>(0), data.EventData.GetAt<Android.Content.Res.Configuration>(1));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnMultiWindowModeChanged;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onMultiWindowModeChanged(boolean,android.content.res.Configuration)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="bool"/></param>
+        /// <param name="arg1"><see cref="Android.Content.Res.Configuration"/></param>
+        public virtual void OnMultiWindowModeChanged(bool arg0, Android.Content.Res.Configuration arg1)
+        {
+            hasOverrideOnMultiWindowModeChanged = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onMultiWindowModeChanged(boolean)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnMultiWindowModeChanged1"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<bool> OnOnMultiWindowModeChanged1 { get; set; } = null;
+        
+        bool hasOverrideOnMultiWindowModeChanged1 = true;
+        void OnMultiWindowModeChanged1EventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnMultiWindowModeChanged1 = true;
+            var methodToExecute = (OnOnMultiWindowModeChanged1 != null) ? OnOnMultiWindowModeChanged1 : OnMultiWindowModeChanged;
+            methodToExecute.Invoke(data.EventData.GetAt<bool>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnMultiWindowModeChanged1;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onMultiWindowModeChanged(boolean)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="bool"/></param>
+        [global::System.Obsolete()]
+        public virtual void OnMultiWindowModeChanged(bool arg0)
+        {
+            hasOverrideOnMultiWindowModeChanged1 = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onNewIntent(android.content.Intent,android.app.ComponentCaller)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnNewIntent"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.Content.Intent, Android.App.ComponentCaller> OnOnNewIntent { get; set; } = null;
+        
+        bool hasOverrideOnNewIntent = true;
+        void OnNewIntentEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnNewIntent = true;
+            var methodToExecute = (OnOnNewIntent != null) ? OnOnNewIntent : OnNewIntent;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.Content.Intent>(0), data.EventData.GetAt<Android.App.ComponentCaller>(1));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnNewIntent;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onNewIntent(android.content.Intent,android.app.ComponentCaller)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Content.Intent"/></param>
+        /// <param name="arg1"><see cref="Android.App.ComponentCaller"/></param>
+        public virtual void OnNewIntent(Android.Content.Intent arg0, Android.App.ComponentCaller arg1)
+        {
+            hasOverrideOnNewIntent = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onOptionsMenuClosed(android.view.Menu)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnOptionsMenuClosed"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.View.Menu> OnOnOptionsMenuClosed { get; set; } = null;
+        
+        bool hasOverrideOnOptionsMenuClosed = true;
+        void OnOptionsMenuClosedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnOptionsMenuClosed = true;
+            var methodToExecute = (OnOnOptionsMenuClosed != null) ? OnOnOptionsMenuClosed : OnOptionsMenuClosed;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.View.Menu>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnOptionsMenuClosed;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onOptionsMenuClosed(android.view.Menu)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.Menu"/></param>
+        public virtual void OnOptionsMenuClosed(Android.View.Menu arg0)
+        {
+            hasOverrideOnOptionsMenuClosed = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onPanelClosed(int,android.view.Menu)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnPanelClosed"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<int, Android.View.Menu> OnOnPanelClosed { get; set; } = null;
+        
+        bool hasOverrideOnPanelClosed = true;
+        void OnPanelClosedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnPanelClosed = true;
+            var methodToExecute = (OnOnPanelClosed != null) ? OnOnPanelClosed : OnPanelClosed;
+            methodToExecute.Invoke(data.EventData.GetAt<int>(0), data.EventData.GetAt<Android.View.Menu>(1));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnPanelClosed;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onPanelClosed(int,android.view.Menu)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="Android.View.Menu"/></param>
+        public virtual void OnPanelClosed(int arg0, Android.View.Menu arg1)
+        {
+            hasOverrideOnPanelClosed = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onPerformDirectAction(java.lang.String,android.os.Bundle,android.os.CancellationSignal,java.util.function.Consumer)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnPerformDirectAction"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Java.Lang.String, Android.Os.Bundle, Android.Os.CancellationSignal, Java.Util.Function.Consumer<Android.Os.Bundle>> OnOnPerformDirectAction { get; set; } = null;
+        
+        bool hasOverrideOnPerformDirectAction = true;
+        void OnPerformDirectActionEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnPerformDirectAction = true;
+            var methodToExecute = (OnOnPerformDirectAction != null) ? OnOnPerformDirectAction : OnPerformDirectAction;
+            methodToExecute.Invoke(data.EventData.GetAt<Java.Lang.String>(0), data.EventData.GetAt<Android.Os.Bundle>(1), data.EventData.GetAt<Android.Os.CancellationSignal>(2), data.EventData.GetAt<Java.Util.Function.Consumer<Android.Os.Bundle>>(3));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnPerformDirectAction;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onPerformDirectAction(java.lang.String,android.os.Bundle,android.os.CancellationSignal,java.util.function.Consumer)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg1"><see cref="Android.Os.Bundle"/></param>
+        /// <param name="arg2"><see cref="Android.Os.CancellationSignal"/></param>
+        /// <param name="arg3"><see cref="Java.Util.Function.Consumer"/></param>
+        public virtual void OnPerformDirectAction(Java.Lang.String arg0, Android.Os.Bundle arg1, Android.Os.CancellationSignal arg2, Java.Util.Function.Consumer<Android.Os.Bundle> arg3)
+        {
+            hasOverrideOnPerformDirectAction = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onPictureInPictureModeChanged(boolean,android.content.res.Configuration)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnPictureInPictureModeChanged"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<bool, Android.Content.Res.Configuration> OnOnPictureInPictureModeChanged { get; set; } = null;
+        
+        bool hasOverrideOnPictureInPictureModeChanged = true;
+        void OnPictureInPictureModeChangedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnPictureInPictureModeChanged = true;
+            var methodToExecute = (OnOnPictureInPictureModeChanged != null) ? OnOnPictureInPictureModeChanged : OnPictureInPictureModeChanged;
+            methodToExecute.Invoke(data.EventData.GetAt<bool>(0), data.EventData.GetAt<Android.Content.Res.Configuration>(1));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnPictureInPictureModeChanged;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onPictureInPictureModeChanged(boolean,android.content.res.Configuration)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="bool"/></param>
+        /// <param name="arg1"><see cref="Android.Content.Res.Configuration"/></param>
+        public virtual void OnPictureInPictureModeChanged(bool arg0, Android.Content.Res.Configuration arg1)
+        {
+            hasOverrideOnPictureInPictureModeChanged = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onPictureInPictureModeChanged(boolean)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnPictureInPictureModeChanged1"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<bool> OnOnPictureInPictureModeChanged1 { get; set; } = null;
+        
+        bool hasOverrideOnPictureInPictureModeChanged1 = true;
+        void OnPictureInPictureModeChanged1EventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnPictureInPictureModeChanged1 = true;
+            var methodToExecute = (OnOnPictureInPictureModeChanged1 != null) ? OnOnPictureInPictureModeChanged1 : OnPictureInPictureModeChanged;
+            methodToExecute.Invoke(data.EventData.GetAt<bool>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnPictureInPictureModeChanged1;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onPictureInPictureModeChanged(boolean)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="bool"/></param>
+        [global::System.Obsolete()]
+        public virtual void OnPictureInPictureModeChanged(bool arg0)
+        {
+            hasOverrideOnPictureInPictureModeChanged1 = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onPictureInPictureUiStateChanged(android.app.PictureInPictureUiState)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnPictureInPictureUiStateChanged"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.App.PictureInPictureUiState> OnOnPictureInPictureUiStateChanged { get; set; } = null;
+        
+        bool hasOverrideOnPictureInPictureUiStateChanged = true;
+        void OnPictureInPictureUiStateChangedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnPictureInPictureUiStateChanged = true;
+            var methodToExecute = (OnOnPictureInPictureUiStateChanged != null) ? OnOnPictureInPictureUiStateChanged : OnPictureInPictureUiStateChanged;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.App.PictureInPictureUiState>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnPictureInPictureUiStateChanged;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onPictureInPictureUiStateChanged(android.app.PictureInPictureUiState)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.App.PictureInPictureUiState"/></param>
+        public virtual void OnPictureInPictureUiStateChanged(Android.App.PictureInPictureUiState arg0)
+        {
+            hasOverrideOnPictureInPictureUiStateChanged = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onPostCreate(android.os.Bundle,android.os.PersistableBundle)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnPostCreate"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.Os.Bundle, Android.Os.PersistableBundle> OnOnPostCreate { get; set; } = null;
+        
+        bool hasOverrideOnPostCreate = true;
+        void OnPostCreateEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnPostCreate = true;
+            var methodToExecute = (OnOnPostCreate != null) ? OnOnPostCreate : OnPostCreate;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.Os.Bundle>(0), data.EventData.GetAt<Android.Os.PersistableBundle>(1));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnPostCreate;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onPostCreate(android.os.Bundle,android.os.PersistableBundle)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Os.Bundle"/></param>
+        /// <param name="arg1"><see cref="Android.Os.PersistableBundle"/></param>
+        public virtual void OnPostCreate(Android.Os.Bundle arg0, Android.Os.PersistableBundle arg1)
+        {
+            hasOverrideOnPostCreate = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onPrepareNavigateUpTaskStack(android.app.TaskStackBuilder)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnPrepareNavigateUpTaskStack"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.App.TaskStackBuilder> OnOnPrepareNavigateUpTaskStack { get; set; } = null;
+        
+        bool hasOverrideOnPrepareNavigateUpTaskStack = true;
+        void OnPrepareNavigateUpTaskStackEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnPrepareNavigateUpTaskStack = true;
+            var methodToExecute = (OnOnPrepareNavigateUpTaskStack != null) ? OnOnPrepareNavigateUpTaskStack : OnPrepareNavigateUpTaskStack;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.App.TaskStackBuilder>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnPrepareNavigateUpTaskStack;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onPrepareNavigateUpTaskStack(android.app.TaskStackBuilder)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.App.TaskStackBuilder"/></param>
+        public virtual void OnPrepareNavigateUpTaskStack(Android.App.TaskStackBuilder arg0)
+        {
+            hasOverrideOnPrepareNavigateUpTaskStack = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onProvideAssistContent(android.app.assist.AssistContent)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnProvideAssistContent"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.App.Assist.AssistContent> OnOnProvideAssistContent { get; set; } = null;
+        
+        bool hasOverrideOnProvideAssistContent = true;
+        void OnProvideAssistContentEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnProvideAssistContent = true;
+            var methodToExecute = (OnOnProvideAssistContent != null) ? OnOnProvideAssistContent : OnProvideAssistContent;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.App.Assist.AssistContent>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnProvideAssistContent;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onProvideAssistContent(android.app.assist.AssistContent)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.App.Assist.AssistContent"/></param>
+        public virtual void OnProvideAssistContent(Android.App.Assist.AssistContent arg0)
+        {
+            hasOverrideOnProvideAssistContent = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onProvideAssistData(android.os.Bundle)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnProvideAssistData"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.Os.Bundle> OnOnProvideAssistData { get; set; } = null;
+        
+        bool hasOverrideOnProvideAssistData = true;
+        void OnProvideAssistDataEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnProvideAssistData = true;
+            var methodToExecute = (OnOnProvideAssistData != null) ? OnOnProvideAssistData : OnProvideAssistData;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.Os.Bundle>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnProvideAssistData;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onProvideAssistData(android.os.Bundle)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Os.Bundle"/></param>
+        public virtual void OnProvideAssistData(Android.Os.Bundle arg0)
+        {
+            hasOverrideOnProvideAssistData = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onProvideKeyboardShortcuts(java.util.List,android.view.Menu,int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnProvideKeyboardShortcuts"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Java.Util.List<Android.View.KeyboardShortcutGroup>, Android.View.Menu, int> OnOnProvideKeyboardShortcuts { get; set; } = null;
+        
+        bool hasOverrideOnProvideKeyboardShortcuts = true;
+        void OnProvideKeyboardShortcutsEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnProvideKeyboardShortcuts = true;
+            var methodToExecute = (OnOnProvideKeyboardShortcuts != null) ? OnOnProvideKeyboardShortcuts : OnProvideKeyboardShortcuts;
+            methodToExecute.Invoke(data.EventData.GetAt<Java.Util.List<Android.View.KeyboardShortcutGroup>>(0), data.EventData.GetAt<Android.View.Menu>(1), data.EventData.GetAt<int>(2));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnProvideKeyboardShortcuts;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onProvideKeyboardShortcuts(java.util.List,android.view.Menu,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Util.List"/></param>
+        /// <param name="arg1"><see cref="Android.View.Menu"/></param>
+        /// <param name="arg2"><see cref="int"/></param>
+        public virtual void OnProvideKeyboardShortcuts(Java.Util.List<Android.View.KeyboardShortcutGroup> arg0, Android.View.Menu arg1, int arg2)
+        {
+            hasOverrideOnProvideKeyboardShortcuts = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onRequestPermissionsResult(int,java.lang.String[],int[],int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnRequestPermissionsResult"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<int, Java.Lang.String[], int[], int> OnOnRequestPermissionsResult { get; set; } = null;
+        
+        bool hasOverrideOnRequestPermissionsResult = true;
+        void OnRequestPermissionsResultEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnRequestPermissionsResult = true;
+            var methodToExecute = (OnOnRequestPermissionsResult != null) ? OnOnRequestPermissionsResult : OnRequestPermissionsResult;
+            methodToExecute.Invoke(data.EventData.GetAt<int>(0), data.EventData.GetAt<Java.Lang.String[]>(1), data.EventData.GetAt<int[]>(2), data.EventData.GetAt<int>(3));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnRequestPermissionsResult;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onRequestPermissionsResult(int,java.lang.String[],int[],int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg2"><see cref="int"/></param>
+        /// <param name="arg3"><see cref="int"/></param>
+        public virtual void OnRequestPermissionsResult(int arg0, Java.Lang.String[] arg1, int[] arg2, int arg3)
+        {
+            hasOverrideOnRequestPermissionsResult = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onRequestPermissionsResult(int,java.lang.String[],int[])"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnRequestPermissionsResult3"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<int, Java.Lang.String[], int[]> OnOnRequestPermissionsResult3 { get; set; } = null;
+        
+        bool hasOverrideOnRequestPermissionsResult3 = true;
+        void OnRequestPermissionsResult3EventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnRequestPermissionsResult3 = true;
+            var methodToExecute = (OnOnRequestPermissionsResult3 != null) ? OnOnRequestPermissionsResult3 : OnRequestPermissionsResult;
+            methodToExecute.Invoke(data.EventData.GetAt<int>(0), data.EventData.GetAt<Java.Lang.String[]>(1), data.EventData.GetAt<int[]>(2));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnRequestPermissionsResult3;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onRequestPermissionsResult(int,java.lang.String[],int[])"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg2"><see cref="int"/></param>
+        public virtual void OnRequestPermissionsResult(int arg0, Java.Lang.String[] arg1, int[] arg2)
+        {
+            hasOverrideOnRequestPermissionsResult3 = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onRestoreInstanceState(android.os.Bundle,android.os.PersistableBundle)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnRestoreInstanceState"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.Os.Bundle, Android.Os.PersistableBundle> OnOnRestoreInstanceState { get; set; } = null;
+        
+        bool hasOverrideOnRestoreInstanceState = true;
+        void OnRestoreInstanceStateEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnRestoreInstanceState = true;
+            var methodToExecute = (OnOnRestoreInstanceState != null) ? OnOnRestoreInstanceState : OnRestoreInstanceState;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.Os.Bundle>(0), data.EventData.GetAt<Android.Os.PersistableBundle>(1));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnRestoreInstanceState;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onRestoreInstanceState(android.os.Bundle,android.os.PersistableBundle)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Os.Bundle"/></param>
+        /// <param name="arg1"><see cref="Android.Os.PersistableBundle"/></param>
+        public virtual void OnRestoreInstanceState(Android.Os.Bundle arg0, Android.Os.PersistableBundle arg1)
+        {
+            hasOverrideOnRestoreInstanceState = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onSaveInstanceState(android.os.Bundle,android.os.PersistableBundle)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnSaveInstanceState"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.Os.Bundle, Android.Os.PersistableBundle> OnOnSaveInstanceState { get; set; } = null;
+        
+        bool hasOverrideOnSaveInstanceState = true;
+        void OnSaveInstanceStateEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnSaveInstanceState = true;
+            var methodToExecute = (OnOnSaveInstanceState != null) ? OnOnSaveInstanceState : OnSaveInstanceState;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.Os.Bundle>(0), data.EventData.GetAt<Android.Os.PersistableBundle>(1));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnSaveInstanceState;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onSaveInstanceState(android.os.Bundle,android.os.PersistableBundle)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Os.Bundle"/></param>
+        /// <param name="arg1"><see cref="Android.Os.PersistableBundle"/></param>
+        public virtual void OnSaveInstanceState(Android.Os.Bundle arg0, Android.Os.PersistableBundle arg1)
+        {
+            hasOverrideOnSaveInstanceState = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onStateNotSaved()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnStateNotSaved"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnOnStateNotSaved { get; set; } = null;
+        
+        bool hasOverrideOnStateNotSaved = true;
+        void OnStateNotSavedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnStateNotSaved = true;
+            var methodToExecute = (OnOnStateNotSaved != null) ? OnOnStateNotSaved : OnStateNotSaved;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnStateNotSaved;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onStateNotSaved()"/>
+        /// </summary>
+        [global::System.Obsolete()]
+        public virtual void OnStateNotSaved()
+        {
+            hasOverrideOnStateNotSaved = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onTopResumedActivityChanged(boolean)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnTopResumedActivityChanged"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<bool> OnOnTopResumedActivityChanged { get; set; } = null;
+        
+        bool hasOverrideOnTopResumedActivityChanged = true;
+        void OnTopResumedActivityChangedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnTopResumedActivityChanged = true;
+            var methodToExecute = (OnOnTopResumedActivityChanged != null) ? OnOnTopResumedActivityChanged : OnTopResumedActivityChanged;
+            methodToExecute.Invoke(data.EventData.GetAt<bool>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnTopResumedActivityChanged;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onTopResumedActivityChanged(boolean)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="bool"/></param>
+        public virtual void OnTopResumedActivityChanged(bool arg0)
+        {
+            hasOverrideOnTopResumedActivityChanged = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onTrimMemory(int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnTrimMemory"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<int> OnOnTrimMemory { get; set; } = null;
+        
+        bool hasOverrideOnTrimMemory = true;
+        void OnTrimMemoryEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnTrimMemory = true;
+            var methodToExecute = (OnOnTrimMemory != null) ? OnOnTrimMemory : OnTrimMemory;
+            methodToExecute.Invoke(data.EventData.GetAt<int>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnTrimMemory;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onTrimMemory(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        public virtual void OnTrimMemory(int arg0)
+        {
+            hasOverrideOnTrimMemory = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onUserInteraction()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnUserInteraction"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnOnUserInteraction { get; set; } = null;
+        
+        bool hasOverrideOnUserInteraction = true;
+        void OnUserInteractionEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnUserInteraction = true;
+            var methodToExecute = (OnOnUserInteraction != null) ? OnOnUserInteraction : OnUserInteraction;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnUserInteraction;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onUserInteraction()"/>
+        /// </summary>
+        public virtual void OnUserInteraction()
+        {
+            hasOverrideOnUserInteraction = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onVisibleBehindCanceled()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnVisibleBehindCanceled"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnOnVisibleBehindCanceled { get; set; } = null;
+        
+        bool hasOverrideOnVisibleBehindCanceled = true;
+        void OnVisibleBehindCanceledEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnVisibleBehindCanceled = true;
+            var methodToExecute = (OnOnVisibleBehindCanceled != null) ? OnOnVisibleBehindCanceled : OnVisibleBehindCanceled;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnVisibleBehindCanceled;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onVisibleBehindCanceled()"/>
+        /// </summary>
+        [global::System.Obsolete()]
+        public virtual void OnVisibleBehindCanceled()
+        {
+            hasOverrideOnVisibleBehindCanceled = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#onWindowAttributesChanged(android.view.WindowManager.LayoutParams)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnWindowAttributesChanged"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.View.WindowManager.LayoutParams> OnOnWindowAttributesChanged { get; set; } = null;
+        
+        bool hasOverrideOnWindowAttributesChanged = true;
+        void OnWindowAttributesChangedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnWindowAttributesChanged = true;
+            var methodToExecute = (OnOnWindowAttributesChanged != null) ? OnOnWindowAttributesChanged : OnWindowAttributesChanged;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.View.WindowManager.LayoutParams>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnWindowAttributesChanged;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#onWindowAttributesChanged(android.view.WindowManager.LayoutParams)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.WindowManager.LayoutParams"/></param>
+        public virtual void OnWindowAttributesChanged(Android.View.WindowManager.LayoutParams arg0)
+        {
+            hasOverrideOnWindowAttributesChanged = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#openContextMenu(android.view.View)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOpenContextMenu"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.View.View> OnOpenContextMenu { get; set; } = null;
+        
+        bool hasOverrideOpenContextMenu = true;
+        void OpenContextMenuEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOpenContextMenu = true;
+            var methodToExecute = (OnOpenContextMenu != null) ? OnOpenContextMenu : OpenContextMenu;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.View.View>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOpenContextMenu;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#openContextMenu(android.view.View)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.View"/></param>
+        public virtual void OpenContextMenu(Android.View.View arg0)
+        {
+            hasOverrideOpenContextMenu = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#openOptionsMenu()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOpenOptionsMenu"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnOpenOptionsMenu { get; set; } = null;
+        
+        bool hasOverrideOpenOptionsMenu = true;
+        void OpenOptionsMenuEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOpenOptionsMenu = true;
+            var methodToExecute = (OnOpenOptionsMenu != null) ? OnOpenOptionsMenu : OpenOptionsMenu;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideOpenOptionsMenu;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#openOptionsMenu()"/>
+        /// </summary>
+        public virtual void OpenOptionsMenu()
+        {
+            hasOverrideOpenOptionsMenu = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#overrideActivityTransition(int,int,int,int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOverrideActivityTransition"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<int, int, int, int> OnOverrideActivityTransition { get; set; } = null;
+        
+        bool hasOverrideOverrideActivityTransition = true;
+        void OverrideActivityTransitionEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOverrideActivityTransition = true;
+            var methodToExecute = (OnOverrideActivityTransition != null) ? OnOverrideActivityTransition : OverrideActivityTransition;
+            methodToExecute.Invoke(data.EventData.GetAt<int>(0), data.EventData.GetAt<int>(1), data.EventData.GetAt<int>(2), data.EventData.GetAt<int>(3));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOverrideActivityTransition;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#overrideActivityTransition(int,int,int,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <param name="arg2"><see cref="int"/></param>
+        /// <param name="arg3"><see cref="int"/></param>
+        public virtual void OverrideActivityTransition(int arg0, int arg1, int arg2, int arg3)
+        {
+            hasOverrideOverrideActivityTransition = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#overrideActivityTransition(int,int,int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOverrideActivityTransition3"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<int, int, int> OnOverrideActivityTransition3 { get; set; } = null;
+        
+        bool hasOverrideOverrideActivityTransition3 = true;
+        void OverrideActivityTransition3EventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOverrideActivityTransition3 = true;
+            var methodToExecute = (OnOverrideActivityTransition3 != null) ? OnOverrideActivityTransition3 : OverrideActivityTransition;
+            methodToExecute.Invoke(data.EventData.GetAt<int>(0), data.EventData.GetAt<int>(1), data.EventData.GetAt<int>(2));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOverrideActivityTransition3;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#overrideActivityTransition(int,int,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <param name="arg2"><see cref="int"/></param>
+        public virtual void OverrideActivityTransition(int arg0, int arg1, int arg2)
+        {
+            hasOverrideOverrideActivityTransition3 = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#overridePendingTransition(int,int,int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOverridePendingTransition"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<int, int, int> OnOverridePendingTransition { get; set; } = null;
+        
+        bool hasOverrideOverridePendingTransition = true;
+        void OverridePendingTransitionEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOverridePendingTransition = true;
+            var methodToExecute = (OnOverridePendingTransition != null) ? OnOverridePendingTransition : OverridePendingTransition;
+            methodToExecute.Invoke(data.EventData.GetAt<int>(0), data.EventData.GetAt<int>(1), data.EventData.GetAt<int>(2));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOverridePendingTransition;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#overridePendingTransition(int,int,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <param name="arg2"><see cref="int"/></param>
+        [global::System.Obsolete()]
+        public virtual void OverridePendingTransition(int arg0, int arg1, int arg2)
+        {
+            hasOverrideOverridePendingTransition = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#overridePendingTransition(int,int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOverridePendingTransition2"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<int, int> OnOverridePendingTransition2 { get; set; } = null;
+        
+        bool hasOverrideOverridePendingTransition2 = true;
+        void OverridePendingTransition2EventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOverridePendingTransition2 = true;
+            var methodToExecute = (OnOverridePendingTransition2 != null) ? OnOverridePendingTransition2 : OverridePendingTransition;
+            methodToExecute.Invoke(data.EventData.GetAt<int>(0), data.EventData.GetAt<int>(1));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOverridePendingTransition2;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#overridePendingTransition(int,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        [global::System.Obsolete()]
+        public virtual void OverridePendingTransition(int arg0, int arg1)
+        {
+            hasOverrideOverridePendingTransition2 = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#postponeEnterTransition()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnPostponeEnterTransition"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnPostponeEnterTransition { get; set; } = null;
+        
+        bool hasOverridePostponeEnterTransition = true;
+        void PostponeEnterTransitionEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverridePostponeEnterTransition = true;
+            var methodToExecute = (OnPostponeEnterTransition != null) ? OnPostponeEnterTransition : PostponeEnterTransition;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverridePostponeEnterTransition;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#postponeEnterTransition()"/>
+        /// </summary>
+        public virtual void PostponeEnterTransition()
+        {
+            hasOverridePostponeEnterTransition = false;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#recreate()"/>
+        /// </summary>
+        public void Recreate()
+        {
+            IExecute("recreate");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#registerActivityLifecycleCallbacks(android.app.Application.ActivityLifecycleCallbacks)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.App.Application.ActivityLifecycleCallbacks"/></param>
+        public void RegisterActivityLifecycleCallbacks(Android.App.Application.ActivityLifecycleCallbacks arg0)
+        {
+            IExecute("registerActivityLifecycleCallbacks", arg0);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#registerForContextMenu(android.view.View)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnRegisterForContextMenu"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.View.View> OnRegisterForContextMenu { get; set; } = null;
+        
+        bool hasOverrideRegisterForContextMenu = true;
+        void RegisterForContextMenuEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideRegisterForContextMenu = true;
+            var methodToExecute = (OnRegisterForContextMenu != null) ? OnRegisterForContextMenu : RegisterForContextMenu;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.View.View>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideRegisterForContextMenu;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#registerForContextMenu(android.view.View)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.View"/></param>
+        public virtual void RegisterForContextMenu(Android.View.View arg0)
+        {
+            hasOverrideRegisterForContextMenu = false;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#registerScreenCaptureCallback(java.util.concurrent.Executor,android.app.Activity.ScreenCaptureCallback)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Util.Concurrent.Executor"/></param>
+        /// <param name="arg1"><see cref="Android.App.Activity.ScreenCaptureCallback"/></param>
+        public void RegisterScreenCaptureCallback(Java.Util.Concurrent.Executor arg0, Android.App.Activity.ScreenCaptureCallback arg1)
+        {
+            IExecute("registerScreenCaptureCallback", arg0, arg1);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#reportFullyDrawn()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnReportFullyDrawn"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnReportFullyDrawn { get; set; } = null;
+        
+        bool hasOverrideReportFullyDrawn = true;
+        void ReportFullyDrawnEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideReportFullyDrawn = true;
+            var methodToExecute = (OnReportFullyDrawn != null) ? OnReportFullyDrawn : ReportFullyDrawn;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideReportFullyDrawn;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#reportFullyDrawn()"/>
+        /// </summary>
+        public virtual void ReportFullyDrawn()
+        {
+            hasOverrideReportFullyDrawn = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#requestFullscreenMode(int,android.os.OutcomeReceiver)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnRequestFullscreenMode"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<int, Android.Os.OutcomeReceiver<Java.Lang.Void, Java.Lang.Throwable>> OnRequestFullscreenMode { get; set; } = null;
+        
+        bool hasOverrideRequestFullscreenMode = true;
+        void RequestFullscreenModeEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideRequestFullscreenMode = true;
+            var methodToExecute = (OnRequestFullscreenMode != null) ? OnRequestFullscreenMode : RequestFullscreenMode;
+            methodToExecute.Invoke(data.EventData.GetAt<int>(0), data.EventData.GetAt<Android.Os.OutcomeReceiver<Java.Lang.Void, Java.Lang.Throwable>>(1));
+            data.EventData.TypedEventData.HasOverride = hasOverrideRequestFullscreenMode;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#requestFullscreenMode(int,android.os.OutcomeReceiver)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="Android.Os.OutcomeReceiver"/></param>
+        public virtual void RequestFullscreenMode(int arg0, Android.Os.OutcomeReceiver<Java.Lang.Void, Java.Lang.Throwable> arg1)
+        {
+            hasOverrideRequestFullscreenMode = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setActionBar(android.widget.Toolbar)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetActionBar"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.Widget.Toolbar> OnSetActionBar { get; set; } = null;
+        
+        bool hasOverrideSetActionBar = true;
+        void SetActionBarEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetActionBar = true;
+            var methodToExecute = (OnSetActionBar != null) ? OnSetActionBar : SetActionBar;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.Widget.Toolbar>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetActionBar;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setActionBar(android.widget.Toolbar)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Widget.Toolbar"/></param>
+        public virtual void SetActionBar(Android.Widget.Toolbar arg0)
+        {
+            hasOverrideSetActionBar = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setAllowCrossUidActivitySwitchFromBelow(boolean)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetAllowCrossUidActivitySwitchFromBelow"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<bool> OnSetAllowCrossUidActivitySwitchFromBelow { get; set; } = null;
+        
+        bool hasOverrideSetAllowCrossUidActivitySwitchFromBelow = true;
+        void SetAllowCrossUidActivitySwitchFromBelowEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetAllowCrossUidActivitySwitchFromBelow = true;
+            var methodToExecute = (OnSetAllowCrossUidActivitySwitchFromBelow != null) ? OnSetAllowCrossUidActivitySwitchFromBelow : SetAllowCrossUidActivitySwitchFromBelow;
+            methodToExecute.Invoke(data.EventData.GetAt<bool>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetAllowCrossUidActivitySwitchFromBelow;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setAllowCrossUidActivitySwitchFromBelow(boolean)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="bool"/></param>
+        public virtual void SetAllowCrossUidActivitySwitchFromBelow(bool arg0)
+        {
+            hasOverrideSetAllowCrossUidActivitySwitchFromBelow = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setContentTransitionManager(android.transition.TransitionManager)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetContentTransitionManager"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.Transition.TransitionManager> OnSetContentTransitionManager { get; set; } = null;
+        
+        bool hasOverrideSetContentTransitionManager = true;
+        void SetContentTransitionManagerEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetContentTransitionManager = true;
+            var methodToExecute = (OnSetContentTransitionManager != null) ? OnSetContentTransitionManager : SetContentTransitionManager;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.Transition.TransitionManager>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetContentTransitionManager;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setContentTransitionManager(android.transition.TransitionManager)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Transition.TransitionManager"/></param>
+        public virtual void SetContentTransitionManager(Android.Transition.TransitionManager arg0)
+        {
+            hasOverrideSetContentTransitionManager = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setContentView(android.view.View,android.view.ViewGroup.LayoutParams)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetContentView"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.View.View, Android.View.ViewGroup.LayoutParams> OnSetContentView { get; set; } = null;
+        
+        bool hasOverrideSetContentView = true;
+        void SetContentViewEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetContentView = true;
+            var methodToExecute = (OnSetContentView != null) ? OnSetContentView : SetContentView;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.View.View>(0), data.EventData.GetAt<Android.View.ViewGroup.LayoutParams>(1));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetContentView;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setContentView(android.view.View,android.view.ViewGroup.LayoutParams)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.View"/></param>
+        /// <param name="arg1"><see cref="Android.View.ViewGroup.LayoutParams"/></param>
+        public virtual void SetContentView(Android.View.View arg0, Android.View.ViewGroup.LayoutParams arg1)
+        {
+            hasOverrideSetContentView = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setContentView(android.view.View)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetContentView1"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.View.View> OnSetContentView1 { get; set; } = null;
+        
+        bool hasOverrideSetContentView1 = true;
+        void SetContentView1EventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetContentView1 = true;
+            var methodToExecute = (OnSetContentView1 != null) ? OnSetContentView1 : SetContentView;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.View.View>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetContentView1;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setContentView(android.view.View)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.View"/></param>
+        public virtual void SetContentView(Android.View.View arg0)
+        {
+            hasOverrideSetContentView1 = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setContentView(int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetContentView1_2"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<int> OnSetContentView1_2 { get; set; } = null;
+        
+        bool hasOverrideSetContentView1_2 = true;
+        void SetContentView1_2EventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetContentView1_2 = true;
+            var methodToExecute = (OnSetContentView1_2 != null) ? OnSetContentView1_2 : SetContentView;
+            methodToExecute.Invoke(data.EventData.GetAt<int>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetContentView1_2;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setContentView(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        public virtual void SetContentView(int arg0)
+        {
+            hasOverrideSetContentView1_2 = false;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setEnterSharedElementCallback(android.app.SharedElementCallback)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.App.SharedElementCallback"/></param>
+        public void SetEnterSharedElementCallback(Android.App.SharedElementCallback arg0)
+        {
+            IExecute("setEnterSharedElementCallback", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setExitSharedElementCallback(android.app.SharedElementCallback)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.App.SharedElementCallback"/></param>
+        public void SetExitSharedElementCallback(Android.App.SharedElementCallback arg0)
+        {
+            IExecute("setExitSharedElementCallback", arg0);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setFinishOnTouchOutside(boolean)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetFinishOnTouchOutside"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<bool> OnSetFinishOnTouchOutside { get; set; } = null;
+        
+        bool hasOverrideSetFinishOnTouchOutside = true;
+        void SetFinishOnTouchOutsideEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetFinishOnTouchOutside = true;
+            var methodToExecute = (OnSetFinishOnTouchOutside != null) ? OnSetFinishOnTouchOutside : SetFinishOnTouchOutside;
+            methodToExecute.Invoke(data.EventData.GetAt<bool>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetFinishOnTouchOutside;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setFinishOnTouchOutside(boolean)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="bool"/></param>
+        public virtual void SetFinishOnTouchOutside(bool arg0)
+        {
+            hasOverrideSetFinishOnTouchOutside = false;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setImmersive(boolean)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="bool"/></param>
+        public void SetImmersive(bool arg0)
+        {
+            IExecute("setImmersive", arg0);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setInheritShowWhenLocked(boolean)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetInheritShowWhenLocked"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<bool> OnSetInheritShowWhenLocked { get; set; } = null;
+        
+        bool hasOverrideSetInheritShowWhenLocked = true;
+        void SetInheritShowWhenLockedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetInheritShowWhenLocked = true;
+            var methodToExecute = (OnSetInheritShowWhenLocked != null) ? OnSetInheritShowWhenLocked : SetInheritShowWhenLocked;
+            methodToExecute.Invoke(data.EventData.GetAt<bool>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetInheritShowWhenLocked;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setInheritShowWhenLocked(boolean)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="bool"/></param>
+        public virtual void SetInheritShowWhenLocked(bool arg0)
+        {
+            hasOverrideSetInheritShowWhenLocked = false;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setIntent(android.content.Intent,android.app.ComponentCaller)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Content.Intent"/></param>
+        /// <param name="arg1"><see cref="Android.App.ComponentCaller"/></param>
+        public void SetIntent(Android.Content.Intent arg0, Android.App.ComponentCaller arg1)
+        {
+            IExecute("setIntent", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setIntent(android.content.Intent)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Content.Intent"/></param>
+        public void SetIntent(Android.Content.Intent arg0)
+        {
+            IExecute("setIntent", arg0);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setLocusContext(android.content.LocusId,android.os.Bundle)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetLocusContext"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.Content.LocusId, Android.Os.Bundle> OnSetLocusContext { get; set; } = null;
+        
+        bool hasOverrideSetLocusContext = true;
+        void SetLocusContextEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetLocusContext = true;
+            var methodToExecute = (OnSetLocusContext != null) ? OnSetLocusContext : SetLocusContext;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.Content.LocusId>(0), data.EventData.GetAt<Android.Os.Bundle>(1));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetLocusContext;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setLocusContext(android.content.LocusId,android.os.Bundle)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Content.LocusId"/></param>
+        /// <param name="arg1"><see cref="Android.Os.Bundle"/></param>
+        public virtual void SetLocusContext(Android.Content.LocusId arg0, Android.Os.Bundle arg1)
+        {
+            hasOverrideSetLocusContext = false;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setPictureInPictureParams(android.app.PictureInPictureParams)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.App.PictureInPictureParams"/></param>
+        public void SetPictureInPictureParams(Android.App.PictureInPictureParams arg0)
+        {
+            IExecute("setPictureInPictureParams", arg0);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setRecentsScreenshotEnabled(boolean)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetRecentsScreenshotEnabled"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<bool> OnSetRecentsScreenshotEnabled { get; set; } = null;
+        
+        bool hasOverrideSetRecentsScreenshotEnabled = true;
+        void SetRecentsScreenshotEnabledEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetRecentsScreenshotEnabled = true;
+            var methodToExecute = (OnSetRecentsScreenshotEnabled != null) ? OnSetRecentsScreenshotEnabled : SetRecentsScreenshotEnabled;
+            methodToExecute.Invoke(data.EventData.GetAt<bool>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetRecentsScreenshotEnabled;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setRecentsScreenshotEnabled(boolean)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="bool"/></param>
+        public virtual void SetRecentsScreenshotEnabled(bool arg0)
+        {
+            hasOverrideSetRecentsScreenshotEnabled = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setRequestedOrientation(int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetRequestedOrientation"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<int> OnSetRequestedOrientation { get; set; } = null;
+        
+        bool hasOverrideSetRequestedOrientation = true;
+        void SetRequestedOrientationEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetRequestedOrientation = true;
+            var methodToExecute = (OnSetRequestedOrientation != null) ? OnSetRequestedOrientation : SetRequestedOrientation;
+            methodToExecute.Invoke(data.EventData.GetAt<int>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetRequestedOrientation;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setRequestedOrientation(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        public virtual void SetRequestedOrientation(int arg0)
+        {
+            hasOverrideSetRequestedOrientation = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setShouldDockBigOverlays(boolean)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetShouldDockBigOverlays"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<bool> OnSetShouldDockBigOverlays { get; set; } = null;
+        
+        bool hasOverrideSetShouldDockBigOverlays = true;
+        void SetShouldDockBigOverlaysEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetShouldDockBigOverlays = true;
+            var methodToExecute = (OnSetShouldDockBigOverlays != null) ? OnSetShouldDockBigOverlays : SetShouldDockBigOverlays;
+            methodToExecute.Invoke(data.EventData.GetAt<bool>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetShouldDockBigOverlays;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setShouldDockBigOverlays(boolean)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="bool"/></param>
+        public virtual void SetShouldDockBigOverlays(bool arg0)
+        {
+            hasOverrideSetShouldDockBigOverlays = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setShowWhenLocked(boolean)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetShowWhenLocked"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<bool> OnSetShowWhenLocked { get; set; } = null;
+        
+        bool hasOverrideSetShowWhenLocked = true;
+        void SetShowWhenLockedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetShowWhenLocked = true;
+            var methodToExecute = (OnSetShowWhenLocked != null) ? OnSetShowWhenLocked : SetShowWhenLocked;
+            methodToExecute.Invoke(data.EventData.GetAt<bool>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetShowWhenLocked;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setShowWhenLocked(boolean)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="bool"/></param>
+        public virtual void SetShowWhenLocked(bool arg0)
+        {
+            hasOverrideSetShowWhenLocked = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setTaskDescription(android.app.ActivityManager.TaskDescription)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetTaskDescription"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.App.ActivityManager.TaskDescription> OnSetTaskDescription { get; set; } = null;
+        
+        bool hasOverrideSetTaskDescription = true;
+        void SetTaskDescriptionEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetTaskDescription = true;
+            var methodToExecute = (OnSetTaskDescription != null) ? OnSetTaskDescription : SetTaskDescription;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.App.ActivityManager.TaskDescription>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetTaskDescription;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setTaskDescription(android.app.ActivityManager.TaskDescription)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.App.ActivityManager.TaskDescription"/></param>
+        public virtual void SetTaskDescription(Android.App.ActivityManager.TaskDescription arg0)
+        {
+            hasOverrideSetTaskDescription = false;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setTitle(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        public void SetTitle(int arg0)
+        {
+            IExecute("setTitle", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setTitle(java.lang.CharSequence)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.CharSequence"/></param>
+        public void SetTitle(Java.Lang.CharSequence arg0)
+        {
+            IExecute("setTitle", arg0);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setTitleColor(int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetTitleColor"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<int> OnSetTitleColor { get; set; } = null;
+        
+        bool hasOverrideSetTitleColor = true;
+        void SetTitleColorEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetTitleColor = true;
+            var methodToExecute = (OnSetTitleColor != null) ? OnSetTitleColor : SetTitleColor;
+            methodToExecute.Invoke(data.EventData.GetAt<int>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetTitleColor;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setTitleColor(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        [global::System.Obsolete()]
+        public virtual void SetTitleColor(int arg0)
+        {
+            hasOverrideSetTitleColor = false;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setTurnScreenOn(boolean)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="bool"/></param>
+        public void SetTurnScreenOn(bool arg0)
+        {
+            IExecute("setTurnScreenOn", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setVisible(boolean)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="bool"/></param>
+        public void SetVisible(bool arg0)
+        {
+            IExecute("setVisible", arg0);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#setVrModeEnabled(boolean,android.content.ComponentName)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetVrModeEnabled"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<bool, Android.Content.ComponentName> OnSetVrModeEnabled { get; set; } = null;
+        
+        bool hasOverrideSetVrModeEnabled = true;
+        void SetVrModeEnabledEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetVrModeEnabled = true;
+            var methodToExecute = (OnSetVrModeEnabled != null) ? OnSetVrModeEnabled : SetVrModeEnabled;
+            methodToExecute.Invoke(data.EventData.GetAt<bool>(0), data.EventData.GetAt<Android.Content.ComponentName>(1));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetVrModeEnabled;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#setVrModeEnabled(boolean,android.content.ComponentName)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="bool"/></param>
+        /// <param name="arg1"><see cref="Android.Content.ComponentName"/></param>
+        /// <exception cref="Android.Content.Pm.PackageManager.NameNotFoundException"/>
+        public virtual void SetVrModeEnabled(bool arg0, Android.Content.ComponentName arg1)
+        {
+            hasOverrideSetVrModeEnabled = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#showLockTaskEscapeMessage()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnShowLockTaskEscapeMessage"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnShowLockTaskEscapeMessage { get; set; } = null;
+        
+        bool hasOverrideShowLockTaskEscapeMessage = true;
+        void ShowLockTaskEscapeMessageEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideShowLockTaskEscapeMessage = true;
+            var methodToExecute = (OnShowLockTaskEscapeMessage != null) ? OnShowLockTaskEscapeMessage : ShowLockTaskEscapeMessage;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideShowLockTaskEscapeMessage;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#showLockTaskEscapeMessage()"/>
+        /// </summary>
+        public virtual void ShowLockTaskEscapeMessage()
+        {
+            hasOverrideShowLockTaskEscapeMessage = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#startActivityForResult(android.content.Intent,int,android.os.Bundle)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnStartActivityForResult"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.Content.Intent, int, Android.Os.Bundle> OnStartActivityForResult { get; set; } = null;
+        
+        bool hasOverrideStartActivityForResult = true;
+        void StartActivityForResultEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideStartActivityForResult = true;
+            var methodToExecute = (OnStartActivityForResult != null) ? OnStartActivityForResult : StartActivityForResult;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.Content.Intent>(0), data.EventData.GetAt<int>(1), data.EventData.GetAt<Android.Os.Bundle>(2));
+            data.EventData.TypedEventData.HasOverride = hasOverrideStartActivityForResult;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#startActivityForResult(android.content.Intent,int,android.os.Bundle)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Content.Intent"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <param name="arg2"><see cref="Android.Os.Bundle"/></param>
+        public virtual void StartActivityForResult(Android.Content.Intent arg0, int arg1, Android.Os.Bundle arg2)
+        {
+            hasOverrideStartActivityForResult = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#startActivityForResult(android.content.Intent,int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnStartActivityForResult2"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.Content.Intent, int> OnStartActivityForResult2 { get; set; } = null;
+        
+        bool hasOverrideStartActivityForResult2 = true;
+        void StartActivityForResult2EventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideStartActivityForResult2 = true;
+            var methodToExecute = (OnStartActivityForResult2 != null) ? OnStartActivityForResult2 : StartActivityForResult;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.Content.Intent>(0), data.EventData.GetAt<int>(1));
+            data.EventData.TypedEventData.HasOverride = hasOverrideStartActivityForResult2;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#startActivityForResult(android.content.Intent,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Content.Intent"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        public virtual void StartActivityForResult(Android.Content.Intent arg0, int arg1)
+        {
+            hasOverrideStartActivityForResult2 = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#startActivityFromChild(android.app.Activity,android.content.Intent,int,android.os.Bundle)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnStartActivityFromChild"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.App.Activity, Android.Content.Intent, int, Android.Os.Bundle> OnStartActivityFromChild { get; set; } = null;
+        
+        bool hasOverrideStartActivityFromChild = true;
+        void StartActivityFromChildEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideStartActivityFromChild = true;
+            var methodToExecute = (OnStartActivityFromChild != null) ? OnStartActivityFromChild : StartActivityFromChild;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.App.Activity>(0), data.EventData.GetAt<Android.Content.Intent>(1), data.EventData.GetAt<int>(2), data.EventData.GetAt<Android.Os.Bundle>(3));
+            data.EventData.TypedEventData.HasOverride = hasOverrideStartActivityFromChild;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#startActivityFromChild(android.app.Activity,android.content.Intent,int,android.os.Bundle)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.App.Activity"/></param>
+        /// <param name="arg1"><see cref="Android.Content.Intent"/></param>
+        /// <param name="arg2"><see cref="int"/></param>
+        /// <param name="arg3"><see cref="Android.Os.Bundle"/></param>
+        [global::System.Obsolete()]
+        public virtual void StartActivityFromChild(Android.App.Activity arg0, Android.Content.Intent arg1, int arg2, Android.Os.Bundle arg3)
+        {
+            hasOverrideStartActivityFromChild = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#startActivityFromChild(android.app.Activity,android.content.Intent,int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnStartActivityFromChild3"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.App.Activity, Android.Content.Intent, int> OnStartActivityFromChild3 { get; set; } = null;
+        
+        bool hasOverrideStartActivityFromChild3 = true;
+        void StartActivityFromChild3EventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideStartActivityFromChild3 = true;
+            var methodToExecute = (OnStartActivityFromChild3 != null) ? OnStartActivityFromChild3 : StartActivityFromChild;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.App.Activity>(0), data.EventData.GetAt<Android.Content.Intent>(1), data.EventData.GetAt<int>(2));
+            data.EventData.TypedEventData.HasOverride = hasOverrideStartActivityFromChild3;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#startActivityFromChild(android.app.Activity,android.content.Intent,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.App.Activity"/></param>
+        /// <param name="arg1"><see cref="Android.Content.Intent"/></param>
+        /// <param name="arg2"><see cref="int"/></param>
+        [global::System.Obsolete()]
+        public virtual void StartActivityFromChild(Android.App.Activity arg0, Android.Content.Intent arg1, int arg2)
+        {
+            hasOverrideStartActivityFromChild3 = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#startActivityFromFragment(android.app.Fragment,android.content.Intent,int,android.os.Bundle)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnStartActivityFromFragment"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.App.Fragment, Android.Content.Intent, int, Android.Os.Bundle> OnStartActivityFromFragment { get; set; } = null;
+        
+        bool hasOverrideStartActivityFromFragment = true;
+        void StartActivityFromFragmentEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideStartActivityFromFragment = true;
+            var methodToExecute = (OnStartActivityFromFragment != null) ? OnStartActivityFromFragment : StartActivityFromFragment;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.App.Fragment>(0), data.EventData.GetAt<Android.Content.Intent>(1), data.EventData.GetAt<int>(2), data.EventData.GetAt<Android.Os.Bundle>(3));
+            data.EventData.TypedEventData.HasOverride = hasOverrideStartActivityFromFragment;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#startActivityFromFragment(android.app.Fragment,android.content.Intent,int,android.os.Bundle)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.App.Fragment"/></param>
+        /// <param name="arg1"><see cref="Android.Content.Intent"/></param>
+        /// <param name="arg2"><see cref="int"/></param>
+        /// <param name="arg3"><see cref="Android.Os.Bundle"/></param>
+        [global::System.Obsolete()]
+        public virtual void StartActivityFromFragment(Android.App.Fragment arg0, Android.Content.Intent arg1, int arg2, Android.Os.Bundle arg3)
+        {
+            hasOverrideStartActivityFromFragment = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#startActivityFromFragment(android.app.Fragment,android.content.Intent,int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnStartActivityFromFragment3"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.App.Fragment, Android.Content.Intent, int> OnStartActivityFromFragment3 { get; set; } = null;
+        
+        bool hasOverrideStartActivityFromFragment3 = true;
+        void StartActivityFromFragment3EventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideStartActivityFromFragment3 = true;
+            var methodToExecute = (OnStartActivityFromFragment3 != null) ? OnStartActivityFromFragment3 : StartActivityFromFragment;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.App.Fragment>(0), data.EventData.GetAt<Android.Content.Intent>(1), data.EventData.GetAt<int>(2));
+            data.EventData.TypedEventData.HasOverride = hasOverrideStartActivityFromFragment3;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#startActivityFromFragment(android.app.Fragment,android.content.Intent,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.App.Fragment"/></param>
+        /// <param name="arg1"><see cref="Android.Content.Intent"/></param>
+        /// <param name="arg2"><see cref="int"/></param>
+        [global::System.Obsolete()]
+        public virtual void StartActivityFromFragment(Android.App.Fragment arg0, Android.Content.Intent arg1, int arg2)
+        {
+            hasOverrideStartActivityFromFragment3 = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#startIntentSenderForResult(android.content.IntentSender,int,android.content.Intent,int,int,int,android.os.Bundle)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnStartIntentSenderForResult"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.Content.IntentSender, int, Android.Content.Intent, int, int, int, Android.Os.Bundle> OnStartIntentSenderForResult { get; set; } = null;
+        
+        bool hasOverrideStartIntentSenderForResult = true;
+        void StartIntentSenderForResultEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideStartIntentSenderForResult = true;
+            var methodToExecute = (OnStartIntentSenderForResult != null) ? OnStartIntentSenderForResult : StartIntentSenderForResult;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.Content.IntentSender>(0), data.EventData.GetAt<int>(1), data.EventData.GetAt<Android.Content.Intent>(2), data.EventData.GetAt<int>(3), data.EventData.GetAt<int>(4), data.EventData.GetAt<int>(5), data.EventData.GetAt<Android.Os.Bundle>(6));
+            data.EventData.TypedEventData.HasOverride = hasOverrideStartIntentSenderForResult;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#startIntentSenderForResult(android.content.IntentSender,int,android.content.Intent,int,int,int,android.os.Bundle)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Content.IntentSender"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <param name="arg2"><see cref="Android.Content.Intent"/></param>
+        /// <param name="arg3"><see cref="int"/></param>
+        /// <param name="arg4"><see cref="int"/></param>
+        /// <param name="arg5"><see cref="int"/></param>
+        /// <param name="arg6"><see cref="Android.Os.Bundle"/></param>
+        /// <exception cref="Android.Content.IntentSender.SendIntentException"/>
+        public virtual void StartIntentSenderForResult(Android.Content.IntentSender arg0, int arg1, Android.Content.Intent arg2, int arg3, int arg4, int arg5, Android.Os.Bundle arg6)
+        {
+            hasOverrideStartIntentSenderForResult = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#startIntentSenderForResult(android.content.IntentSender,int,android.content.Intent,int,int,int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnStartIntentSenderForResult6"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.Content.IntentSender, int, Android.Content.Intent, int, int, int> OnStartIntentSenderForResult6 { get; set; } = null;
+        
+        bool hasOverrideStartIntentSenderForResult6 = true;
+        void StartIntentSenderForResult6EventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideStartIntentSenderForResult6 = true;
+            var methodToExecute = (OnStartIntentSenderForResult6 != null) ? OnStartIntentSenderForResult6 : StartIntentSenderForResult;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.Content.IntentSender>(0), data.EventData.GetAt<int>(1), data.EventData.GetAt<Android.Content.Intent>(2), data.EventData.GetAt<int>(3), data.EventData.GetAt<int>(4), data.EventData.GetAt<int>(5));
+            data.EventData.TypedEventData.HasOverride = hasOverrideStartIntentSenderForResult6;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#startIntentSenderForResult(android.content.IntentSender,int,android.content.Intent,int,int,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Content.IntentSender"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <param name="arg2"><see cref="Android.Content.Intent"/></param>
+        /// <param name="arg3"><see cref="int"/></param>
+        /// <param name="arg4"><see cref="int"/></param>
+        /// <param name="arg5"><see cref="int"/></param>
+        /// <exception cref="Android.Content.IntentSender.SendIntentException"/>
+        public virtual void StartIntentSenderForResult(Android.Content.IntentSender arg0, int arg1, Android.Content.Intent arg2, int arg3, int arg4, int arg5)
+        {
+            hasOverrideStartIntentSenderForResult6 = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#startIntentSenderFromChild(android.app.Activity,android.content.IntentSender,int,android.content.Intent,int,int,int,android.os.Bundle)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnStartIntentSenderFromChild"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.App.Activity, Android.Content.IntentSender, int, Android.Content.Intent, int, int, int, Android.Os.Bundle> OnStartIntentSenderFromChild { get; set; } = null;
+        
+        bool hasOverrideStartIntentSenderFromChild = true;
+        void StartIntentSenderFromChildEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideStartIntentSenderFromChild = true;
+            var methodToExecute = (OnStartIntentSenderFromChild != null) ? OnStartIntentSenderFromChild : StartIntentSenderFromChild;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.App.Activity>(0), data.EventData.GetAt<Android.Content.IntentSender>(1), data.EventData.GetAt<int>(2), data.EventData.GetAt<Android.Content.Intent>(3), data.EventData.GetAt<int>(4), data.EventData.GetAt<int>(5), data.EventData.GetAt<int>(6), data.EventData.GetAt<Android.Os.Bundle>(7));
+            data.EventData.TypedEventData.HasOverride = hasOverrideStartIntentSenderFromChild;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#startIntentSenderFromChild(android.app.Activity,android.content.IntentSender,int,android.content.Intent,int,int,int,android.os.Bundle)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.App.Activity"/></param>
+        /// <param name="arg1"><see cref="Android.Content.IntentSender"/></param>
+        /// <param name="arg2"><see cref="int"/></param>
+        /// <param name="arg3"><see cref="Android.Content.Intent"/></param>
+        /// <param name="arg4"><see cref="int"/></param>
+        /// <param name="arg5"><see cref="int"/></param>
+        /// <param name="arg6"><see cref="int"/></param>
+        /// <param name="arg7"><see cref="Android.Os.Bundle"/></param>
+        /// <exception cref="Android.Content.IntentSender.SendIntentException"/>
+        [global::System.Obsolete()]
+        public virtual void StartIntentSenderFromChild(Android.App.Activity arg0, Android.Content.IntentSender arg1, int arg2, Android.Content.Intent arg3, int arg4, int arg5, int arg6, Android.Os.Bundle arg7)
+        {
+            hasOverrideStartIntentSenderFromChild = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#startIntentSenderFromChild(android.app.Activity,android.content.IntentSender,int,android.content.Intent,int,int,int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnStartIntentSenderFromChild7"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.App.Activity, Android.Content.IntentSender, int, Android.Content.Intent, int, int, int> OnStartIntentSenderFromChild7 { get; set; } = null;
+        
+        bool hasOverrideStartIntentSenderFromChild7 = true;
+        void StartIntentSenderFromChild7EventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideStartIntentSenderFromChild7 = true;
+            var methodToExecute = (OnStartIntentSenderFromChild7 != null) ? OnStartIntentSenderFromChild7 : StartIntentSenderFromChild;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.App.Activity>(0), data.EventData.GetAt<Android.Content.IntentSender>(1), data.EventData.GetAt<int>(2), data.EventData.GetAt<Android.Content.Intent>(3), data.EventData.GetAt<int>(4), data.EventData.GetAt<int>(5), data.EventData.GetAt<int>(6));
+            data.EventData.TypedEventData.HasOverride = hasOverrideStartIntentSenderFromChild7;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#startIntentSenderFromChild(android.app.Activity,android.content.IntentSender,int,android.content.Intent,int,int,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.App.Activity"/></param>
+        /// <param name="arg1"><see cref="Android.Content.IntentSender"/></param>
+        /// <param name="arg2"><see cref="int"/></param>
+        /// <param name="arg3"><see cref="Android.Content.Intent"/></param>
+        /// <param name="arg4"><see cref="int"/></param>
+        /// <param name="arg5"><see cref="int"/></param>
+        /// <param name="arg6"><see cref="int"/></param>
+        /// <exception cref="Android.Content.IntentSender.SendIntentException"/>
+        [global::System.Obsolete()]
+        public virtual void StartIntentSenderFromChild(Android.App.Activity arg0, Android.Content.IntentSender arg1, int arg2, Android.Content.Intent arg3, int arg4, int arg5, int arg6)
+        {
+            hasOverrideStartIntentSenderFromChild7 = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#startLocalVoiceInteraction(android.os.Bundle)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnStartLocalVoiceInteraction"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.Os.Bundle> OnStartLocalVoiceInteraction { get; set; } = null;
+        
+        bool hasOverrideStartLocalVoiceInteraction = true;
+        void StartLocalVoiceInteractionEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideStartLocalVoiceInteraction = true;
+            var methodToExecute = (OnStartLocalVoiceInteraction != null) ? OnStartLocalVoiceInteraction : StartLocalVoiceInteraction;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.Os.Bundle>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideStartLocalVoiceInteraction;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#startLocalVoiceInteraction(android.os.Bundle)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Os.Bundle"/></param>
+        public virtual void StartLocalVoiceInteraction(Android.Os.Bundle arg0)
+        {
+            hasOverrideStartLocalVoiceInteraction = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#startLockTask()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnStartLockTask"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnStartLockTask { get; set; } = null;
+        
+        bool hasOverrideStartLockTask = true;
+        void StartLockTaskEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideStartLockTask = true;
+            var methodToExecute = (OnStartLockTask != null) ? OnStartLockTask : StartLockTask;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideStartLockTask;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#startLockTask()"/>
+        /// </summary>
+        public virtual void StartLockTask()
+        {
+            hasOverrideStartLockTask = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#startManagingCursor(android.database.Cursor)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnStartManagingCursor"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.Database.Cursor> OnStartManagingCursor { get; set; } = null;
+        
+        bool hasOverrideStartManagingCursor = true;
+        void StartManagingCursorEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideStartManagingCursor = true;
+            var methodToExecute = (OnStartManagingCursor != null) ? OnStartManagingCursor : StartManagingCursor;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.Database.Cursor>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideStartManagingCursor;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#startManagingCursor(android.database.Cursor)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Database.Cursor"/></param>
+        [global::System.Obsolete()]
+        public virtual void StartManagingCursor(Android.Database.Cursor arg0)
+        {
+            hasOverrideStartManagingCursor = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#startPostponedEnterTransition()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnStartPostponedEnterTransition"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnStartPostponedEnterTransition { get; set; } = null;
+        
+        bool hasOverrideStartPostponedEnterTransition = true;
+        void StartPostponedEnterTransitionEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideStartPostponedEnterTransition = true;
+            var methodToExecute = (OnStartPostponedEnterTransition != null) ? OnStartPostponedEnterTransition : StartPostponedEnterTransition;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideStartPostponedEnterTransition;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#startPostponedEnterTransition()"/>
+        /// </summary>
+        public virtual void StartPostponedEnterTransition()
+        {
+            hasOverrideStartPostponedEnterTransition = false;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#startSearch(java.lang.String,boolean,android.os.Bundle,boolean)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg1"><see cref="bool"/></param>
+        /// <param name="arg2"><see cref="Android.Os.Bundle"/></param>
+        /// <param name="arg3"><see cref="bool"/></param>
+        public void StartSearch(Java.Lang.String arg0, bool arg1, Android.Os.Bundle arg2, bool arg3)
+        {
+            IExecute("startSearch", arg0, arg1, arg2, arg3);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#stopLocalVoiceInteraction()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnStopLocalVoiceInteraction"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnStopLocalVoiceInteraction { get; set; } = null;
+        
+        bool hasOverrideStopLocalVoiceInteraction = true;
+        void StopLocalVoiceInteractionEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideStopLocalVoiceInteraction = true;
+            var methodToExecute = (OnStopLocalVoiceInteraction != null) ? OnStopLocalVoiceInteraction : StopLocalVoiceInteraction;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideStopLocalVoiceInteraction;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#stopLocalVoiceInteraction()"/>
+        /// </summary>
+        public virtual void StopLocalVoiceInteraction()
+        {
+            hasOverrideStopLocalVoiceInteraction = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#stopLockTask()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnStopLockTask"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnStopLockTask { get; set; } = null;
+        
+        bool hasOverrideStopLockTask = true;
+        void StopLockTaskEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideStopLockTask = true;
+            var methodToExecute = (OnStopLockTask != null) ? OnStopLockTask : StopLockTask;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideStopLockTask;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#stopLockTask()"/>
+        /// </summary>
+        public virtual void StopLockTask()
+        {
+            hasOverrideStopLockTask = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#stopManagingCursor(android.database.Cursor)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnStopManagingCursor"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.Database.Cursor> OnStopManagingCursor { get; set; } = null;
+        
+        bool hasOverrideStopManagingCursor = true;
+        void StopManagingCursorEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideStopManagingCursor = true;
+            var methodToExecute = (OnStopManagingCursor != null) ? OnStopManagingCursor : StopManagingCursor;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.Database.Cursor>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideStopManagingCursor;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#stopManagingCursor(android.database.Cursor)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Database.Cursor"/></param>
+        [global::System.Obsolete()]
+        public virtual void StopManagingCursor(Android.Database.Cursor arg0)
+        {
+            hasOverrideStopManagingCursor = false;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#takeKeyEvents(boolean)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="bool"/></param>
+        public void TakeKeyEvents(bool arg0)
+        {
+            IExecute("takeKeyEvents", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#triggerSearch(java.lang.String,android.os.Bundle)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg1"><see cref="Android.Os.Bundle"/></param>
+        public void TriggerSearch(Java.Lang.String arg0, Android.Os.Bundle arg1)
+        {
+            IExecute("triggerSearch", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#unregisterActivityLifecycleCallbacks(android.app.Application.ActivityLifecycleCallbacks)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.App.Application.ActivityLifecycleCallbacks"/></param>
+        public void UnregisterActivityLifecycleCallbacks(Android.App.Application.ActivityLifecycleCallbacks arg0)
+        {
+            IExecute("unregisterActivityLifecycleCallbacks", arg0);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/Activity.html#unregisterForContextMenu(android.view.View)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnUnregisterForContextMenu"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.View.View> OnUnregisterForContextMenu { get; set; } = null;
+        
+        bool hasOverrideUnregisterForContextMenu = true;
+        void UnregisterForContextMenuEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideUnregisterForContextMenu = true;
+            var methodToExecute = (OnUnregisterForContextMenu != null) ? OnUnregisterForContextMenu : UnregisterForContextMenu;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.View.View>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideUnregisterForContextMenu;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#unregisterForContextMenu(android.view.View)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.View.View"/></param>
+        public virtual void UnregisterForContextMenu(Android.View.View arg0)
+        {
+            hasOverrideUnregisterForContextMenu = false;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/app/Activity.html#unregisterScreenCaptureCallback(android.app.Activity.ScreenCaptureCallback)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.App.Activity.ScreenCaptureCallback"/></param>
+        public void UnregisterScreenCaptureCallback(Android.App.Activity.ScreenCaptureCallback arg0)
+        {
+            IExecute("unregisterScreenCaptureCallback", arg0);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/NativeActivity.html#onGlobalLayout()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnGlobalLayout"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action OnOnGlobalLayout { get; set; } = null;
+        
+        bool hasOverrideOnGlobalLayout = true;
+        void OnGlobalLayoutEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnGlobalLayout = true;
+            var methodToExecute = (OnOnGlobalLayout != null) ? OnOnGlobalLayout : OnGlobalLayout;
+            methodToExecute.Invoke();
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnGlobalLayout;
+        }
+        
+        /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/NativeActivity.html#onGlobalLayout()"/>
         /// </summary>
-        public void OnGlobalLayout()
+        public virtual void OnGlobalLayout()
         {
-            IExecuteWithSignature("onGlobalLayout", "()V");
+            hasOverrideOnGlobalLayout = false;
         }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/NativeActivity.html#onInputQueueCreated(android.view.InputQueue)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnInputQueueCreated"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.View.InputQueue> OnOnInputQueueCreated { get; set; } = null;
+        
+        bool hasOverrideOnInputQueueCreated = true;
+        void OnInputQueueCreatedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnInputQueueCreated = true;
+            var methodToExecute = (OnOnInputQueueCreated != null) ? OnOnInputQueueCreated : OnInputQueueCreated;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.View.InputQueue>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnInputQueueCreated;
+        }
+        
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/NativeActivity.html#onInputQueueCreated(android.view.InputQueue)"/>
         /// </summary>
         /// <param name="arg0"><see cref="Android.View.InputQueue"/></param>
-        public void OnInputQueueCreated(Android.View.InputQueue arg0)
+        public virtual void OnInputQueueCreated(Android.View.InputQueue arg0)
         {
-            IExecuteWithSignature("onInputQueueCreated", "(Landroid/view/InputQueue;)V", arg0);
+            hasOverrideOnInputQueueCreated = false;
         }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/NativeActivity.html#onInputQueueDestroyed(android.view.InputQueue)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnOnInputQueueDestroyed"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.View.InputQueue> OnOnInputQueueDestroyed { get; set; } = null;
+        
+        bool hasOverrideOnInputQueueDestroyed = true;
+        void OnInputQueueDestroyedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideOnInputQueueDestroyed = true;
+            var methodToExecute = (OnOnInputQueueDestroyed != null) ? OnOnInputQueueDestroyed : OnInputQueueDestroyed;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.View.InputQueue>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideOnInputQueueDestroyed;
+        }
+        
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/NativeActivity.html#onInputQueueDestroyed(android.view.InputQueue)"/>
         /// </summary>
         /// <param name="arg0"><see cref="Android.View.InputQueue"/></param>
-        public void OnInputQueueDestroyed(Android.View.InputQueue arg0)
+        public virtual void OnInputQueueDestroyed(Android.View.InputQueue arg0)
         {
-            IExecuteWithSignature("onInputQueueDestroyed", "(Landroid/view/InputQueue;)V", arg0);
+            hasOverrideOnInputQueueDestroyed = false;
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/NativeActivity.html#surfaceChanged(android.view.SurfaceHolder,int,int,int)"/>
@@ -144,13 +6034,29 @@ namespace Android.App
         {
             IExecuteWithSignature("surfaceCreated", "(Landroid/view/SurfaceHolder;)V", arg0);
         }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/NativeActivity.html#surfaceDestroyed(android.view.SurfaceHolder)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSurfaceDestroyed"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.View.SurfaceHolder> OnSurfaceDestroyed { get; set; } = null;
+        
+        bool hasOverrideSurfaceDestroyed = true;
+        void SurfaceDestroyedEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSurfaceDestroyed = true;
+            var methodToExecute = (OnSurfaceDestroyed != null) ? OnSurfaceDestroyed : SurfaceDestroyed;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.View.SurfaceHolder>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSurfaceDestroyed;
+        }
+        
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/NativeActivity.html#surfaceDestroyed(android.view.SurfaceHolder)"/>
         /// </summary>
         /// <param name="arg0"><see cref="Android.View.SurfaceHolder"/></param>
-        public void SurfaceDestroyed(Android.View.SurfaceHolder arg0)
+        public virtual void SurfaceDestroyed(Android.View.SurfaceHolder arg0)
         {
-            IExecuteWithSignature("surfaceDestroyed", "(Landroid/view/SurfaceHolder;)V", arg0);
+            hasOverrideSurfaceDestroyed = false;
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/NativeActivity.html#surfaceRedrawNeeded(android.view.SurfaceHolder)"/>
@@ -159,6 +6065,119 @@ namespace Android.App
         public void SurfaceRedrawNeeded(Android.View.SurfaceHolder arg0)
         {
             IExecuteWithSignature("surfaceRedrawNeeded", "(Landroid/view/SurfaceHolder;)V", arg0);
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/content/Context.html#revokeSelfPermissionOnKill(java.lang.String)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnRevokeSelfPermissionOnKill"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Java.Lang.String> OnRevokeSelfPermissionOnKill { get; set; } = null;
+        
+        bool hasOverrideRevokeSelfPermissionOnKill = true;
+        void RevokeSelfPermissionOnKillEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideRevokeSelfPermissionOnKill = true;
+            var methodToExecute = (OnRevokeSelfPermissionOnKill != null) ? OnRevokeSelfPermissionOnKill : RevokeSelfPermissionOnKill;
+            methodToExecute.Invoke(data.EventData.GetAt<Java.Lang.String>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideRevokeSelfPermissionOnKill;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/content/Context.html#revokeSelfPermissionOnKill(java.lang.String)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        public virtual void RevokeSelfPermissionOnKill(Java.Lang.String arg0)
+        {
+            hasOverrideRevokeSelfPermissionOnKill = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/content/Context.html#sendBroadcastWithMultiplePermissions(android.content.Intent,java.lang.String[])"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSendBroadcastWithMultiplePermissions"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.Content.Intent, Java.Lang.String[]> OnSendBroadcastWithMultiplePermissions { get; set; } = null;
+        
+        bool hasOverrideSendBroadcastWithMultiplePermissions = true;
+        void SendBroadcastWithMultiplePermissionsEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSendBroadcastWithMultiplePermissions = true;
+            var methodToExecute = (OnSendBroadcastWithMultiplePermissions != null) ? OnSendBroadcastWithMultiplePermissions : SendBroadcastWithMultiplePermissions;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.Content.Intent>(0), data.EventData.GetAt<Java.Lang.String[]>(1));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSendBroadcastWithMultiplePermissions;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/content/Context.html#sendBroadcastWithMultiplePermissions(android.content.Intent,java.lang.String[])"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Content.Intent"/></param>
+        /// <param name="arg1"><see cref="Java.Lang.String"/></param>
+        public virtual void SendBroadcastWithMultiplePermissions(Android.Content.Intent arg0, Java.Lang.String[] arg1)
+        {
+            hasOverrideSendBroadcastWithMultiplePermissions = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/content/ContextWrapper.html#sendOrderedBroadcast(android.content.Intent,int,java.lang.String,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,java.lang.String,android.os.Bundle,android.os.Bundle)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSendOrderedBroadcast"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.Content.Intent, int, Java.Lang.String, Java.Lang.String, Android.Content.BroadcastReceiver, Android.Os.Handler, Java.Lang.String, Android.Os.Bundle, Android.Os.Bundle> OnSendOrderedBroadcast { get; set; } = null;
+        
+        bool hasOverrideSendOrderedBroadcast = true;
+        void SendOrderedBroadcastEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSendOrderedBroadcast = true;
+            var methodToExecute = (OnSendOrderedBroadcast != null) ? OnSendOrderedBroadcast : SendOrderedBroadcast;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.Content.Intent>(0), data.EventData.GetAt<int>(1), data.EventData.GetAt<Java.Lang.String>(2), data.EventData.GetAt<Java.Lang.String>(3), data.EventData.GetAt<Android.Content.BroadcastReceiver>(4), data.EventData.GetAt<Android.Os.Handler>(5), data.EventData.GetAt<Java.Lang.String>(6), data.EventData.GetAt<Android.Os.Bundle>(7), data.EventData.GetAt<Android.Os.Bundle>(8));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSendOrderedBroadcast;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/content/ContextWrapper.html#sendOrderedBroadcast(android.content.Intent,int,java.lang.String,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,java.lang.String,android.os.Bundle,android.os.Bundle)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Content.Intent"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <param name="arg2"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg3"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg4"><see cref="Android.Content.BroadcastReceiver"/></param>
+        /// <param name="arg5"><see cref="Android.Os.Handler"/></param>
+        /// <param name="arg6"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg7"><see cref="Android.Os.Bundle"/></param>
+        /// <param name="arg8"><see cref="Android.Os.Bundle"/></param>
+        public virtual void SendOrderedBroadcast(Android.Content.Intent arg0, int arg1, Java.Lang.String arg2, Java.Lang.String arg3, Android.Content.BroadcastReceiver arg4, Android.Os.Handler arg5, Java.Lang.String arg6, Android.Os.Bundle arg7, Android.Os.Bundle arg8)
+        {
+            hasOverrideSendOrderedBroadcast = false;
+        }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/view/ContextThemeWrapper.html#applyOverrideConfiguration(android.content.res.Configuration)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnApplyOverrideConfiguration"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<Android.Content.Res.Configuration> OnApplyOverrideConfiguration { get; set; } = null;
+        
+        bool hasOverrideApplyOverrideConfiguration = true;
+        void ApplyOverrideConfigurationEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideApplyOverrideConfiguration = true;
+            var methodToExecute = (OnApplyOverrideConfiguration != null) ? OnApplyOverrideConfiguration : ApplyOverrideConfiguration;
+            methodToExecute.Invoke(data.EventData.GetAt<Android.Content.Res.Configuration>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideApplyOverrideConfiguration;
+        }
+        
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/view/ContextThemeWrapper.html#applyOverrideConfiguration(android.content.res.Configuration)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Content.Res.Configuration"/></param>
+        public virtual void ApplyOverrideConfiguration(Android.Content.Res.Configuration arg0)
+        {
+            hasOverrideApplyOverrideConfiguration = false;
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/android/view/ContextThemeWrapper.html#setTheme(android.content.res.Resources.Theme)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Android.Content.Res.Resources.Theme"/></param>
+        public void SetTheme(Android.Content.Res.Resources.Theme arg0)
+        {
+            IExecute("setTheme", arg0);
         }
     
         #endregion

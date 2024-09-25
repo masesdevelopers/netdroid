@@ -359,7 +359,7 @@ namespace Android.Gesture
         /// <returns><see cref="Android.Gesture.Gesture"/></returns>
         public Android.Gesture.Gesture GetGesture()
         {
-            return IExecuteWithSignature<Android.Gesture.Gesture>("getGesture", "()Landroid/gesture/Gesture;");
+            return IExecute<Android.Gesture.Gesture>("getGesture");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#getGesturePath()"/>
@@ -367,7 +367,7 @@ namespace Android.Gesture
         /// <returns><see cref="Android.Graphics.Path"/></returns>
         public Android.Graphics.Path GetGesturePath()
         {
-            return IExecuteWithSignature<Android.Graphics.Path>("getGesturePath", "()Landroid/graphics/Path;");
+            return IExecute<Android.Graphics.Path>("getGesturePath");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#getGesturePath(android.graphics.Path)"/>
@@ -376,7 +376,7 @@ namespace Android.Gesture
         /// <returns><see cref="Android.Graphics.Path"/></returns>
         public Android.Graphics.Path GetGesturePath(Android.Graphics.Path arg0)
         {
-            return IExecuteWithSignature<Android.Graphics.Path>("getGesturePath", "(Landroid/graphics/Path;)Landroid/graphics/Path;", arg0);
+            return IExecute<Android.Graphics.Path>("getGesturePath", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#isEventsInterceptionEnabled()"/>
@@ -384,7 +384,7 @@ namespace Android.Gesture
         /// <returns><see cref="bool"/></returns>
         public bool IsEventsInterceptionEnabled()
         {
-            return IExecuteWithSignature<bool>("isEventsInterceptionEnabled", "()Z");
+            return IExecute<bool>("isEventsInterceptionEnabled");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#isFadeEnabled()"/>
@@ -392,7 +392,7 @@ namespace Android.Gesture
         /// <returns><see cref="bool"/></returns>
         public bool IsFadeEnabled()
         {
-            return IExecuteWithSignature<bool>("isFadeEnabled", "()Z");
+            return IExecute<bool>("isFadeEnabled");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#isGestureVisible()"/>
@@ -400,7 +400,7 @@ namespace Android.Gesture
         /// <returns><see cref="bool"/></returns>
         public bool IsGestureVisible()
         {
-            return IExecuteWithSignature<bool>("isGestureVisible", "()Z");
+            return IExecute<bool>("isGestureVisible");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#isGesturing()"/>
@@ -408,7 +408,7 @@ namespace Android.Gesture
         /// <returns><see cref="bool"/></returns>
         public bool IsGesturing()
         {
-            return IExecuteWithSignature<bool>("isGesturing", "()Z");
+            return IExecute<bool>("isGesturing");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#getGestureStrokeAngleThreshold()"/>
@@ -416,7 +416,7 @@ namespace Android.Gesture
         /// <returns><see cref="float"/></returns>
         public float GetGestureStrokeAngleThreshold()
         {
-            return IExecuteWithSignature<float>("getGestureStrokeAngleThreshold", "()F");
+            return IExecute<float>("getGestureStrokeAngleThreshold");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#getGestureStrokeLengthThreshold()"/>
@@ -424,7 +424,7 @@ namespace Android.Gesture
         /// <returns><see cref="float"/></returns>
         public float GetGestureStrokeLengthThreshold()
         {
-            return IExecuteWithSignature<float>("getGestureStrokeLengthThreshold", "()F");
+            return IExecute<float>("getGestureStrokeLengthThreshold");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#getGestureStrokeSquarenessTreshold()"/>
@@ -432,7 +432,7 @@ namespace Android.Gesture
         /// <returns><see cref="float"/></returns>
         public float GetGestureStrokeSquarenessTreshold()
         {
-            return IExecuteWithSignature<float>("getGestureStrokeSquarenessTreshold", "()F");
+            return IExecute<float>("getGestureStrokeSquarenessTreshold");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#getGestureStrokeWidth()"/>
@@ -440,7 +440,7 @@ namespace Android.Gesture
         /// <returns><see cref="float"/></returns>
         public float GetGestureStrokeWidth()
         {
-            return IExecuteWithSignature<float>("getGestureStrokeWidth", "()F");
+            return IExecute<float>("getGestureStrokeWidth");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#getGestureColor()"/>
@@ -448,7 +448,7 @@ namespace Android.Gesture
         /// <returns><see cref="int"/></returns>
         public int GetGestureColor()
         {
-            return IExecuteWithSignature<int>("getGestureColor", "()I");
+            return IExecute<int>("getGestureColor");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#getGestureStrokeType()"/>
@@ -456,7 +456,7 @@ namespace Android.Gesture
         /// <returns><see cref="int"/></returns>
         public int GetGestureStrokeType()
         {
-            return IExecuteWithSignature<int>("getGestureStrokeType", "()I");
+            return IExecute<int>("getGestureStrokeType");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#getOrientation()"/>
@@ -464,7 +464,7 @@ namespace Android.Gesture
         /// <returns><see cref="int"/></returns>
         public int GetOrientation()
         {
-            return IExecuteWithSignature<int>("getOrientation", "()I");
+            return IExecute<int>("getOrientation");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#getUncertainGestureColor()"/>
@@ -472,7 +472,7 @@ namespace Android.Gesture
         /// <returns><see cref="int"/></returns>
         public int GetUncertainGestureColor()
         {
-            return IExecuteWithSignature<int>("getUncertainGestureColor", "()I");
+            return IExecute<int>("getUncertainGestureColor");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#getCurrentStroke()"/>
@@ -480,7 +480,7 @@ namespace Android.Gesture
         /// <returns><see cref="Java.Util.ArrayList"/></returns>
         public Java.Util.ArrayList<Android.Gesture.GesturePoint> GetCurrentStroke()
         {
-            return IExecuteWithSignature<Java.Util.ArrayList<Android.Gesture.GesturePoint>>("getCurrentStroke", "()Ljava/util/ArrayList;");
+            return IExecute<Java.Util.ArrayList<Android.Gesture.GesturePoint>>("getCurrentStroke");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#getFadeOffset()"/>
@@ -488,7 +488,7 @@ namespace Android.Gesture
         /// <returns><see cref="long"/></returns>
         public long GetFadeOffset()
         {
-            return IExecuteWithSignature<long>("getFadeOffset", "()J");
+            return IExecute<long>("getFadeOffset");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#addOnGestureListener(android.gesture.GestureOverlayView.OnGestureListener)"/>
@@ -496,7 +496,7 @@ namespace Android.Gesture
         /// <param name="arg0"><see cref="Android.Gesture.GestureOverlayView.OnGestureListener"/></param>
         public void AddOnGestureListener(Android.Gesture.GestureOverlayView.OnGestureListener arg0)
         {
-            IExecuteWithSignature("addOnGestureListener", "(Landroid/gesture/GestureOverlayView$OnGestureListener;)V", arg0);
+            IExecute("addOnGestureListener", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#addOnGesturePerformedListener(android.gesture.GestureOverlayView.OnGesturePerformedListener)"/>
@@ -504,7 +504,7 @@ namespace Android.Gesture
         /// <param name="arg0"><see cref="Android.Gesture.GestureOverlayView.OnGesturePerformedListener"/></param>
         public void AddOnGesturePerformedListener(Android.Gesture.GestureOverlayView.OnGesturePerformedListener arg0)
         {
-            IExecuteWithSignature("addOnGesturePerformedListener", "(Landroid/gesture/GestureOverlayView$OnGesturePerformedListener;)V", arg0);
+            IExecute("addOnGesturePerformedListener", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#addOnGesturingListener(android.gesture.GestureOverlayView.OnGesturingListener)"/>
@@ -512,21 +512,21 @@ namespace Android.Gesture
         /// <param name="arg0"><see cref="Android.Gesture.GestureOverlayView.OnGesturingListener"/></param>
         public void AddOnGesturingListener(Android.Gesture.GestureOverlayView.OnGesturingListener arg0)
         {
-            IExecuteWithSignature("addOnGesturingListener", "(Landroid/gesture/GestureOverlayView$OnGesturingListener;)V", arg0);
+            IExecute("addOnGesturingListener", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#cancelClearAnimation()"/>
         /// </summary>
         public void CancelClearAnimation()
         {
-            IExecuteWithSignature("cancelClearAnimation", "()V");
+            IExecute("cancelClearAnimation");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#cancelGesture()"/>
         /// </summary>
         public void CancelGesture()
         {
-            IExecuteWithSignature("cancelGesture", "()V");
+            IExecute("cancelGesture");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#clear(boolean)"/>
@@ -534,28 +534,28 @@ namespace Android.Gesture
         /// <param name="arg0"><see cref="bool"/></param>
         public void Clear(bool arg0)
         {
-            IExecuteWithSignature("clear", "(Z)V", arg0);
+            IExecute("clear", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#removeAllOnGestureListeners()"/>
         /// </summary>
         public void RemoveAllOnGestureListeners()
         {
-            IExecuteWithSignature("removeAllOnGestureListeners", "()V");
+            IExecute("removeAllOnGestureListeners");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#removeAllOnGesturePerformedListeners()"/>
         /// </summary>
         public void RemoveAllOnGesturePerformedListeners()
         {
-            IExecuteWithSignature("removeAllOnGesturePerformedListeners", "()V");
+            IExecute("removeAllOnGesturePerformedListeners");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#removeAllOnGesturingListeners()"/>
         /// </summary>
         public void RemoveAllOnGesturingListeners()
         {
-            IExecuteWithSignature("removeAllOnGesturingListeners", "()V");
+            IExecute("removeAllOnGesturingListeners");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#removeOnGestureListener(android.gesture.GestureOverlayView.OnGestureListener)"/>
@@ -563,7 +563,7 @@ namespace Android.Gesture
         /// <param name="arg0"><see cref="Android.Gesture.GestureOverlayView.OnGestureListener"/></param>
         public void RemoveOnGestureListener(Android.Gesture.GestureOverlayView.OnGestureListener arg0)
         {
-            IExecuteWithSignature("removeOnGestureListener", "(Landroid/gesture/GestureOverlayView$OnGestureListener;)V", arg0);
+            IExecute("removeOnGestureListener", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#removeOnGesturePerformedListener(android.gesture.GestureOverlayView.OnGesturePerformedListener)"/>
@@ -571,7 +571,7 @@ namespace Android.Gesture
         /// <param name="arg0"><see cref="Android.Gesture.GestureOverlayView.OnGesturePerformedListener"/></param>
         public void RemoveOnGesturePerformedListener(Android.Gesture.GestureOverlayView.OnGesturePerformedListener arg0)
         {
-            IExecuteWithSignature("removeOnGesturePerformedListener", "(Landroid/gesture/GestureOverlayView$OnGesturePerformedListener;)V", arg0);
+            IExecute("removeOnGesturePerformedListener", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#removeOnGesturingListener(android.gesture.GestureOverlayView.OnGesturingListener)"/>
@@ -579,7 +579,7 @@ namespace Android.Gesture
         /// <param name="arg0"><see cref="Android.Gesture.GestureOverlayView.OnGesturingListener"/></param>
         public void RemoveOnGesturingListener(Android.Gesture.GestureOverlayView.OnGesturingListener arg0)
         {
-            IExecuteWithSignature("removeOnGesturingListener", "(Landroid/gesture/GestureOverlayView$OnGesturingListener;)V", arg0);
+            IExecute("removeOnGesturingListener", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#setEventsInterceptionEnabled(boolean)"/>
@@ -587,7 +587,7 @@ namespace Android.Gesture
         /// <param name="arg0"><see cref="bool"/></param>
         public void SetEventsInterceptionEnabled(bool arg0)
         {
-            IExecuteWithSignature("setEventsInterceptionEnabled", "(Z)V", arg0);
+            IExecute("setEventsInterceptionEnabled", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#setFadeEnabled(boolean)"/>
@@ -595,7 +595,7 @@ namespace Android.Gesture
         /// <param name="arg0"><see cref="bool"/></param>
         public void SetFadeEnabled(bool arg0)
         {
-            IExecuteWithSignature("setFadeEnabled", "(Z)V", arg0);
+            IExecute("setFadeEnabled", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#setFadeOffset(long)"/>
@@ -603,7 +603,7 @@ namespace Android.Gesture
         /// <param name="arg0"><see cref="long"/></param>
         public void SetFadeOffset(long arg0)
         {
-            IExecuteWithSignature("setFadeOffset", "(J)V", arg0);
+            IExecute("setFadeOffset", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#setGesture(android.gesture.Gesture)"/>
@@ -611,7 +611,7 @@ namespace Android.Gesture
         /// <param name="arg0"><see cref="Android.Gesture.Gesture"/></param>
         public void SetGesture(Android.Gesture.Gesture arg0)
         {
-            IExecuteWithSignature("setGesture", "(Landroid/gesture/Gesture;)V", arg0);
+            IExecute("setGesture", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#setGestureColor(int)"/>
@@ -619,7 +619,7 @@ namespace Android.Gesture
         /// <param name="arg0"><see cref="int"/></param>
         public void SetGestureColor(int arg0)
         {
-            IExecuteWithSignature("setGestureColor", "(I)V", arg0);
+            IExecute("setGestureColor", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#setGestureStrokeAngleThreshold(float)"/>
@@ -627,7 +627,7 @@ namespace Android.Gesture
         /// <param name="arg0"><see cref="float"/></param>
         public void SetGestureStrokeAngleThreshold(float arg0)
         {
-            IExecuteWithSignature("setGestureStrokeAngleThreshold", "(F)V", arg0);
+            IExecute("setGestureStrokeAngleThreshold", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#setGestureStrokeLengthThreshold(float)"/>
@@ -635,7 +635,7 @@ namespace Android.Gesture
         /// <param name="arg0"><see cref="float"/></param>
         public void SetGestureStrokeLengthThreshold(float arg0)
         {
-            IExecuteWithSignature("setGestureStrokeLengthThreshold", "(F)V", arg0);
+            IExecute("setGestureStrokeLengthThreshold", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#setGestureStrokeSquarenessTreshold(float)"/>
@@ -643,7 +643,7 @@ namespace Android.Gesture
         /// <param name="arg0"><see cref="float"/></param>
         public void SetGestureStrokeSquarenessTreshold(float arg0)
         {
-            IExecuteWithSignature("setGestureStrokeSquarenessTreshold", "(F)V", arg0);
+            IExecute("setGestureStrokeSquarenessTreshold", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#setGestureStrokeType(int)"/>
@@ -651,7 +651,7 @@ namespace Android.Gesture
         /// <param name="arg0"><see cref="int"/></param>
         public void SetGestureStrokeType(int arg0)
         {
-            IExecuteWithSignature("setGestureStrokeType", "(I)V", arg0);
+            IExecute("setGestureStrokeType", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#setGestureStrokeWidth(float)"/>
@@ -659,7 +659,7 @@ namespace Android.Gesture
         /// <param name="arg0"><see cref="float"/></param>
         public void SetGestureStrokeWidth(float arg0)
         {
-            IExecuteWithSignature("setGestureStrokeWidth", "(F)V", arg0);
+            IExecute("setGestureStrokeWidth", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#setGestureVisible(boolean)"/>
@@ -667,7 +667,7 @@ namespace Android.Gesture
         /// <param name="arg0"><see cref="bool"/></param>
         public void SetGestureVisible(bool arg0)
         {
-            IExecuteWithSignature("setGestureVisible", "(Z)V", arg0);
+            IExecute("setGestureVisible", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#setOrientation(int)"/>
@@ -675,7 +675,7 @@ namespace Android.Gesture
         /// <param name="arg0"><see cref="int"/></param>
         public void SetOrientation(int arg0)
         {
-            IExecuteWithSignature("setOrientation", "(I)V", arg0);
+            IExecute("setOrientation", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureOverlayView.html#setUncertainGestureColor(int)"/>
@@ -683,7 +683,7 @@ namespace Android.Gesture
         /// <param name="arg0"><see cref="int"/></param>
         public void SetUncertainGestureColor(int arg0)
         {
-            IExecuteWithSignature("setUncertainGestureColor", "(I)V", arg0);
+            IExecute("setUncertainGestureColor", arg0);
         }
     
         #endregion

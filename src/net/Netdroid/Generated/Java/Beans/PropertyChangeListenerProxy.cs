@@ -109,7 +109,7 @@ namespace Java.Beans
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetPropertyName()
         {
-            return IExecuteWithSignature<Java.Lang.String>("getPropertyName", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("getPropertyName");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/beans/PropertyChangeListenerProxy.html#propertyChange(java.beans.PropertyChangeEvent)"/>
@@ -117,7 +117,7 @@ namespace Java.Beans
         /// <param name="arg0"><see cref="Java.Beans.PropertyChangeEvent"/></param>
         public void PropertyChange(Java.Beans.PropertyChangeEvent arg0)
         {
-            IExecuteWithSignature("propertyChange", "(Ljava/beans/PropertyChangeEvent;)V", arg0);
+            IExecute("propertyChange", arg0);
         }
     
         #endregion

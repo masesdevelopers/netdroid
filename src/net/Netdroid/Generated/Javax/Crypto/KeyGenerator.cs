@@ -117,7 +117,7 @@ namespace Javax.Crypto
         /// <exception cref="Java.Security.NoSuchAlgorithmException"/>
         public static Javax.Crypto.KeyGenerator GetInstance(Java.Lang.String arg0)
         {
-            return SExecuteWithSignature<Javax.Crypto.KeyGenerator>(LocalBridgeClazz, "getInstance", "(Ljava/lang/String;)Ljavax/crypto/KeyGenerator;", arg0);
+            return SExecute<Javax.Crypto.KeyGenerator>(LocalBridgeClazz, "getInstance", arg0);
         }
     
         #endregion
@@ -129,7 +129,7 @@ namespace Javax.Crypto
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetAlgorithm()
         {
-            return IExecuteWithSignature<Java.Lang.String>("getAlgorithm", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("getAlgorithm");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/KeyGenerator.html#getProvider()"/>
@@ -137,7 +137,7 @@ namespace Javax.Crypto
         /// <returns><see cref="Java.Security.Provider"/></returns>
         public Java.Security.Provider GetProvider()
         {
-            return IExecuteWithSignature<Java.Security.Provider>("getProvider", "()Ljava/security/Provider;");
+            return IExecute<Java.Security.Provider>("getProvider");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/KeyGenerator.html#generateKey()"/>
@@ -145,7 +145,7 @@ namespace Javax.Crypto
         /// <returns><see cref="Javax.Crypto.SecretKey"/></returns>
         public Javax.Crypto.SecretKey GenerateKey()
         {
-            return IExecuteWithSignature<Javax.Crypto.SecretKey>("generateKey", "()Ljavax/crypto/SecretKey;");
+            return IExecute<Javax.Crypto.SecretKey>("generateKey");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/KeyGenerator.html#init(int,java.security.SecureRandom)"/>
@@ -162,7 +162,7 @@ namespace Javax.Crypto
         /// <param name="arg0"><see cref="int"/></param>
         public void Init(int arg0)
         {
-            IExecuteWithSignature("init", "(I)V", arg0);
+            IExecute("init", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/KeyGenerator.html#init(java.security.SecureRandom)"/>
@@ -170,7 +170,7 @@ namespace Javax.Crypto
         /// <param name="arg0"><see cref="Java.Security.SecureRandom"/></param>
         public void Init(Java.Security.SecureRandom arg0)
         {
-            IExecuteWithSignature("init", "(Ljava/security/SecureRandom;)V", arg0);
+            IExecute("init", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/KeyGenerator.html#init(java.security.spec.AlgorithmParameterSpec,java.security.SecureRandom)"/>
@@ -189,7 +189,7 @@ namespace Javax.Crypto
         /// <exception cref="Java.Security.InvalidAlgorithmParameterException"/>
         public void Init(Java.Security.Spec.AlgorithmParameterSpec arg0)
         {
-            IExecuteWithSignature("init", "(Ljava/security/spec/AlgorithmParameterSpec;)V", arg0);
+            IExecute("init", arg0);
         }
     
         #endregion

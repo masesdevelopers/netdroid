@@ -118,14 +118,30 @@ namespace Android.App
         {
             return IExecuteWithSignature<Android.Widget.ListView>("getListView", "()Landroid/widget/ListView;");
         }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/ListActivity.html#getSelectedItemPosition()"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnGetSelectedItemPosition"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Func<int> OnGetSelectedItemPosition { get; set; } = null;
+        
+        bool hasOverrideGetSelectedItemPosition = true;
+        void GetSelectedItemPositionEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideGetSelectedItemPosition = true;
+            var methodToExecute = (OnGetSelectedItemPosition != null) ? OnGetSelectedItemPosition : GetSelectedItemPosition;
+            var executionResult = methodToExecute.Invoke();
+            data.EventData.TypedEventData.SetReturnData(hasOverrideGetSelectedItemPosition, executionResult);
+        }
+        
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/ListActivity.html#getSelectedItemPosition()"/>
         /// </summary>
         /// <returns><see cref="int"/></returns>
         [global::System.Obsolete()]
-        public int GetSelectedItemPosition()
+        public virtual int GetSelectedItemPosition()
         {
-            return IExecuteWithSignature<int>("getSelectedItemPosition", "()I");
+            hasOverrideGetSelectedItemPosition = false; return default;
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/ListActivity.html#getSelectedItemId()"/>
@@ -145,14 +161,30 @@ namespace Android.App
         {
             IExecuteWithSignature("setListAdapter", "(Landroid/widget/ListAdapter;)V", arg0);
         }
+        
+        /// <summary>
+        /// Handler for <see href="https://developer.android.com/reference/android/app/ListActivity.html#setSelection(int)"/>
+        /// </summary>
+        /// <remarks>If <see cref="OnSetSelection"/> has a value it takes precedence over corresponding class method</remarks>
+        public global::System.Action<int> OnSetSelection { get; set; } = null;
+        
+        bool hasOverrideSetSelection = true;
+        void SetSelectionEventHandler(object sender, CLRListenerEventArgs<CLREventData<MASES.JNet.Specific.JNetEventResult>> data)
+        {
+            hasOverrideSetSelection = true;
+            var methodToExecute = (OnSetSelection != null) ? OnSetSelection : SetSelection;
+            methodToExecute.Invoke(data.EventData.GetAt<int>(0));
+            data.EventData.TypedEventData.HasOverride = hasOverrideSetSelection;
+        }
+        
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/app/ListActivity.html#setSelection(int)"/>
         /// </summary>
         /// <param name="arg0"><see cref="int"/></param>
         [global::System.Obsolete()]
-        public void SetSelection(int arg0)
+        public virtual void SetSelection(int arg0)
         {
-            IExecuteWithSignature("setSelection", "(I)V", arg0);
+            hasOverrideSetSelection = false;
         }
     
         #endregion

@@ -93,7 +93,7 @@ namespace Android.Gesture
         /// <returns><see cref="Android.Gesture.GestureLibrary"/></returns>
         public static Android.Gesture.GestureLibrary FromFile(Java.Io.File arg0)
         {
-            return SExecuteWithSignature<Android.Gesture.GestureLibrary>(LocalBridgeClazz, "fromFile", "(Ljava/io/File;)Landroid/gesture/GestureLibrary;", arg0);
+            return SExecute<Android.Gesture.GestureLibrary>(LocalBridgeClazz, "fromFile", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureLibraries.html#fromFile(java.lang.String)"/>
@@ -102,7 +102,7 @@ namespace Android.Gesture
         /// <returns><see cref="Android.Gesture.GestureLibrary"/></returns>
         public static Android.Gesture.GestureLibrary FromFile(Java.Lang.String arg0)
         {
-            return SExecuteWithSignature<Android.Gesture.GestureLibrary>(LocalBridgeClazz, "fromFile", "(Ljava/lang/String;)Landroid/gesture/GestureLibrary;", arg0);
+            return SExecute<Android.Gesture.GestureLibrary>(LocalBridgeClazz, "fromFile", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureLibraries.html#fromFileDescriptor(android.os.ParcelFileDescriptor)"/>
@@ -111,7 +111,7 @@ namespace Android.Gesture
         /// <returns><see cref="Android.Gesture.GestureLibrary"/></returns>
         public static Android.Gesture.GestureLibrary FromFileDescriptor(Android.Os.ParcelFileDescriptor arg0)
         {
-            return SExecuteWithSignature<Android.Gesture.GestureLibrary>(LocalBridgeClazz, "fromFileDescriptor", "(Landroid/os/ParcelFileDescriptor;)Landroid/gesture/GestureLibrary;", arg0);
+            return SExecute<Android.Gesture.GestureLibrary>(LocalBridgeClazz, "fromFileDescriptor", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureLibraries.html#fromPrivateFile(android.content.Context,java.lang.String)"/>

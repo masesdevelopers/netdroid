@@ -98,14 +98,14 @@ namespace Java.Util.Logging
         /// <exception cref="Java.Lang.SecurityException"/>
         public void Close()
         {
-            IExecuteWithSignature("close", "()V");
+            IExecute("close");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Handler.html#flush()"/>
         /// </summary>
         public void Flush()
         {
-            IExecuteWithSignature("flush", "()V");
+            IExecute("flush");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Handler.html#publish(java.util.logging.LogRecord)"/>
@@ -113,7 +113,7 @@ namespace Java.Util.Logging
         /// <param name="arg0"><see cref="Java.Util.Logging.LogRecord"/></param>
         public void Publish(Java.Util.Logging.LogRecord arg0)
         {
-            IExecuteWithSignature("publish", "(Ljava/util/logging/LogRecord;)V", arg0);
+            IExecute("publish", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Handler.html#isLoggable(java.util.logging.LogRecord)"/>
@@ -122,7 +122,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="bool"/></returns>
         public bool IsLoggable(Java.Util.Logging.LogRecord arg0)
         {
-            return IExecuteWithSignature<bool>("isLoggable", "(Ljava/util/logging/LogRecord;)Z", arg0);
+            return IExecute<bool>("isLoggable", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Handler.html#getEncoding()"/>
@@ -130,7 +130,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetEncoding()
         {
-            return IExecuteWithSignature<Java.Lang.String>("getEncoding", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("getEncoding");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Handler.html#getErrorManager()"/>
@@ -138,7 +138,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="Java.Util.Logging.ErrorManager"/></returns>
         public Java.Util.Logging.ErrorManager GetErrorManager()
         {
-            return IExecuteWithSignature<Java.Util.Logging.ErrorManager>("getErrorManager", "()Ljava/util/logging/ErrorManager;");
+            return IExecute<Java.Util.Logging.ErrorManager>("getErrorManager");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Handler.html#getFilter()"/>
@@ -146,7 +146,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="Java.Util.Logging.Filter"/></returns>
         public Java.Util.Logging.Filter GetFilter()
         {
-            return IExecuteWithSignature<Java.Util.Logging.Filter>("getFilter", "()Ljava/util/logging/Filter;");
+            return IExecute<Java.Util.Logging.Filter>("getFilter");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Handler.html#getFormatter()"/>
@@ -154,7 +154,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="Java.Util.Logging.Formatter"/></returns>
         public Java.Util.Logging.Formatter GetFormatter()
         {
-            return IExecuteWithSignature<Java.Util.Logging.Formatter>("getFormatter", "()Ljava/util/logging/Formatter;");
+            return IExecute<Java.Util.Logging.Formatter>("getFormatter");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Handler.html#getLevel()"/>
@@ -162,7 +162,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="Java.Util.Logging.Level"/></returns>
         public Java.Util.Logging.Level GetLevel()
         {
-            return IExecuteWithSignature<Java.Util.Logging.Level>("getLevel", "()Ljava/util/logging/Level;");
+            return IExecute<Java.Util.Logging.Level>("getLevel");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Handler.html#setEncoding(java.lang.String)"/>
@@ -172,7 +172,7 @@ namespace Java.Util.Logging
         /// <exception cref="Java.Io.UnsupportedEncodingException"/>
         public void SetEncoding(Java.Lang.String arg0)
         {
-            IExecuteWithSignature("setEncoding", "(Ljava/lang/String;)V", arg0);
+            IExecute("setEncoding", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Handler.html#setErrorManager(java.util.logging.ErrorManager)"/>
@@ -180,7 +180,7 @@ namespace Java.Util.Logging
         /// <param name="arg0"><see cref="Java.Util.Logging.ErrorManager"/></param>
         public void SetErrorManager(Java.Util.Logging.ErrorManager arg0)
         {
-            IExecuteWithSignature("setErrorManager", "(Ljava/util/logging/ErrorManager;)V", arg0);
+            IExecute("setErrorManager", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Handler.html#setFilter(java.util.logging.Filter)"/>
@@ -189,7 +189,7 @@ namespace Java.Util.Logging
         /// <exception cref="Java.Lang.SecurityException"/>
         public void SetFilter(Java.Util.Logging.Filter arg0)
         {
-            IExecuteWithSignature("setFilter", "(Ljava/util/logging/Filter;)V", arg0);
+            IExecute("setFilter", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Handler.html#setFormatter(java.util.logging.Formatter)"/>
@@ -198,7 +198,7 @@ namespace Java.Util.Logging
         /// <exception cref="Java.Lang.SecurityException"/>
         public void SetFormatter(Java.Util.Logging.Formatter arg0)
         {
-            IExecuteWithSignature("setFormatter", "(Ljava/util/logging/Formatter;)V", arg0);
+            IExecute("setFormatter", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Handler.html#setLevel(java.util.logging.Level)"/>
@@ -207,7 +207,7 @@ namespace Java.Util.Logging
         /// <exception cref="Java.Lang.SecurityException"/>
         public void SetLevel(Java.Util.Logging.Level arg0)
         {
-            IExecuteWithSignature("setLevel", "(Ljava/util/logging/Level;)V", arg0);
+            IExecute("setLevel", arg0);
         }
     
         #endregion

@@ -129,7 +129,7 @@ namespace Android.Database
         /// <returns><see cref="Android.Database.CursorWindow"/></returns>
         public static Android.Database.CursorWindow NewFromParcel(Android.Os.Parcel arg0)
         {
-            return SExecuteWithSignature<Android.Database.CursorWindow>(LocalBridgeClazz, "newFromParcel", "(Landroid/os/Parcel;)Landroid/database/CursorWindow;", arg0);
+            return SExecute<Android.Database.CursorWindow>(LocalBridgeClazz, "newFromParcel", arg0);
         }
     
         #endregion
@@ -141,7 +141,7 @@ namespace Android.Database
         /// <returns><see cref="bool"/></returns>
         public bool AllocRow()
         {
-            return IExecuteWithSignature<bool>("allocRow", "()Z");
+            return IExecute<bool>("allocRow");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWindow.html#isBlob(int,int)"/>
@@ -259,7 +259,7 @@ namespace Android.Database
         /// <returns><see cref="bool"/></returns>
         public bool SetNumColumns(int arg0)
         {
-            return IExecuteWithSignature<bool>("setNumColumns", "(I)Z", arg0);
+            return IExecute<bool>("setNumColumns", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWindow.html#getBlob(int,int)"/>
@@ -297,7 +297,7 @@ namespace Android.Database
         /// <returns><see cref="int"/></returns>
         public int DescribeContents()
         {
-            return IExecuteWithSignature<int>("describeContents", "()I");
+            return IExecute<int>("describeContents");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWindow.html#getInt(int,int)"/>
@@ -315,7 +315,7 @@ namespace Android.Database
         /// <returns><see cref="int"/></returns>
         public int GetNumRows()
         {
-            return IExecuteWithSignature<int>("getNumRows", "()I");
+            return IExecute<int>("getNumRows");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWindow.html#getStartPosition()"/>
@@ -323,7 +323,7 @@ namespace Android.Database
         /// <returns><see cref="int"/></returns>
         public int GetStartPosition()
         {
-            return IExecuteWithSignature<int>("getStartPosition", "()I");
+            return IExecute<int>("getStartPosition");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWindow.html#getType(int,int)"/>
@@ -370,7 +370,7 @@ namespace Android.Database
         /// </summary>
         public void Clear()
         {
-            IExecuteWithSignature("clear", "()V");
+            IExecute("clear");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWindow.html#copyStringToBuffer(int,int,android.database.CharArrayBuffer)"/>
@@ -387,7 +387,7 @@ namespace Android.Database
         /// </summary>
         public void FreeLastRow()
         {
-            IExecuteWithSignature("freeLastRow", "()V");
+            IExecute("freeLastRow");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWindow.html#setStartPosition(int)"/>
@@ -395,7 +395,7 @@ namespace Android.Database
         /// <param name="arg0"><see cref="int"/></param>
         public void SetStartPosition(int arg0)
         {
-            IExecuteWithSignature("setStartPosition", "(I)V", arg0);
+            IExecute("setStartPosition", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/CursorWindow.html#writeToParcel(android.os.Parcel,int)"/>

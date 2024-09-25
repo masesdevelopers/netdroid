@@ -98,7 +98,7 @@ namespace Android.Gesture
         /// <returns><see cref="bool"/></returns>
         public bool Load()
         {
-            return IExecuteWithSignature<bool>("load", "()Z");
+            return IExecute<bool>("load");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureLibrary.html#save()"/>
@@ -106,7 +106,7 @@ namespace Android.Gesture
         /// <returns><see cref="bool"/></returns>
         public bool Save()
         {
-            return IExecuteWithSignature<bool>("save", "()Z");
+            return IExecute<bool>("save");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureLibrary.html#isReadOnly()"/>
@@ -114,7 +114,7 @@ namespace Android.Gesture
         /// <returns><see cref="bool"/></returns>
         public bool IsReadOnly()
         {
-            return IExecuteWithSignature<bool>("isReadOnly", "()Z");
+            return IExecute<bool>("isReadOnly");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureLibrary.html#getOrientationStyle()"/>
@@ -122,7 +122,7 @@ namespace Android.Gesture
         /// <returns><see cref="int"/></returns>
         public int GetOrientationStyle()
         {
-            return IExecuteWithSignature<int>("getOrientationStyle", "()I");
+            return IExecute<int>("getOrientationStyle");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureLibrary.html#getSequenceType()"/>
@@ -130,7 +130,7 @@ namespace Android.Gesture
         /// <returns><see cref="int"/></returns>
         public int GetSequenceType()
         {
-            return IExecuteWithSignature<int>("getSequenceType", "()I");
+            return IExecute<int>("getSequenceType");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureLibrary.html#getGestures(java.lang.String)"/>
@@ -139,7 +139,7 @@ namespace Android.Gesture
         /// <returns><see cref="Java.Util.ArrayList"/></returns>
         public Java.Util.ArrayList<Android.Gesture.Gesture> GetGestures(Java.Lang.String arg0)
         {
-            return IExecuteWithSignature<Java.Util.ArrayList<Android.Gesture.Gesture>>("getGestures", "(Ljava/lang/String;)Ljava/util/ArrayList;", arg0);
+            return IExecute<Java.Util.ArrayList<Android.Gesture.Gesture>>("getGestures", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureLibrary.html#recognize(android.gesture.Gesture)"/>
@@ -148,7 +148,7 @@ namespace Android.Gesture
         /// <returns><see cref="Java.Util.ArrayList"/></returns>
         public Java.Util.ArrayList<Android.Gesture.Prediction> Recognize(Android.Gesture.Gesture arg0)
         {
-            return IExecuteWithSignature<Java.Util.ArrayList<Android.Gesture.Prediction>>("recognize", "(Landroid/gesture/Gesture;)Ljava/util/ArrayList;", arg0);
+            return IExecute<Java.Util.ArrayList<Android.Gesture.Prediction>>("recognize", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureLibrary.html#getGestureEntries()"/>
@@ -156,7 +156,7 @@ namespace Android.Gesture
         /// <returns><see cref="Java.Util.Set"/></returns>
         public Java.Util.Set<Java.Lang.String> GetGestureEntries()
         {
-            return IExecuteWithSignature<Java.Util.Set<Java.Lang.String>>("getGestureEntries", "()Ljava/util/Set;");
+            return IExecute<Java.Util.Set<Java.Lang.String>>("getGestureEntries");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureLibrary.html#addGesture(java.lang.String,android.gesture.Gesture)"/>
@@ -173,7 +173,7 @@ namespace Android.Gesture
         /// <param name="arg0"><see cref="Java.Lang.String"/></param>
         public void RemoveEntry(Java.Lang.String arg0)
         {
-            IExecuteWithSignature("removeEntry", "(Ljava/lang/String;)V", arg0);
+            IExecute("removeEntry", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureLibrary.html#removeGesture(java.lang.String,android.gesture.Gesture)"/>
@@ -190,7 +190,7 @@ namespace Android.Gesture
         /// <param name="arg0"><see cref="int"/></param>
         public void SetOrientationStyle(int arg0)
         {
-            IExecuteWithSignature("setOrientationStyle", "(I)V", arg0);
+            IExecute("setOrientationStyle", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/gesture/GestureLibrary.html#setSequenceType(int)"/>
@@ -198,7 +198,7 @@ namespace Android.Gesture
         /// <param name="arg0"><see cref="int"/></param>
         public void SetSequenceType(int arg0)
         {
-            IExecuteWithSignature("setSequenceType", "(I)V", arg0);
+            IExecute("setSequenceType", arg0);
         }
     
         #endregion

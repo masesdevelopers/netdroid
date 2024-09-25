@@ -127,7 +127,7 @@ namespace Javax.Crypto
         /// <exception cref="Java.Security.InvalidKeyException"/>
         public object GetObject(Java.Security.Key arg0)
         {
-            return IExecuteWithSignature("getObject", "(Ljava/security/Key;)Ljava/lang/Object;", arg0);
+            return IExecute("getObject", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/SealedObject.html#getObject(javax.crypto.Cipher)"/>
@@ -140,7 +140,7 @@ namespace Javax.Crypto
         /// <exception cref="Javax.Crypto.BadPaddingException"/>
         public object GetObject(Javax.Crypto.Cipher arg0)
         {
-            return IExecuteWithSignature("getObject", "(Ljavax/crypto/Cipher;)Ljava/lang/Object;", arg0);
+            return IExecute("getObject", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/SealedObject.html#getAlgorithm()"/>
@@ -148,7 +148,7 @@ namespace Javax.Crypto
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetAlgorithm()
         {
-            return IExecuteWithSignature<Java.Lang.String>("getAlgorithm", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("getAlgorithm");
         }
     
         #endregion

@@ -148,7 +148,7 @@ namespace Java.Util.Logging
         /// <exception cref="Java.Lang.IllegalArgumentException"/>
         public static Java.Util.Logging.Level Parse(Java.Lang.String arg0)
         {
-            return SExecuteWithSignature<Java.Util.Logging.Level>(LocalBridgeClazz, "parse", "(Ljava/lang/String;)Ljava/util/logging/Level;", arg0);
+            return SExecute<Java.Util.Logging.Level>(LocalBridgeClazz, "parse", arg0);
         }
     
         #endregion
@@ -160,7 +160,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="int"/></returns>
         public int IntValue()
         {
-            return IExecuteWithSignature<int>("intValue", "()I");
+            return IExecute<int>("intValue");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Level.html#getLocalizedName()"/>
@@ -168,7 +168,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetLocalizedName()
         {
-            return IExecuteWithSignature<Java.Lang.String>("getLocalizedName", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("getLocalizedName");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Level.html#getName()"/>
@@ -176,7 +176,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetName()
         {
-            return IExecuteWithSignature<Java.Lang.String>("getName", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("getName");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/logging/Level.html#getResourceBundleName()"/>
@@ -184,7 +184,7 @@ namespace Java.Util.Logging
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetResourceBundleName()
         {
-            return IExecuteWithSignature<Java.Lang.String>("getResourceBundleName", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("getResourceBundleName");
         }
     
         #endregion

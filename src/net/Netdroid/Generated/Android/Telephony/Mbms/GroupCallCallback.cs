@@ -122,7 +122,7 @@ namespace Android.Telephony.Mbms
         /// <param name="arg0"><see cref="int"/></param>
         public void OnBroadcastSignalStrengthUpdated(int arg0)
         {
-            IExecuteWithSignature("onBroadcastSignalStrengthUpdated", "(I)V", arg0);
+            IExecute("onBroadcastSignalStrengthUpdated", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/GroupCallCallback.html#onError(int,java.lang.String)"/>

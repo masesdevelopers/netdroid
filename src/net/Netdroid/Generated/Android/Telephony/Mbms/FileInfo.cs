@@ -102,7 +102,7 @@ namespace Android.Telephony.Mbms
         /// <returns><see cref="Android.Net.Uri"/></returns>
         public Android.Net.Uri GetUri()
         {
-            return IExecuteWithSignature<Android.Net.Uri>("getUri", "()Landroid/net/Uri;");
+            return IExecute<Android.Net.Uri>("getUri");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/FileInfo.html#describeContents()"/>
@@ -110,7 +110,7 @@ namespace Android.Telephony.Mbms
         /// <returns><see cref="int"/></returns>
         public int DescribeContents()
         {
-            return IExecuteWithSignature<int>("describeContents", "()I");
+            return IExecute<int>("describeContents");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/FileInfo.html#getMimeType()"/>
@@ -118,7 +118,7 @@ namespace Android.Telephony.Mbms
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String GetMimeType()
         {
-            return IExecuteWithSignature<Java.Lang.String>("getMimeType", "()Ljava/lang/String;");
+            return IExecute<Java.Lang.String>("getMimeType");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/telephony/mbms/FileInfo.html#writeToParcel(android.os.Parcel,int)"/>

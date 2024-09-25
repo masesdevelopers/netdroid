@@ -106,7 +106,7 @@ namespace Android.Database
         [global::System.Obsolete()]
         public void DispatchChange(bool arg0)
         {
-            IExecuteWithSignature("dispatchChange", "(Z)V", arg0);
+            IExecute("dispatchChange", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/ContentObservable.html#notifyChange(boolean)"/>
@@ -115,7 +115,7 @@ namespace Android.Database
         [global::System.Obsolete()]
         public void NotifyChange(bool arg0)
         {
-            IExecuteWithSignature("notifyChange", "(Z)V", arg0);
+            IExecute("notifyChange", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/ContentObservable.html#registerObserver(android.database.ContentObserver)"/>
@@ -123,7 +123,7 @@ namespace Android.Database
         /// <param name="arg0"><see cref="Android.Database.ContentObserver"/></param>
         public void RegisterObserver(Android.Database.ContentObserver arg0)
         {
-            IExecuteWithSignature("registerObserver", "(Landroid/database/ContentObserver;)V", arg0);
+            IExecute("registerObserver", arg0);
         }
     
         #endregion

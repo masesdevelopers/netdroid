@@ -95,14 +95,14 @@ namespace Android.Database
         /// </summary>
         public void NotifyChanged()
         {
-            IExecuteWithSignature("notifyChanged", "()V");
+            IExecute("notifyChanged");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/android/database/DataSetObservable.html#notifyInvalidated()"/>
         /// </summary>
         public void NotifyInvalidated()
         {
-            IExecuteWithSignature("notifyInvalidated", "()V");
+            IExecute("notifyInvalidated");
         }
     
         #endregion
