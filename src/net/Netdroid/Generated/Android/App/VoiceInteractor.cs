@@ -1034,6 +1034,14 @@ namespace Android.App
                 return IExecuteWithSignature<Android.App.Activity>("getActivity", "()Landroid/app/Activity;");
             }
             /// <summary>
+            /// <see href="https://developer.android.com/reference/android/app/VoiceInteractor.Request.html#getActivity()"/>
+            /// </summary>
+            /// <returns><see cref="Android.App.Activity"/></returns>
+            public Android.App.Activity GetActivityDirect()
+            {
+                return IExecuteWithSignature<Android.App.ActivityDirect, Android.App.Activity>("getActivity", "()Landroid/app/Activity;");
+            }
+            /// <summary>
             /// <see href="https://developer.android.com/reference/android/app/VoiceInteractor.Request.html#getContext()"/>
             /// </summary>
             /// <returns><see cref="Android.Content.Context"/></returns>
