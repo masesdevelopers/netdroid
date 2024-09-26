@@ -535,7 +535,7 @@ namespace Android.Health.Connect.Datatypes
             /// <returns><see cref="Android.Health.Connect.Datatypes.Units.Energy"/></returns>
             public Android.Health.Connect.Datatypes.Units.Energy GetActiveCalories()
             {
-                return IExecuteWithSignature<Android.Health.Connect.Datatypes.Units.Energy>("getActiveCalories", "()Landroid/health/connect/datatypes/units/Energy;");
+                return IExecute<Android.Health.Connect.Datatypes.Units.Energy>("getActiveCalories");
             }
 
             #endregion
@@ -582,7 +582,7 @@ namespace Android.Health.Connect.Datatypes
             /// <returns><see cref="Android.Health.Connect.Datatypes.Units.Length"/></returns>
             public Android.Health.Connect.Datatypes.Units.Length GetDistance()
             {
-                return IExecuteWithSignature<Android.Health.Connect.Datatypes.Units.Length>("getDistance", "()Landroid/health/connect/datatypes/units/Length;");
+                return IExecute<Android.Health.Connect.Datatypes.Units.Length>("getDistance");
             }
 
             #endregion
@@ -630,7 +630,7 @@ namespace Android.Health.Connect.Datatypes
             /// <returns><see cref="Android.Health.Connect.Datatypes.Units.Length"/></returns>
             public Android.Health.Connect.Datatypes.Units.Length GetDistance()
             {
-                return IExecuteWithSignature<Android.Health.Connect.Datatypes.Units.Length>("getDistance", "()Landroid/health/connect/datatypes/units/Length;");
+                return IExecute<Android.Health.Connect.Datatypes.Units.Length>("getDistance");
             }
             /// <summary>
             /// <see href="https://developer.android.com/reference/android/health/connect/datatypes/ExerciseCompletionGoal.DistanceWithVariableRestGoal.html#getDuration()"/>
@@ -638,7 +638,7 @@ namespace Android.Health.Connect.Datatypes
             /// <returns><see cref="Java.Time.Duration"/></returns>
             public Java.Time.Duration GetDuration()
             {
-                return IExecuteWithSignature<Java.Time.Duration>("getDuration", "()Ljava/time/Duration;");
+                return IExecute<Java.Time.Duration>("getDuration");
             }
 
             #endregion
@@ -685,7 +685,7 @@ namespace Android.Health.Connect.Datatypes
             /// <returns><see cref="Java.Time.Duration"/></returns>
             public Java.Time.Duration GetDuration()
             {
-                return IExecuteWithSignature<Java.Time.Duration>("getDuration", "()Ljava/time/Duration;");
+                return IExecute<Java.Time.Duration>("getDuration");
             }
 
             #endregion
@@ -732,7 +732,7 @@ namespace Android.Health.Connect.Datatypes
             /// <returns><see cref="int"/></returns>
             public int GetRepetitions()
             {
-                return IExecuteWithSignature<int>("getRepetitions", "()I");
+                return IExecute<int>("getRepetitions");
             }
 
             #endregion
@@ -779,7 +779,7 @@ namespace Android.Health.Connect.Datatypes
             /// <returns><see cref="int"/></returns>
             public int GetSteps()
             {
-                return IExecuteWithSignature<int>("getSteps", "()I");
+                return IExecute<int>("getSteps");
             }
 
             #endregion
@@ -826,7 +826,7 @@ namespace Android.Health.Connect.Datatypes
             /// <returns><see cref="Android.Health.Connect.Datatypes.Units.Energy"/></returns>
             public Android.Health.Connect.Datatypes.Units.Energy GetTotalCalories()
             {
-                return IExecuteWithSignature<Android.Health.Connect.Datatypes.Units.Energy>("getTotalCalories", "()Landroid/health/connect/datatypes/units/Energy;");
+                return IExecute<Android.Health.Connect.Datatypes.Units.Energy>("getTotalCalories");
             }
 
             #endregion
