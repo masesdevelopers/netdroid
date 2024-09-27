@@ -173,6 +173,15 @@ namespace Java.Util.Concurrent
             return SExecuteWithSignature<Java.Util.Concurrent.ForkJoinTask>(LocalBridgeClazz, "adapt", "(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/ForkJoinTask;", arg0);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinTask.html#adaptInterruptible(java.util.concurrent.Callable)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Util.Concurrent.Callable"/></param>
+        /// <returns><see cref="Java.Util.Concurrent.ForkJoinTask"/></returns>
+        public static Java.Util.Concurrent.ForkJoinTask AdaptInterruptible(Java.Util.Concurrent.Callable arg0)
+        {
+            return SExecuteWithSignature<Java.Util.Concurrent.ForkJoinTask>(LocalBridgeClazz, "adaptInterruptible", "(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/ForkJoinTask;", arg0);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinTask.html#inForkJoinPool()"/>
         /// </summary>
         /// <returns><see cref="bool"/></returns>
@@ -309,6 +318,27 @@ namespace Java.Util.Concurrent
             return IExecuteWithSignature<bool>("isDone", "()Z");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinTask.html#quietlyJoin(long,java.util.concurrent.TimeUnit)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="long"/></param>
+        /// <param name="arg1"><see cref="Java.Util.Concurrent.TimeUnit"/></param>
+        /// <returns><see cref="bool"/></returns>
+        /// <exception cref="Java.Lang.InterruptedException"/>
+        public bool QuietlyJoin(long arg0, Java.Util.Concurrent.TimeUnit arg1)
+        {
+            return IExecuteWithSignature<bool>("quietlyJoin", "(JLjava/util/concurrent/TimeUnit;)Z", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinTask.html#quietlyJoinUninterruptibly(long,java.util.concurrent.TimeUnit)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="long"/></param>
+        /// <param name="arg1"><see cref="Java.Util.Concurrent.TimeUnit"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public bool QuietlyJoinUninterruptibly(long arg0, Java.Util.Concurrent.TimeUnit arg1)
+        {
+            return IExecuteWithSignature<bool>("quietlyJoinUninterruptibly", "(JLjava/util/concurrent/TimeUnit;)Z", arg0, arg1);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinTask.html#getException()"/>
         /// </summary>
         /// <returns><see cref="Java.Lang.Throwable"/></returns>
@@ -400,6 +430,30 @@ namespace Java.Util.Concurrent
         public void QuietlyJoin()
         {
             IExecuteWithSignature("quietlyJoin", "()V");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinTask.html#exceptionNow()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Lang.Throwable"/></returns>
+        public Java.Lang.Throwable ExceptionNow()
+        {
+            var obj = IExecuteWithSignature<MASES.JCOBridge.C2JBridge.JVMInterop.IJavaObject>("exceptionNow", "()Ljava/lang/Throwable;"); return MASES.JCOBridge.C2JBridge.JVMBridgeException.New<Java.Lang.Throwable>(obj);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinTask.html#state()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.Concurrent.Future.State"/></returns>
+        public Java.Util.Concurrent.Future.State State()
+        {
+            return IExecuteWithSignature<Java.Util.Concurrent.Future.State>("state", "()Ljava/util/concurrent/Future$State;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinTask.html#resultNow()"/>
+        /// </summary>
+        /// <returns><see cref="object"/></returns>
+        public object ResultNow()
+        {
+            return IExecuteWithSignature("resultNow", "()Ljava/lang/Object;");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinTask.html#complete(java.lang.Object)"/>
@@ -494,6 +548,17 @@ namespace Java.Util.Concurrent
         public static Java.Util.Concurrent.ForkJoinTask<T> Adapt<T, Arg0ExtendsT>(Java.Util.Concurrent.Callable<Arg0ExtendsT> arg0) where Arg0ExtendsT : T
         {
             return SExecuteWithSignature<Java.Util.Concurrent.ForkJoinTask<T>>(LocalBridgeClazz, "adapt", "(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/ForkJoinTask;", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinTask.html#adaptInterruptible(java.util.concurrent.Callable)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Util.Concurrent.Callable"/></param>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="Arg0ExtendsT"><typeparamref name="T"/></typeparam>
+        /// <returns><see cref="Java.Util.Concurrent.ForkJoinTask"/></returns>
+        public static Java.Util.Concurrent.ForkJoinTask<T> AdaptInterruptible<T, Arg0ExtendsT>(Java.Util.Concurrent.Callable<Arg0ExtendsT> arg0) where Arg0ExtendsT : T
+        {
+            return SExecuteWithSignature<Java.Util.Concurrent.ForkJoinTask<T>>(LocalBridgeClazz, "adaptInterruptible", "(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/ForkJoinTask;", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinTask.html#inForkJoinPool()"/>
@@ -632,6 +697,27 @@ namespace Java.Util.Concurrent
             return IExecuteWithSignature<bool>("isDone", "()Z");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinTask.html#quietlyJoin(long,java.util.concurrent.TimeUnit)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="long"/></param>
+        /// <param name="arg1"><see cref="Java.Util.Concurrent.TimeUnit"/></param>
+        /// <returns><see cref="bool"/></returns>
+        /// <exception cref="Java.Lang.InterruptedException"/>
+        public bool QuietlyJoin(long arg0, Java.Util.Concurrent.TimeUnit arg1)
+        {
+            return IExecuteWithSignature<bool>("quietlyJoin", "(JLjava/util/concurrent/TimeUnit;)Z", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinTask.html#quietlyJoinUninterruptibly(long,java.util.concurrent.TimeUnit)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="long"/></param>
+        /// <param name="arg1"><see cref="Java.Util.Concurrent.TimeUnit"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public bool QuietlyJoinUninterruptibly(long arg0, Java.Util.Concurrent.TimeUnit arg1)
+        {
+            return IExecuteWithSignature<bool>("quietlyJoinUninterruptibly", "(JLjava/util/concurrent/TimeUnit;)Z", arg0, arg1);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinTask.html#getException()"/>
         /// </summary>
         /// <returns><see cref="Java.Lang.Throwable"/></returns>
@@ -723,6 +809,30 @@ namespace Java.Util.Concurrent
         public void QuietlyJoin()
         {
             IExecuteWithSignature("quietlyJoin", "()V");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinTask.html#exceptionNow()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Lang.Throwable"/></returns>
+        public Java.Lang.Throwable ExceptionNow()
+        {
+            var obj = IExecuteWithSignature<MASES.JCOBridge.C2JBridge.JVMInterop.IJavaObject>("exceptionNow", "()Ljava/lang/Throwable;"); return MASES.JCOBridge.C2JBridge.JVMBridgeException.New<Java.Lang.Throwable>(obj);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinTask.html#state()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.Concurrent.Future.State"/></returns>
+        public Java.Util.Concurrent.Future.State State()
+        {
+            return IExecuteWithSignature<Java.Util.Concurrent.Future.State>("state", "()Ljava/util/concurrent/Future$State;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinTask.html#resultNow()"/>
+        /// </summary>
+        /// <returns><typeparamref name="V"/></returns>
+        public V ResultNow()
+        {
+            return IExecuteWithSignature<V>("resultNow", "()Ljava/lang/Object;");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinTask.html#complete(java.lang.Object)"/>

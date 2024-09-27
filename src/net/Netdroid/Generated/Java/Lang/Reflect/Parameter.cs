@@ -218,6 +218,14 @@ namespace Java.Lang.Reflect
         {
             return IExecuteWithSignature<Java.Lang.String>("getName", "()Ljava/lang/String;");
         }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/reflect/Parameter.html#accessFlags()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.Set"/></returns>
+        public Java.Util.Set<Java.Lang.Reflect.AccessFlag> AccessFlags()
+        {
+            return IExecuteWithSignature<Java.Util.Set<Java.Lang.Reflect.AccessFlag>>("accessFlags", "()Ljava/util/Set;");
+        }
 
         #endregion
 

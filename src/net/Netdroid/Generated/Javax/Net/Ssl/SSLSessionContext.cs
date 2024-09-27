@@ -147,7 +147,6 @@ namespace Javax.Net.Ssl
         /// <see href="https://developer.android.com/reference/javax/net/ssl/SSLSessionContext.html#setSessionCacheSize(int)"/>
         /// </summary>
         /// <param name="arg0"><see cref="int"/></param>
-        /// <exception cref="Java.Lang.IllegalArgumentException"/>
         public void SetSessionCacheSize(int arg0)
         {
             IExecuteWithSignature("setSessionCacheSize", "(I)V", arg0);
@@ -156,7 +155,6 @@ namespace Javax.Net.Ssl
         /// <see href="https://developer.android.com/reference/javax/net/ssl/SSLSessionContext.html#setSessionTimeout(int)"/>
         /// </summary>
         /// <param name="arg0"><see cref="int"/></param>
-        /// <exception cref="Java.Lang.IllegalArgumentException"/>
         public void SetSessionTimeout(int arg0)
         {
             IExecuteWithSignature("setSessionTimeout", "(I)V", arg0);

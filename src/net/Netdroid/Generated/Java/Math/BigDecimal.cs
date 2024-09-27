@@ -297,6 +297,12 @@ namespace Java.Math
         private static Java.Math.BigDecimal _TENContent = default;
         private static bool _TENReady = false; // this is used because in case of generics 
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/math/BigDecimal.html#TWO"/>
+        /// </summary>
+        public static Java.Math.BigDecimal TWO { get { if (!_TWOReady) { _TWOContent = SGetField<Java.Math.BigDecimal>(LocalBridgeClazz, "TWO"); _TWOReady = true; } return _TWOContent; } }
+        private static Java.Math.BigDecimal _TWOContent = default;
+        private static bool _TWOReady = false; // this is used because in case of generics 
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/math/BigDecimal.html#ZERO"/>
         /// </summary>
         public static Java.Math.BigDecimal ZERO { get { if (!_ZEROReady) { _ZEROContent = SGetField<Java.Math.BigDecimal>(LocalBridgeClazz, "ZERO"); _ZEROReady = true; } return _ZEROContent; } }

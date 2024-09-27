@@ -29,7 +29,7 @@ namespace Java.Util
     /// <summary>
     /// <see href="https://developer.android.com/reference/java/util/Deque.html"/>
     /// </summary>
-    public partial class Deque : Java.Util.Queue
+    public partial class Deque : MASES.JCOBridge.C2JBridge.JVMBridgeBase<Deque>
     {
         const string _bridgeClassName = "java.util.Deque";
         /// <summary>
@@ -77,7 +77,7 @@ namespace Java.Util
     /// <see href="https://developer.android.com/reference/java/util/Deque.html"/>
     /// </summary>
     /// <typeparam name="E"></typeparam>
-    public partial class Deque<E> : Java.Util.Queue<E>
+    public partial class Deque<E> : MASES.JCOBridge.C2JBridge.JVMBridgeBase<Deque<E>>
     {
         const string _bridgeClassName = "java.util.Deque";
         /// <summary>
@@ -128,6 +128,14 @@ namespace Java.Util
         #endregion
 
         #region Class/Interface conversion operators
+        /// <summary>
+        /// Converter from <see cref="Java.Util.Deque"/> to <see cref="Java.Util.Queue"/>
+        /// </summary>
+        public static implicit operator Java.Util.Queue(Java.Util.Deque t) => t.Cast<Java.Util.Queue>();
+        /// <summary>
+        /// Converter from <see cref="Java.Util.Deque"/> to <see cref="Java.Util.SequencedCollection"/>
+        /// </summary>
+        public static implicit operator Java.Util.SequencedCollection(Java.Util.Deque t) => t.Cast<Java.Util.SequencedCollection>();
 
         #endregion
 
@@ -373,6 +381,14 @@ namespace Java.Util
         {
             IExecuteWithSignature("push", "(Ljava/lang/Object;)V", arg0);
         }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/Deque.html#reversed()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.SequencedCollection"/></returns>
+        public Java.Util.SequencedCollection Reversed()
+        {
+            return IExecuteWithSignature<Java.Util.SequencedCollection>("reversed", "()Ljava/util/SequencedCollection;");
+        }
 
         #endregion
 
@@ -388,7 +404,7 @@ namespace Java.Util
     /// <summary>
     /// .NET interface for TO BE DEFINED FROM USER
     /// </summary>
-    public partial interface IDeque<E> : Java.Util.IQueue<E>
+    public partial interface IDeque<E>
     {
         #region Instance methods
 
@@ -403,13 +419,21 @@ namespace Java.Util
     #endregion
 
     #region Deque<E> implementation
-    public partial class Deque<E> : Java.Util.IDeque<E>
+    public partial class Deque<E> : Java.Util.IDeque<E>, Java.Util.IQueue<E>, Java.Util.ISequencedCollection<E>
     {
         #region Constructors
 
         #endregion
 
         #region Class/Interface conversion operators
+        /// <summary>
+        /// Converter from <see cref="Java.Util.Deque{E}"/> to <see cref="Java.Util.Queue{E}"/>
+        /// </summary>
+        public static implicit operator Java.Util.Queue<E>(Java.Util.Deque<E> t) => t.Cast<Java.Util.Queue<E>>();
+        /// <summary>
+        /// Converter from <see cref="Java.Util.Deque{E}"/> to <see cref="Java.Util.SequencedCollection{E}"/>
+        /// </summary>
+        public static implicit operator Java.Util.SequencedCollection<E>(Java.Util.Deque<E> t) => t.Cast<Java.Util.SequencedCollection<E>>();
         /// <summary>
         /// Converter from <see cref="Java.Util.Deque{E}"/> to <see cref="Java.Util.Deque"/>
         /// </summary>
@@ -659,6 +683,14 @@ namespace Java.Util
         public void Push(E arg0)
         {
             IExecuteWithSignature("push", "(Ljava/lang/Object;)V", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/Deque.html#reversed()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.SequencedCollection"/></returns>
+        public Java.Util.SequencedCollection Reversed()
+        {
+            return IExecuteWithSignature<Java.Util.SequencedCollection>("reversed", "()Ljava/util/SequencedCollection;");
         }
 
         #endregion

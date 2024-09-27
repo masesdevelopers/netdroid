@@ -219,6 +219,14 @@ namespace Java.Time
             return IExecuteWithSignature<bool>("isNegative", "()Z");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/time/Duration.html#isPositive()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public bool IsPositive()
+        {
+            return IExecuteWithSignature<bool>("isPositive", "()Z");
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/time/Duration.html#isZero()"/>
         /// </summary>
         /// <returns><see cref="bool"/></returns>

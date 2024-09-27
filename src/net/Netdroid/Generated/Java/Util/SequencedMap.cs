@@ -25,21 +25,23 @@ using MASES.JCOBridge.C2JBridge;
 
 namespace Java.Util
 {
-    #region LinkedHashMap declaration
+    #region SequencedMap declaration
     /// <summary>
-    /// <see href="https://developer.android.com/reference/java/util/LinkedHashMap.html"/>
+    /// <see href="https://developer.android.com/reference/java/util/SequencedMap.html"/>
     /// </summary>
-    public partial class LinkedHashMap : Java.Util.HashMap
+    public partial class SequencedMap : Java.Util.Map
     {
-        const string _bridgeClassName = "java.util.LinkedHashMap";
+        const string _bridgeClassName = "java.util.SequencedMap";
         /// <summary>
         /// Default constructor: even if the corresponding Java class does not have one, it is mandatory for JCOBridge
         /// </summary>
-        public LinkedHashMap() { }
+        [global::System.Obsolete("SequencedMap class represents, in .NET, an instance of a JVM interface or abstract class. This public initializer is needed for JCOBridge internal use, other uses can produce unidentible behaviors.")]
+        public SequencedMap() { }
         /// <summary>
         /// Generic constructor: it is useful for JCOBridge when there is a derived class which needs to pass arguments to the highest JVMBridgeBase class
         /// </summary>
-        public LinkedHashMap(params object[] args) : base(args) { }
+        [global::System.Obsolete("SequencedMap class represents, in .NET, an instance of a JVM interface or abstract class. This public initializer is needed for JCOBridge internal use, other uses can produce unidentible behaviors.")]
+        public SequencedMap(params object[] args) : base(args) { }
 
         private static readonly MASES.JCOBridge.C2JBridge.JVMInterop.IJavaType _LocalBridgeClazz = JVMBridgeBase.ClazzOf(_bridgeClassName);
         private static MASES.JCOBridge.C2JBridge.JVMInterop.IJavaType LocalBridgeClazz => _LocalBridgeClazz ?? throw new global::System.InvalidOperationException($"Class {_bridgeClassName} was not found.");
@@ -51,7 +53,7 @@ namespace Java.Util
         /// <summary>
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeAbstract.htm"/>
         /// </summary>
-        public override bool IsBridgeAbstract => false;
+        public override bool IsBridgeAbstract => true;
         /// <summary>
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeCloseable.htm"/>
         /// </summary>
@@ -59,7 +61,7 @@ namespace Java.Util
         /// <summary>
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeInterface.htm"/>
         /// </summary>
-        public override bool IsBridgeInterface => false;
+        public override bool IsBridgeInterface => true;
         /// <summary>
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeStatic.htm"/>
         /// </summary>
@@ -70,23 +72,25 @@ namespace Java.Util
     }
     #endregion
 
-    #region LinkedHashMap<K, V> declaration
+    #region SequencedMap<K, V> declaration
     /// <summary>
-    /// <see href="https://developer.android.com/reference/java/util/LinkedHashMap.html"/>
+    /// <see href="https://developer.android.com/reference/java/util/SequencedMap.html"/>
     /// </summary>
     /// <typeparam name="K"></typeparam>
     /// <typeparam name="V"></typeparam>
-    public partial class LinkedHashMap<K, V> : Java.Util.HashMap<K, V>
+    public partial class SequencedMap<K, V> : Java.Util.Map<K, V>
     {
-        const string _bridgeClassName = "java.util.LinkedHashMap";
+        const string _bridgeClassName = "java.util.SequencedMap";
         /// <summary>
         /// Default constructor: even if the corresponding Java class does not have one, it is mandatory for JCOBridge
         /// </summary>
-        public LinkedHashMap() { }
+        [global::System.Obsolete("SequencedMap class represents, in .NET, an instance of a JVM interface or abstract class. This public initializer is needed for JCOBridge internal use, other uses can produce unidentible behaviors.")]
+        public SequencedMap() { }
         /// <summary>
         /// Generic constructor: it is useful for JCOBridge when there is a derived class which needs to pass arguments to the highest JVMBridgeBase class
         /// </summary>
-        public LinkedHashMap(params object[] args) : base(args) { }
+        [global::System.Obsolete("SequencedMap class represents, in .NET, an instance of a JVM interface or abstract class. This public initializer is needed for JCOBridge internal use, other uses can produce unidentible behaviors.")]
+        public SequencedMap(params object[] args) : base(args) { }
 
         private static readonly MASES.JCOBridge.C2JBridge.JVMInterop.IJavaType _LocalBridgeClazz = JVMBridgeBase.ClazzOf(_bridgeClassName);
         private static MASES.JCOBridge.C2JBridge.JVMInterop.IJavaType LocalBridgeClazz => _LocalBridgeClazz ?? throw new global::System.InvalidOperationException($"Class {_bridgeClassName} was not found.");
@@ -98,7 +102,7 @@ namespace Java.Util
         /// <summary>
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeAbstract.htm"/>
         /// </summary>
-        public override bool IsBridgeAbstract => false;
+        public override bool IsBridgeAbstract => true;
         /// <summary>
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeCloseable.htm"/>
         /// </summary>
@@ -106,7 +110,7 @@ namespace Java.Util
         /// <summary>
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeInterface.htm"/>
         /// </summary>
-        public override bool IsBridgeInterface => false;
+        public override bool IsBridgeInterface => true;
         /// <summary>
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeStatic.htm"/>
         /// </summary>
@@ -117,53 +121,14 @@ namespace Java.Util
     }
     #endregion
 
-    #region LinkedHashMap implementation
-    public partial class LinkedHashMap
+    #region SequencedMap implementation
+    public partial class SequencedMap
     {
         #region Constructors
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashMap.html#%3Cinit%3E(int,float,boolean)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="int"/></param>
-        /// <param name="arg1"><see cref="float"/></param>
-        /// <param name="arg2"><see cref="bool"/></param>
-        public LinkedHashMap(int arg0, float arg1, bool arg2)
-            : base(arg0, arg1, arg2)
-        {
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashMap.html#%3Cinit%3E(int,float)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="int"/></param>
-        /// <param name="arg1"><see cref="float"/></param>
-        public LinkedHashMap(int arg0, float arg1)
-            : base(arg0, arg1)
-        {
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashMap.html#%3Cinit%3E(int)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="int"/></param>
-        public LinkedHashMap(int arg0)
-            : base(arg0)
-        {
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashMap.html#%3Cinit%3E(java.util.Map)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="Java.Util.Map"/></param>
-        public LinkedHashMap(Java.Util.Map arg0)
-            : base(arg0)
-        {
-        }
 
         #endregion
 
         #region Class/Interface conversion operators
-        /// <summary>
-        /// Converter from <see cref="Java.Util.LinkedHashMap"/> to <see cref="Java.Util.SequencedMap"/>
-        /// </summary>
-        public static implicit operator Java.Util.SequencedMap(Java.Util.LinkedHashMap t) => t.Cast<Java.Util.SequencedMap>();
 
         #endregion
 
@@ -172,29 +137,12 @@ namespace Java.Util
         #endregion
 
         #region Static methods
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashMap.html#newLinkedHashMap(int)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="int"/></param>
-        /// <returns><see cref="Java.Util.LinkedHashMap"/></returns>
-        public static Java.Util.LinkedHashMap NewLinkedHashMap(int arg0)
-        {
-            return SExecuteWithSignature<Java.Util.LinkedHashMap>(LocalBridgeClazz, "newLinkedHashMap", "(I)Ljava/util/LinkedHashMap;", arg0);
-        }
 
         #endregion
 
         #region Instance methods
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashMap.html#sequencedValues()"/>
-        /// </summary>
-        /// <returns><see cref="Java.Util.SequencedCollection"/></returns>
-        public Java.Util.SequencedCollection SequencedValues()
-        {
-            return IExecuteWithSignature<Java.Util.SequencedCollection>("sequencedValues", "()Ljava/util/SequencedCollection;");
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashMap.html#reversed()"/>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedMap.html#reversed()"/>
         /// </summary>
         /// <returns><see cref="Java.Util.SequencedMap"/></returns>
         public Java.Util.SequencedMap Reversed()
@@ -202,7 +150,47 @@ namespace Java.Util
             return IExecuteWithSignature<Java.Util.SequencedMap>("reversed", "()Ljava/util/SequencedMap;");
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashMap.html#sequencedEntrySet()"/>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedMap.html#firstEntry()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.Map.Entry"/></returns>
+        public Java.Util.Map.Entry FirstEntry()
+        {
+            return IExecuteWithSignature<Java.Util.Map.Entry>("firstEntry", "()Ljava/util/Map$Entry;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedMap.html#lastEntry()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.Map.Entry"/></returns>
+        public Java.Util.Map.Entry LastEntry()
+        {
+            return IExecuteWithSignature<Java.Util.Map.Entry>("lastEntry", "()Ljava/util/Map$Entry;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedMap.html#pollFirstEntry()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.Map.Entry"/></returns>
+        public Java.Util.Map.Entry PollFirstEntry()
+        {
+            return IExecuteWithSignature<Java.Util.Map.Entry>("pollFirstEntry", "()Ljava/util/Map$Entry;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedMap.html#pollLastEntry()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.Map.Entry"/></returns>
+        public Java.Util.Map.Entry PollLastEntry()
+        {
+            return IExecuteWithSignature<Java.Util.Map.Entry>("pollLastEntry", "()Ljava/util/Map$Entry;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedMap.html#sequencedValues()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.SequencedCollection"/></returns>
+        public Java.Util.SequencedCollection SequencedValues()
+        {
+            return IExecuteWithSignature<Java.Util.SequencedCollection>("sequencedValues", "()Ljava/util/SequencedCollection;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedMap.html#sequencedEntrySet()"/>
         /// </summary>
         /// <returns><see cref="Java.Util.SequencedSet"/></returns>
         public Java.Util.SequencedSet SequencedEntrySet()
@@ -210,7 +198,7 @@ namespace Java.Util
             return IExecuteWithSignature<Java.Util.SequencedSet>("sequencedEntrySet", "()Ljava/util/SequencedSet;");
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashMap.html#sequencedKeySet()"/>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedMap.html#sequencedKeySet()"/>
         /// </summary>
         /// <returns><see cref="Java.Util.SequencedSet"/></returns>
         public Java.Util.SequencedSet SequencedKeySet()
@@ -218,7 +206,7 @@ namespace Java.Util
             return IExecuteWithSignature<Java.Util.SequencedSet>("sequencedKeySet", "()Ljava/util/SequencedSet;");
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashMap.html#putFirst(java.lang.Object,java.lang.Object)"/>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedMap.html#putFirst(java.lang.Object,java.lang.Object)"/>
         /// </summary>
         /// <param name="arg0"><see cref="object"/></param>
         /// <param name="arg1"><see cref="object"/></param>
@@ -228,7 +216,7 @@ namespace Java.Util
             return IExecuteWithSignature("putFirst", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", arg0, arg1);
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashMap.html#putLast(java.lang.Object,java.lang.Object)"/>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedMap.html#putLast(java.lang.Object,java.lang.Object)"/>
         /// </summary>
         /// <param name="arg0"><see cref="object"/></param>
         /// <param name="arg1"><see cref="object"/></param>
@@ -248,57 +236,36 @@ namespace Java.Util
     }
     #endregion
 
-    #region LinkedHashMap<K, V> implementation
-    public partial class LinkedHashMap<K, V>
+    #region ISequencedMap<K, V>
+    /// <summary>
+    /// .NET interface for TO BE DEFINED FROM USER
+    /// </summary>
+    public partial interface ISequencedMap<K, V> : Java.Util.IMap<K, V>
+    {
+        #region Instance methods
+
+        #endregion
+
+        #region Nested classes
+
+        #endregion
+
+        // TODO: complete the class
+    }
+    #endregion
+
+    #region SequencedMap<K, V> implementation
+    public partial class SequencedMap<K, V> : Java.Util.ISequencedMap<K, V>
     {
         #region Constructors
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashMap.html#%3Cinit%3E(int,float,boolean)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="int"/></param>
-        /// <param name="arg1"><see cref="float"/></param>
-        /// <param name="arg2"><see cref="bool"/></param>
-        public LinkedHashMap(int arg0, float arg1, bool arg2)
-            : base(arg0, arg1, arg2)
-        {
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashMap.html#%3Cinit%3E(int,float)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="int"/></param>
-        /// <param name="arg1"><see cref="float"/></param>
-        public LinkedHashMap(int arg0, float arg1)
-            : base(arg0, arg1)
-        {
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashMap.html#%3Cinit%3E(int)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="int"/></param>
-        public LinkedHashMap(int arg0)
-            : base(arg0)
-        {
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashMap.html#%3Cinit%3E(java.util.Map)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="Java.Util.Map"/></param>
-        public LinkedHashMap(Java.Util.Map<K, V> arg0)
-            : base(arg0)
-        {
-        }
 
         #endregion
 
         #region Class/Interface conversion operators
         /// <summary>
-        /// Converter from <see cref="Java.Util.LinkedHashMap{K, V}"/> to <see cref="Java.Util.SequencedMap{K, V}"/>
+        /// Converter from <see cref="Java.Util.SequencedMap{K, V}"/> to <see cref="Java.Util.SequencedMap"/>
         /// </summary>
-        public static implicit operator Java.Util.SequencedMap<K, V>(Java.Util.LinkedHashMap<K, V> t) => t.Cast<Java.Util.SequencedMap<K, V>>();
-        /// <summary>
-        /// Converter from <see cref="Java.Util.LinkedHashMap{K, V}"/> to <see cref="Java.Util.LinkedHashMap"/>
-        /// </summary>
-        public static implicit operator Java.Util.LinkedHashMap(Java.Util.LinkedHashMap<K, V> t) => t.Cast<Java.Util.LinkedHashMap>();
+        public static implicit operator Java.Util.SequencedMap(Java.Util.SequencedMap<K, V> t) => t.Cast<Java.Util.SequencedMap>();
 
         #endregion
 
@@ -307,29 +274,12 @@ namespace Java.Util
         #endregion
 
         #region Static methods
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashMap.html#newLinkedHashMap(int)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="int"/></param>
-        /// <returns><see cref="Java.Util.LinkedHashMap"/></returns>
-        public static Java.Util.LinkedHashMap<K, V> NewLinkedHashMap(int arg0)
-        {
-            return SExecuteWithSignature<Java.Util.LinkedHashMap<K, V>>(LocalBridgeClazz, "newLinkedHashMap", "(I)Ljava/util/LinkedHashMap;", arg0);
-        }
 
         #endregion
 
         #region Instance methods
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashMap.html#sequencedValues()"/>
-        /// </summary>
-        /// <returns><see cref="Java.Util.SequencedCollection"/></returns>
-        public Java.Util.SequencedCollection<V> SequencedValues()
-        {
-            return IExecuteWithSignature<Java.Util.SequencedCollection<V>>("sequencedValues", "()Ljava/util/SequencedCollection;");
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashMap.html#reversed()"/>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedMap.html#reversed()"/>
         /// </summary>
         /// <returns><see cref="Java.Util.SequencedMap"/></returns>
         public Java.Util.SequencedMap<K, V> Reversed()
@@ -337,7 +287,47 @@ namespace Java.Util
             return IExecuteWithSignature<Java.Util.SequencedMap<K, V>>("reversed", "()Ljava/util/SequencedMap;");
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashMap.html#sequencedEntrySet()"/>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedMap.html#firstEntry()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.Map.Entry"/></returns>
+        public Java.Util.Map.Entry<K, V> FirstEntry()
+        {
+            return IExecuteWithSignature<Java.Util.Map.Entry<K, V>>("firstEntry", "()Ljava/util/Map$Entry;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedMap.html#lastEntry()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.Map.Entry"/></returns>
+        public Java.Util.Map.Entry<K, V> LastEntry()
+        {
+            return IExecuteWithSignature<Java.Util.Map.Entry<K, V>>("lastEntry", "()Ljava/util/Map$Entry;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedMap.html#pollFirstEntry()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.Map.Entry"/></returns>
+        public Java.Util.Map.Entry<K, V> PollFirstEntry()
+        {
+            return IExecuteWithSignature<Java.Util.Map.Entry<K, V>>("pollFirstEntry", "()Ljava/util/Map$Entry;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedMap.html#pollLastEntry()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.Map.Entry"/></returns>
+        public Java.Util.Map.Entry<K, V> PollLastEntry()
+        {
+            return IExecuteWithSignature<Java.Util.Map.Entry<K, V>>("pollLastEntry", "()Ljava/util/Map$Entry;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedMap.html#sequencedValues()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.SequencedCollection"/></returns>
+        public Java.Util.SequencedCollection<V> SequencedValues()
+        {
+            return IExecuteWithSignature<Java.Util.SequencedCollection<V>>("sequencedValues", "()Ljava/util/SequencedCollection;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedMap.html#sequencedEntrySet()"/>
         /// </summary>
         /// <returns><see cref="Java.Util.SequencedSet"/></returns>
         public Java.Util.SequencedSet<Java.Util.Map.Entry<K, V>> SequencedEntrySet()
@@ -345,7 +335,7 @@ namespace Java.Util
             return IExecuteWithSignature<Java.Util.SequencedSet<Java.Util.Map.Entry<K, V>>>("sequencedEntrySet", "()Ljava/util/SequencedSet;");
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashMap.html#sequencedKeySet()"/>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedMap.html#sequencedKeySet()"/>
         /// </summary>
         /// <returns><see cref="Java.Util.SequencedSet"/></returns>
         public Java.Util.SequencedSet<K> SequencedKeySet()
@@ -353,7 +343,7 @@ namespace Java.Util
             return IExecuteWithSignature<Java.Util.SequencedSet<K>>("sequencedKeySet", "()Ljava/util/SequencedSet;");
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashMap.html#putFirst(java.lang.Object,java.lang.Object)"/>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedMap.html#putFirst(java.lang.Object,java.lang.Object)"/>
         /// </summary>
         /// <param name="arg0"><typeparamref name="K"/></param>
         /// <param name="arg1"><typeparamref name="V"/></param>
@@ -363,7 +353,7 @@ namespace Java.Util
             return IExecuteWithSignature<V>("putFirst", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", arg0, arg1);
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashMap.html#putLast(java.lang.Object,java.lang.Object)"/>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedMap.html#putLast(java.lang.Object,java.lang.Object)"/>
         /// </summary>
         /// <param name="arg0"><typeparamref name="K"/></param>
         /// <param name="arg1"><typeparamref name="V"/></param>

@@ -212,12 +212,28 @@ namespace Javax.Net.Ssl
             return IExecuteWithSignatureArray<Java.Lang.String>("getCipherSuites", "()[Ljava/lang/String;");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/javax/net/ssl/SSLParameters.html#getNamedGroups()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Lang.String"/></returns>
+        public Java.Lang.String[] GetNamedGroups()
+        {
+            return IExecuteWithSignatureArray<Java.Lang.String>("getNamedGroups", "()[Ljava/lang/String;");
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/javax/net/ssl/SSLParameters.html#getProtocols()"/>
         /// </summary>
         /// <returns><see cref="Java.Lang.String"/></returns>
         public Java.Lang.String[] GetProtocols()
         {
             return IExecuteWithSignatureArray<Java.Lang.String>("getProtocols", "()[Ljava/lang/String;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/javax/net/ssl/SSLParameters.html#getSignatureSchemes()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Lang.String"/></returns>
+        public Java.Lang.String[] GetSignatureSchemes()
+        {
+            return IExecuteWithSignatureArray<Java.Lang.String>("getSignatureSchemes", "()[Ljava/lang/String;");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/net/ssl/SSLParameters.html#getAlgorithmConstraints()"/>
@@ -276,6 +292,14 @@ namespace Javax.Net.Ssl
             IExecuteWithSignature("setMaximumPacketSize", "(I)V", arg0);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/javax/net/ssl/SSLParameters.html#setNamedGroups(java.lang.String[])"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        public void SetNamedGroups(Java.Lang.String[] arg0)
+        {
+            IExecuteWithSignature("setNamedGroups", "([Ljava/lang/String;)V", new object[] { arg0 });
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/javax/net/ssl/SSLParameters.html#setNeedClientAuth(boolean)"/>
         /// </summary>
         /// <param name="arg0"><see cref="bool"/></param>
@@ -290,6 +314,14 @@ namespace Javax.Net.Ssl
         public void SetProtocols(Java.Lang.String[] arg0)
         {
             IExecuteWithSignature("setProtocols", "([Ljava/lang/String;)V", new object[] { arg0 });
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/javax/net/ssl/SSLParameters.html#setSignatureSchemes(java.lang.String[])"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        public void SetSignatureSchemes(Java.Lang.String[] arg0)
+        {
+            IExecuteWithSignature("setSignatureSchemes", "([Ljava/lang/String;)V", new object[] { arg0 });
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/net/ssl/SSLParameters.html#setWantClientAuth(boolean)"/>

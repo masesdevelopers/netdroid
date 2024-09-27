@@ -281,6 +281,7 @@ namespace Java.Lang
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/System.html#runFinalization()"/>
         /// </summary>
+        [global::System.Obsolete()]
         public static void RunFinalization()
         {
             SExecuteWithSignature(LocalBridgeClazz, "runFinalization", "()V");

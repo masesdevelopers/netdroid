@@ -713,6 +713,60 @@ namespace Java.Lang
             return SExecuteWithSignature<bool>(LocalBridgeClazz, "isDigit", "(I)Z", arg0);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Character.html#isEmoji(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public static bool IsEmoji(int arg0)
+        {
+            return SExecuteWithSignature<bool>(LocalBridgeClazz, "isEmoji", "(I)Z", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Character.html#isEmojiComponent(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public static bool IsEmojiComponent(int arg0)
+        {
+            return SExecuteWithSignature<bool>(LocalBridgeClazz, "isEmojiComponent", "(I)Z", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Character.html#isEmojiModifier(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public static bool IsEmojiModifier(int arg0)
+        {
+            return SExecuteWithSignature<bool>(LocalBridgeClazz, "isEmojiModifier", "(I)Z", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Character.html#isEmojiModifierBase(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public static bool IsEmojiModifierBase(int arg0)
+        {
+            return SExecuteWithSignature<bool>(LocalBridgeClazz, "isEmojiModifierBase", "(I)Z", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Character.html#isEmojiPresentation(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public static bool IsEmojiPresentation(int arg0)
+        {
+            return SExecuteWithSignature<bool>(LocalBridgeClazz, "isEmojiPresentation", "(I)Z", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Character.html#isExtendedPictographic(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public static bool IsExtendedPictographic(int arg0)
+        {
+            return SExecuteWithSignature<bool>(LocalBridgeClazz, "isExtendedPictographic", "(I)Z", arg0);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/Character.html#isHighSurrogate(char)"/>
         /// </summary>
         /// <param name="arg0"><see cref="char"/></param>
@@ -1578,6 +1632,18 @@ namespace Java.Lang
             private static Java.Lang.Character.UnicodeBlock _ARABIC_EXTENDED_AContent = default;
             private static bool _ARABIC_EXTENDED_AReady = false; // this is used because in case of generics 
             /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#ARABIC_EXTENDED_B"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeBlock ARABIC_EXTENDED_B { get { if (!_ARABIC_EXTENDED_BReady) { _ARABIC_EXTENDED_BContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "ARABIC_EXTENDED_B"); _ARABIC_EXTENDED_BReady = true; } return _ARABIC_EXTENDED_BContent; } }
+            private static Java.Lang.Character.UnicodeBlock _ARABIC_EXTENDED_BContent = default;
+            private static bool _ARABIC_EXTENDED_BReady = false; // this is used because in case of generics 
+            /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#ARABIC_EXTENDED_C"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeBlock ARABIC_EXTENDED_C { get { if (!_ARABIC_EXTENDED_CReady) { _ARABIC_EXTENDED_CContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "ARABIC_EXTENDED_C"); _ARABIC_EXTENDED_CReady = true; } return _ARABIC_EXTENDED_CContent; } }
+            private static Java.Lang.Character.UnicodeBlock _ARABIC_EXTENDED_CContent = default;
+            private static bool _ARABIC_EXTENDED_CReady = false; // this is used because in case of generics 
+            /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#ARABIC_MATHEMATICAL_ALPHABETIC_SYMBOLS"/>
             /// </summary>
             public static Java.Lang.Character.UnicodeBlock ARABIC_MATHEMATICAL_ALPHABETIC_SYMBOLS { get { if (!_ARABIC_MATHEMATICAL_ALPHABETIC_SYMBOLSReady) { _ARABIC_MATHEMATICAL_ALPHABETIC_SYMBOLSContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "ARABIC_MATHEMATICAL_ALPHABETIC_SYMBOLS"); _ARABIC_MATHEMATICAL_ALPHABETIC_SYMBOLSReady = true; } return _ARABIC_MATHEMATICAL_ALPHABETIC_SYMBOLSContent; } }
@@ -1860,6 +1926,12 @@ namespace Java.Lang
             private static Java.Lang.Character.UnicodeBlock _CJK_UNIFIED_IDEOGRAPHS_EXTENSION_GContent = default;
             private static bool _CJK_UNIFIED_IDEOGRAPHS_EXTENSION_GReady = false; // this is used because in case of generics 
             /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#CJK_UNIFIED_IDEOGRAPHS_EXTENSION_H"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeBlock CJK_UNIFIED_IDEOGRAPHS_EXTENSION_H { get { if (!_CJK_UNIFIED_IDEOGRAPHS_EXTENSION_HReady) { _CJK_UNIFIED_IDEOGRAPHS_EXTENSION_HContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "CJK_UNIFIED_IDEOGRAPHS_EXTENSION_H"); _CJK_UNIFIED_IDEOGRAPHS_EXTENSION_HReady = true; } return _CJK_UNIFIED_IDEOGRAPHS_EXTENSION_HContent; } }
+            private static Java.Lang.Character.UnicodeBlock _CJK_UNIFIED_IDEOGRAPHS_EXTENSION_HContent = default;
+            private static bool _CJK_UNIFIED_IDEOGRAPHS_EXTENSION_HReady = false; // this is used because in case of generics 
+            /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#COMBINING_DIACRITICAL_MARKS"/>
             /// </summary>
             public static Java.Lang.Character.UnicodeBlock COMBINING_DIACRITICAL_MARKS { get { if (!_COMBINING_DIACRITICAL_MARKSReady) { _COMBINING_DIACRITICAL_MARKSContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "COMBINING_DIACRITICAL_MARKS"); _COMBINING_DIACRITICAL_MARKSReady = true; } return _COMBINING_DIACRITICAL_MARKSContent; } }
@@ -1944,6 +2016,12 @@ namespace Java.Lang
             private static Java.Lang.Character.UnicodeBlock _CYPRIOT_SYLLABARYContent = default;
             private static bool _CYPRIOT_SYLLABARYReady = false; // this is used because in case of generics 
             /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#CYPRO_MINOAN"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeBlock CYPRO_MINOAN { get { if (!_CYPRO_MINOANReady) { _CYPRO_MINOANContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "CYPRO_MINOAN"); _CYPRO_MINOANReady = true; } return _CYPRO_MINOANContent; } }
+            private static Java.Lang.Character.UnicodeBlock _CYPRO_MINOANContent = default;
+            private static bool _CYPRO_MINOANReady = false; // this is used because in case of generics 
+            /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#CYRILLIC"/>
             /// </summary>
             public static Java.Lang.Character.UnicodeBlock CYRILLIC { get { if (!_CYRILLICReady) { _CYRILLICContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "CYRILLIC"); _CYRILLICReady = true; } return _CYRILLICContent; } }
@@ -1968,6 +2046,12 @@ namespace Java.Lang
             private static Java.Lang.Character.UnicodeBlock _CYRILLIC_EXTENDED_CContent = default;
             private static bool _CYRILLIC_EXTENDED_CReady = false; // this is used because in case of generics 
             /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#CYRILLIC_EXTENDED_D"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeBlock CYRILLIC_EXTENDED_D { get { if (!_CYRILLIC_EXTENDED_DReady) { _CYRILLIC_EXTENDED_DContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "CYRILLIC_EXTENDED_D"); _CYRILLIC_EXTENDED_DReady = true; } return _CYRILLIC_EXTENDED_DContent; } }
+            private static Java.Lang.Character.UnicodeBlock _CYRILLIC_EXTENDED_DContent = default;
+            private static bool _CYRILLIC_EXTENDED_DReady = false; // this is used because in case of generics 
+            /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#CYRILLIC_SUPPLEMENTARY"/>
             /// </summary>
             public static Java.Lang.Character.UnicodeBlock CYRILLIC_SUPPLEMENTARY { get { if (!_CYRILLIC_SUPPLEMENTARYReady) { _CYRILLIC_SUPPLEMENTARYContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "CYRILLIC_SUPPLEMENTARY"); _CYRILLIC_SUPPLEMENTARYReady = true; } return _CYRILLIC_SUPPLEMENTARYContent; } }
@@ -1991,6 +2075,12 @@ namespace Java.Lang
             public static Java.Lang.Character.UnicodeBlock DEVANAGARI_EXTENDED { get { if (!_DEVANAGARI_EXTENDEDReady) { _DEVANAGARI_EXTENDEDContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "DEVANAGARI_EXTENDED"); _DEVANAGARI_EXTENDEDReady = true; } return _DEVANAGARI_EXTENDEDContent; } }
             private static Java.Lang.Character.UnicodeBlock _DEVANAGARI_EXTENDEDContent = default;
             private static bool _DEVANAGARI_EXTENDEDReady = false; // this is used because in case of generics 
+            /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#DEVANAGARI_EXTENDED_A"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeBlock DEVANAGARI_EXTENDED_A { get { if (!_DEVANAGARI_EXTENDED_AReady) { _DEVANAGARI_EXTENDED_AContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "DEVANAGARI_EXTENDED_A"); _DEVANAGARI_EXTENDED_AReady = true; } return _DEVANAGARI_EXTENDED_AContent; } }
+            private static Java.Lang.Character.UnicodeBlock _DEVANAGARI_EXTENDED_AContent = default;
+            private static bool _DEVANAGARI_EXTENDED_AReady = false; // this is used because in case of generics 
             /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#DINGBATS"/>
             /// </summary>
@@ -2099,6 +2189,12 @@ namespace Java.Lang
             public static Java.Lang.Character.UnicodeBlock ETHIOPIC_EXTENDED_A { get { if (!_ETHIOPIC_EXTENDED_AReady) { _ETHIOPIC_EXTENDED_AContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "ETHIOPIC_EXTENDED_A"); _ETHIOPIC_EXTENDED_AReady = true; } return _ETHIOPIC_EXTENDED_AContent; } }
             private static Java.Lang.Character.UnicodeBlock _ETHIOPIC_EXTENDED_AContent = default;
             private static bool _ETHIOPIC_EXTENDED_AReady = false; // this is used because in case of generics 
+            /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#ETHIOPIC_EXTENDED_B"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeBlock ETHIOPIC_EXTENDED_B { get { if (!_ETHIOPIC_EXTENDED_BReady) { _ETHIOPIC_EXTENDED_BContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "ETHIOPIC_EXTENDED_B"); _ETHIOPIC_EXTENDED_BReady = true; } return _ETHIOPIC_EXTENDED_BContent; } }
+            private static Java.Lang.Character.UnicodeBlock _ETHIOPIC_EXTENDED_BContent = default;
+            private static bool _ETHIOPIC_EXTENDED_BReady = false; // this is used because in case of generics 
             /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#ETHIOPIC_SUPPLEMENT"/>
             /// </summary>
@@ -2328,11 +2424,23 @@ namespace Java.Lang
             private static Java.Lang.Character.UnicodeBlock _KAITHIContent = default;
             private static bool _KAITHIReady = false; // this is used because in case of generics 
             /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#KAKTOVIK_NUMERALS"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeBlock KAKTOVIK_NUMERALS { get { if (!_KAKTOVIK_NUMERALSReady) { _KAKTOVIK_NUMERALSContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "KAKTOVIK_NUMERALS"); _KAKTOVIK_NUMERALSReady = true; } return _KAKTOVIK_NUMERALSContent; } }
+            private static Java.Lang.Character.UnicodeBlock _KAKTOVIK_NUMERALSContent = default;
+            private static bool _KAKTOVIK_NUMERALSReady = false; // this is used because in case of generics 
+            /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#KANA_EXTENDED_A"/>
             /// </summary>
             public static Java.Lang.Character.UnicodeBlock KANA_EXTENDED_A { get { if (!_KANA_EXTENDED_AReady) { _KANA_EXTENDED_AContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "KANA_EXTENDED_A"); _KANA_EXTENDED_AReady = true; } return _KANA_EXTENDED_AContent; } }
             private static Java.Lang.Character.UnicodeBlock _KANA_EXTENDED_AContent = default;
             private static bool _KANA_EXTENDED_AReady = false; // this is used because in case of generics 
+            /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#KANA_EXTENDED_B"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeBlock KANA_EXTENDED_B { get { if (!_KANA_EXTENDED_BReady) { _KANA_EXTENDED_BContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "KANA_EXTENDED_B"); _KANA_EXTENDED_BReady = true; } return _KANA_EXTENDED_BContent; } }
+            private static Java.Lang.Character.UnicodeBlock _KANA_EXTENDED_BContent = default;
+            private static bool _KANA_EXTENDED_BReady = false; // this is used because in case of generics 
             /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#KANA_SUPPLEMENT"/>
             /// </summary>
@@ -2369,6 +2477,12 @@ namespace Java.Lang
             public static Java.Lang.Character.UnicodeBlock KATAKANA_PHONETIC_EXTENSIONS { get { if (!_KATAKANA_PHONETIC_EXTENSIONSReady) { _KATAKANA_PHONETIC_EXTENSIONSContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "KATAKANA_PHONETIC_EXTENSIONS"); _KATAKANA_PHONETIC_EXTENSIONSReady = true; } return _KATAKANA_PHONETIC_EXTENSIONSContent; } }
             private static Java.Lang.Character.UnicodeBlock _KATAKANA_PHONETIC_EXTENSIONSContent = default;
             private static bool _KATAKANA_PHONETIC_EXTENSIONSReady = false; // this is used because in case of generics 
+            /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#KAWI"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeBlock KAWI { get { if (!_KAWIReady) { _KAWIContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "KAWI"); _KAWIReady = true; } return _KAWIContent; } }
+            private static Java.Lang.Character.UnicodeBlock _KAWIContent = default;
+            private static bool _KAWIReady = false; // this is used because in case of generics 
             /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#KAYAH_LI"/>
             /// </summary>
@@ -2459,6 +2573,18 @@ namespace Java.Lang
             public static Java.Lang.Character.UnicodeBlock LATIN_EXTENDED_E { get { if (!_LATIN_EXTENDED_EReady) { _LATIN_EXTENDED_EContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "LATIN_EXTENDED_E"); _LATIN_EXTENDED_EReady = true; } return _LATIN_EXTENDED_EContent; } }
             private static Java.Lang.Character.UnicodeBlock _LATIN_EXTENDED_EContent = default;
             private static bool _LATIN_EXTENDED_EReady = false; // this is used because in case of generics 
+            /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#LATIN_EXTENDED_F"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeBlock LATIN_EXTENDED_F { get { if (!_LATIN_EXTENDED_FReady) { _LATIN_EXTENDED_FContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "LATIN_EXTENDED_F"); _LATIN_EXTENDED_FReady = true; } return _LATIN_EXTENDED_FContent; } }
+            private static Java.Lang.Character.UnicodeBlock _LATIN_EXTENDED_FContent = default;
+            private static bool _LATIN_EXTENDED_FReady = false; // this is used because in case of generics 
+            /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#LATIN_EXTENDED_G"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeBlock LATIN_EXTENDED_G { get { if (!_LATIN_EXTENDED_GReady) { _LATIN_EXTENDED_GContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "LATIN_EXTENDED_G"); _LATIN_EXTENDED_GReady = true; } return _LATIN_EXTENDED_GContent; } }
+            private static Java.Lang.Character.UnicodeBlock _LATIN_EXTENDED_GContent = default;
+            private static bool _LATIN_EXTENDED_GReady = false; // this is used because in case of generics 
             /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#LEPCHA"/>
             /// </summary>
@@ -2736,6 +2862,12 @@ namespace Java.Lang
             private static Java.Lang.Character.UnicodeBlock _NABATAEANContent = default;
             private static bool _NABATAEANReady = false; // this is used because in case of generics 
             /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#NAG_MUNDARI"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeBlock NAG_MUNDARI { get { if (!_NAG_MUNDARIReady) { _NAG_MUNDARIContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "NAG_MUNDARI"); _NAG_MUNDARIReady = true; } return _NAG_MUNDARIContent; } }
+            private static Java.Lang.Character.UnicodeBlock _NAG_MUNDARIContent = default;
+            private static bool _NAG_MUNDARIReady = false; // this is used because in case of generics 
+            /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#NANDINAGARI"/>
             /// </summary>
             public static Java.Lang.Character.UnicodeBlock NANDINAGARI { get { if (!_NANDINAGARIReady) { _NANDINAGARIContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "NANDINAGARI"); _NANDINAGARIReady = true; } return _NANDINAGARIContent; } }
@@ -2837,6 +2969,12 @@ namespace Java.Lang
             public static Java.Lang.Character.UnicodeBlock OLD_TURKIC { get { if (!_OLD_TURKICReady) { _OLD_TURKICContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "OLD_TURKIC"); _OLD_TURKICReady = true; } return _OLD_TURKICContent; } }
             private static Java.Lang.Character.UnicodeBlock _OLD_TURKICContent = default;
             private static bool _OLD_TURKICReady = false; // this is used because in case of generics 
+            /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#OLD_UYGHUR"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeBlock OLD_UYGHUR { get { if (!_OLD_UYGHURReady) { _OLD_UYGHURContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "OLD_UYGHUR"); _OLD_UYGHURReady = true; } return _OLD_UYGHURContent; } }
+            private static Java.Lang.Character.UnicodeBlock _OLD_UYGHURContent = default;
+            private static bool _OLD_UYGHURReady = false; // this is used because in case of generics 
             /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#OPTICAL_CHARACTER_RECOGNITION"/>
             /// </summary>
@@ -3217,6 +3355,12 @@ namespace Java.Lang
             private static Java.Lang.Character.UnicodeBlock _TAMIL_SUPPLEMENTContent = default;
             private static bool _TAMIL_SUPPLEMENTReady = false; // this is used because in case of generics 
             /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#TANGSA"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeBlock TANGSA { get { if (!_TANGSAReady) { _TANGSAContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "TANGSA"); _TANGSAReady = true; } return _TANGSAContent; } }
+            private static Java.Lang.Character.UnicodeBlock _TANGSAContent = default;
+            private static bool _TANGSAReady = false; // this is used because in case of generics 
+            /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#TANGUT"/>
             /// </summary>
             public static Java.Lang.Character.UnicodeBlock TANGUT { get { if (!_TANGUTReady) { _TANGUTContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "TANGUT"); _TANGUTReady = true; } return _TANGUTContent; } }
@@ -3271,6 +3415,12 @@ namespace Java.Lang
             private static Java.Lang.Character.UnicodeBlock _TIRHUTAContent = default;
             private static bool _TIRHUTAReady = false; // this is used because in case of generics 
             /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#TOTO"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeBlock TOTO { get { if (!_TOTOReady) { _TOTOContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "TOTO"); _TOTOReady = true; } return _TOTOContent; } }
+            private static Java.Lang.Character.UnicodeBlock _TOTOContent = default;
+            private static bool _TOTOReady = false; // this is used because in case of generics 
+            /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#TRANSPORT_AND_MAP_SYMBOLS"/>
             /// </summary>
             public static Java.Lang.Character.UnicodeBlock TRANSPORT_AND_MAP_SYMBOLS { get { if (!_TRANSPORT_AND_MAP_SYMBOLSReady) { _TRANSPORT_AND_MAP_SYMBOLSContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "TRANSPORT_AND_MAP_SYMBOLS"); _TRANSPORT_AND_MAP_SYMBOLSReady = true; } return _TRANSPORT_AND_MAP_SYMBOLSContent; } }
@@ -3294,6 +3444,12 @@ namespace Java.Lang
             public static Java.Lang.Character.UnicodeBlock UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED { get { if (!_UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDEDReady) { _UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDEDContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED"); _UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDEDReady = true; } return _UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDEDContent; } }
             private static Java.Lang.Character.UnicodeBlock _UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDEDContent = default;
             private static bool _UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDEDReady = false; // this is used because in case of generics 
+            /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED_A"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeBlock UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED_A { get { if (!_UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED_AReady) { _UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED_AContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED_A"); _UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED_AReady = true; } return _UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED_AContent; } }
+            private static Java.Lang.Character.UnicodeBlock _UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED_AContent = default;
+            private static bool _UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED_AReady = false; // this is used because in case of generics 
             /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#VAI"/>
             /// </summary>
@@ -3324,6 +3480,12 @@ namespace Java.Lang
             public static Java.Lang.Character.UnicodeBlock VERTICAL_FORMS { get { if (!_VERTICAL_FORMSReady) { _VERTICAL_FORMSContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "VERTICAL_FORMS"); _VERTICAL_FORMSReady = true; } return _VERTICAL_FORMSContent; } }
             private static Java.Lang.Character.UnicodeBlock _VERTICAL_FORMSContent = default;
             private static bool _VERTICAL_FORMSReady = false; // this is used because in case of generics 
+            /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#VITHKUQI"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeBlock VITHKUQI { get { if (!_VITHKUQIReady) { _VITHKUQIContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "VITHKUQI"); _VITHKUQIReady = true; } return _VITHKUQIContent; } }
+            private static Java.Lang.Character.UnicodeBlock _VITHKUQIContent = default;
+            private static bool _VITHKUQIReady = false; // this is used because in case of generics 
             /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#WANCHO"/>
             /// </summary>
@@ -3366,6 +3528,12 @@ namespace Java.Lang
             public static Java.Lang.Character.UnicodeBlock ZANABAZAR_SQUARE { get { if (!_ZANABAZAR_SQUAREReady) { _ZANABAZAR_SQUAREContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "ZANABAZAR_SQUARE"); _ZANABAZAR_SQUAREReady = true; } return _ZANABAZAR_SQUAREContent; } }
             private static Java.Lang.Character.UnicodeBlock _ZANABAZAR_SQUAREContent = default;
             private static bool _ZANABAZAR_SQUAREReady = false; // this is used because in case of generics 
+            /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeBlock.html#ZNAMENNY_MUSICAL_NOTATION"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeBlock ZNAMENNY_MUSICAL_NOTATION { get { if (!_ZNAMENNY_MUSICAL_NOTATIONReady) { _ZNAMENNY_MUSICAL_NOTATIONContent = SGetField<Java.Lang.Character.UnicodeBlock>(LocalBridgeClazz, "ZNAMENNY_MUSICAL_NOTATION"); _ZNAMENNY_MUSICAL_NOTATIONReady = true; } return _ZNAMENNY_MUSICAL_NOTATIONContent; } }
+            private static Java.Lang.Character.UnicodeBlock _ZNAMENNY_MUSICAL_NOTATIONContent = default;
+            private static bool _ZNAMENNY_MUSICAL_NOTATIONReady = false; // this is used because in case of generics 
 
             #endregion
 
@@ -3593,6 +3761,12 @@ namespace Java.Lang
             private static Java.Lang.Character.UnicodeScript _CYPRIOTContent = default;
             private static bool _CYPRIOTReady = false; // this is used because in case of generics 
             /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeScript.html#CYPRO_MINOAN"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeScript CYPRO_MINOAN { get { if (!_CYPRO_MINOANReady) { _CYPRO_MINOANContent = SGetField<Java.Lang.Character.UnicodeScript>(LocalBridgeClazz, "CYPRO_MINOAN"); _CYPRO_MINOANReady = true; } return _CYPRO_MINOANContent; } }
+            private static Java.Lang.Character.UnicodeScript _CYPRO_MINOANContent = default;
+            private static bool _CYPRO_MINOANReady = false; // this is used because in case of generics 
+            /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeScript.html#CYRILLIC"/>
             /// </summary>
             public static Java.Lang.Character.UnicodeScript CYRILLIC { get { if (!_CYRILLICReady) { _CYRILLICContent = SGetField<Java.Lang.Character.UnicodeScript>(LocalBridgeClazz, "CYRILLIC"); _CYRILLICReady = true; } return _CYRILLICContent; } }
@@ -3790,6 +3964,12 @@ namespace Java.Lang
             public static Java.Lang.Character.UnicodeScript KATAKANA { get { if (!_KATAKANAReady) { _KATAKANAContent = SGetField<Java.Lang.Character.UnicodeScript>(LocalBridgeClazz, "KATAKANA"); _KATAKANAReady = true; } return _KATAKANAContent; } }
             private static Java.Lang.Character.UnicodeScript _KATAKANAContent = default;
             private static bool _KATAKANAReady = false; // this is used because in case of generics 
+            /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeScript.html#KAWI"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeScript KAWI { get { if (!_KAWIReady) { _KAWIContent = SGetField<Java.Lang.Character.UnicodeScript>(LocalBridgeClazz, "KAWI"); _KAWIReady = true; } return _KAWIContent; } }
+            private static Java.Lang.Character.UnicodeScript _KAWIContent = default;
+            private static bool _KAWIReady = false; // this is used because in case of generics 
             /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeScript.html#KAYAH_LI"/>
             /// </summary>
@@ -3995,6 +4175,12 @@ namespace Java.Lang
             private static Java.Lang.Character.UnicodeScript _NABATAEANContent = default;
             private static bool _NABATAEANReady = false; // this is used because in case of generics 
             /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeScript.html#NAG_MUNDARI"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeScript NAG_MUNDARI { get { if (!_NAG_MUNDARIReady) { _NAG_MUNDARIContent = SGetField<Java.Lang.Character.UnicodeScript>(LocalBridgeClazz, "NAG_MUNDARI"); _NAG_MUNDARIReady = true; } return _NAG_MUNDARIContent; } }
+            private static Java.Lang.Character.UnicodeScript _NAG_MUNDARIContent = default;
+            private static bool _NAG_MUNDARIReady = false; // this is used because in case of generics 
+            /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeScript.html#NANDINAGARI"/>
             /// </summary>
             public static Java.Lang.Character.UnicodeScript NANDINAGARI { get { if (!_NANDINAGARIReady) { _NANDINAGARIContent = SGetField<Java.Lang.Character.UnicodeScript>(LocalBridgeClazz, "NANDINAGARI"); _NANDINAGARIReady = true; } return _NANDINAGARIContent; } }
@@ -4090,6 +4276,12 @@ namespace Java.Lang
             public static Java.Lang.Character.UnicodeScript OLD_TURKIC { get { if (!_OLD_TURKICReady) { _OLD_TURKICContent = SGetField<Java.Lang.Character.UnicodeScript>(LocalBridgeClazz, "OLD_TURKIC"); _OLD_TURKICReady = true; } return _OLD_TURKICContent; } }
             private static Java.Lang.Character.UnicodeScript _OLD_TURKICContent = default;
             private static bool _OLD_TURKICReady = false; // this is used because in case of generics 
+            /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeScript.html#OLD_UYGHUR"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeScript OLD_UYGHUR { get { if (!_OLD_UYGHURReady) { _OLD_UYGHURContent = SGetField<Java.Lang.Character.UnicodeScript>(LocalBridgeClazz, "OLD_UYGHUR"); _OLD_UYGHURReady = true; } return _OLD_UYGHURContent; } }
+            private static Java.Lang.Character.UnicodeScript _OLD_UYGHURContent = default;
+            private static bool _OLD_UYGHURReady = false; // this is used because in case of generics 
             /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeScript.html#ORIYA"/>
             /// </summary>
@@ -4277,6 +4469,12 @@ namespace Java.Lang
             private static Java.Lang.Character.UnicodeScript _TAMILContent = default;
             private static bool _TAMILReady = false; // this is used because in case of generics 
             /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeScript.html#TANGSA"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeScript TANGSA { get { if (!_TANGSAReady) { _TANGSAContent = SGetField<Java.Lang.Character.UnicodeScript>(LocalBridgeClazz, "TANGSA"); _TANGSAReady = true; } return _TANGSAContent; } }
+            private static Java.Lang.Character.UnicodeScript _TANGSAContent = default;
+            private static bool _TANGSAReady = false; // this is used because in case of generics 
+            /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeScript.html#TANGUT"/>
             /// </summary>
             public static Java.Lang.Character.UnicodeScript TANGUT { get { if (!_TANGUTReady) { _TANGUTContent = SGetField<Java.Lang.Character.UnicodeScript>(LocalBridgeClazz, "TANGUT"); _TANGUTReady = true; } return _TANGUTContent; } }
@@ -4319,6 +4517,12 @@ namespace Java.Lang
             private static Java.Lang.Character.UnicodeScript _TIRHUTAContent = default;
             private static bool _TIRHUTAReady = false; // this is used because in case of generics 
             /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeScript.html#TOTO"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeScript TOTO { get { if (!_TOTOReady) { _TOTOContent = SGetField<Java.Lang.Character.UnicodeScript>(LocalBridgeClazz, "TOTO"); _TOTOReady = true; } return _TOTOContent; } }
+            private static Java.Lang.Character.UnicodeScript _TOTOContent = default;
+            private static bool _TOTOReady = false; // this is used because in case of generics 
+            /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeScript.html#UGARITIC"/>
             /// </summary>
             public static Java.Lang.Character.UnicodeScript UGARITIC { get { if (!_UGARITICReady) { _UGARITICContent = SGetField<Java.Lang.Character.UnicodeScript>(LocalBridgeClazz, "UGARITIC"); _UGARITICReady = true; } return _UGARITICContent; } }
@@ -4336,6 +4540,12 @@ namespace Java.Lang
             public static Java.Lang.Character.UnicodeScript VAI { get { if (!_VAIReady) { _VAIContent = SGetField<Java.Lang.Character.UnicodeScript>(LocalBridgeClazz, "VAI"); _VAIReady = true; } return _VAIContent; } }
             private static Java.Lang.Character.UnicodeScript _VAIContent = default;
             private static bool _VAIReady = false; // this is used because in case of generics 
+            /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeScript.html#VITHKUQI"/>
+            /// </summary>
+            public static Java.Lang.Character.UnicodeScript VITHKUQI { get { if (!_VITHKUQIReady) { _VITHKUQIContent = SGetField<Java.Lang.Character.UnicodeScript>(LocalBridgeClazz, "VITHKUQI"); _VITHKUQIReady = true; } return _VITHKUQIContent; } }
+            private static Java.Lang.Character.UnicodeScript _VITHKUQIContent = default;
+            private static bool _VITHKUQIReady = false; // this is used because in case of generics 
             /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/Character.UnicodeScript.html#WANCHO"/>
             /// </summary>

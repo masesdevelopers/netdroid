@@ -339,6 +339,16 @@ namespace Java.Lang
             return SExecuteWithSignature<Java.Lang.String>(LocalBridgeClazz, "toUnsignedString", "(J)Ljava/lang/String;", arg0);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Long.html#compress(long,long)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="long"/></param>
+        /// <param name="arg1"><see cref="long"/></param>
+        /// <returns><see cref="long"/></returns>
+        public static long Compress(long arg0, long arg1)
+        {
+            return SExecuteWithSignature<long>(LocalBridgeClazz, "compress", "(JJ)J", arg0, arg1);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/Long.html#divideUnsigned(long,long)"/>
         /// </summary>
         /// <param name="arg0"><see cref="long"/></param>
@@ -347,6 +357,16 @@ namespace Java.Lang
         public static long DivideUnsigned(long arg0, long arg1)
         {
             return SExecuteWithSignature<long>(LocalBridgeClazz, "divideUnsigned", "(JJ)J", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Long.html#expand(long,long)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="long"/></param>
+        /// <param name="arg1"><see cref="long"/></param>
+        /// <returns><see cref="long"/></returns>
+        public static long Expand(long arg0, long arg1)
+        {
+            return SExecuteWithSignature<long>(LocalBridgeClazz, "expand", "(JJ)J", arg0, arg1);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/Long.html#highestOneBit(long)"/>

@@ -283,6 +283,15 @@ namespace Java.Security
             return IExecuteWithSignature<Java.Security.KeyStore.Entry>("engineGetEntry", "(Ljava/lang/String;Ljava/security/KeyStore$ProtectionParameter;)Ljava/security/KeyStore$Entry;", arg0, arg1);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/security/KeyStoreSpi.html#engineGetAttributes(java.lang.String)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <returns><see cref="Java.Util.Set"/></returns>
+        public Java.Util.Set<Java.Security.KeyStore.Entry.Attribute> EngineGetAttributes(Java.Lang.String arg0)
+        {
+            return IExecuteWithSignature<Java.Util.Set<Java.Security.KeyStore.Entry.Attribute>>("engineGetAttributes", "(Ljava/lang/String;)Ljava/util/Set;", arg0);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/security/KeyStoreSpi.html#engineLoad(java.security.KeyStore.LoadStoreParameter)"/>
         /// </summary>
         /// <param name="arg0"><see cref="Java.Security.KeyStore.LoadStoreParameter"/></param>

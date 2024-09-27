@@ -101,6 +101,19 @@ namespace Java.Nio.File.Spi
 
         #region Instance methods
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/nio/file/spi/FileSystemProvider.html#readAttributesIfExists(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption[])"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Nio.File.Path"/></param>
+        /// <param name="arg1"><see cref="Java.Lang.Class"/></param>
+        /// <param name="arg2"><see cref="Java.Nio.File.LinkOption"/></param>
+        /// <typeparam name="A"><see cref="Java.Nio.File.Attribute.IBasicFileAttributes"/></typeparam>
+        /// <returns><typeparamref name="A"/></returns>
+        /// <exception cref="Java.Io.IOException"/>
+        public A ReadAttributesIfExists<A>(Java.Nio.File.Path arg0, Java.Lang.Class arg1, params Java.Nio.File.LinkOption[] arg2) where A : Java.Nio.File.Attribute.IBasicFileAttributes, new()
+        {
+            if (arg2.Length == 0) return IExecuteWithSignature<A>("readAttributesIfExists", "(Ljava/nio/file/Path;Ljava/lang/Class;[Ljava/nio/file/LinkOption;)Ljava/nio/file/attribute/BasicFileAttributes;", arg0, arg1); else return IExecuteWithSignature<A>("readAttributesIfExists", "(Ljava/nio/file/Path;Ljava/lang/Class;[Ljava/nio/file/LinkOption;)Ljava/nio/file/attribute/BasicFileAttributes;", arg0, arg1, arg2);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/nio/file/spi/FileSystemProvider.html#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption[])"/>
         /// </summary>
         /// <param name="arg0"><see cref="Java.Nio.File.Path"/></param>
@@ -302,6 +315,16 @@ namespace Java.Nio.File.Spi
         public bool DeleteIfExists(Java.Nio.File.Path arg0)
         {
             return IExecuteWithSignature<bool>("deleteIfExists", "(Ljava/nio/file/Path;)Z", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/nio/file/spi/FileSystemProvider.html#exists(java.nio.file.Path,java.nio.file.LinkOption[])"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Nio.File.Path"/></param>
+        /// <param name="arg1"><see cref="Java.Nio.File.LinkOption"/></param>
+        /// <returns><see cref="bool"/></returns>
+        public bool Exists(Java.Nio.File.Path arg0, params Java.Nio.File.LinkOption[] arg1)
+        {
+            if (arg1.Length == 0) return IExecuteWithSignature<bool>("exists", "(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Z", arg0); else return IExecuteWithSignature<bool>("exists", "(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Z", arg0, arg1);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/nio/file/spi/FileSystemProvider.html#newInputStream(java.nio.file.Path,java.nio.file.OpenOption[])"/>

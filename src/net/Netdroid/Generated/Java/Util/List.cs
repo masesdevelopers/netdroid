@@ -29,7 +29,7 @@ namespace Java.Util
     /// <summary>
     /// <see href="https://developer.android.com/reference/java/util/List.html"/>
     /// </summary>
-    public partial class List : Java.Util.Collection
+    public partial class List : Java.Util.SequencedCollection
     {
         const string _bridgeClassName = "java.util.List";
         /// <summary>
@@ -77,7 +77,7 @@ namespace Java.Util
     /// <see href="https://developer.android.com/reference/java/util/List.html"/>
     /// </summary>
     /// <typeparam name="E"></typeparam>
-    public partial class List<E> : Java.Util.Collection<E>
+    public partial class List<E> : Java.Util.SequencedCollection<E>
     {
         const string _bridgeClassName = "java.util.List";
         /// <summary>
@@ -505,12 +505,68 @@ namespace Java.Util
             IExecuteWithSignature("clear", "()V");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/List.html#getFirst()"/>
+        /// </summary>
+        /// <returns><see cref="object"/></returns>
+        public object GetFirst()
+        {
+            return IExecuteWithSignature("getFirst", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/List.html#getLast()"/>
+        /// </summary>
+        /// <returns><see cref="object"/></returns>
+        public object GetLast()
+        {
+            return IExecuteWithSignature("getLast", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/List.html#removeFirst()"/>
+        /// </summary>
+        /// <returns><see cref="object"/></returns>
+        public object RemoveFirst()
+        {
+            return IExecuteWithSignature("removeFirst", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/List.html#removeLast()"/>
+        /// </summary>
+        /// <returns><see cref="object"/></returns>
+        public object RemoveLast()
+        {
+            return IExecuteWithSignature("removeLast", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/List.html#reversed()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.SequencedCollection"/></returns>
+        public Java.Util.SequencedCollection Reversed()
+        {
+            return IExecuteWithSignature<Java.Util.SequencedCollection>("reversed", "()Ljava/util/SequencedCollection;");
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/List.html#spliterator()"/>
         /// </summary>
         /// <returns><see cref="Java.Util.Spliterator"/></returns>
         public Java.Util.Spliterator Spliterator()
         {
             return IExecuteWithSignature<Java.Util.Spliterator>("spliterator", "()Ljava/util/Spliterator;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/List.html#addFirst(java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="object"/></param>
+        public void AddFirst(object arg0)
+        {
+            IExecuteWithSignature("addFirst", "(Ljava/lang/Object;)V", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/List.html#addLast(java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="object"/></param>
+        public void AddLast(object arg0)
+        {
+            IExecuteWithSignature("addLast", "(Ljava/lang/Object;)V", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/List.html#replaceAll(java.util.function.UnaryOperator)"/>
@@ -543,7 +599,7 @@ namespace Java.Util
     /// <summary>
     /// .NET interface for TO BE DEFINED FROM USER
     /// </summary>
-    public partial interface IList<E> : Java.Util.ICollection<E>
+    public partial interface IList<E> : Java.Util.ISequencedCollection<E>
     {
         #region Instance methods
 
@@ -950,12 +1006,68 @@ namespace Java.Util
             IExecuteWithSignature("clear", "()V");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/List.html#getFirst()"/>
+        /// </summary>
+        /// <returns><typeparamref name="E"/></returns>
+        public E GetFirst()
+        {
+            return IExecuteWithSignature<E>("getFirst", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/List.html#getLast()"/>
+        /// </summary>
+        /// <returns><typeparamref name="E"/></returns>
+        public E GetLast()
+        {
+            return IExecuteWithSignature<E>("getLast", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/List.html#removeFirst()"/>
+        /// </summary>
+        /// <returns><typeparamref name="E"/></returns>
+        public E RemoveFirst()
+        {
+            return IExecuteWithSignature<E>("removeFirst", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/List.html#removeLast()"/>
+        /// </summary>
+        /// <returns><typeparamref name="E"/></returns>
+        public E RemoveLast()
+        {
+            return IExecuteWithSignature<E>("removeLast", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/List.html#reversed()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.SequencedCollection"/></returns>
+        public Java.Util.SequencedCollection Reversed()
+        {
+            return IExecuteWithSignature<Java.Util.SequencedCollection>("reversed", "()Ljava/util/SequencedCollection;");
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/List.html#spliterator()"/>
         /// </summary>
         /// <returns><see cref="Java.Util.Spliterator"/></returns>
         public Java.Util.Spliterator<E> Spliterator()
         {
             return IExecuteWithSignature<Java.Util.Spliterator<E>>("spliterator", "()Ljava/util/Spliterator;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/List.html#addFirst(java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><typeparamref name="E"/></param>
+        public void AddFirst(E arg0)
+        {
+            IExecuteWithSignature("addFirst", "(Ljava/lang/Object;)V", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/List.html#addLast(java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><typeparamref name="E"/></param>
+        public void AddLast(E arg0)
+        {
+            IExecuteWithSignature("addLast", "(Ljava/lang/Object;)V", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/List.html#replaceAll(java.util.function.UnaryOperator)"/>

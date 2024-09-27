@@ -98,12 +98,25 @@ namespace Javax.Security.Auth
 
         #region Static methods
         /// <summary>
+        /// <see href="https://developer.android.com/reference/javax/security/auth/Subject.html#callAs(javax.security.auth.Subject,java.util.concurrent.Callable)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Javax.Security.Auth.Subject"/></param>
+        /// <param name="arg1"><see cref="Java.Util.Concurrent.Callable"/></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns><typeparamref name="T"/></returns>
+        /// <exception cref="Java.Util.Concurrent.CompletionException"/>
+        public static T CallAs<T>(Javax.Security.Auth.Subject arg0, Java.Util.Concurrent.Callable<T> arg1)
+        {
+            return SExecuteWithSignature<T>(LocalBridgeClazz, "callAs", "(Ljavax/security/auth/Subject;Ljava/util/concurrent/Callable;)Ljava/lang/Object;", arg0, arg1);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/javax/security/auth/Subject.html#doAs(javax.security.auth.Subject,java.security.PrivilegedAction)"/>
         /// </summary>
         /// <param name="arg0"><see cref="Javax.Security.Auth.Subject"/></param>
         /// <param name="arg1"><see cref="Java.Security.PrivilegedAction"/></param>
         /// <typeparam name="T"></typeparam>
         /// <returns><typeparamref name="T"/></returns>
+        [global::System.Obsolete()]
         public static T DoAs<T>(Javax.Security.Auth.Subject arg0, Java.Security.PrivilegedAction<T> arg1)
         {
             return SExecuteWithSignature<T>(LocalBridgeClazz, "doAs", "(Ljavax/security/auth/Subject;Ljava/security/PrivilegedAction;)Ljava/lang/Object;", arg0, arg1);
@@ -116,6 +129,7 @@ namespace Javax.Security.Auth
         /// <typeparam name="T"></typeparam>
         /// <returns><typeparamref name="T"/></returns>
         /// <exception cref="Java.Security.PrivilegedActionException"/>
+        [global::System.Obsolete()]
         public static T DoAs<T>(Javax.Security.Auth.Subject arg0, Java.Security.PrivilegedExceptionAction<T> arg1)
         {
             return SExecuteWithSignature<T>(LocalBridgeClazz, "doAs", "(Ljavax/security/auth/Subject;Ljava/security/PrivilegedExceptionAction;)Ljava/lang/Object;", arg0, arg1);
@@ -146,6 +160,14 @@ namespace Javax.Security.Auth
         public static T DoAsPrivileged<T>(Javax.Security.Auth.Subject arg0, Java.Security.PrivilegedExceptionAction<T> arg1, Java.Security.AccessControlContext arg2)
         {
             return SExecuteWithSignature<T>(LocalBridgeClazz, "doAsPrivileged", "(Ljavax/security/auth/Subject;Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;", arg0, arg1, arg2);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/javax/security/auth/Subject.html#current()"/>
+        /// </summary>
+        /// <returns><see cref="Javax.Security.Auth.Subject"/></returns>
+        public static Javax.Security.Auth.Subject Current()
+        {
+            return SExecuteWithSignature<Javax.Security.Auth.Subject>(LocalBridgeClazz, "current", "()Ljavax/security/auth/Subject;");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/security/auth/Subject.html#getSubject(java.security.AccessControlContext)"/>

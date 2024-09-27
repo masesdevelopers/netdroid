@@ -29,6 +29,7 @@ namespace Java.Lang
     /// <summary>
     /// <see href="https://developer.android.com/reference/java/lang/ThreadDeath.html"/>
     /// </summary>
+    [global::System.Obsolete()]
     public partial class ThreadDeath : Java.Lang.Error
     {
         const string _bridgeClassName = "java.lang.ThreadDeath";

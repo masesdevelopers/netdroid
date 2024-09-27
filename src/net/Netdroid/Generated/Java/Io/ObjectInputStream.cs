@@ -458,6 +458,7 @@ namespace Java.Io
             /// <param name="arg1"><see cref="object"/></param>
             /// <returns><see cref="object"/></returns>
             /// <exception cref="Java.Io.IOException"/>
+            /// <exception cref="Java.Lang.ClassNotFoundException"/>
             public object Get(Java.Lang.String arg0, object arg1)
             {
                 return IExecuteWithSignature("get", "(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;", arg0, arg1);

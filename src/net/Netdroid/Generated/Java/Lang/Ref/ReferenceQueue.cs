@@ -158,7 +158,6 @@ namespace Java.Lang.Ref
         /// </summary>
         /// <param name="arg0"><see cref="long"/></param>
         /// <returns><see cref="Java.Lang.Ref.Reference"/></returns>
-        /// <exception cref="Java.Lang.IllegalArgumentException"/>
         /// <exception cref="Java.Lang.InterruptedException"/>
         public Java.Lang.Ref.Reference Remove(long arg0)
         {
@@ -224,7 +223,6 @@ namespace Java.Lang.Ref
         /// <param name="arg0"><see cref="long"/></param>
         /// <typeparam name="ReturnExtendsT"><typeparamref name="T"/></typeparam>
         /// <returns><see cref="Java.Lang.Ref.Reference"/></returns>
-        /// <exception cref="Java.Lang.IllegalArgumentException"/>
         /// <exception cref="Java.Lang.InterruptedException"/>
         public Java.Lang.Ref.Reference<ReturnExtendsT> Remove<ReturnExtendsT>(long arg0) where ReturnExtendsT : T
         {

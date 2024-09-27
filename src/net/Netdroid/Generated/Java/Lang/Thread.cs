@@ -251,6 +251,31 @@ namespace Java.Lang
             return SExecuteWithSignature<int>(LocalBridgeClazz, "enumerate", "([Ljava/lang/Thread;)I", new object[] { arg0 });
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Thread.html#startVirtualThread(java.lang.Runnable)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.Runnable"/></param>
+        /// <returns><see cref="Java.Lang.Thread"/></returns>
+        public static Java.Lang.Thread StartVirtualThread(Java.Lang.Runnable arg0)
+        {
+            return SExecuteWithSignature<Java.Lang.Thread>(LocalBridgeClazz, "startVirtualThread", "(Ljava/lang/Runnable;)Ljava/lang/Thread;", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Thread.html#ofPlatform()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Lang.Thread.Builder.OfPlatform"/></returns>
+        public static Java.Lang.Thread.Builder.OfPlatform OfPlatform()
+        {
+            return SExecuteWithSignature<Java.Lang.Thread.Builder.OfPlatform>(LocalBridgeClazz, "ofPlatform", "()Ljava/lang/Thread$Builder$OfPlatform;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Thread.html#ofVirtual()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Lang.Thread.Builder.OfVirtual"/></returns>
+        public static Java.Lang.Thread.Builder.OfVirtual OfVirtual()
+        {
+            return SExecuteWithSignature<Java.Lang.Thread.Builder.OfVirtual>(LocalBridgeClazz, "ofVirtual", "()Ljava/lang/Thread$Builder$OfVirtual;");
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/Thread.html#getAllStackTraces()"/>
         /// </summary>
         /// <returns><see cref="Java.Util.Map"/></returns>
@@ -276,22 +301,6 @@ namespace Java.Lang
             return SExecuteWithSignature<Java.Lang.Thread>(LocalBridgeClazz, "currentThread", "()Ljava/lang/Thread;");
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/Thread.html#sleep(long)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="long"/></param>
-        /// <exception cref="Java.Lang.InterruptedException"/>
-        public static void Sleep(long arg0)
-        {
-            SExecuteWithSignature(LocalBridgeClazz, "sleep", "(J)V", arg0);
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/Thread.html#yield()"/>
-        /// </summary>
-        public static void Yield()
-        {
-            SExecuteWithSignature(LocalBridgeClazz, "yield", "()V");
-        }
-        /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/Thread.html#dumpStack()"/>
         /// </summary>
         public static void DumpStack()
@@ -306,6 +315,15 @@ namespace Java.Lang
             SExecuteWithSignature(LocalBridgeClazz, "onSpinWait", "()V");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Thread.html#sleep(java.time.Duration)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Time.Duration"/></param>
+        /// <exception cref="Java.Lang.InterruptedException"/>
+        public static void Sleep(Java.Time.Duration arg0)
+        {
+            SExecuteWithSignature(LocalBridgeClazz, "sleep", "(Ljava/time/Duration;)V", arg0);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/Thread.html#sleep(long,int)"/>
         /// </summary>
         /// <param name="arg0"><see cref="long"/></param>
@@ -314,6 +332,22 @@ namespace Java.Lang
         public static void Sleep(long arg0, int arg1)
         {
             SExecuteWithSignature(LocalBridgeClazz, "sleep", "(JI)V", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Thread.html#sleep(long)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="long"/></param>
+        /// <exception cref="Java.Lang.InterruptedException"/>
+        public static void Sleep(long arg0)
+        {
+            SExecuteWithSignature(LocalBridgeClazz, "sleep", "(J)V", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Thread.html#yield()"/>
+        /// </summary>
+        public static void Yield()
+        {
+            SExecuteWithSignature(LocalBridgeClazz, "yield", "()V");
         }
 
         #endregion
@@ -344,6 +378,24 @@ namespace Java.Lang
             return IExecuteWithSignature<bool>("isDaemon", "()Z");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Thread.html#isVirtual()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public bool IsVirtual()
+        {
+            return IExecuteWithSignature<bool>("isVirtual", "()Z");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Thread.html#join(java.time.Duration)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Time.Duration"/></param>
+        /// <returns><see cref="bool"/></returns>
+        /// <exception cref="Java.Lang.InterruptedException"/>
+        public bool Join(Java.Time.Duration arg0)
+        {
+            return IExecuteWithSignature<bool>("join", "(Ljava/time/Duration;)Z", arg0);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/Thread.html#getPriority()"/>
         /// </summary>
         /// <returns><see cref="int"/></returns>
@@ -368,23 +420,12 @@ namespace Java.Lang
             return IExecuteWithSignature<Java.Lang.ThreadGroup>("getThreadGroup", "()Ljava/lang/ThreadGroup;");
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/Thread.html#join(long,int)"/>
+        /// <see href="https://developer.android.com/reference/java/lang/Thread.html#threadId()"/>
         /// </summary>
-        /// <param name="arg0"><see cref="long"/></param>
-        /// <param name="arg1"><see cref="int"/></param>
-        /// <exception cref="Java.Lang.InterruptedException"/>
-        public void Join(long arg0, int arg1)
+        /// <returns><see cref="long"/></returns>
+        public long ThreadId()
         {
-            IExecuteWithSignature("join", "(JI)V", arg0, arg1);
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/Thread.html#join(long)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="long"/></param>
-        /// <exception cref="Java.Lang.InterruptedException"/>
-        public void Join(long arg0)
-        {
-            IExecuteWithSignature("join", "(J)V", arg0);
+            return IExecuteWithSignature<long>("threadId", "()J");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/Thread.html#setName(java.lang.String)"/>
@@ -409,6 +450,25 @@ namespace Java.Lang
         public void Join()
         {
             IExecuteWithSignature("join", "()V");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Thread.html#join(long,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="long"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <exception cref="Java.Lang.InterruptedException"/>
+        public void Join(long arg0, int arg1)
+        {
+            IExecuteWithSignature("join", "(JI)V", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Thread.html#join(long)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="long"/></param>
+        /// <exception cref="Java.Lang.InterruptedException"/>
+        public void Join(long arg0)
+        {
+            IExecuteWithSignature("join", "(J)V", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/Thread.html#resume()"/>
@@ -487,16 +547,10 @@ namespace Java.Lang
         /// <see href="https://developer.android.com/reference/java/lang/Thread.html#getId()"/>
         /// </summary>
         /// <returns><see cref="long"/></returns>
+        [global::System.Obsolete()]
         public long GetId()
         {
             return IExecuteWithSignature<long>("getId", "()J");
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/Thread.html#start()"/>
-        /// </summary>
-        public void Start()
-        {
-            IExecuteWithSignature("start", "()V");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/Thread.html#interrupt()"/>
@@ -519,6 +573,13 @@ namespace Java.Lang
         public void SetContextClassLoader(Java.Lang.ClassLoader arg0)
         {
             IExecuteWithSignature("setContextClassLoader", "(Ljava/lang/ClassLoader;)V", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Thread.html#start()"/>
+        /// </summary>
+        public void Start()
+        {
+            IExecuteWithSignature("start", "()V");
         }
 
         #endregion

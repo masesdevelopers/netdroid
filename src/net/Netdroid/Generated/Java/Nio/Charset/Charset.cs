@@ -106,6 +106,16 @@ namespace Java.Nio.Charset
             return SExecuteWithSignature<Java.Nio.Charset.Charset>(LocalBridgeClazz, "defaultCharset", "()Ljava/nio/charset/Charset;");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/nio/charset/Charset.html#forName(java.lang.String,java.nio.charset.Charset)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg1"><see cref="Java.Nio.Charset.Charset"/></param>
+        /// <returns><see cref="Java.Nio.Charset.Charset"/></returns>
+        public static Java.Nio.Charset.Charset ForName(Java.Lang.String arg0, Java.Nio.Charset.Charset arg1)
+        {
+            return SExecuteWithSignature<Java.Nio.Charset.Charset>(LocalBridgeClazz, "forName", "(Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;", arg0, arg1);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/nio/charset/Charset.html#forName(java.lang.String)"/>
         /// </summary>
         /// <param name="arg0"><see cref="Java.Lang.String"/></param>

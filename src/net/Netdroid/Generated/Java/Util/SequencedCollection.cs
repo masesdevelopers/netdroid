@@ -25,21 +25,23 @@ using MASES.JCOBridge.C2JBridge;
 
 namespace Java.Util
 {
-    #region LinkedHashSet declaration
+    #region SequencedCollection declaration
     /// <summary>
-    /// <see href="https://developer.android.com/reference/java/util/LinkedHashSet.html"/>
+    /// <see href="https://developer.android.com/reference/java/util/SequencedCollection.html"/>
     /// </summary>
-    public partial class LinkedHashSet : Java.Util.HashSet
+    public partial class SequencedCollection : Java.Util.Collection
     {
-        const string _bridgeClassName = "java.util.LinkedHashSet";
+        const string _bridgeClassName = "java.util.SequencedCollection";
         /// <summary>
         /// Default constructor: even if the corresponding Java class does not have one, it is mandatory for JCOBridge
         /// </summary>
-        public LinkedHashSet() { }
+        [global::System.Obsolete("SequencedCollection class represents, in .NET, an instance of a JVM interface or abstract class. This public initializer is needed for JCOBridge internal use, other uses can produce unidentible behaviors.")]
+        public SequencedCollection() { }
         /// <summary>
         /// Generic constructor: it is useful for JCOBridge when there is a derived class which needs to pass arguments to the highest JVMBridgeBase class
         /// </summary>
-        public LinkedHashSet(params object[] args) : base(args) { }
+        [global::System.Obsolete("SequencedCollection class represents, in .NET, an instance of a JVM interface or abstract class. This public initializer is needed for JCOBridge internal use, other uses can produce unidentible behaviors.")]
+        public SequencedCollection(params object[] args) : base(args) { }
 
         private static readonly MASES.JCOBridge.C2JBridge.JVMInterop.IJavaType _LocalBridgeClazz = JVMBridgeBase.ClazzOf(_bridgeClassName);
         private static MASES.JCOBridge.C2JBridge.JVMInterop.IJavaType LocalBridgeClazz => _LocalBridgeClazz ?? throw new global::System.InvalidOperationException($"Class {_bridgeClassName} was not found.");
@@ -51,7 +53,7 @@ namespace Java.Util
         /// <summary>
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeAbstract.htm"/>
         /// </summary>
-        public override bool IsBridgeAbstract => false;
+        public override bool IsBridgeAbstract => true;
         /// <summary>
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeCloseable.htm"/>
         /// </summary>
@@ -59,7 +61,7 @@ namespace Java.Util
         /// <summary>
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeInterface.htm"/>
         /// </summary>
-        public override bool IsBridgeInterface => false;
+        public override bool IsBridgeInterface => true;
         /// <summary>
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeStatic.htm"/>
         /// </summary>
@@ -70,22 +72,24 @@ namespace Java.Util
     }
     #endregion
 
-    #region LinkedHashSet<E> declaration
+    #region SequencedCollection<E> declaration
     /// <summary>
-    /// <see href="https://developer.android.com/reference/java/util/LinkedHashSet.html"/>
+    /// <see href="https://developer.android.com/reference/java/util/SequencedCollection.html"/>
     /// </summary>
     /// <typeparam name="E"></typeparam>
-    public partial class LinkedHashSet<E> : Java.Util.HashSet<E>
+    public partial class SequencedCollection<E> : Java.Util.Collection<E>
     {
-        const string _bridgeClassName = "java.util.LinkedHashSet";
+        const string _bridgeClassName = "java.util.SequencedCollection";
         /// <summary>
         /// Default constructor: even if the corresponding Java class does not have one, it is mandatory for JCOBridge
         /// </summary>
-        public LinkedHashSet() { }
+        [global::System.Obsolete("SequencedCollection class represents, in .NET, an instance of a JVM interface or abstract class. This public initializer is needed for JCOBridge internal use, other uses can produce unidentible behaviors.")]
+        public SequencedCollection() { }
         /// <summary>
         /// Generic constructor: it is useful for JCOBridge when there is a derived class which needs to pass arguments to the highest JVMBridgeBase class
         /// </summary>
-        public LinkedHashSet(params object[] args) : base(args) { }
+        [global::System.Obsolete("SequencedCollection class represents, in .NET, an instance of a JVM interface or abstract class. This public initializer is needed for JCOBridge internal use, other uses can produce unidentible behaviors.")]
+        public SequencedCollection(params object[] args) : base(args) { }
 
         private static readonly MASES.JCOBridge.C2JBridge.JVMInterop.IJavaType _LocalBridgeClazz = JVMBridgeBase.ClazzOf(_bridgeClassName);
         private static MASES.JCOBridge.C2JBridge.JVMInterop.IJavaType LocalBridgeClazz => _LocalBridgeClazz ?? throw new global::System.InvalidOperationException($"Class {_bridgeClassName} was not found.");
@@ -97,7 +101,7 @@ namespace Java.Util
         /// <summary>
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeAbstract.htm"/>
         /// </summary>
-        public override bool IsBridgeAbstract => false;
+        public override bool IsBridgeAbstract => true;
         /// <summary>
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeCloseable.htm"/>
         /// </summary>
@@ -105,7 +109,7 @@ namespace Java.Util
         /// <summary>
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeInterface.htm"/>
         /// </summary>
-        public override bool IsBridgeInterface => false;
+        public override bool IsBridgeInterface => true;
         /// <summary>
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeStatic.htm"/>
         /// </summary>
@@ -116,43 +120,14 @@ namespace Java.Util
     }
     #endregion
 
-    #region LinkedHashSet implementation
-    public partial class LinkedHashSet
+    #region SequencedCollection implementation
+    public partial class SequencedCollection
     {
         #region Constructors
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashSet.html#%3Cinit%3E(int,float)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="int"/></param>
-        /// <param name="arg1"><see cref="float"/></param>
-        public LinkedHashSet(int arg0, float arg1)
-            : base(arg0, arg1)
-        {
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashSet.html#%3Cinit%3E(int)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="int"/></param>
-        public LinkedHashSet(int arg0)
-            : base(arg0)
-        {
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashSet.html#%3Cinit%3E(java.util.Collection)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="Java.Util.Collection"/></param>
-        public LinkedHashSet(Java.Util.Collection arg0)
-            : base(arg0)
-        {
-        }
 
         #endregion
 
         #region Class/Interface conversion operators
-        /// <summary>
-        /// Converter from <see cref="Java.Util.LinkedHashSet"/> to <see cref="Java.Util.SequencedSet"/>
-        /// </summary>
-        public static implicit operator Java.Util.SequencedSet(Java.Util.LinkedHashSet t) => t.Cast<Java.Util.SequencedSet>();
 
         #endregion
 
@@ -161,21 +136,20 @@ namespace Java.Util
         #endregion
 
         #region Static methods
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashSet.html#newLinkedHashSet(int)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="int"/></param>
-        /// <returns><see cref="Java.Util.LinkedHashSet"/></returns>
-        public static Java.Util.LinkedHashSet NewLinkedHashSet(int arg0)
-        {
-            return SExecuteWithSignature<Java.Util.LinkedHashSet>(LocalBridgeClazz, "newLinkedHashSet", "(I)Ljava/util/LinkedHashSet;", arg0);
-        }
 
         #endregion
 
         #region Instance methods
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashSet.html#getFirst()"/>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedCollection.html#reversed()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.SequencedCollection"/></returns>
+        public Java.Util.SequencedCollection Reversed()
+        {
+            return IExecuteWithSignature<Java.Util.SequencedCollection>("reversed", "()Ljava/util/SequencedCollection;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedCollection.html#getFirst()"/>
         /// </summary>
         /// <returns><see cref="object"/></returns>
         public object GetFirst()
@@ -183,7 +157,7 @@ namespace Java.Util
             return IExecuteWithSignature("getFirst", "()Ljava/lang/Object;");
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashSet.html#getLast()"/>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedCollection.html#getLast()"/>
         /// </summary>
         /// <returns><see cref="object"/></returns>
         public object GetLast()
@@ -191,7 +165,7 @@ namespace Java.Util
             return IExecuteWithSignature("getLast", "()Ljava/lang/Object;");
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashSet.html#removeFirst()"/>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedCollection.html#removeFirst()"/>
         /// </summary>
         /// <returns><see cref="object"/></returns>
         public object RemoveFirst()
@@ -199,7 +173,7 @@ namespace Java.Util
             return IExecuteWithSignature("removeFirst", "()Ljava/lang/Object;");
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashSet.html#removeLast()"/>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedCollection.html#removeLast()"/>
         /// </summary>
         /// <returns><see cref="object"/></returns>
         public object RemoveLast()
@@ -207,15 +181,7 @@ namespace Java.Util
             return IExecuteWithSignature("removeLast", "()Ljava/lang/Object;");
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashSet.html#reversed()"/>
-        /// </summary>
-        /// <returns><see cref="Java.Util.SequencedSet"/></returns>
-        public Java.Util.SequencedSet Reversed()
-        {
-            return IExecuteWithSignature<Java.Util.SequencedSet>("reversed", "()Ljava/util/SequencedSet;");
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashSet.html#addFirst(java.lang.Object)"/>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedCollection.html#addFirst(java.lang.Object)"/>
         /// </summary>
         /// <param name="arg0"><see cref="object"/></param>
         public void AddFirst(object arg0)
@@ -223,7 +189,7 @@ namespace Java.Util
             IExecuteWithSignature("addFirst", "(Ljava/lang/Object;)V", arg0);
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashSet.html#addLast(java.lang.Object)"/>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedCollection.html#addLast(java.lang.Object)"/>
         /// </summary>
         /// <param name="arg0"><see cref="object"/></param>
         public void AddLast(object arg0)
@@ -241,47 +207,36 @@ namespace Java.Util
     }
     #endregion
 
-    #region LinkedHashSet<E> implementation
-    public partial class LinkedHashSet<E> : Java.Util.ISequencedSet<E>
+    #region ISequencedCollection<E>
+    /// <summary>
+    /// .NET interface for TO BE DEFINED FROM USER
+    /// </summary>
+    public partial interface ISequencedCollection<E> : Java.Util.ICollection<E>
+    {
+        #region Instance methods
+
+        #endregion
+
+        #region Nested classes
+
+        #endregion
+
+        // TODO: complete the class
+    }
+    #endregion
+
+    #region SequencedCollection<E> implementation
+    public partial class SequencedCollection<E> : Java.Util.ISequencedCollection<E>
     {
         #region Constructors
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashSet.html#%3Cinit%3E(int,float)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="int"/></param>
-        /// <param name="arg1"><see cref="float"/></param>
-        public LinkedHashSet(int arg0, float arg1)
-            : base(arg0, arg1)
-        {
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashSet.html#%3Cinit%3E(int)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="int"/></param>
-        public LinkedHashSet(int arg0)
-            : base(arg0)
-        {
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashSet.html#%3Cinit%3E(java.util.Collection)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="Java.Util.Collection"/></param>
-        public LinkedHashSet(Java.Util.Collection<E> arg0)
-            : base(arg0)
-        {
-        }
 
         #endregion
 
         #region Class/Interface conversion operators
         /// <summary>
-        /// Converter from <see cref="Java.Util.LinkedHashSet{E}"/> to <see cref="Java.Util.SequencedSet{E}"/>
+        /// Converter from <see cref="Java.Util.SequencedCollection{E}"/> to <see cref="Java.Util.SequencedCollection"/>
         /// </summary>
-        public static implicit operator Java.Util.SequencedSet<E>(Java.Util.LinkedHashSet<E> t) => t.Cast<Java.Util.SequencedSet<E>>();
-        /// <summary>
-        /// Converter from <see cref="Java.Util.LinkedHashSet{E}"/> to <see cref="Java.Util.LinkedHashSet"/>
-        /// </summary>
-        public static implicit operator Java.Util.LinkedHashSet(Java.Util.LinkedHashSet<E> t) => t.Cast<Java.Util.LinkedHashSet>();
+        public static implicit operator Java.Util.SequencedCollection(Java.Util.SequencedCollection<E> t) => t.Cast<Java.Util.SequencedCollection>();
 
         #endregion
 
@@ -290,22 +245,20 @@ namespace Java.Util
         #endregion
 
         #region Static methods
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashSet.html#newLinkedHashSet(int)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="int"/></param>
-        /// <typeparam name="T"></typeparam>
-        /// <returns><see cref="Java.Util.LinkedHashSet"/></returns>
-        public static Java.Util.LinkedHashSet<T> NewLinkedHashSet<T>(int arg0)
-        {
-            return SExecuteWithSignature<Java.Util.LinkedHashSet<T>>(LocalBridgeClazz, "newLinkedHashSet", "(I)Ljava/util/LinkedHashSet;", arg0);
-        }
 
         #endregion
 
         #region Instance methods
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashSet.html#getFirst()"/>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedCollection.html#reversed()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.SequencedCollection"/></returns>
+        public Java.Util.SequencedCollection<E> Reversed()
+        {
+            return IExecuteWithSignature<Java.Util.SequencedCollection<E>>("reversed", "()Ljava/util/SequencedCollection;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedCollection.html#getFirst()"/>
         /// </summary>
         /// <returns><typeparamref name="E"/></returns>
         public E GetFirst()
@@ -313,7 +266,7 @@ namespace Java.Util
             return IExecuteWithSignature<E>("getFirst", "()Ljava/lang/Object;");
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashSet.html#getLast()"/>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedCollection.html#getLast()"/>
         /// </summary>
         /// <returns><typeparamref name="E"/></returns>
         public E GetLast()
@@ -321,7 +274,7 @@ namespace Java.Util
             return IExecuteWithSignature<E>("getLast", "()Ljava/lang/Object;");
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashSet.html#removeFirst()"/>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedCollection.html#removeFirst()"/>
         /// </summary>
         /// <returns><typeparamref name="E"/></returns>
         public E RemoveFirst()
@@ -329,7 +282,7 @@ namespace Java.Util
             return IExecuteWithSignature<E>("removeFirst", "()Ljava/lang/Object;");
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashSet.html#removeLast()"/>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedCollection.html#removeLast()"/>
         /// </summary>
         /// <returns><typeparamref name="E"/></returns>
         public E RemoveLast()
@@ -337,15 +290,7 @@ namespace Java.Util
             return IExecuteWithSignature<E>("removeLast", "()Ljava/lang/Object;");
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashSet.html#reversed()"/>
-        /// </summary>
-        /// <returns><see cref="Java.Util.SequencedSet"/></returns>
-        public Java.Util.SequencedSet<E> Reversed()
-        {
-            return IExecuteWithSignature<Java.Util.SequencedSet<E>>("reversed", "()Ljava/util/SequencedSet;");
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashSet.html#addFirst(java.lang.Object)"/>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedCollection.html#addFirst(java.lang.Object)"/>
         /// </summary>
         /// <param name="arg0"><typeparamref name="E"/></param>
         public void AddFirst(E arg0)
@@ -353,7 +298,7 @@ namespace Java.Util
             IExecuteWithSignature("addFirst", "(Ljava/lang/Object;)V", arg0);
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedHashSet.html#addLast(java.lang.Object)"/>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedCollection.html#addLast(java.lang.Object)"/>
         /// </summary>
         /// <param name="arg0"><typeparamref name="E"/></param>
         public void AddLast(E arg0)

@@ -158,6 +158,15 @@ namespace Java.Util
         #endregion
 
         #region Static methods
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/WeakHashMap.html#newWeakHashMap(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <returns><see cref="Java.Util.WeakHashMap"/></returns>
+        public static Java.Util.WeakHashMap NewWeakHashMap(int arg0)
+        {
+            return SExecuteWithSignature<Java.Util.WeakHashMap>(LocalBridgeClazz, "newWeakHashMap", "(I)Ljava/util/WeakHashMap;", arg0);
+        }
 
         #endregion
 
@@ -218,6 +227,15 @@ namespace Java.Util
         #endregion
 
         #region Static methods
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/WeakHashMap.html#newWeakHashMap(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <returns><see cref="Java.Util.WeakHashMap"/></returns>
+        public static Java.Util.WeakHashMap<K, V> NewWeakHashMap(int arg0)
+        {
+            return SExecuteWithSignature<Java.Util.WeakHashMap<K, V>>(LocalBridgeClazz, "newWeakHashMap", "(I)Ljava/util/WeakHashMap;", arg0);
+        }
 
         #endregion
 

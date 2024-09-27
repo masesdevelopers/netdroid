@@ -96,6 +96,7 @@ namespace Javax.Crypto.Spec
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/spec/OAEPParameterSpec.html#DEFAULT"/>
         /// </summary>
+        [global::System.Obsolete()]
         public static Javax.Crypto.Spec.OAEPParameterSpec DEFAULT { get { if (!_DEFAULTReady) { _DEFAULTContent = SGetField<Javax.Crypto.Spec.OAEPParameterSpec>(LocalBridgeClazz, "DEFAULT"); _DEFAULTReady = true; } return _DEFAULTContent; } }
         private static Javax.Crypto.Spec.OAEPParameterSpec _DEFAULTContent = default;
         private static bool _DEFAULTReady = false; // this is used because in case of generics 

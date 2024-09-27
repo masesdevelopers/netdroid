@@ -293,6 +293,24 @@ namespace Java.Net
             return IExecuteWithSignature<int>("getPort", "()I");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/net/Socket.html#getReceiveBufferSize()"/>
+        /// </summary>
+        /// <returns><see cref="int"/></returns>
+        /// <exception cref="Java.Net.SocketException"/>
+        public int GetReceiveBufferSize()
+        {
+            return IExecuteWithSignature<int>("getReceiveBufferSize", "()I");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/net/Socket.html#getSendBufferSize()"/>
+        /// </summary>
+        /// <returns><see cref="int"/></returns>
+        /// <exception cref="Java.Net.SocketException"/>
+        public int GetSendBufferSize()
+        {
+            return IExecuteWithSignature<int>("getSendBufferSize", "()I");
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/net/Socket.html#getSoLinger()"/>
         /// </summary>
         /// <returns><see cref="int"/></returns>
@@ -300,6 +318,15 @@ namespace Java.Net
         public int GetSoLinger()
         {
             return IExecuteWithSignature<int>("getSoLinger", "()I");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/net/Socket.html#getSoTimeout()"/>
+        /// </summary>
+        /// <returns><see cref="int"/></returns>
+        /// <exception cref="Java.Net.SocketException"/>
+        public int GetSoTimeout()
+        {
+            return IExecuteWithSignature<int>("getSoTimeout", "()I");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/net/Socket.html#getTrafficClass()"/>
@@ -377,31 +404,13 @@ namespace Java.Net
             return IExecuteWithSignature<Java.Util.Set<Java.Net.SocketOption<object>>>("supportedOptions", "()Ljava/util/Set;");
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/net/Socket.html#getReceiveBufferSize()"/>
+        /// <see href="https://developer.android.com/reference/java/net/Socket.html#bind(java.net.SocketAddress)"/>
         /// </summary>
-        /// <returns><see cref="int"/></returns>
-        /// <exception cref="Java.Net.SocketException"/>
-        public int GetReceiveBufferSize()
+        /// <param name="arg0"><see cref="Java.Net.SocketAddress"/></param>
+        /// <exception cref="Java.Io.IOException"/>
+        public void Bind(Java.Net.SocketAddress arg0)
         {
-            return IExecuteWithSignature<int>("getReceiveBufferSize", "()I");
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/net/Socket.html#getSendBufferSize()"/>
-        /// </summary>
-        /// <returns><see cref="int"/></returns>
-        /// <exception cref="Java.Net.SocketException"/>
-        public int GetSendBufferSize()
-        {
-            return IExecuteWithSignature<int>("getSendBufferSize", "()I");
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/net/Socket.html#getSoTimeout()"/>
-        /// </summary>
-        /// <returns><see cref="int"/></returns>
-        /// <exception cref="Java.Net.SocketException"/>
-        public int GetSoTimeout()
-        {
-            return IExecuteWithSignature<int>("getSoTimeout", "()I");
+            IExecuteWithSignature("bind", "(Ljava/net/SocketAddress;)V", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/net/Socket.html#close()"/>
@@ -410,42 +419,6 @@ namespace Java.Net
         public void Close()
         {
             IExecuteWithSignature("close", "()V");
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/net/Socket.html#setReceiveBufferSize(int)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="int"/></param>
-        /// <exception cref="Java.Net.SocketException"/>
-        public void SetReceiveBufferSize(int arg0)
-        {
-            IExecuteWithSignature("setReceiveBufferSize", "(I)V", arg0);
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/net/Socket.html#setSendBufferSize(int)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="int"/></param>
-        /// <exception cref="Java.Net.SocketException"/>
-        public void SetSendBufferSize(int arg0)
-        {
-            IExecuteWithSignature("setSendBufferSize", "(I)V", arg0);
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/net/Socket.html#setSoTimeout(int)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="int"/></param>
-        /// <exception cref="Java.Net.SocketException"/>
-        public void SetSoTimeout(int arg0)
-        {
-            IExecuteWithSignature("setSoTimeout", "(I)V", arg0);
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/net/Socket.html#bind(java.net.SocketAddress)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="Java.Net.SocketAddress"/></param>
-        /// <exception cref="Java.Io.IOException"/>
-        public void Bind(Java.Net.SocketAddress arg0)
-        {
-            IExecuteWithSignature("bind", "(Ljava/net/SocketAddress;)V", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/net/Socket.html#connect(java.net.SocketAddress,int)"/>
@@ -504,6 +477,15 @@ namespace Java.Net
             IExecuteWithSignature("setPerformancePreferences", "(III)V", arg0, arg1, arg2);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/net/Socket.html#setReceiveBufferSize(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <exception cref="Java.Net.SocketException"/>
+        public void SetReceiveBufferSize(int arg0)
+        {
+            IExecuteWithSignature("setReceiveBufferSize", "(I)V", arg0);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/net/Socket.html#setReuseAddress(boolean)"/>
         /// </summary>
         /// <param name="arg0"><see cref="bool"/></param>
@@ -511,6 +493,15 @@ namespace Java.Net
         public void SetReuseAddress(bool arg0)
         {
             IExecuteWithSignature("setReuseAddress", "(Z)V", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/net/Socket.html#setSendBufferSize(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <exception cref="Java.Net.SocketException"/>
+        public void SetSendBufferSize(int arg0)
+        {
+            IExecuteWithSignature("setSendBufferSize", "(I)V", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/net/Socket.html#setSoLinger(boolean,int)"/>
@@ -521,6 +512,15 @@ namespace Java.Net
         public void SetSoLinger(bool arg0, int arg1)
         {
             IExecuteWithSignature("setSoLinger", "(ZI)V", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/net/Socket.html#setSoTimeout(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <exception cref="Java.Net.SocketException"/>
+        public void SetSoTimeout(int arg0)
+        {
+            IExecuteWithSignature("setSoTimeout", "(I)V", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/net/Socket.html#setTcpNoDelay(boolean)"/>

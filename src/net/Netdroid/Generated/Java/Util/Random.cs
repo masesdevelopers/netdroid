@@ -102,6 +102,15 @@ namespace Java.Util
         #endregion
 
         #region Static methods
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/Random.html#from(java.util.random.RandomGenerator)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Util.RandomNs.RandomGenerator"/></param>
+        /// <returns><see cref="Java.Util.Random"/></returns>
+        public static Java.Util.Random From(Java.Util.RandomNs.RandomGenerator arg0)
+        {
+            return SExecuteWithSignature<Java.Util.Random>(LocalBridgeClazz, "from", "(Ljava/util/random/RandomGenerator;)Ljava/util/Random;", arg0);
+        }
 
         #endregion
 

@@ -310,6 +310,14 @@ namespace Java.Lang
             return IExecuteWithSignature<bool>("isSynthetic", "()Z");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Class.html#isUnnamedClass()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public bool IsUnnamedClass()
+        {
+            return IExecuteWithSignature<bool>("isUnnamedClass", "()Z");
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/Class.html#getResourceAsStream(java.lang.String)"/>
         /// </summary>
         /// <param name="arg0"><see cref="Java.Lang.String"/></param>
@@ -687,6 +695,14 @@ namespace Java.Lang
             return IExecuteWithSignature<Java.Security.ProtectionDomain>("getProtectionDomain", "()Ljava/security/ProtectionDomain;");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Class.html#accessFlags()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.Set"/></returns>
+        public Java.Util.Set AccessFlags()
+        {
+            return IExecuteWithSignature<Java.Util.Set>("accessFlags", "()Ljava/util/Set;");
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/Class.html#isArray()"/>
         /// </summary>
         /// <returns><see cref="bool"/></returns>
@@ -1001,6 +1017,14 @@ namespace Java.Lang
         public bool IsSynthetic()
         {
             return IExecuteWithSignature<bool>("isSynthetic", "()Z");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Class.html#isUnnamedClass()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public bool IsUnnamedClass()
+        {
+            return IExecuteWithSignature<bool>("isUnnamedClass", "()Z");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/Class.html#getResourceAsStream(java.lang.String)"/>
@@ -1378,6 +1402,14 @@ namespace Java.Lang
         public Java.Security.ProtectionDomain GetProtectionDomain()
         {
             return IExecuteWithSignature<Java.Security.ProtectionDomain>("getProtectionDomain", "()Ljava/security/ProtectionDomain;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Class.html#accessFlags()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.Set"/></returns>
+        public Java.Util.Set<Java.Lang.Reflect.AccessFlag> AccessFlags()
+        {
+            return IExecuteWithSignature<Java.Util.Set<Java.Lang.Reflect.AccessFlag>>("accessFlags", "()Ljava/util/Set;");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/Class.html#isArray()"/>

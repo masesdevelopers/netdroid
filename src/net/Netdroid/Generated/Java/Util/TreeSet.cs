@@ -324,6 +324,22 @@ namespace Java.Util
         {
             return IExecuteWithSignature<Java.Util.SortedSet>("tailSet", "(Ljava/lang/Object;)Ljava/util/SortedSet;", arg0);
         }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/TreeSet.html#addFirst(java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="object"/></param>
+        public void AddFirst(object arg0)
+        {
+            IExecuteWithSignature("addFirst", "(Ljava/lang/Object;)V", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/TreeSet.html#addLast(java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="object"/></param>
+        public void AddLast(object arg0)
+        {
+            IExecuteWithSignature("addLast", "(Ljava/lang/Object;)V", arg0);
+        }
 
         #endregion
 
@@ -547,6 +563,22 @@ namespace Java.Util
         public Java.Util.SortedSet<E> TailSet(E arg0)
         {
             return IExecuteWithSignature<Java.Util.SortedSet<E>>("tailSet", "(Ljava/lang/Object;)Ljava/util/SortedSet;", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/TreeSet.html#addFirst(java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><typeparamref name="E"/></param>
+        public void AddFirst(E arg0)
+        {
+            IExecuteWithSignature("addFirst", "(Ljava/lang/Object;)V", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/TreeSet.html#addLast(java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><typeparamref name="E"/></param>
+        public void AddLast(E arg0)
+        {
+            IExecuteWithSignature("addLast", "(Ljava/lang/Object;)V", arg0);
         }
 
         #endregion

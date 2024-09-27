@@ -385,6 +385,26 @@ namespace Java.Util
         {
             return IExecuteWithSignature("lowerKey", "(Ljava/lang/Object;)Ljava/lang/Object;", arg0);
         }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/TreeMap.html#putFirst(java.lang.Object,java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="object"/></param>
+        /// <param name="arg1"><see cref="object"/></param>
+        /// <returns><see cref="object"/></returns>
+        public object PutFirst(object arg0, object arg1)
+        {
+            return IExecuteWithSignature("putFirst", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/TreeMap.html#putLast(java.lang.Object,java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="object"/></param>
+        /// <param name="arg1"><see cref="object"/></param>
+        /// <returns><see cref="object"/></returns>
+        public object PutLast(object arg0, object arg1)
+        {
+            return IExecuteWithSignature("putLast", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", arg0, arg1);
+        }
 
         #endregion
 
@@ -668,6 +688,26 @@ namespace Java.Util
         public K LowerKey(K arg0)
         {
             return IExecuteWithSignature<K>("lowerKey", "(Ljava/lang/Object;)Ljava/lang/Object;", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/TreeMap.html#putFirst(java.lang.Object,java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><typeparamref name="K"/></param>
+        /// <param name="arg1"><typeparamref name="V"/></param>
+        /// <returns><typeparamref name="V"/></returns>
+        public V PutFirst(K arg0, V arg1)
+        {
+            return IExecuteWithSignature<V>("putFirst", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/TreeMap.html#putLast(java.lang.Object,java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><typeparamref name="K"/></param>
+        /// <param name="arg1"><typeparamref name="V"/></param>
+        /// <returns><typeparamref name="V"/></returns>
+        public V PutLast(K arg0, V arg1)
+        {
+            return IExecuteWithSignature<V>("putLast", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", arg0, arg1);
         }
 
         #endregion

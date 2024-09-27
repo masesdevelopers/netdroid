@@ -761,6 +761,16 @@ namespace Java.Security
             return IExecuteWithSignature<Java.Util.Enumeration<Java.Lang.String>>("aliases", "()Ljava/util/Enumeration;");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/security/KeyStore.html#getAttributes(java.lang.String)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <returns><see cref="Java.Util.Set"/></returns>
+        /// <exception cref="Java.Security.KeyStoreException"/>
+        public Java.Util.Set<Java.Security.KeyStore.Entry.Attribute> GetAttributes(Java.Lang.String arg0)
+        {
+            return IExecuteWithSignature<Java.Util.Set<Java.Security.KeyStore.Entry.Attribute>>("getAttributes", "(Ljava/lang/String;)Ljava/util/Set;", arg0);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/security/KeyStore.html#deleteEntry(java.lang.String)"/>
         /// </summary>
         /// <param name="arg0"><see cref="Java.Lang.String"/></param>

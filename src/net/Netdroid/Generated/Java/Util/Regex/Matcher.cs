@@ -125,6 +125,14 @@ namespace Java.Util.Regex
             return IExecuteWithSignature<bool>("hasAnchoringBounds", "()Z");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/regex/Matcher.html#hasMatch()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public bool HasMatch()
+        {
+            return IExecuteWithSignature<bool>("hasMatch", "()Z");
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/regex/Matcher.html#hasTransparentBounds()"/>
         /// </summary>
         /// <returns><see cref="bool"/></returns>
@@ -319,6 +327,14 @@ namespace Java.Util.Regex
         public Java.Lang.StringBuilder AppendTail(Java.Lang.StringBuilder arg0)
         {
             return IExecuteWithSignature<Java.Lang.StringBuilder>("appendTail", "(Ljava/lang/StringBuilder;)Ljava/lang/StringBuilder;", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/regex/Matcher.html#namedGroups()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.Map"/></returns>
+        public Java.Util.Map<Java.Lang.String, Java.Lang.Integer> NamedGroups()
+        {
+            return IExecuteWithSignature<Java.Util.Map<Java.Lang.String, Java.Lang.Integer>>("namedGroups", "()Ljava/util/Map;");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/regex/Matcher.html#appendReplacement(java.lang.StringBuffer,java.lang.String)"/>

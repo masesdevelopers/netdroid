@@ -195,6 +195,24 @@ namespace Javax.Xml.Xpath
         {
             IExecuteWithSignature("setXPathVariableResolver", "(Ljavax/xml/xpath/XPathVariableResolver;)V", arg0);
         }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/javax/xml/xpath/XPathFactory.html#getProperty(java.lang.String)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <returns><see cref="Java.Lang.String"/></returns>
+        public Java.Lang.String GetProperty(Java.Lang.String arg0)
+        {
+            return IExecuteWithSignature<Java.Lang.String>("getProperty", "(Ljava/lang/String;)Ljava/lang/String;", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/javax/xml/xpath/XPathFactory.html#setProperty(java.lang.String,java.lang.String)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg1"><see cref="Java.Lang.String"/></param>
+        public void SetProperty(Java.Lang.String arg0, Java.Lang.String arg1)
+        {
+            IExecuteWithSignature("setProperty", "(Ljava/lang/String;Ljava/lang/String;)V", arg0, arg1);
+        }
 
         #endregion
 

@@ -279,6 +279,14 @@ namespace Java.Io
             return IExecuteWithSignature<Java.Lang.Appendable>("append", "(Ljava/lang/CharSequence;)Ljava/lang/Appendable;", arg0);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/io/PrintStream.html#charset()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Nio.Charset.Charset"/></returns>
+        public Java.Nio.Charset.Charset Charset()
+        {
+            return IExecuteWithSignature<Java.Nio.Charset.Charset>("charset", "()Ljava/nio/charset/Charset;");
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/io/PrintStream.html#print(boolean)"/>
         /// </summary>
         /// <param name="arg0"><see cref="bool"/></param>

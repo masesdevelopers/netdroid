@@ -372,6 +372,14 @@ namespace Java.Util.Concurrent
             return IExecuteWithSignature<int>("getNumberOfDependents", "()I");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/CompletableFuture.html#exceptionNow()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Lang.Throwable"/></returns>
+        public Java.Lang.Throwable ExceptionNow()
+        {
+            var obj = IExecuteWithSignature<MASES.JCOBridge.C2JBridge.JVMInterop.IJavaObject>("exceptionNow", "()Ljava/lang/Throwable;"); return MASES.JCOBridge.C2JBridge.JVMBridgeException.New<Java.Lang.Throwable>(obj);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/concurrent/CompletableFuture.html#completeAsync(java.util.function.Supplier,java.util.concurrent.Executor)"/>
         /// </summary>
         /// <param name="arg0"><see cref="Java.Util.Function.Supplier"/></param>
@@ -854,6 +862,14 @@ namespace Java.Util.Concurrent
             return IExecuteWithSignature<Java.Util.Concurrent.Executor>("defaultExecutor", "()Ljava/util/concurrent/Executor;");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/CompletableFuture.html#state()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.Concurrent.Future.State"/></returns>
+        public Java.Util.Concurrent.Future.State State()
+        {
+            return IExecuteWithSignature<Java.Util.Concurrent.Future.State>("state", "()Ljava/util/concurrent/Future$State;");
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/concurrent/CompletableFuture.html#get()"/>
         /// </summary>
         /// <returns><see cref="object"/></returns>
@@ -892,6 +908,14 @@ namespace Java.Util.Concurrent
         public object Join()
         {
             return IExecuteWithSignature("join", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/CompletableFuture.html#resultNow()"/>
+        /// </summary>
+        /// <returns><see cref="object"/></returns>
+        public object ResultNow()
+        {
+            return IExecuteWithSignature("resultNow", "()Ljava/lang/Object;");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/concurrent/CompletableFuture.html#obtrudeException(java.lang.Throwable)"/>
@@ -1169,6 +1193,14 @@ namespace Java.Util.Concurrent
         public int GetNumberOfDependents()
         {
             return IExecuteWithSignature<int>("getNumberOfDependents", "()I");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/CompletableFuture.html#exceptionNow()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Lang.Throwable"/></returns>
+        public Java.Lang.Throwable ExceptionNow()
+        {
+            var obj = IExecuteWithSignature<MASES.JCOBridge.C2JBridge.JVMInterop.IJavaObject>("exceptionNow", "()Ljava/lang/Throwable;"); return MASES.JCOBridge.C2JBridge.JVMBridgeException.New<Java.Lang.Throwable>(obj);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/concurrent/CompletableFuture.html#completeAsync(java.util.function.Supplier,java.util.concurrent.Executor)"/>
@@ -1655,6 +1687,14 @@ namespace Java.Util.Concurrent
             return IExecuteWithSignature<Java.Util.Concurrent.Executor>("defaultExecutor", "()Ljava/util/concurrent/Executor;");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/CompletableFuture.html#state()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.Concurrent.Future.State"/></returns>
+        public Java.Util.Concurrent.Future.State State()
+        {
+            return IExecuteWithSignature<Java.Util.Concurrent.Future.State>("state", "()Ljava/util/concurrent/Future$State;");
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/concurrent/CompletableFuture.html#get()"/>
         /// </summary>
         /// <returns><typeparamref name="T"/></returns>
@@ -1693,6 +1733,14 @@ namespace Java.Util.Concurrent
         public T Join()
         {
             return IExecuteWithSignature<T>("join", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/CompletableFuture.html#resultNow()"/>
+        /// </summary>
+        /// <returns><typeparamref name="T"/></returns>
+        public T ResultNow()
+        {
+            return IExecuteWithSignature<T>("resultNow", "()Ljava/lang/Object;");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/concurrent/CompletableFuture.html#obtrudeException(java.lang.Throwable)"/>

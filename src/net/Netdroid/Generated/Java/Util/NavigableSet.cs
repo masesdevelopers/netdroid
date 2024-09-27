@@ -276,6 +276,30 @@ namespace Java.Util
         {
             return IExecuteWithSignature<Java.Util.SortedSet>("tailSet", "(Ljava/lang/Object;)Ljava/util/SortedSet;", arg0);
         }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/NavigableSet.html#removeFirst()"/>
+        /// </summary>
+        /// <returns><see cref="object"/></returns>
+        public object RemoveFirst()
+        {
+            return IExecuteWithSignature("removeFirst", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/NavigableSet.html#removeLast()"/>
+        /// </summary>
+        /// <returns><see cref="object"/></returns>
+        public object RemoveLast()
+        {
+            return IExecuteWithSignature("removeLast", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/NavigableSet.html#reversed()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.SortedSet"/></returns>
+        public Java.Util.SortedSet Reversed()
+        {
+            return IExecuteWithSignature<Java.Util.SortedSet>("reversed", "()Ljava/util/SortedSet;");
+        }
 
         #endregion
 
@@ -464,6 +488,30 @@ namespace Java.Util
         public Java.Util.SortedSet<E> TailSet(E arg0)
         {
             return IExecuteWithSignature<Java.Util.SortedSet<E>>("tailSet", "(Ljava/lang/Object;)Ljava/util/SortedSet;", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/NavigableSet.html#removeFirst()"/>
+        /// </summary>
+        /// <returns><typeparamref name="E"/></returns>
+        public E RemoveFirst()
+        {
+            return IExecuteWithSignature<E>("removeFirst", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/NavigableSet.html#removeLast()"/>
+        /// </summary>
+        /// <returns><typeparamref name="E"/></returns>
+        public E RemoveLast()
+        {
+            return IExecuteWithSignature<E>("removeLast", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/NavigableSet.html#reversed()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.SortedSet"/></returns>
+        public Java.Util.SortedSet Reversed()
+        {
+            return IExecuteWithSignature<Java.Util.SortedSet>("reversed", "()Ljava/util/SortedSet;");
         }
 
         #endregion

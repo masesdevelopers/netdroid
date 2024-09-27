@@ -224,6 +224,26 @@ namespace Java.Util.Concurrent
 
         #region Instance methods
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinPool.html#externalSubmit(java.util.concurrent.ForkJoinTask)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Util.Concurrent.ForkJoinTask"/></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns><see cref="Java.Util.Concurrent.ForkJoinTask"/></returns>
+        public Java.Util.Concurrent.ForkJoinTask<T> ExternalSubmit<T>(Java.Util.Concurrent.ForkJoinTask<T> arg0)
+        {
+            return IExecuteWithSignature<Java.Util.Concurrent.ForkJoinTask<T>>("externalSubmit", "(Ljava/util/concurrent/ForkJoinTask;)Ljava/util/concurrent/ForkJoinTask;", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinPool.html#lazySubmit(java.util.concurrent.ForkJoinTask)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Util.Concurrent.ForkJoinTask"/></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns><see cref="Java.Util.Concurrent.ForkJoinTask"/></returns>
+        public Java.Util.Concurrent.ForkJoinTask<T> LazySubmit<T>(Java.Util.Concurrent.ForkJoinTask<T> arg0)
+        {
+            return IExecuteWithSignature<Java.Util.Concurrent.ForkJoinTask<T>>("lazySubmit", "(Ljava/util/concurrent/ForkJoinTask;)Ljava/util/concurrent/ForkJoinTask;", arg0);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinPool.html#submit(java.util.concurrent.ForkJoinTask)"/>
         /// </summary>
         /// <param name="arg0"><see cref="Java.Util.Concurrent.ForkJoinTask"/></param>
@@ -324,6 +344,15 @@ namespace Java.Util.Concurrent
         public int GetRunningThreadCount()
         {
             return IExecuteWithSignature<int>("getRunningThreadCount", "()I");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinPool.html#setParallelism(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <returns><see cref="int"/></returns>
+        public int SetParallelism(int arg0)
+        {
+            return IExecuteWithSignature<int>("setParallelism", "(I)I", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinPool.html#getFactory()"/>

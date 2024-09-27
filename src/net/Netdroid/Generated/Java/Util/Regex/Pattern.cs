@@ -218,6 +218,16 @@ namespace Java.Util.Regex
             return IExecuteWithSignatureArray<Java.Lang.String>("split", "(Ljava/lang/CharSequence;)[Ljava/lang/String;", arg0);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/regex/Pattern.html#splitWithDelimiters(java.lang.CharSequence,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.CharSequence"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <returns><see cref="Java.Lang.String"/></returns>
+        public Java.Lang.String[] SplitWithDelimiters(Java.Lang.CharSequence arg0, int arg1)
+        {
+            return IExecuteWithSignatureArray<Java.Lang.String>("splitWithDelimiters", "(Ljava/lang/CharSequence;I)[Ljava/lang/String;", arg0, arg1);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/regex/Pattern.html#asMatchPredicate()"/>
         /// </summary>
         /// <returns><see cref="Java.Util.Function.Predicate"/></returns>
@@ -248,6 +258,14 @@ namespace Java.Util.Regex
         public Java.Util.Function.Predicate<Java.Lang.String> AsPredicateDirect()
         {
             return IExecuteWithSignature<Java.Util.Function.PredicateDirect<Java.Lang.String>, Java.Util.Function.Predicate<Java.Lang.String>>("asPredicate", "()Ljava/util/function/Predicate;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/regex/Pattern.html#namedGroups()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.Map"/></returns>
+        public Java.Util.Map<Java.Lang.String, Java.Lang.Integer> NamedGroups()
+        {
+            return IExecuteWithSignature<Java.Util.Map<Java.Lang.String, Java.Lang.Integer>>("namedGroups", "()Ljava/util/Map;");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/regex/Pattern.html#matcher(java.lang.CharSequence)"/>

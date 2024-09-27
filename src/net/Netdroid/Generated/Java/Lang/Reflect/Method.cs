@@ -129,7 +129,6 @@ namespace Java.Lang.Reflect
         /// <param name="arg1"><see cref="object"/></param>
         /// <returns><see cref="object"/></returns>
         /// <exception cref="Java.Lang.IllegalAccessException"/>
-        /// <exception cref="Java.Lang.IllegalArgumentException"/>
         /// <exception cref="Java.Lang.Reflect.InvocationTargetException"/>
         public object Invoke(object arg0, params object[] arg1)
         {

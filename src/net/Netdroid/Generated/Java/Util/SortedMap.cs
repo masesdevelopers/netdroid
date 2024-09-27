@@ -29,7 +29,7 @@ namespace Java.Util
     /// <summary>
     /// <see href="https://developer.android.com/reference/java/util/SortedMap.html"/>
     /// </summary>
-    public partial class SortedMap : Java.Util.Map
+    public partial class SortedMap : Java.Util.SequencedMap
     {
         const string _bridgeClassName = "java.util.SortedMap";
         /// <summary>
@@ -78,7 +78,7 @@ namespace Java.Util
     /// </summary>
     /// <typeparam name="K"></typeparam>
     /// <typeparam name="V"></typeparam>
-    public partial class SortedMap<K, V> : Java.Util.Map<K, V>
+    public partial class SortedMap<K, V> : Java.Util.SequencedMap<K, V>
     {
         const string _bridgeClassName = "java.util.SortedMap";
         /// <summary>
@@ -217,6 +217,34 @@ namespace Java.Util
         {
             return IExecuteWithSignature("lastKey", "()Ljava/lang/Object;");
         }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SortedMap.html#reversed()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.SequencedMap"/></returns>
+        public Java.Util.SequencedMap Reversed()
+        {
+            return IExecuteWithSignature<Java.Util.SequencedMap>("reversed", "()Ljava/util/SequencedMap;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SortedMap.html#putFirst(java.lang.Object,java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="object"/></param>
+        /// <param name="arg1"><see cref="object"/></param>
+        /// <returns><see cref="object"/></returns>
+        public object PutFirst(object arg0, object arg1)
+        {
+            return IExecuteWithSignature("putFirst", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SortedMap.html#putLast(java.lang.Object,java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="object"/></param>
+        /// <param name="arg1"><see cref="object"/></param>
+        /// <returns><see cref="object"/></returns>
+        public object PutLast(object arg0, object arg1)
+        {
+            return IExecuteWithSignature("putLast", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", arg0, arg1);
+        }
 
         #endregion
 
@@ -232,7 +260,7 @@ namespace Java.Util
     /// <summary>
     /// .NET interface for TO BE DEFINED FROM USER
     /// </summary>
-    public partial interface ISortedMap<K, V> : Java.Util.IMap<K, V>
+    public partial interface ISortedMap<K, V> : Java.Util.ISequencedMap<K, V>
     {
         #region Instance methods
 
@@ -346,6 +374,34 @@ namespace Java.Util
         public K LastKey()
         {
             return IExecuteWithSignature<K>("lastKey", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SortedMap.html#reversed()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.SequencedMap"/></returns>
+        public Java.Util.SequencedMap Reversed()
+        {
+            return IExecuteWithSignature<Java.Util.SequencedMap>("reversed", "()Ljava/util/SequencedMap;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SortedMap.html#putFirst(java.lang.Object,java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><typeparamref name="K"/></param>
+        /// <param name="arg1"><typeparamref name="V"/></param>
+        /// <returns><typeparamref name="V"/></returns>
+        public V PutFirst(K arg0, V arg1)
+        {
+            return IExecuteWithSignature<V>("putFirst", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SortedMap.html#putLast(java.lang.Object,java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><typeparamref name="K"/></param>
+        /// <param name="arg1"><typeparamref name="V"/></param>
+        /// <returns><typeparamref name="V"/></returns>
+        public V PutLast(K arg0, V arg1)
+        {
+            return IExecuteWithSignature<V>("putLast", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", arg0, arg1);
         }
 
         #endregion

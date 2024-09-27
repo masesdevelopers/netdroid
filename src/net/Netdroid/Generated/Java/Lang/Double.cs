@@ -160,6 +160,12 @@ namespace Java.Lang
         private static int _MIN_EXPONENTContent = default;
         private static bool _MIN_EXPONENTReady = false; // this is used because in case of generics 
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Double.html#PRECISION"/>
+        /// </summary>
+        public static int PRECISION { get { if (!_PRECISIONReady) { _PRECISIONContent = SGetField<int>(LocalBridgeClazz, "PRECISION"); _PRECISIONReady = true; } return _PRECISIONContent; } }
+        private static int _PRECISIONContent = default;
+        private static bool _PRECISIONReady = false; // this is used because in case of generics 
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/Double.html#SIZE"/>
         /// </summary>
         public static int SIZE { get { if (!_SIZEReady) { _SIZEContent = SGetField<int>(LocalBridgeClazz, "SIZE"); _SIZEReady = true; } return _SIZEContent; } }

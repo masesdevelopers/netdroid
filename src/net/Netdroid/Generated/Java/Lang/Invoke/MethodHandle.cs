@@ -101,6 +101,15 @@ namespace Java.Lang.Invoke
             return IExecuteWithSignature<bool>("isVarargsCollector", "()Z");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/invoke/MethodHandle.html#asType(java.lang.invoke.MethodType)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.Invoke.MethodType"/></param>
+        /// <returns><see cref="Java.Lang.Invoke.MethodHandle"/></returns>
+        public Java.Lang.Invoke.MethodHandle AsType(Java.Lang.Invoke.MethodType arg0)
+        {
+            return IExecuteWithSignature<Java.Lang.Invoke.MethodHandle>("asType", "(Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/MethodHandle;", arg0);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/invoke/MethodHandle.html#invoke(java.lang.Object[])"/>
         /// </summary>
         /// <param name="arg0"><see cref="object"/></param>
@@ -169,15 +178,6 @@ namespace Java.Lang.Invoke
         public Java.Lang.Invoke.MethodHandle AsSpreader(Java.Lang.Class arg0, int arg1)
         {
             return IExecuteWithSignature<Java.Lang.Invoke.MethodHandle>("asSpreader", "(Ljava/lang/Class;I)Ljava/lang/invoke/MethodHandle;", arg0, arg1);
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/invoke/MethodHandle.html#asType(java.lang.invoke.MethodType)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="Java.Lang.Invoke.MethodType"/></param>
-        /// <returns><see cref="Java.Lang.Invoke.MethodHandle"/></returns>
-        public Java.Lang.Invoke.MethodHandle AsType(Java.Lang.Invoke.MethodType arg0)
-        {
-            return IExecuteWithSignature<Java.Lang.Invoke.MethodHandle>("asType", "(Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/MethodHandle;", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/invoke/MethodHandle.html#asVarargsCollector(java.lang.Class)"/>

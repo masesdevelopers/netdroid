@@ -169,6 +169,12 @@ namespace Java.Lang
         private static int _MIN_EXPONENTContent = default;
         private static bool _MIN_EXPONENTReady = false; // this is used because in case of generics 
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Float.html#PRECISION"/>
+        /// </summary>
+        public static int PRECISION { get { if (!_PRECISIONReady) { _PRECISIONContent = SGetField<int>(LocalBridgeClazz, "PRECISION"); _PRECISIONReady = true; } return _PRECISIONContent; } }
+        private static int _PRECISIONContent = default;
+        private static bool _PRECISIONReady = false; // this is used because in case of generics 
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/Float.html#SIZE"/>
         /// </summary>
         public static int SIZE { get { if (!_SIZEReady) { _SIZEContent = SGetField<int>(LocalBridgeClazz, "SIZE"); _SIZEReady = true; } return _SIZEContent; } }
@@ -210,6 +216,15 @@ namespace Java.Lang
         public static bool IsNaN(float arg0)
         {
             return SExecuteWithSignature<bool>(LocalBridgeClazz, "isNaN", "(F)Z", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Float.html#float16ToFloat(short)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="short"/></param>
+        /// <returns><see cref="float"/></returns>
+        public static float Float16ToFloat(short arg0)
+        {
+            return SExecuteWithSignature<float>(LocalBridgeClazz, "float16ToFloat", "(S)F", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/Float.html#max(float,float)"/>
@@ -333,6 +348,15 @@ namespace Java.Lang
         public static int FloatToRawIntBits(float arg0)
         {
             return SExecuteWithSignature<int>(LocalBridgeClazz, "floatToRawIntBits", "(F)I", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Float.html#floatToFloat16(float)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="float"/></param>
+        /// <returns><see cref="short"/></returns>
+        public static short FloatToFloat16(float arg0)
+        {
+            return SExecuteWithSignature<short>(LocalBridgeClazz, "floatToFloat16", "(F)S", arg0);
         }
 
         #endregion

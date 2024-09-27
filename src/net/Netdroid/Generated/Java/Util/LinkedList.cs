@@ -214,22 +214,6 @@ namespace Java.Util
             return IExecuteWithSignature("element", "()Ljava/lang/Object;");
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedList.html#getFirst()"/>
-        /// </summary>
-        /// <returns><see cref="object"/></returns>
-        public object GetFirst()
-        {
-            return IExecuteWithSignature("getFirst", "()Ljava/lang/Object;");
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedList.html#getLast()"/>
-        /// </summary>
-        /// <returns><see cref="object"/></returns>
-        public object GetLast()
-        {
-            return IExecuteWithSignature("getLast", "()Ljava/lang/Object;");
-        }
-        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/LinkedList.html#peek()"/>
         /// </summary>
         /// <returns><see cref="object"/></returns>
@@ -294,44 +278,12 @@ namespace Java.Util
             return IExecuteWithSignature("remove", "()Ljava/lang/Object;");
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedList.html#removeFirst()"/>
-        /// </summary>
-        /// <returns><see cref="object"/></returns>
-        public object RemoveFirst()
-        {
-            return IExecuteWithSignature("removeFirst", "()Ljava/lang/Object;");
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedList.html#removeLast()"/>
-        /// </summary>
-        /// <returns><see cref="object"/></returns>
-        public object RemoveLast()
-        {
-            return IExecuteWithSignature("removeLast", "()Ljava/lang/Object;");
-        }
-        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/LinkedList.html#descendingIterator()"/>
         /// </summary>
         /// <returns><see cref="Java.Util.Iterator"/></returns>
         public Java.Util.Iterator DescendingIterator()
         {
             return IExecuteWithSignature<Java.Util.Iterator>("descendingIterator", "()Ljava/util/Iterator;");
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedList.html#addFirst(java.lang.Object)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="object"/></param>
-        public void AddFirst(object arg0)
-        {
-            IExecuteWithSignature("addFirst", "(Ljava/lang/Object;)V", arg0);
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedList.html#addLast(java.lang.Object)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="object"/></param>
-        public void AddLast(object arg0)
-        {
-            IExecuteWithSignature("addLast", "(Ljava/lang/Object;)V", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/LinkedList.html#push(java.lang.Object)"/>
@@ -454,22 +406,6 @@ namespace Java.Util
             return IExecuteWithSignature<E>("element", "()Ljava/lang/Object;");
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedList.html#getFirst()"/>
-        /// </summary>
-        /// <returns><typeparamref name="E"/></returns>
-        public E GetFirst()
-        {
-            return IExecuteWithSignature<E>("getFirst", "()Ljava/lang/Object;");
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedList.html#getLast()"/>
-        /// </summary>
-        /// <returns><typeparamref name="E"/></returns>
-        public E GetLast()
-        {
-            return IExecuteWithSignature<E>("getLast", "()Ljava/lang/Object;");
-        }
-        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/LinkedList.html#peek()"/>
         /// </summary>
         /// <returns><typeparamref name="E"/></returns>
@@ -534,44 +470,12 @@ namespace Java.Util
             return IExecuteWithSignature<E>("remove", "()Ljava/lang/Object;");
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedList.html#removeFirst()"/>
-        /// </summary>
-        /// <returns><typeparamref name="E"/></returns>
-        public E RemoveFirst()
-        {
-            return IExecuteWithSignature<E>("removeFirst", "()Ljava/lang/Object;");
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedList.html#removeLast()"/>
-        /// </summary>
-        /// <returns><typeparamref name="E"/></returns>
-        public E RemoveLast()
-        {
-            return IExecuteWithSignature<E>("removeLast", "()Ljava/lang/Object;");
-        }
-        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/LinkedList.html#descendingIterator()"/>
         /// </summary>
         /// <returns><see cref="Java.Util.Iterator"/></returns>
         public Java.Util.Iterator<E> DescendingIterator()
         {
             return IExecuteWithSignature<Java.Util.Iterator<E>>("descendingIterator", "()Ljava/util/Iterator;");
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedList.html#addFirst(java.lang.Object)"/>
-        /// </summary>
-        /// <param name="arg0"><typeparamref name="E"/></param>
-        public void AddFirst(E arg0)
-        {
-            IExecuteWithSignature("addFirst", "(Ljava/lang/Object;)V", arg0);
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/LinkedList.html#addLast(java.lang.Object)"/>
-        /// </summary>
-        /// <param name="arg0"><typeparamref name="E"/></param>
-        public void AddLast(E arg0)
-        {
-            IExecuteWithSignature("addLast", "(Ljava/lang/Object;)V", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/LinkedList.html#push(java.lang.Object)"/>

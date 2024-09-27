@@ -169,6 +169,16 @@ namespace Java.Lang
             return SExecuteWithSignature<int>(LocalBridgeClazz, "compareUnsigned", "(II)I", arg0, arg1);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Integer.html#compress(int,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <returns><see cref="int"/></returns>
+        public static int Compress(int arg0, int arg1)
+        {
+            return SExecuteWithSignature<int>(LocalBridgeClazz, "compress", "(II)I", arg0, arg1);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/Integer.html#divideUnsigned(int,int)"/>
         /// </summary>
         /// <param name="arg0"><see cref="int"/></param>
@@ -177,6 +187,16 @@ namespace Java.Lang
         public static int DivideUnsigned(int arg0, int arg1)
         {
             return SExecuteWithSignature<int>(LocalBridgeClazz, "divideUnsigned", "(II)I", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/Integer.html#expand(int,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <returns><see cref="int"/></returns>
+        public static int Expand(int arg0, int arg1)
+        {
+            return SExecuteWithSignature<int>(LocalBridgeClazz, "expand", "(II)I", arg0, arg1);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/Integer.html#hashCode(int)"/>

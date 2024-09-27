@@ -115,6 +115,7 @@ namespace Java.Lang
         /// <param name="arg2"><see cref="Java.Io.File"/></param>
         /// <returns><see cref="Java.Lang.Process"/></returns>
         /// <exception cref="Java.Io.IOException"/>
+        [global::System.Obsolete()]
         public Java.Lang.Process Exec(Java.Lang.String arg0, Java.Lang.String[] arg1, Java.Io.File arg2)
         {
             return IExecuteWithSignature<Java.Lang.Process>("exec", "(Ljava/lang/String;[Ljava/lang/String;Ljava/io/File;)Ljava/lang/Process;", arg0, arg1, arg2);
@@ -126,6 +127,7 @@ namespace Java.Lang
         /// <param name="arg1"><see cref="Java.Lang.String"/></param>
         /// <returns><see cref="Java.Lang.Process"/></returns>
         /// <exception cref="Java.Io.IOException"/>
+        [global::System.Obsolete()]
         public Java.Lang.Process Exec(Java.Lang.String arg0, Java.Lang.String[] arg1)
         {
             return IExecuteWithSignature<Java.Lang.Process>("exec", "(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/Process;", arg0, arg1);
@@ -136,6 +138,7 @@ namespace Java.Lang
         /// <param name="arg0"><see cref="Java.Lang.String"/></param>
         /// <returns><see cref="Java.Lang.Process"/></returns>
         /// <exception cref="Java.Io.IOException"/>
+        [global::System.Obsolete()]
         public Java.Lang.Process Exec(Java.Lang.String arg0)
         {
             return IExecuteWithSignature<Java.Lang.Process>("exec", "(Ljava/lang/String;)Ljava/lang/Process;", arg0);
@@ -255,6 +258,7 @@ namespace Java.Lang
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/Runtime.html#runFinalization()"/>
         /// </summary>
+        [global::System.Obsolete()]
         public void RunFinalization()
         {
             IExecuteWithSignature("runFinalization", "()V");

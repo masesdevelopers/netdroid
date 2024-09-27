@@ -128,14 +128,6 @@ namespace Javax.Crypto.Spec
             return IExecuteWithSignatureArray<byte>("getSalt", "()[B");
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/javax/crypto/spec/PBEKeySpec.html#getPassword()"/>
-        /// </summary>
-        /// <returns><see cref="char"/></returns>
-        public char[] GetPassword()
-        {
-            return IExecuteWithSignatureArray<char>("getPassword", "()[C");
-        }
-        /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/spec/PBEKeySpec.html#getIterationCount()"/>
         /// </summary>
         /// <returns><see cref="int"/></returns>
@@ -150,6 +142,14 @@ namespace Javax.Crypto.Spec
         public int GetKeyLength()
         {
             return IExecuteWithSignature<int>("getKeyLength", "()I");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/javax/crypto/spec/PBEKeySpec.html#getPassword()"/>
+        /// </summary>
+        /// <returns><see cref="char"/></returns>
+        public char[] GetPassword()
+        {
+            return IExecuteWithSignatureArray<char>("getPassword", "()[C");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/javax/crypto/spec/PBEKeySpec.html#clearPassword()"/>

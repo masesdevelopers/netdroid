@@ -260,6 +260,14 @@ namespace Java.Text
             return IExecuteWithSignature<Java.Util.Currency>("getCurrency", "()Ljava/util/Currency;");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/text/DecimalFormatSymbols.html#getLocale()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.Locale"/></returns>
+        public Java.Util.Locale GetLocale()
+        {
+            return IExecuteWithSignature<Java.Util.Locale>("getLocale", "()Ljava/util/Locale;");
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/text/DecimalFormatSymbols.html#setCurrency(java.util.Currency)"/>
         /// </summary>
         /// <param name="arg0"><see cref="Java.Util.Currency"/></param>

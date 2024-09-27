@@ -99,6 +99,14 @@ namespace Java.Util.Concurrent
             return IExecuteWithSignature<int>("getPoolIndex", "()I");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinWorkerThread.html#getQueuedTaskCount()"/>
+        /// </summary>
+        /// <returns><see cref="int"/></returns>
+        public int GetQueuedTaskCount()
+        {
+            return IExecuteWithSignature<int>("getQueuedTaskCount", "()I");
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/concurrent/ForkJoinWorkerThread.html#getPool()"/>
         /// </summary>
         /// <returns><see cref="Java.Util.Concurrent.ForkJoinPool"/></returns>

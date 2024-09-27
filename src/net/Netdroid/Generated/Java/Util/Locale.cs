@@ -307,6 +307,7 @@ namespace Java.Util
         /// <param name="arg0"><see cref="Java.Lang.String"/></param>
         /// <param name="arg1"><see cref="Java.Lang.String"/></param>
         /// <param name="arg2"><see cref="Java.Lang.String"/></param>
+        [global::System.Obsolete()]
         public Locale(Java.Lang.String arg0, Java.Lang.String arg1, Java.Lang.String arg2)
             : base(arg0, arg1, arg2)
         {
@@ -316,6 +317,7 @@ namespace Java.Util
         /// </summary>
         /// <param name="arg0"><see cref="Java.Lang.String"/></param>
         /// <param name="arg1"><see cref="Java.Lang.String"/></param>
+        [global::System.Obsolete()]
         public Locale(Java.Lang.String arg0, Java.Lang.String arg1)
             : base(arg0, arg1)
         {
@@ -324,6 +326,7 @@ namespace Java.Util
         /// <see href="https://developer.android.com/reference/java/util/Locale.html#%3Cinit%3E(java.lang.String)"/>
         /// </summary>
         /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        [global::System.Obsolete()]
         public Locale(Java.Lang.String arg0)
             : base(arg0)
         {
@@ -493,6 +496,15 @@ namespace Java.Util
 
         #region Static methods
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/Locale.html#caseFoldLanguageTag(java.lang.String)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <returns><see cref="Java.Lang.String"/></returns>
+        public static Java.Lang.String CaseFoldLanguageTag(Java.Lang.String arg0)
+        {
+            return SExecuteWithSignature<Java.Lang.String>(LocalBridgeClazz, "caseFoldLanguageTag", "(Ljava/lang/String;)Ljava/lang/String;", arg0);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/Locale.html#lookupTag(java.util.List,java.util.Collection)"/>
         /// </summary>
         /// <param name="arg0"><see cref="Java.Util.List"/></param>
@@ -597,6 +609,36 @@ namespace Java.Util
             return SExecuteWithSignature<Java.Util.Locale>(LocalBridgeClazz, "lookup", "(Ljava/util/List;Ljava/util/Collection;)Ljava/util/Locale;", arg0, arg1);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/Locale.html#of(java.lang.String,java.lang.String,java.lang.String)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg1"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg2"><see cref="Java.Lang.String"/></param>
+        /// <returns><see cref="Java.Util.Locale"/></returns>
+        public static Java.Util.Locale Of(Java.Lang.String arg0, Java.Lang.String arg1, Java.Lang.String arg2)
+        {
+            return SExecuteWithSignature<Java.Util.Locale>(LocalBridgeClazz, "of", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/util/Locale;", arg0, arg1, arg2);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/Locale.html#of(java.lang.String,java.lang.String)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg1"><see cref="Java.Lang.String"/></param>
+        /// <returns><see cref="Java.Util.Locale"/></returns>
+        public static Java.Util.Locale Of(Java.Lang.String arg0, Java.Lang.String arg1)
+        {
+            return SExecuteWithSignature<Java.Util.Locale>(LocalBridgeClazz, "of", "(Ljava/lang/String;Ljava/lang/String;)Ljava/util/Locale;", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/Locale.html#of(java.lang.String)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <returns><see cref="Java.Util.Locale"/></returns>
+        public static Java.Util.Locale Of(Java.Lang.String arg0)
+        {
+            return SExecuteWithSignature<Java.Util.Locale>(LocalBridgeClazz, "of", "(Ljava/lang/String;)Ljava/util/Locale;", arg0);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/Locale.html#getAvailableLocales()"/>
         /// </summary>
         /// <returns><see cref="Java.Util.Locale"/></returns>
@@ -612,6 +654,14 @@ namespace Java.Util
         public static Java.Util.Set<Java.Lang.String> GetISOCountries(Java.Util.Locale.IsoCountryCode arg0)
         {
             return SExecuteWithSignature<Java.Util.Set<Java.Lang.String>>(LocalBridgeClazz, "getISOCountries", "(Ljava/util/Locale$IsoCountryCode;)Ljava/util/Set;", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/Locale.html#availableLocales()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.Stream.Stream"/></returns>
+        public static Java.Util.Stream.Stream<Java.Util.Locale> AvailableLocales()
+        {
+            return SExecuteWithSignature<Java.Util.Stream.Stream<Java.Util.Locale>>(LocalBridgeClazz, "availableLocales", "()Ljava/util/stream/Stream;");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/Locale.html#setDefault(java.util.Locale)"/>

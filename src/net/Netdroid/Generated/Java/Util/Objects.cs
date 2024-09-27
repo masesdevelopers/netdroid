@@ -243,6 +243,15 @@ namespace Java.Util
             return SExecuteWithSignature<int>(LocalBridgeClazz, "hashCode", "(Ljava/lang/Object;)I", arg0);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/Objects.html#toIdentityString(java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="object"/></param>
+        /// <returns><see cref="Java.Lang.String"/></returns>
+        public static Java.Lang.String ToIdentityString(object arg0)
+        {
+            return SExecuteWithSignature<Java.Lang.String>(LocalBridgeClazz, "toIdentityString", "(Ljava/lang/Object;)Ljava/lang/String;", arg0);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/Objects.html#toString(java.lang.Object,java.lang.String)"/>
         /// </summary>
         /// <param name="arg0"><see cref="object"/></param>

@@ -29,7 +29,7 @@ namespace Java.Util
     /// <summary>
     /// <see href="https://developer.android.com/reference/java/util/SortedSet.html"/>
     /// </summary>
-    public partial class SortedSet : Java.Util.Set
+    public partial class SortedSet : MASES.JCOBridge.C2JBridge.JVMBridgeBase<SortedSet>
     {
         const string _bridgeClassName = "java.util.SortedSet";
         /// <summary>
@@ -77,7 +77,7 @@ namespace Java.Util
     /// <see href="https://developer.android.com/reference/java/util/SortedSet.html"/>
     /// </summary>
     /// <typeparam name="E"></typeparam>
-    public partial class SortedSet<E> : Java.Util.Set<E>
+    public partial class SortedSet<E> : MASES.JCOBridge.C2JBridge.JVMBridgeBase<SortedSet<E>>
     {
         const string _bridgeClassName = "java.util.SortedSet";
         /// <summary>
@@ -128,6 +128,14 @@ namespace Java.Util
         #endregion
 
         #region Class/Interface conversion operators
+        /// <summary>
+        /// Converter from <see cref="Java.Util.SortedSet"/> to <see cref="Java.Util.Set"/>
+        /// </summary>
+        public static implicit operator Java.Util.Set(Java.Util.SortedSet t) => t.Cast<Java.Util.Set>();
+        /// <summary>
+        /// Converter from <see cref="Java.Util.SortedSet"/> to <see cref="Java.Util.SequencedSet"/>
+        /// </summary>
+        public static implicit operator Java.Util.SequencedSet(Java.Util.SortedSet t) => t.Cast<Java.Util.SequencedSet>();
 
         #endregion
 
@@ -193,12 +201,68 @@ namespace Java.Util
             return IExecuteWithSignature<Java.Util.SortedSet>("tailSet", "(Ljava/lang/Object;)Ljava/util/SortedSet;", arg0);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SortedSet.html#getFirst()"/>
+        /// </summary>
+        /// <returns><see cref="object"/></returns>
+        public object GetFirst()
+        {
+            return IExecuteWithSignature("getFirst", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SortedSet.html#getLast()"/>
+        /// </summary>
+        /// <returns><see cref="object"/></returns>
+        public object GetLast()
+        {
+            return IExecuteWithSignature("getLast", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SortedSet.html#removeFirst()"/>
+        /// </summary>
+        /// <returns><see cref="object"/></returns>
+        public object RemoveFirst()
+        {
+            return IExecuteWithSignature("removeFirst", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SortedSet.html#removeLast()"/>
+        /// </summary>
+        /// <returns><see cref="object"/></returns>
+        public object RemoveLast()
+        {
+            return IExecuteWithSignature("removeLast", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SortedSet.html#reversed()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.SequencedSet"/></returns>
+        public Java.Util.SequencedSet Reversed()
+        {
+            return IExecuteWithSignature<Java.Util.SequencedSet>("reversed", "()Ljava/util/SequencedSet;");
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/SortedSet.html#spliterator()"/>
         /// </summary>
         /// <returns><see cref="Java.Util.Spliterator"/></returns>
         public Java.Util.Spliterator Spliterator()
         {
             return IExecuteWithSignature<Java.Util.Spliterator>("spliterator", "()Ljava/util/Spliterator;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SortedSet.html#addFirst(java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="object"/></param>
+        public void AddFirst(object arg0)
+        {
+            IExecuteWithSignature("addFirst", "(Ljava/lang/Object;)V", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SortedSet.html#addLast(java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="object"/></param>
+        public void AddLast(object arg0)
+        {
+            IExecuteWithSignature("addLast", "(Ljava/lang/Object;)V", arg0);
         }
 
         #endregion
@@ -215,7 +279,7 @@ namespace Java.Util
     /// <summary>
     /// .NET interface for TO BE DEFINED FROM USER
     /// </summary>
-    public partial interface ISortedSet<E> : Java.Util.ISet<E>
+    public partial interface ISortedSet<E>
     {
         #region Instance methods
 
@@ -230,13 +294,21 @@ namespace Java.Util
     #endregion
 
     #region SortedSet<E> implementation
-    public partial class SortedSet<E> : Java.Util.ISortedSet<E>
+    public partial class SortedSet<E> : Java.Util.ISortedSet<E>, Java.Util.ISet<E>, Java.Util.ISequencedSet<E>
     {
         #region Constructors
 
         #endregion
 
         #region Class/Interface conversion operators
+        /// <summary>
+        /// Converter from <see cref="Java.Util.SortedSet{E}"/> to <see cref="Java.Util.Set{E}"/>
+        /// </summary>
+        public static implicit operator Java.Util.Set<E>(Java.Util.SortedSet<E> t) => t.Cast<Java.Util.Set<E>>();
+        /// <summary>
+        /// Converter from <see cref="Java.Util.SortedSet{E}"/> to <see cref="Java.Util.SequencedSet{E}"/>
+        /// </summary>
+        public static implicit operator Java.Util.SequencedSet<E>(Java.Util.SortedSet<E> t) => t.Cast<Java.Util.SequencedSet<E>>();
         /// <summary>
         /// Converter from <see cref="Java.Util.SortedSet{E}"/> to <see cref="Java.Util.SortedSet"/>
         /// </summary>
@@ -307,12 +379,68 @@ namespace Java.Util
             return IExecuteWithSignature<Java.Util.SortedSet<E>>("tailSet", "(Ljava/lang/Object;)Ljava/util/SortedSet;", arg0);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SortedSet.html#getFirst()"/>
+        /// </summary>
+        /// <returns><typeparamref name="E"/></returns>
+        public E GetFirst()
+        {
+            return IExecuteWithSignature<E>("getFirst", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SortedSet.html#getLast()"/>
+        /// </summary>
+        /// <returns><typeparamref name="E"/></returns>
+        public E GetLast()
+        {
+            return IExecuteWithSignature<E>("getLast", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SortedSet.html#removeFirst()"/>
+        /// </summary>
+        /// <returns><typeparamref name="E"/></returns>
+        public E RemoveFirst()
+        {
+            return IExecuteWithSignature<E>("removeFirst", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SortedSet.html#removeLast()"/>
+        /// </summary>
+        /// <returns><typeparamref name="E"/></returns>
+        public E RemoveLast()
+        {
+            return IExecuteWithSignature<E>("removeLast", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SortedSet.html#reversed()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.SequencedSet"/></returns>
+        public Java.Util.SequencedSet Reversed()
+        {
+            return IExecuteWithSignature<Java.Util.SequencedSet>("reversed", "()Ljava/util/SequencedSet;");
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/SortedSet.html#spliterator()"/>
         /// </summary>
         /// <returns><see cref="Java.Util.Spliterator"/></returns>
         public Java.Util.Spliterator<E> Spliterator()
         {
             return IExecuteWithSignature<Java.Util.Spliterator<E>>("spliterator", "()Ljava/util/Spliterator;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SortedSet.html#addFirst(java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><typeparamref name="E"/></param>
+        public void AddFirst(E arg0)
+        {
+            IExecuteWithSignature("addFirst", "(Ljava/lang/Object;)V", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SortedSet.html#addLast(java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><typeparamref name="E"/></param>
+        public void AddLast(E arg0)
+        {
+            IExecuteWithSignature("addLast", "(Ljava/lang/Object;)V", arg0);
         }
 
         #endregion

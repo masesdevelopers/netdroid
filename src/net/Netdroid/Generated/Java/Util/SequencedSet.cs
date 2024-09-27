@@ -25,21 +25,23 @@ using MASES.JCOBridge.C2JBridge;
 
 namespace Java.Util
 {
-    #region HashSet declaration
+    #region SequencedSet declaration
     /// <summary>
-    /// <see href="https://developer.android.com/reference/java/util/HashSet.html"/>
+    /// <see href="https://developer.android.com/reference/java/util/SequencedSet.html"/>
     /// </summary>
-    public partial class HashSet : Java.Util.AbstractSet
+    public partial class SequencedSet : MASES.JCOBridge.C2JBridge.JVMBridgeBase<SequencedSet>
     {
-        const string _bridgeClassName = "java.util.HashSet";
+        const string _bridgeClassName = "java.util.SequencedSet";
         /// <summary>
         /// Default constructor: even if the corresponding Java class does not have one, it is mandatory for JCOBridge
         /// </summary>
-        public HashSet() { }
+        [global::System.Obsolete("SequencedSet class represents, in .NET, an instance of a JVM interface or abstract class. This public initializer is needed for JCOBridge internal use, other uses can produce unidentible behaviors.")]
+        public SequencedSet() { }
         /// <summary>
         /// Generic constructor: it is useful for JCOBridge when there is a derived class which needs to pass arguments to the highest JVMBridgeBase class
         /// </summary>
-        public HashSet(params object[] args) : base(args) { }
+        [global::System.Obsolete("SequencedSet class represents, in .NET, an instance of a JVM interface or abstract class. This public initializer is needed for JCOBridge internal use, other uses can produce unidentible behaviors.")]
+        public SequencedSet(params object[] args) : base(args) { }
 
         private static readonly MASES.JCOBridge.C2JBridge.JVMInterop.IJavaType _LocalBridgeClazz = JVMBridgeBase.ClazzOf(_bridgeClassName);
         private static MASES.JCOBridge.C2JBridge.JVMInterop.IJavaType LocalBridgeClazz => _LocalBridgeClazz ?? throw new global::System.InvalidOperationException($"Class {_bridgeClassName} was not found.");
@@ -51,7 +53,7 @@ namespace Java.Util
         /// <summary>
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeAbstract.htm"/>
         /// </summary>
-        public override bool IsBridgeAbstract => false;
+        public override bool IsBridgeAbstract => true;
         /// <summary>
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeCloseable.htm"/>
         /// </summary>
@@ -59,7 +61,7 @@ namespace Java.Util
         /// <summary>
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeInterface.htm"/>
         /// </summary>
-        public override bool IsBridgeInterface => false;
+        public override bool IsBridgeInterface => true;
         /// <summary>
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeStatic.htm"/>
         /// </summary>
@@ -70,22 +72,24 @@ namespace Java.Util
     }
     #endregion
 
-    #region HashSet<E> declaration
+    #region SequencedSet<E> declaration
     /// <summary>
-    /// <see href="https://developer.android.com/reference/java/util/HashSet.html"/>
+    /// <see href="https://developer.android.com/reference/java/util/SequencedSet.html"/>
     /// </summary>
     /// <typeparam name="E"></typeparam>
-    public partial class HashSet<E> : Java.Util.AbstractSet<E>
+    public partial class SequencedSet<E> : MASES.JCOBridge.C2JBridge.JVMBridgeBase<SequencedSet<E>>
     {
-        const string _bridgeClassName = "java.util.HashSet";
+        const string _bridgeClassName = "java.util.SequencedSet";
         /// <summary>
         /// Default constructor: even if the corresponding Java class does not have one, it is mandatory for JCOBridge
         /// </summary>
-        public HashSet() { }
+        [global::System.Obsolete("SequencedSet class represents, in .NET, an instance of a JVM interface or abstract class. This public initializer is needed for JCOBridge internal use, other uses can produce unidentible behaviors.")]
+        public SequencedSet() { }
         /// <summary>
         /// Generic constructor: it is useful for JCOBridge when there is a derived class which needs to pass arguments to the highest JVMBridgeBase class
         /// </summary>
-        public HashSet(params object[] args) : base(args) { }
+        [global::System.Obsolete("SequencedSet class represents, in .NET, an instance of a JVM interface or abstract class. This public initializer is needed for JCOBridge internal use, other uses can produce unidentible behaviors.")]
+        public SequencedSet(params object[] args) : base(args) { }
 
         private static readonly MASES.JCOBridge.C2JBridge.JVMInterop.IJavaType _LocalBridgeClazz = JVMBridgeBase.ClazzOf(_bridgeClassName);
         private static MASES.JCOBridge.C2JBridge.JVMInterop.IJavaType LocalBridgeClazz => _LocalBridgeClazz ?? throw new global::System.InvalidOperationException($"Class {_bridgeClassName} was not found.");
@@ -97,7 +101,7 @@ namespace Java.Util
         /// <summary>
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeAbstract.htm"/>
         /// </summary>
-        public override bool IsBridgeAbstract => false;
+        public override bool IsBridgeAbstract => true;
         /// <summary>
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeCloseable.htm"/>
         /// </summary>
@@ -105,7 +109,7 @@ namespace Java.Util
         /// <summary>
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeInterface.htm"/>
         /// </summary>
-        public override bool IsBridgeInterface => false;
+        public override bool IsBridgeInterface => true;
         /// <summary>
         /// <see href="https://www.jcobridge.com/api-clr/html/P_MASES_JCOBridge_C2JBridge_JVMBridgeBase_IsBridgeStatic.htm"/>
         /// </summary>
@@ -116,47 +120,22 @@ namespace Java.Util
     }
     #endregion
 
-    #region HashSet implementation
-    public partial class HashSet
+    #region SequencedSet implementation
+    public partial class SequencedSet
     {
         #region Constructors
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/HashSet.html#%3Cinit%3E(int,float)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="int"/></param>
-        /// <param name="arg1"><see cref="float"/></param>
-        public HashSet(int arg0, float arg1)
-            : base(arg0, arg1)
-        {
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/HashSet.html#%3Cinit%3E(int)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="int"/></param>
-        public HashSet(int arg0)
-            : base(arg0)
-        {
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/HashSet.html#%3Cinit%3E(java.util.Collection)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="Java.Util.Collection"/></param>
-        public HashSet(Java.Util.Collection arg0)
-            : base(arg0)
-        {
-        }
 
         #endregion
 
         #region Class/Interface conversion operators
         /// <summary>
-        /// Converter from <see cref="Java.Util.HashSet"/> to <see cref="Java.Lang.Cloneable"/>
+        /// Converter from <see cref="Java.Util.SequencedSet"/> to <see cref="Java.Util.SequencedCollection"/>
         /// </summary>
-        public static implicit operator Java.Lang.Cloneable(Java.Util.HashSet t) => t.Cast<Java.Lang.Cloneable>();
+        public static implicit operator Java.Util.SequencedCollection(Java.Util.SequencedSet t) => t.Cast<Java.Util.SequencedCollection>();
         /// <summary>
-        /// Converter from <see cref="Java.Util.HashSet"/> to <see cref="Java.Io.Serializable"/>
+        /// Converter from <see cref="Java.Util.SequencedSet"/> to <see cref="Java.Util.Set"/>
         /// </summary>
-        public static implicit operator Java.Io.Serializable(Java.Util.HashSet t) => t.Cast<Java.Io.Serializable>();
+        public static implicit operator Java.Util.Set(Java.Util.SequencedSet t) => t.Cast<Java.Util.Set>();
 
         #endregion
 
@@ -165,18 +144,35 @@ namespace Java.Util
         #endregion
 
         #region Static methods
+
+        #endregion
+
+        #region Instance methods
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/HashSet.html#newHashSet(int)"/>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedSet.html#reversed()"/>
         /// </summary>
-        /// <param name="arg0"><see cref="int"/></param>
-        /// <returns><see cref="Java.Util.HashSet"/></returns>
-        public static Java.Util.HashSet NewHashSet(int arg0)
+        /// <returns><see cref="Java.Util.SequencedCollection"/></returns>
+        public Java.Util.SequencedCollection Reversed()
         {
-            return SExecuteWithSignature<Java.Util.HashSet>(LocalBridgeClazz, "newHashSet", "(I)Ljava/util/HashSet;", arg0);
+            return IExecuteWithSignature<Java.Util.SequencedCollection>("reversed", "()Ljava/util/SequencedCollection;");
         }
 
         #endregion
 
+        #region Nested classes
+
+        #endregion
+
+        // TODO: complete the class
+    }
+    #endregion
+
+    #region ISequencedSet<E>
+    /// <summary>
+    /// .NET interface for TO BE DEFINED FROM USER
+    /// </summary>
+    public partial interface ISequencedSet<E>
+    {
         #region Instance methods
 
         #endregion
@@ -189,51 +185,26 @@ namespace Java.Util
     }
     #endregion
 
-    #region HashSet<E> implementation
-    public partial class HashSet<E> : Java.Util.ISet<E>, Java.Lang.ICloneable, Java.Io.ISerializable
+    #region SequencedSet<E> implementation
+    public partial class SequencedSet<E> : Java.Util.ISequencedSet<E>, Java.Util.ISequencedCollection<E>, Java.Util.ISet<E>
     {
         #region Constructors
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/HashSet.html#%3Cinit%3E(int,float)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="int"/></param>
-        /// <param name="arg1"><see cref="float"/></param>
-        public HashSet(int arg0, float arg1)
-            : base(arg0, arg1)
-        {
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/HashSet.html#%3Cinit%3E(int)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="int"/></param>
-        public HashSet(int arg0)
-            : base(arg0)
-        {
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/HashSet.html#%3Cinit%3E(java.util.Collection)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="Java.Util.Collection"/></param>
-        public HashSet(Java.Util.Collection<E> arg0)
-            : base(arg0)
-        {
-        }
 
         #endregion
 
         #region Class/Interface conversion operators
         /// <summary>
-        /// Converter from <see cref="Java.Util.HashSet{E}"/> to <see cref="Java.Lang.Cloneable"/>
+        /// Converter from <see cref="Java.Util.SequencedSet{E}"/> to <see cref="Java.Util.SequencedCollection{E}"/>
         /// </summary>
-        public static implicit operator Java.Lang.Cloneable(Java.Util.HashSet<E> t) => t.Cast<Java.Lang.Cloneable>();
+        public static implicit operator Java.Util.SequencedCollection<E>(Java.Util.SequencedSet<E> t) => t.Cast<Java.Util.SequencedCollection<E>>();
         /// <summary>
-        /// Converter from <see cref="Java.Util.HashSet{E}"/> to <see cref="Java.Io.Serializable"/>
+        /// Converter from <see cref="Java.Util.SequencedSet{E}"/> to <see cref="Java.Util.Set{E}"/>
         /// </summary>
-        public static implicit operator Java.Io.Serializable(Java.Util.HashSet<E> t) => t.Cast<Java.Io.Serializable>();
+        public static implicit operator Java.Util.Set<E>(Java.Util.SequencedSet<E> t) => t.Cast<Java.Util.Set<E>>();
         /// <summary>
-        /// Converter from <see cref="Java.Util.HashSet{E}"/> to <see cref="Java.Util.HashSet"/>
+        /// Converter from <see cref="Java.Util.SequencedSet{E}"/> to <see cref="Java.Util.SequencedSet"/>
         /// </summary>
-        public static implicit operator Java.Util.HashSet(Java.Util.HashSet<E> t) => t.Cast<Java.Util.HashSet>();
+        public static implicit operator Java.Util.SequencedSet(Java.Util.SequencedSet<E> t) => t.Cast<Java.Util.SequencedSet>();
 
         #endregion
 
@@ -242,20 +213,18 @@ namespace Java.Util
         #endregion
 
         #region Static methods
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/util/HashSet.html#newHashSet(int)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="int"/></param>
-        /// <typeparam name="T"></typeparam>
-        /// <returns><see cref="Java.Util.HashSet"/></returns>
-        public static Java.Util.HashSet<T> NewHashSet<T>(int arg0)
-        {
-            return SExecuteWithSignature<Java.Util.HashSet<T>>(LocalBridgeClazz, "newHashSet", "(I)Ljava/util/HashSet;", arg0);
-        }
 
         #endregion
 
         #region Instance methods
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/SequencedSet.html#reversed()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.SequencedCollection"/></returns>
+        public Java.Util.SequencedCollection Reversed()
+        {
+            return IExecuteWithSignature<Java.Util.SequencedCollection>("reversed", "()Ljava/util/SequencedCollection;");
+        }
 
         #endregion
 

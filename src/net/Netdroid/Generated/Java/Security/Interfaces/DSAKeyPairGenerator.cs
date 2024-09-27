@@ -116,7 +116,6 @@ namespace Java.Security.Interfaces
         /// <param name="arg0"><see cref="int"/></param>
         /// <param name="arg1"><see cref="bool"/></param>
         /// <param name="arg2"><see cref="Java.Security.SecureRandom"/></param>
-        /// <exception cref="Java.Security.InvalidParameterException"/>
         public void Initialize(int arg0, bool arg1, Java.Security.SecureRandom arg2)
         {
             IExecuteWithSignature("initialize", "(IZLjava/security/SecureRandom;)V", arg0, arg1, arg2);
@@ -126,7 +125,6 @@ namespace Java.Security.Interfaces
         /// </summary>
         /// <param name="arg0"><see cref="Java.Security.Interfaces.DSAParams"/></param>
         /// <param name="arg1"><see cref="Java.Security.SecureRandom"/></param>
-        /// <exception cref="Java.Security.InvalidParameterException"/>
         public void Initialize(Java.Security.Interfaces.DSAParams arg0, Java.Security.SecureRandom arg1)
         {
             IExecute("initialize", arg0, arg1);

@@ -365,6 +365,19 @@ namespace Java.Nio.Channels
             return IExecuteWithSignature<long>("write", "([Ljava/nio/ByteBuffer;)J", new object[] { arg0 });
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/nio/channels/FileChannel.html#map(java.nio.channels.FileChannel.MapMode,long,long,java.lang.foreign.Arena)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Nio.Channels.FileChannel.MapMode"/></param>
+        /// <param name="arg1"><see cref="long"/></param>
+        /// <param name="arg2"><see cref="long"/></param>
+        /// <param name="arg3"><see cref="Java.Lang.Foreign.Arena"/></param>
+        /// <returns><see cref="Java.Lang.Foreign.MemorySegment"/></returns>
+        /// <exception cref="Java.Io.IOException"/>
+        public Java.Lang.Foreign.MemorySegment Map(Java.Nio.Channels.FileChannel.MapMode arg0, long arg1, long arg2, Java.Lang.Foreign.Arena arg3)
+        {
+            return IExecuteWithSignature<Java.Lang.Foreign.MemorySegment>("map", "(Ljava/nio/channels/FileChannel$MapMode;JJLjava/lang/foreign/Arena;)Ljava/lang/foreign/MemorySegment;", arg0, arg1, arg2, arg3);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/nio/channels/FileChannel.html#position(long)"/>
         /// </summary>
         /// <param name="arg0"><see cref="long"/></param>

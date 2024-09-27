@@ -94,6 +94,12 @@ namespace Java.Lang
         public static double PI { get { if (!_PIReady) { _PIContent = SGetField<double>(LocalBridgeClazz, "PI"); _PIReady = true; } return _PIContent; } }
         private static double _PIContent = default;
         private static bool _PIReady = false; // this is used because in case of generics 
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#TAU"/>
+        /// </summary>
+        public static double TAU { get { if (!_TAUReady) { _TAUContent = SGetField<double>(LocalBridgeClazz, "TAU"); _TAUReady = true; } return _TAUContent; } }
+        private static double _TAUContent = default;
+        private static bool _TAUReady = false; // this is used because in case of generics 
 
         #endregion
 
@@ -106,6 +112,43 @@ namespace Java.Lang
         public static double Abs(double arg0)
         {
             return SExecuteWithSignature<double>(LocalBridgeClazz, "abs", "(D)D", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#acos(double)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="double"/></param>
+        /// <returns><see cref="double"/></returns>
+        public static double Acos(double arg0)
+        {
+            return SExecuteWithSignature<double>(LocalBridgeClazz, "acos", "(D)D", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#asin(double)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="double"/></param>
+        /// <returns><see cref="double"/></returns>
+        public static double Asin(double arg0)
+        {
+            return SExecuteWithSignature<double>(LocalBridgeClazz, "asin", "(D)D", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#atan(double)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="double"/></param>
+        /// <returns><see cref="double"/></returns>
+        public static double Atan(double arg0)
+        {
+            return SExecuteWithSignature<double>(LocalBridgeClazz, "atan", "(D)D", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#atan2(double,double)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="double"/></param>
+        /// <param name="arg1"><see cref="double"/></param>
+        /// <returns><see cref="double"/></returns>
+        public static double Atan2(double arg0, double arg1)
+        {
+            return SExecuteWithSignature<double>(LocalBridgeClazz, "atan2", "(DD)D", arg0, arg1);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#cbrt(double)"/>
@@ -126,6 +169,17 @@ namespace Java.Lang
             return SExecuteWithSignature<double>(LocalBridgeClazz, "ceil", "(D)D", arg0);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#clamp(double,double,double)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="double"/></param>
+        /// <param name="arg1"><see cref="double"/></param>
+        /// <param name="arg2"><see cref="double"/></param>
+        /// <returns><see cref="double"/></returns>
+        public static double Clamp(double arg0, double arg1, double arg2)
+        {
+            return SExecuteWithSignature<double>(LocalBridgeClazz, "clamp", "(DDD)D", arg0, arg1, arg2);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#copySign(double,double)"/>
         /// </summary>
         /// <param name="arg0"><see cref="double"/></param>
@@ -136,6 +190,24 @@ namespace Java.Lang
             return SExecuteWithSignature<double>(LocalBridgeClazz, "copySign", "(DD)D", arg0, arg1);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#cos(double)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="double"/></param>
+        /// <returns><see cref="double"/></returns>
+        public static double Cos(double arg0)
+        {
+            return SExecuteWithSignature<double>(LocalBridgeClazz, "cos", "(D)D", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#cosh(double)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="double"/></param>
+        /// <returns><see cref="double"/></returns>
+        public static double Cosh(double arg0)
+        {
+            return SExecuteWithSignature<double>(LocalBridgeClazz, "cosh", "(D)D", arg0);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#exp(double)"/>
         /// </summary>
         /// <param name="arg0"><see cref="double"/></param>
@@ -143,6 +215,15 @@ namespace Java.Lang
         public static double Exp(double arg0)
         {
             return SExecuteWithSignature<double>(LocalBridgeClazz, "exp", "(D)D", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#expm1(double)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="double"/></param>
+        /// <returns><see cref="double"/></returns>
+        public static double Expm1(double arg0)
+        {
+            return SExecuteWithSignature<double>(LocalBridgeClazz, "expm1", "(D)D", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#floor(double)"/>
@@ -173,6 +254,43 @@ namespace Java.Lang
         public static double Hypot(double arg0, double arg1)
         {
             return SExecuteWithSignature<double>(LocalBridgeClazz, "hypot", "(DD)D", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#IEEEremainder(double,double)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="double"/></param>
+        /// <param name="arg1"><see cref="double"/></param>
+        /// <returns><see cref="double"/></returns>
+        public static double IEEEremainder(double arg0, double arg1)
+        {
+            return SExecuteWithSignature<double>(LocalBridgeClazz, "IEEEremainder", "(DD)D", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#log(double)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="double"/></param>
+        /// <returns><see cref="double"/></returns>
+        public static double Log(double arg0)
+        {
+            return SExecuteWithSignature<double>(LocalBridgeClazz, "log", "(D)D", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#log10(double)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="double"/></param>
+        /// <returns><see cref="double"/></returns>
+        public static double Log10(double arg0)
+        {
+            return SExecuteWithSignature<double>(LocalBridgeClazz, "log10", "(D)D", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#log1p(double)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="double"/></param>
+        /// <returns><see cref="double"/></returns>
+        public static double Log1p(double arg0)
+        {
+            return SExecuteWithSignature<double>(LocalBridgeClazz, "log1p", "(D)D", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#max(double,double)"/>
@@ -269,6 +387,51 @@ namespace Java.Lang
             return SExecuteWithSignature<double>(LocalBridgeClazz, "signum", "(D)D", arg0);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#sin(double)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="double"/></param>
+        /// <returns><see cref="double"/></returns>
+        public static double Sin(double arg0)
+        {
+            return SExecuteWithSignature<double>(LocalBridgeClazz, "sin", "(D)D", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#sinh(double)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="double"/></param>
+        /// <returns><see cref="double"/></returns>
+        public static double Sinh(double arg0)
+        {
+            return SExecuteWithSignature<double>(LocalBridgeClazz, "sinh", "(D)D", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#sqrt(double)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="double"/></param>
+        /// <returns><see cref="double"/></returns>
+        public static double Sqrt(double arg0)
+        {
+            return SExecuteWithSignature<double>(LocalBridgeClazz, "sqrt", "(D)D", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#tan(double)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="double"/></param>
+        /// <returns><see cref="double"/></returns>
+        public static double Tan(double arg0)
+        {
+            return SExecuteWithSignature<double>(LocalBridgeClazz, "tan", "(D)D", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#tanh(double)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="double"/></param>
+        /// <returns><see cref="double"/></returns>
+        public static double Tanh(double arg0)
+        {
+            return SExecuteWithSignature<double>(LocalBridgeClazz, "tanh", "(D)D", arg0);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#toDegrees(double)"/>
         /// </summary>
         /// <param name="arg0"><see cref="double"/></param>
@@ -303,6 +466,17 @@ namespace Java.Lang
         public static float Abs(float arg0)
         {
             return SExecuteWithSignature<float>(LocalBridgeClazz, "abs", "(F)F", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#clamp(float,float,float)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="float"/></param>
+        /// <param name="arg1"><see cref="float"/></param>
+        /// <param name="arg2"><see cref="float"/></param>
+        /// <returns><see cref="float"/></returns>
+        public static float Clamp(float arg0, float arg1, float arg2)
+        {
+            return SExecuteWithSignature<float>(LocalBridgeClazz, "clamp", "(FFF)F", arg0, arg1, arg2);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#copySign(float,float)"/>
@@ -430,6 +604,57 @@ namespace Java.Lang
             return SExecuteWithSignature<int>(LocalBridgeClazz, "addExact", "(II)I", arg0, arg1);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#ceilDiv(int,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <returns><see cref="int"/></returns>
+        public static int CeilDiv(int arg0, int arg1)
+        {
+            return SExecuteWithSignature<int>(LocalBridgeClazz, "ceilDiv", "(II)I", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#ceilDivExact(int,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <returns><see cref="int"/></returns>
+        public static int CeilDivExact(int arg0, int arg1)
+        {
+            return SExecuteWithSignature<int>(LocalBridgeClazz, "ceilDivExact", "(II)I", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#ceilMod(int,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <returns><see cref="int"/></returns>
+        public static int CeilMod(int arg0, int arg1)
+        {
+            return SExecuteWithSignature<int>(LocalBridgeClazz, "ceilMod", "(II)I", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#ceilMod(long,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="long"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <returns><see cref="int"/></returns>
+        public static int CeilMod(long arg0, int arg1)
+        {
+            return SExecuteWithSignature<int>(LocalBridgeClazz, "ceilMod", "(JI)I", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#clamp(long,int,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="long"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <param name="arg2"><see cref="int"/></param>
+        /// <returns><see cref="int"/></returns>
+        public static int Clamp(long arg0, int arg1, int arg2)
+        {
+            return SExecuteWithSignature<int>(LocalBridgeClazz, "clamp", "(JII)I", arg0, arg1, arg2);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#decrementExact(int)"/>
         /// </summary>
         /// <param name="arg0"><see cref="int"/></param>
@@ -437,6 +662,16 @@ namespace Java.Lang
         public static int DecrementExact(int arg0)
         {
             return SExecuteWithSignature<int>(LocalBridgeClazz, "decrementExact", "(I)I", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#divideExact(int,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <returns><see cref="int"/></returns>
+        public static int DivideExact(int arg0, int arg1)
+        {
+            return SExecuteWithSignature<int>(LocalBridgeClazz, "divideExact", "(II)I", arg0, arg1);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#floorDiv(int,int)"/>
@@ -447,6 +682,16 @@ namespace Java.Lang
         public static int FloorDiv(int arg0, int arg1)
         {
             return SExecuteWithSignature<int>(LocalBridgeClazz, "floorDiv", "(II)I", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#floorDivExact(int,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <returns><see cref="int"/></returns>
+        public static int FloorDivExact(int arg0, int arg1)
+        {
+            return SExecuteWithSignature<int>(LocalBridgeClazz, "floorDivExact", "(II)I", arg0, arg1);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#floorMod(int,int)"/>
@@ -591,6 +836,57 @@ namespace Java.Lang
             return SExecuteWithSignature<long>(LocalBridgeClazz, "addExact", "(JJ)J", arg0, arg1);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#ceilDiv(long,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="long"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <returns><see cref="long"/></returns>
+        public static long CeilDiv(long arg0, int arg1)
+        {
+            return SExecuteWithSignature<long>(LocalBridgeClazz, "ceilDiv", "(JI)J", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#ceilDiv(long,long)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="long"/></param>
+        /// <param name="arg1"><see cref="long"/></param>
+        /// <returns><see cref="long"/></returns>
+        public static long CeilDiv(long arg0, long arg1)
+        {
+            return SExecuteWithSignature<long>(LocalBridgeClazz, "ceilDiv", "(JJ)J", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#ceilDivExact(long,long)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="long"/></param>
+        /// <param name="arg1"><see cref="long"/></param>
+        /// <returns><see cref="long"/></returns>
+        public static long CeilDivExact(long arg0, long arg1)
+        {
+            return SExecuteWithSignature<long>(LocalBridgeClazz, "ceilDivExact", "(JJ)J", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#ceilMod(long,long)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="long"/></param>
+        /// <param name="arg1"><see cref="long"/></param>
+        /// <returns><see cref="long"/></returns>
+        public static long CeilMod(long arg0, long arg1)
+        {
+            return SExecuteWithSignature<long>(LocalBridgeClazz, "ceilMod", "(JJ)J", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#clamp(long,long,long)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="long"/></param>
+        /// <param name="arg1"><see cref="long"/></param>
+        /// <param name="arg2"><see cref="long"/></param>
+        /// <returns><see cref="long"/></returns>
+        public static long Clamp(long arg0, long arg1, long arg2)
+        {
+            return SExecuteWithSignature<long>(LocalBridgeClazz, "clamp", "(JJJ)J", arg0, arg1, arg2);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#decrementExact(long)"/>
         /// </summary>
         /// <param name="arg0"><see cref="long"/></param>
@@ -598,6 +894,16 @@ namespace Java.Lang
         public static long DecrementExact(long arg0)
         {
             return SExecuteWithSignature<long>(LocalBridgeClazz, "decrementExact", "(J)J", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#divideExact(long,long)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="long"/></param>
+        /// <param name="arg1"><see cref="long"/></param>
+        /// <returns><see cref="long"/></returns>
+        public static long DivideExact(long arg0, long arg1)
+        {
+            return SExecuteWithSignature<long>(LocalBridgeClazz, "divideExact", "(JJ)J", arg0, arg1);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#floorDiv(long,int)"/>
@@ -618,6 +924,16 @@ namespace Java.Lang
         public static long FloorDiv(long arg0, long arg1)
         {
             return SExecuteWithSignature<long>(LocalBridgeClazz, "floorDiv", "(JJ)J", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#floorDivExact(long,long)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="long"/></param>
+        /// <param name="arg1"><see cref="long"/></param>
+        /// <returns><see cref="long"/></returns>
+        public static long FloorDivExact(long arg0, long arg1)
+        {
+            return SExecuteWithSignature<long>(LocalBridgeClazz, "floorDivExact", "(JJ)J", arg0, arg1);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#floorMod(long,long)"/>
@@ -727,150 +1043,14 @@ namespace Java.Lang
             return SExecuteWithSignature<long>(LocalBridgeClazz, "subtractExact", "(JJ)J", arg0, arg1);
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#acos(double)"/>
+        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#unsignedMultiplyHigh(long,long)"/>
         /// </summary>
-        /// <param name="arg0"><see cref="double"/></param>
-        /// <returns><see cref="double"/></returns>
-        public static double Acos(double arg0)
+        /// <param name="arg0"><see cref="long"/></param>
+        /// <param name="arg1"><see cref="long"/></param>
+        /// <returns><see cref="long"/></returns>
+        public static long UnsignedMultiplyHigh(long arg0, long arg1)
         {
-            return SExecuteWithSignature<double>(LocalBridgeClazz, "acos", "(D)D", arg0);
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#asin(double)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="double"/></param>
-        /// <returns><see cref="double"/></returns>
-        public static double Asin(double arg0)
-        {
-            return SExecuteWithSignature<double>(LocalBridgeClazz, "asin", "(D)D", arg0);
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#atan(double)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="double"/></param>
-        /// <returns><see cref="double"/></returns>
-        public static double Atan(double arg0)
-        {
-            return SExecuteWithSignature<double>(LocalBridgeClazz, "atan", "(D)D", arg0);
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#atan2(double,double)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="double"/></param>
-        /// <param name="arg1"><see cref="double"/></param>
-        /// <returns><see cref="double"/></returns>
-        public static double Atan2(double arg0, double arg1)
-        {
-            return SExecuteWithSignature<double>(LocalBridgeClazz, "atan2", "(DD)D", arg0, arg1);
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#cos(double)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="double"/></param>
-        /// <returns><see cref="double"/></returns>
-        public static double Cos(double arg0)
-        {
-            return SExecuteWithSignature<double>(LocalBridgeClazz, "cos", "(D)D", arg0);
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#cosh(double)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="double"/></param>
-        /// <returns><see cref="double"/></returns>
-        public static double Cosh(double arg0)
-        {
-            return SExecuteWithSignature<double>(LocalBridgeClazz, "cosh", "(D)D", arg0);
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#expm1(double)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="double"/></param>
-        /// <returns><see cref="double"/></returns>
-        public static double Expm1(double arg0)
-        {
-            return SExecuteWithSignature<double>(LocalBridgeClazz, "expm1", "(D)D", arg0);
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#IEEEremainder(double,double)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="double"/></param>
-        /// <param name="arg1"><see cref="double"/></param>
-        /// <returns><see cref="double"/></returns>
-        public static double IEEEremainder(double arg0, double arg1)
-        {
-            return SExecuteWithSignature<double>(LocalBridgeClazz, "IEEEremainder", "(DD)D", arg0, arg1);
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#log(double)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="double"/></param>
-        /// <returns><see cref="double"/></returns>
-        public static double Log(double arg0)
-        {
-            return SExecuteWithSignature<double>(LocalBridgeClazz, "log", "(D)D", arg0);
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#log10(double)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="double"/></param>
-        /// <returns><see cref="double"/></returns>
-        public static double Log10(double arg0)
-        {
-            return SExecuteWithSignature<double>(LocalBridgeClazz, "log10", "(D)D", arg0);
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#log1p(double)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="double"/></param>
-        /// <returns><see cref="double"/></returns>
-        public static double Log1p(double arg0)
-        {
-            return SExecuteWithSignature<double>(LocalBridgeClazz, "log1p", "(D)D", arg0);
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#sin(double)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="double"/></param>
-        /// <returns><see cref="double"/></returns>
-        public static double Sin(double arg0)
-        {
-            return SExecuteWithSignature<double>(LocalBridgeClazz, "sin", "(D)D", arg0);
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#sinh(double)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="double"/></param>
-        /// <returns><see cref="double"/></returns>
-        public static double Sinh(double arg0)
-        {
-            return SExecuteWithSignature<double>(LocalBridgeClazz, "sinh", "(D)D", arg0);
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#sqrt(double)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="double"/></param>
-        /// <returns><see cref="double"/></returns>
-        public static double Sqrt(double arg0)
-        {
-            return SExecuteWithSignature<double>(LocalBridgeClazz, "sqrt", "(D)D", arg0);
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#tan(double)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="double"/></param>
-        /// <returns><see cref="double"/></returns>
-        public static double Tan(double arg0)
-        {
-            return SExecuteWithSignature<double>(LocalBridgeClazz, "tan", "(D)D", arg0);
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/StrictMath.html#tanh(double)"/>
-        /// </summary>
-        /// <param name="arg0"><see cref="double"/></param>
-        /// <returns><see cref="double"/></returns>
-        public static double Tanh(double arg0)
-        {
-            return SExecuteWithSignature<double>(LocalBridgeClazz, "tanh", "(D)D", arg0);
+            return SExecuteWithSignature<long>(LocalBridgeClazz, "unsignedMultiplyHigh", "(JJ)J", arg0, arg1);
         }
 
         #endregion

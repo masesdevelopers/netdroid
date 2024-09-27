@@ -78,6 +78,7 @@ namespace Java.Security.Spec
         /// <see href="https://developer.android.com/reference/java/security/spec/PSSParameterSpec.html#%3Cinit%3E(int)"/>
         /// </summary>
         /// <param name="arg0"><see cref="int"/></param>
+        [global::System.Obsolete()]
         public PSSParameterSpec(int arg0)
             : base(arg0)
         {
@@ -111,6 +112,7 @@ namespace Java.Security.Spec
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/security/spec/PSSParameterSpec.html#DEFAULT"/>
         /// </summary>
+        [global::System.Obsolete()]
         public static Java.Security.Spec.PSSParameterSpec DEFAULT { get { if (!_DEFAULTReady) { _DEFAULTContent = SGetField<Java.Security.Spec.PSSParameterSpec>(LocalBridgeClazz, "DEFAULT"); _DEFAULTReady = true; } return _DEFAULTContent; } }
         private static Java.Security.Spec.PSSParameterSpec _DEFAULTContent = default;
         private static bool _DEFAULTReady = false; // this is used because in case of generics 

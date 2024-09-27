@@ -200,6 +200,14 @@ namespace Java.Io
             return IExecuteWithSignature<long>("transferTo", "(Ljava/io/OutputStream;)J", arg0);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/io/InputStream.html#close()"/>
+        /// </summary>
+        /// <exception cref="Java.Io.IOException"/>
+        public void Close()
+        {
+            IExecuteWithSignature("close", "()V");
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/io/InputStream.html#mark(int)"/>
         /// </summary>
         /// <param name="arg0"><see cref="int"/></param>
@@ -214,14 +222,6 @@ namespace Java.Io
         public void Reset()
         {
             IExecuteWithSignature("reset", "()V");
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/io/InputStream.html#close()"/>
-        /// </summary>
-        /// <exception cref="Java.Io.IOException"/>
-        public void Close()
-        {
-            IExecuteWithSignature("close", "()V");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/io/InputStream.html#skipNBytes(long)"/>

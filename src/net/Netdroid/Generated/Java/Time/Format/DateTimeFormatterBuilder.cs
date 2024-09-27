@@ -87,6 +87,17 @@ namespace Java.Time.Format
 
         #region Static methods
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/time/format/DateTimeFormatterBuilder.html#getLocalizedDateTimePattern(java.lang.String,java.time.chrono.Chronology,java.util.Locale)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg1"><see cref="Java.Time.Chrono.Chronology"/></param>
+        /// <param name="arg2"><see cref="Java.Util.Locale"/></param>
+        /// <returns><see cref="Java.Lang.String"/></returns>
+        public static Java.Lang.String GetLocalizedDateTimePattern(Java.Lang.String arg0, Java.Time.Chrono.Chronology arg1, Java.Util.Locale arg2)
+        {
+            return SExecuteWithSignature<Java.Lang.String>(LocalBridgeClazz, "getLocalizedDateTimePattern", "(Ljava/lang/String;Ljava/time/chrono/Chronology;Ljava/util/Locale;)Ljava/lang/String;", arg0, arg1, arg2);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/time/format/DateTimeFormatterBuilder.html#getLocalizedDateTimePattern(java.time.format.FormatStyle,java.time.format.FormatStyle,java.time.chrono.Chronology,java.util.Locale)"/>
         /// </summary>
         /// <param name="arg0"><see cref="Java.Time.Format.FormatStyle"/></param>
@@ -219,6 +230,15 @@ namespace Java.Time.Format
         public Java.Time.Format.DateTimeFormatterBuilder AppendLiteral(Java.Lang.String arg0)
         {
             return IExecuteWithSignature<Java.Time.Format.DateTimeFormatterBuilder>("appendLiteral", "(Ljava/lang/String;)Ljava/time/format/DateTimeFormatterBuilder;", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/time/format/DateTimeFormatterBuilder.html#appendLocalized(java.lang.String)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <returns><see cref="Java.Time.Format.DateTimeFormatterBuilder"/></returns>
+        public Java.Time.Format.DateTimeFormatterBuilder AppendLocalized(Java.Lang.String arg0)
+        {
+            return IExecuteWithSignature<Java.Time.Format.DateTimeFormatterBuilder>("appendLocalized", "(Ljava/lang/String;)Ljava/time/format/DateTimeFormatterBuilder;", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/time/format/DateTimeFormatterBuilder.html#appendLocalized(java.time.format.FormatStyle,java.time.format.FormatStyle)"/>

@@ -472,6 +472,15 @@ namespace Java.Math
             return IExecuteWithSignature<Java.Math.BigInteger>("or", "(Ljava/math/BigInteger;)Ljava/math/BigInteger;", arg0);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/math/BigInteger.html#parallelMultiply(java.math.BigInteger)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Math.BigInteger"/></param>
+        /// <returns><see cref="Java.Math.BigInteger"/></returns>
+        public Java.Math.BigInteger ParallelMultiply(Java.Math.BigInteger arg0)
+        {
+            return IExecuteWithSignature<Java.Math.BigInteger>("parallelMultiply", "(Ljava/math/BigInteger;)Ljava/math/BigInteger;", arg0);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/math/BigInteger.html#pow(int)"/>
         /// </summary>
         /// <param name="arg0"><see cref="int"/></param>

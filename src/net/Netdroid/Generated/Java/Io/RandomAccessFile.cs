@@ -408,15 +408,6 @@ namespace Java.Io
             return IExecuteWithSignature<int>("skipBytes", "(I)I", arg0);
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/io/RandomAccessFile.html#getFilePointer()"/>
-        /// </summary>
-        /// <returns><see cref="long"/></returns>
-        /// <exception cref="Java.Io.IOException"/>
-        public long GetFilePointer()
-        {
-            return IExecuteWithSignature<long>("getFilePointer", "()J");
-        }
-        /// <summary>
         /// <see href="https://developer.android.com/reference/java/io/RandomAccessFile.html#length()"/>
         /// </summary>
         /// <returns><see cref="long"/></returns>
@@ -426,13 +417,13 @@ namespace Java.Io
             return IExecuteWithSignature<long>("length", "()J");
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/io/RandomAccessFile.html#setLength(long)"/>
+        /// <see href="https://developer.android.com/reference/java/io/RandomAccessFile.html#getFilePointer()"/>
         /// </summary>
-        /// <param name="arg0"><see cref="long"/></param>
+        /// <returns><see cref="long"/></returns>
         /// <exception cref="Java.Io.IOException"/>
-        public void SetLength(long arg0)
+        public long GetFilePointer()
         {
-            IExecuteWithSignature("setLength", "(J)V", arg0);
+            return IExecuteWithSignature<long>("getFilePointer", "()J");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/io/RandomAccessFile.html#close()"/>
@@ -450,6 +441,15 @@ namespace Java.Io
         public void Seek(long arg0)
         {
             IExecuteWithSignature("seek", "(J)V", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/io/RandomAccessFile.html#setLength(long)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="long"/></param>
+        /// <exception cref="Java.Io.IOException"/>
+        public void SetLength(long arg0)
+        {
+            IExecuteWithSignature("setLength", "(J)V", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/io/RandomAccessFile.html#write(byte[],int,int)"/>

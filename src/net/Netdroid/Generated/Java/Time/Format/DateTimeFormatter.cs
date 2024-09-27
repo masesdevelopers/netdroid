@@ -221,6 +221,15 @@ namespace Java.Time.Format
             return SExecuteWithSignature<Java.Time.Format.DateTimeFormatter>(LocalBridgeClazz, "ofLocalizedDateTime", "(Ljava/time/format/FormatStyle;)Ljava/time/format/DateTimeFormatter;", arg0);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/time/format/DateTimeFormatter.html#ofLocalizedPattern(java.lang.String)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <returns><see cref="Java.Time.Format.DateTimeFormatter"/></returns>
+        public static Java.Time.Format.DateTimeFormatter OfLocalizedPattern(Java.Lang.String arg0)
+        {
+            return SExecuteWithSignature<Java.Time.Format.DateTimeFormatter>(LocalBridgeClazz, "ofLocalizedPattern", "(Ljava/lang/String;)Ljava/time/format/DateTimeFormatter;", arg0);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/time/format/DateTimeFormatter.html#ofLocalizedTime(java.time.format.FormatStyle)"/>
         /// </summary>
         /// <param name="arg0"><see cref="Java.Time.Format.FormatStyle"/></param>

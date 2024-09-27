@@ -613,6 +613,17 @@ namespace Java.Lang
             return IExecuteWithSignature<int>("compareToIgnoreCase", "(Ljava/lang/String;)I", arg0);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/String.html#indexOf(int,int,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <param name="arg2"><see cref="int"/></param>
+        /// <returns><see cref="int"/></returns>
+        public int IndexOf(int arg0, int arg1, int arg2)
+        {
+            return IExecuteWithSignature<int>("indexOf", "(III)I", arg0, arg1, arg2);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/String.html#indexOf(int,int)"/>
         /// </summary>
         /// <param name="arg0"><see cref="int"/></param>
@@ -630,6 +641,17 @@ namespace Java.Lang
         public int IndexOf(int arg0)
         {
             return IExecuteWithSignature<int>("indexOf", "(I)I", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/String.html#indexOf(java.lang.String,int,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <param name="arg2"><see cref="int"/></param>
+        /// <returns><see cref="int"/></returns>
+        public int IndexOf(Java.Lang.String arg0, int arg1, int arg2)
+        {
+            return IExecuteWithSignature<int>("indexOf", "(Ljava/lang/String;II)I", arg0, arg1, arg2);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/String.html#indexOf(java.lang.String,int)"/>
@@ -921,6 +943,16 @@ namespace Java.Lang
         public Java.Lang.String[] Split(Java.Lang.String arg0)
         {
             return IExecuteWithSignatureArray<Java.Lang.String>("split", "(Ljava/lang/String;)[Ljava/lang/String;", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/String.html#splitWithDelimiters(java.lang.String,int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <returns><see cref="Java.Lang.String"/></returns>
+        public Java.Lang.String[] SplitWithDelimiters(Java.Lang.String arg0, int arg1)
+        {
+            return IExecuteWithSignatureArray<Java.Lang.String>("splitWithDelimiters", "(Ljava/lang/String;I)[Ljava/lang/String;", arg0, arg1);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/String.html#describeConstable()"/>

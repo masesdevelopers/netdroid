@@ -83,6 +83,7 @@ namespace Java.Net
         /// <param name="arg3"><see cref="Java.Lang.String"/></param>
         /// <param name="arg4"><see cref="Java.Net.URLStreamHandler"/></param>
         /// <exception cref="Java.Net.MalformedURLException"/>
+        [global::System.Obsolete()]
         public URL(Java.Lang.String arg0, Java.Lang.String arg1, int arg2, Java.Lang.String arg3, Java.Net.URLStreamHandler arg4)
             : base(arg0, arg1, arg2, arg3, arg4)
         {
@@ -95,6 +96,7 @@ namespace Java.Net
         /// <param name="arg2"><see cref="int"/></param>
         /// <param name="arg3"><see cref="Java.Lang.String"/></param>
         /// <exception cref="Java.Net.MalformedURLException"/>
+        [global::System.Obsolete()]
         public URL(Java.Lang.String arg0, Java.Lang.String arg1, int arg2, Java.Lang.String arg3)
             : base(arg0, arg1, arg2, arg3)
         {
@@ -106,6 +108,7 @@ namespace Java.Net
         /// <param name="arg1"><see cref="Java.Lang.String"/></param>
         /// <param name="arg2"><see cref="Java.Lang.String"/></param>
         /// <exception cref="Java.Net.MalformedURLException"/>
+        [global::System.Obsolete()]
         public URL(Java.Lang.String arg0, Java.Lang.String arg1, Java.Lang.String arg2)
             : base(arg0, arg1, arg2)
         {
@@ -115,6 +118,7 @@ namespace Java.Net
         /// </summary>
         /// <param name="arg0"><see cref="Java.Lang.String"/></param>
         /// <exception cref="Java.Net.MalformedURLException"/>
+        [global::System.Obsolete()]
         public URL(Java.Lang.String arg0)
             : base(arg0)
         {
@@ -126,6 +130,7 @@ namespace Java.Net
         /// <param name="arg1"><see cref="Java.Lang.String"/></param>
         /// <param name="arg2"><see cref="Java.Net.URLStreamHandler"/></param>
         /// <exception cref="Java.Net.MalformedURLException"/>
+        [global::System.Obsolete()]
         public URL(Java.Net.URL arg0, Java.Lang.String arg1, Java.Net.URLStreamHandler arg2)
             : base(arg0, arg1, arg2)
         {
@@ -136,6 +141,7 @@ namespace Java.Net
         /// <param name="arg0"><see cref="Java.Net.URL"/></param>
         /// <param name="arg1"><see cref="Java.Lang.String"/></param>
         /// <exception cref="Java.Net.MalformedURLException"/>
+        [global::System.Obsolete()]
         public URL(Java.Net.URL arg0, Java.Lang.String arg1)
             : base(arg0, arg1)
         {
@@ -152,6 +158,17 @@ namespace Java.Net
         #endregion
 
         #region Static methods
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/net/URL.html#of(java.net.URI,java.net.URLStreamHandler)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Net.URI"/></param>
+        /// <param name="arg1"><see cref="Java.Net.URLStreamHandler"/></param>
+        /// <returns><see cref="Java.Net.URL"/></returns>
+        /// <exception cref="Java.Net.MalformedURLException"/>
+        public static Java.Net.URL Of(Java.Net.URI arg0, Java.Net.URLStreamHandler arg1)
+        {
+            return SExecuteWithSignature<Java.Net.URL>(LocalBridgeClazz, "of", "(Ljava/net/URI;Ljava/net/URLStreamHandler;)Ljava/net/URL;", arg0, arg1);
+        }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/net/URL.html#setURLStreamHandlerFactory(java.net.URLStreamHandlerFactory)"/>
         /// </summary>

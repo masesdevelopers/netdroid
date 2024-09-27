@@ -71,7 +71,7 @@ namespace Java.Lang
     #endregion
 
     #region StringBuilder implementation
-    public partial class StringBuilder : Java.Io.ISerializable, Java.Lang.IComparable<Java.Lang.StringBuilder>, Java.Lang.ICharSequence
+    public partial class StringBuilder : Java.Lang.IAppendable, Java.Io.ISerializable, Java.Lang.IComparable<Java.Lang.StringBuilder>, Java.Lang.ICharSequence
     {
         #region Constructors
         /// <summary>
@@ -102,6 +102,10 @@ namespace Java.Lang
         #endregion
 
         #region Class/Interface conversion operators
+        /// <summary>
+        /// Converter from <see cref="Java.Lang.StringBuilder"/> to <see cref="Java.Lang.Appendable"/>
+        /// </summary>
+        public static implicit operator Java.Lang.Appendable(Java.Lang.StringBuilder t) => t.Cast<Java.Lang.Appendable>();
         /// <summary>
         /// Converter from <see cref="Java.Lang.StringBuilder"/> to <see cref="Java.Io.Serializable"/>
         /// </summary>

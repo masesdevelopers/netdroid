@@ -158,6 +158,16 @@ namespace Java.Util
             return SExecuteWithSignature<Java.Util.Queue<E>>(LocalBridgeClazz, "checkedQueue", "(Ljava/util/Queue;Ljava/lang/Class;)Ljava/util/Queue;", arg0, arg1);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/Collections.html#newSequencedSetFromMap(java.util.SequencedMap)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Util.SequencedMap"/></param>
+        /// <typeparam name="E"></typeparam>
+        /// <returns><see cref="Java.Util.SequencedSet"/></returns>
+        public static Java.Util.SequencedSet<E> NewSequencedSetFromMap<E>(Java.Util.SequencedMap<E, Java.Lang.Boolean> arg0)
+        {
+            return SExecuteWithSignature<Java.Util.SequencedSet<E>>(LocalBridgeClazz, "newSequencedSetFromMap", "(Ljava/util/SequencedMap;)Ljava/util/SequencedSet;", arg0);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/Collections.html#checkedSet(java.util.Set,java.lang.Class)"/>
         /// </summary>
         /// <param name="arg0"><see cref="Java.Util.Set"/></param>
@@ -282,6 +292,19 @@ namespace Java.Util
         public static Java.Util.NavigableMap<K, V> UnmodifiableNavigableMap<K, V, Arg0ExtendsV>(Java.Util.NavigableMap<K, Arg0ExtendsV> arg0) where Arg0ExtendsV : V
         {
             return SExecuteWithSignature<Java.Util.NavigableMap<K, V>>(LocalBridgeClazz, "unmodifiableNavigableMap", "(Ljava/util/NavigableMap;)Ljava/util/NavigableMap;", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/Collections.html#unmodifiableSequencedMap(java.util.SequencedMap)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Util.SequencedMap"/></param>
+        /// <typeparam name="K"></typeparam>
+        /// <typeparam name="V"></typeparam>
+        /// <typeparam name="Arg0ExtendsK"><typeparamref name="K"/></typeparam>
+        /// <typeparam name="Arg0ExtendsV"><typeparamref name="V"/></typeparam>
+        /// <returns><see cref="Java.Util.SequencedMap"/></returns>
+        public static Java.Util.SequencedMap<K, V> UnmodifiableSequencedMap<K, V, Arg0ExtendsK, Arg0ExtendsV>(Java.Util.SequencedMap<Arg0ExtendsK, Arg0ExtendsV> arg0) where Arg0ExtendsK : K where Arg0ExtendsV : V
+        {
+            return SExecuteWithSignature<Java.Util.SequencedMap<K, V>>(LocalBridgeClazz, "unmodifiableSequencedMap", "(Ljava/util/SequencedMap;)Ljava/util/SequencedMap;", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/Collections.html#checkedSortedMap(java.util.SortedMap,java.lang.Class,java.lang.Class)"/>
@@ -561,6 +584,28 @@ namespace Java.Util
             return SExecuteWithSignature<Java.Util.Queue<T>>(LocalBridgeClazz, "asLifoQueue", "(Ljava/util/Deque;)Ljava/util/Queue;", arg0);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/Collections.html#unmodifiableSequencedCollection(java.util.SequencedCollection)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Util.SequencedCollection"/></param>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="Arg0ExtendsT"><typeparamref name="T"/></typeparam>
+        /// <returns><see cref="Java.Util.SequencedCollection"/></returns>
+        public static Java.Util.SequencedCollection<T> UnmodifiableSequencedCollection<T, Arg0ExtendsT>(Java.Util.SequencedCollection<Arg0ExtendsT> arg0) where Arg0ExtendsT : T
+        {
+            return SExecuteWithSignature<Java.Util.SequencedCollection<T>>(LocalBridgeClazz, "unmodifiableSequencedCollection", "(Ljava/util/SequencedCollection;)Ljava/util/SequencedCollection;", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/Collections.html#unmodifiableSequencedSet(java.util.SequencedSet)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Util.SequencedSet"/></param>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="Arg0ExtendsT"><typeparamref name="T"/></typeparam>
+        /// <returns><see cref="Java.Util.SequencedSet"/></returns>
+        public static Java.Util.SequencedSet<T> UnmodifiableSequencedSet<T, Arg0ExtendsT>(Java.Util.SequencedSet<Arg0ExtendsT> arg0) where Arg0ExtendsT : T
+        {
+            return SExecuteWithSignature<Java.Util.SequencedSet<T>>(LocalBridgeClazz, "unmodifiableSequencedSet", "(Ljava/util/SequencedSet;)Ljava/util/SequencedSet;", arg0);
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/Collections.html#singleton(java.lang.Object)"/>
         /// </summary>
         /// <param name="arg0"><typeparamref name="T"/></param>
@@ -775,6 +820,15 @@ namespace Java.Util
         public static void Rotate(Java.Util.List<object> arg0, int arg1)
         {
             SExecuteWithSignature(LocalBridgeClazz, "rotate", "(Ljava/util/List;I)V", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/Collections.html#shuffle(java.util.List,java.util.random.RandomGenerator)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Util.List"/></param>
+        /// <param name="arg1"><see cref="Java.Util.RandomNs.RandomGenerator"/></param>
+        public static void Shuffle(Java.Util.List<object> arg0, Java.Util.RandomNs.RandomGenerator arg1)
+        {
+            SExecuteWithSignature(LocalBridgeClazz, "shuffle", "(Ljava/util/List;Ljava/util/random/RandomGenerator;)V", arg0, arg1);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/Collections.html#shuffle(java.util.List,java.util.Random)"/>

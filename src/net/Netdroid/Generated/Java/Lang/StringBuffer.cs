@@ -71,7 +71,7 @@ namespace Java.Lang
     #endregion
 
     #region StringBuffer implementation
-    public partial class StringBuffer : Java.Io.ISerializable, Java.Lang.IComparable<Java.Lang.StringBuffer>, Java.Lang.ICharSequence
+    public partial class StringBuffer : Java.Lang.IAppendable, Java.Io.ISerializable, Java.Lang.IComparable<Java.Lang.StringBuffer>, Java.Lang.ICharSequence
     {
         #region Constructors
         /// <summary>
@@ -102,6 +102,10 @@ namespace Java.Lang
         #endregion
 
         #region Class/Interface conversion operators
+        /// <summary>
+        /// Converter from <see cref="Java.Lang.StringBuffer"/> to <see cref="Java.Lang.Appendable"/>
+        /// </summary>
+        public static implicit operator Java.Lang.Appendable(Java.Lang.StringBuffer t) => t.Cast<Java.Lang.Appendable>();
         /// <summary>
         /// Converter from <see cref="Java.Lang.StringBuffer"/> to <see cref="Java.Io.Serializable"/>
         /// </summary>

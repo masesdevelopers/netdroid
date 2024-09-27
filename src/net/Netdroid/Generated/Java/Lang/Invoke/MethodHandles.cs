@@ -643,6 +643,81 @@ namespace Java.Lang.Invoke
         {
             return SExecuteWithSignature<Java.Lang.Invoke.VarHandle>(LocalBridgeClazz, "byteBufferViewVarHandle", "(Ljava/lang/Class;Ljava/nio/ByteOrder;)Ljava/lang/invoke/VarHandle;", arg0, arg1);
         }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/invoke/MethodHandles.html#collectCoordinates(java.lang.invoke.VarHandle,int,java.lang.invoke.MethodHandle)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.Invoke.VarHandle"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <param name="arg2"><see cref="Java.Lang.Invoke.MethodHandle"/></param>
+        /// <returns><see cref="Java.Lang.Invoke.VarHandle"/></returns>
+        public static Java.Lang.Invoke.VarHandle CollectCoordinates(Java.Lang.Invoke.VarHandle arg0, int arg1, Java.Lang.Invoke.MethodHandle arg2)
+        {
+            return SExecuteWithSignature<Java.Lang.Invoke.VarHandle>(LocalBridgeClazz, "collectCoordinates", "(Ljava/lang/invoke/VarHandle;ILjava/lang/invoke/MethodHandle;)Ljava/lang/invoke/VarHandle;", arg0, arg1, arg2);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/invoke/MethodHandles.html#dropCoordinates(java.lang.invoke.VarHandle,int,java.lang.Class[])"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.Invoke.VarHandle"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <param name="arg2"><see cref="Java.Lang.Class"/></param>
+        /// <returns><see cref="Java.Lang.Invoke.VarHandle"/></returns>
+        public static Java.Lang.Invoke.VarHandle DropCoordinates(Java.Lang.Invoke.VarHandle arg0, int arg1, params Java.Lang.Class[] arg2)
+        {
+            if (arg2.Length == 0) return SExecuteWithSignature<Java.Lang.Invoke.VarHandle>(LocalBridgeClazz, "dropCoordinates", "(Ljava/lang/invoke/VarHandle;I[Ljava/lang/Class;)Ljava/lang/invoke/VarHandle;", arg0, arg1); else return SExecuteWithSignature<Java.Lang.Invoke.VarHandle>(LocalBridgeClazz, "dropCoordinates", "(Ljava/lang/invoke/VarHandle;I[Ljava/lang/Class;)Ljava/lang/invoke/VarHandle;", arg0, arg1, arg2);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/invoke/MethodHandles.html#filterCoordinates(java.lang.invoke.VarHandle,int,java.lang.invoke.MethodHandle[])"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.Invoke.VarHandle"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <param name="arg2"><see cref="Java.Lang.Invoke.MethodHandle"/></param>
+        /// <returns><see cref="Java.Lang.Invoke.VarHandle"/></returns>
+        public static Java.Lang.Invoke.VarHandle FilterCoordinates(Java.Lang.Invoke.VarHandle arg0, int arg1, params Java.Lang.Invoke.MethodHandle[] arg2)
+        {
+            if (arg2.Length == 0) return SExecuteWithSignature<Java.Lang.Invoke.VarHandle>(LocalBridgeClazz, "filterCoordinates", "(Ljava/lang/invoke/VarHandle;I[Ljava/lang/invoke/MethodHandle;)Ljava/lang/invoke/VarHandle;", arg0, arg1); else return SExecuteWithSignature<Java.Lang.Invoke.VarHandle>(LocalBridgeClazz, "filterCoordinates", "(Ljava/lang/invoke/VarHandle;I[Ljava/lang/invoke/MethodHandle;)Ljava/lang/invoke/VarHandle;", arg0, arg1, arg2);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/invoke/MethodHandles.html#filterValue(java.lang.invoke.VarHandle,java.lang.invoke.MethodHandle,java.lang.invoke.MethodHandle)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.Invoke.VarHandle"/></param>
+        /// <param name="arg1"><see cref="Java.Lang.Invoke.MethodHandle"/></param>
+        /// <param name="arg2"><see cref="Java.Lang.Invoke.MethodHandle"/></param>
+        /// <returns><see cref="Java.Lang.Invoke.VarHandle"/></returns>
+        public static Java.Lang.Invoke.VarHandle FilterValue(Java.Lang.Invoke.VarHandle arg0, Java.Lang.Invoke.MethodHandle arg1, Java.Lang.Invoke.MethodHandle arg2)
+        {
+            return SExecuteWithSignature<Java.Lang.Invoke.VarHandle>(LocalBridgeClazz, "filterValue", "(Ljava/lang/invoke/VarHandle;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodHandle;)Ljava/lang/invoke/VarHandle;", arg0, arg1, arg2);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/invoke/MethodHandles.html#insertCoordinates(java.lang.invoke.VarHandle,int,java.lang.Object[])"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.Invoke.VarHandle"/></param>
+        /// <param name="arg1"><see cref="int"/></param>
+        /// <param name="arg2"><see cref="object"/></param>
+        /// <returns><see cref="Java.Lang.Invoke.VarHandle"/></returns>
+        public static Java.Lang.Invoke.VarHandle InsertCoordinates(Java.Lang.Invoke.VarHandle arg0, int arg1, params object[] arg2)
+        {
+            if (arg2.Length == 0) return SExecuteWithSignature<Java.Lang.Invoke.VarHandle>(LocalBridgeClazz, "insertCoordinates", "(Ljava/lang/invoke/VarHandle;I[Ljava/lang/Object;)Ljava/lang/invoke/VarHandle;", arg0, arg1); else return SExecuteWithSignature<Java.Lang.Invoke.VarHandle>(LocalBridgeClazz, "insertCoordinates", "(Ljava/lang/invoke/VarHandle;I[Ljava/lang/Object;)Ljava/lang/invoke/VarHandle;", arg0, arg1, arg2);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/invoke/MethodHandles.html#memorySegmentViewVarHandle(java.lang.foreign.ValueLayout)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.Foreign.ValueLayout"/></param>
+        /// <returns><see cref="Java.Lang.Invoke.VarHandle"/></returns>
+        public static Java.Lang.Invoke.VarHandle MemorySegmentViewVarHandle(Java.Lang.Foreign.ValueLayout arg0)
+        {
+            return SExecuteWithSignature<Java.Lang.Invoke.VarHandle>(LocalBridgeClazz, "memorySegmentViewVarHandle", "(Ljava/lang/foreign/ValueLayout;)Ljava/lang/invoke/VarHandle;", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/invoke/MethodHandles.html#permuteCoordinates(java.lang.invoke.VarHandle,java.util.List,int[])"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.Invoke.VarHandle"/></param>
+        /// <param name="arg1"><see cref="Java.Util.List"/></param>
+        /// <param name="arg2"><see cref="int"/></param>
+        /// <returns><see cref="Java.Lang.Invoke.VarHandle"/></returns>
+        public static Java.Lang.Invoke.VarHandle PermuteCoordinates(Java.Lang.Invoke.VarHandle arg0, Java.Util.List<Java.Lang.Class> arg1, params int[] arg2)
+        {
+            if (arg2.Length == 0) return SExecuteWithSignature<Java.Lang.Invoke.VarHandle>(LocalBridgeClazz, "permuteCoordinates", "(Ljava/lang/invoke/VarHandle;Ljava/util/List;[I)Ljava/lang/invoke/VarHandle;", arg0, arg1); else return SExecuteWithSignature<Java.Lang.Invoke.VarHandle>(LocalBridgeClazz, "permuteCoordinates", "(Ljava/lang/invoke/VarHandle;Ljava/util/List;[I)Ljava/lang/invoke/VarHandle;", arg0, arg1, arg2);
+        }
 
         #endregion
 
@@ -714,6 +789,28 @@ namespace Java.Lang.Invoke
 
             #region Instance methods
             /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/invoke/MethodHandles.Lookup.html#accessClass(java.lang.Class)"/>
+            /// </summary>
+            /// <param name="arg0"><see cref="Java.Lang.Class"/></param>
+            /// <typeparam name="T"></typeparam>
+            /// <returns><see cref="Java.Lang.Class"/></returns>
+            /// <exception cref="Java.Lang.IllegalAccessException"/>
+            public Java.Lang.Class AccessClass<T>(Java.Lang.Class arg0)
+            {
+                return IExecuteWithSignature<Java.Lang.Class>("accessClass", "(Ljava/lang/Class;)Ljava/lang/Class;", arg0);
+            }
+            /// <summary>
+            /// <see href="https://developer.android.com/reference/java/lang/invoke/MethodHandles.Lookup.html#ensureInitialized(java.lang.Class)"/>
+            /// </summary>
+            /// <param name="arg0"><see cref="Java.Lang.Class"/></param>
+            /// <typeparam name="T"></typeparam>
+            /// <returns><see cref="Java.Lang.Class"/></returns>
+            /// <exception cref="Java.Lang.IllegalAccessException"/>
+            public Java.Lang.Class EnsureInitialized<T>(Java.Lang.Class arg0)
+            {
+                return IExecuteWithSignature<Java.Lang.Class>("ensureInitialized", "(Ljava/lang/Class;)Ljava/lang/Class;", arg0);
+            }
+            /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/invoke/MethodHandles.Lookup.html#hasFullPrivilegeAccess()"/>
             /// </summary>
             /// <returns><see cref="bool"/></returns>
@@ -739,16 +836,6 @@ namespace Java.Lang.Invoke
                 return IExecuteWithSignature<int>("lookupModes", "()I");
             }
             /// <summary>
-            /// <see href="https://developer.android.com/reference/java/lang/invoke/MethodHandles.Lookup.html#accessClass(java.lang.Class)"/>
-            /// </summary>
-            /// <param name="arg0"><see cref="Java.Lang.Class"/></param>
-            /// <returns><see cref="Java.Lang.Class"/></returns>
-            /// <exception cref="Java.Lang.IllegalAccessException"/>
-            public Java.Lang.Class AccessClass(Java.Lang.Class arg0)
-            {
-                return IExecuteWithSignature<Java.Lang.Class>("accessClass", "(Ljava/lang/Class;)Ljava/lang/Class;", arg0);
-            }
-            /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/invoke/MethodHandles.Lookup.html#defineClass(byte[])"/>
             /// </summary>
             /// <param name="arg0"><see cref="byte"/></param>
@@ -757,16 +844,6 @@ namespace Java.Lang.Invoke
             public Java.Lang.Class DefineClass(byte[] arg0)
             {
                 return IExecuteWithSignature<Java.Lang.Class>("defineClass", "([B)Ljava/lang/Class;", new object[] { arg0 });
-            }
-            /// <summary>
-            /// <see href="https://developer.android.com/reference/java/lang/invoke/MethodHandles.Lookup.html#ensureInitialized(java.lang.Class)"/>
-            /// </summary>
-            /// <param name="arg0"><see cref="Java.Lang.Class"/></param>
-            /// <returns><see cref="Java.Lang.Class"/></returns>
-            /// <exception cref="Java.Lang.IllegalAccessException"/>
-            public Java.Lang.Class EnsureInitialized(Java.Lang.Class arg0)
-            {
-                return IExecuteWithSignature<Java.Lang.Class>("ensureInitialized", "(Ljava/lang/Class;)Ljava/lang/Class;", arg0);
             }
             /// <summary>
             /// <see href="https://developer.android.com/reference/java/lang/invoke/MethodHandles.Lookup.html#findClass(java.lang.String)"/>

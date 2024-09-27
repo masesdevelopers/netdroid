@@ -169,6 +169,49 @@ namespace Java.Util.Regex
         {
             return IExecuteWithSignature<Java.Lang.String>("group", "(I)Ljava/lang/String;", arg0);
         }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/regex/MatchResult.html#hasMatch()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public bool HasMatch()
+        {
+            return IExecuteWithSignature<bool>("hasMatch", "()Z");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/regex/MatchResult.html#end(java.lang.String)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <returns><see cref="int"/></returns>
+        public int End(Java.Lang.String arg0)
+        {
+            return IExecuteWithSignature<int>("end", "(Ljava/lang/String;)I", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/regex/MatchResult.html#start(java.lang.String)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <returns><see cref="int"/></returns>
+        public int Start(Java.Lang.String arg0)
+        {
+            return IExecuteWithSignature<int>("start", "(Ljava/lang/String;)I", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/regex/MatchResult.html#group(java.lang.String)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Lang.String"/></param>
+        /// <returns><see cref="Java.Lang.String"/></returns>
+        public Java.Lang.String Group(Java.Lang.String arg0)
+        {
+            return IExecuteWithSignature<Java.Lang.String>("group", "(Ljava/lang/String;)Ljava/lang/String;", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/regex/MatchResult.html#namedGroups()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.Map"/></returns>
+        public Java.Util.Map<Java.Lang.String, Java.Lang.Integer> NamedGroups()
+        {
+            return IExecuteWithSignature<Java.Util.Map<Java.Lang.String, Java.Lang.Integer>>("namedGroups", "()Ljava/util/Map;");
+        }
 
         #endregion
 

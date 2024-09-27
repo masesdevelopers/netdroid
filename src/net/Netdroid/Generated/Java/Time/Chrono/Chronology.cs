@@ -265,6 +265,14 @@ namespace Java.Time.Chrono
             return IExecuteWithSignature<Java.Util.List<Java.Time.Chrono.Era>>("eras", "()Ljava/util/List;");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/time/chrono/Chronology.html#isIsoBased()"/>
+        /// </summary>
+        /// <returns><see cref="bool"/></returns>
+        public bool IsIsoBased()
+        {
+            return IExecuteWithSignature<bool>("isIsoBased", "()Z");
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/time/chrono/Chronology.html#compareTo(java.lang.Object)"/>
         /// </summary>
         /// <param name="arg0"><see cref="object"/></param>

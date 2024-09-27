@@ -278,6 +278,22 @@ namespace Java.Util.Concurrent
             return IExecuteWithSignature("get", "(I)Ljava/lang/Object;", arg0);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/CopyOnWriteArrayList.html#getFirst()"/>
+        /// </summary>
+        /// <returns><see cref="object"/></returns>
+        public object GetFirst()
+        {
+            return IExecuteWithSignature("getFirst", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/CopyOnWriteArrayList.html#getLast()"/>
+        /// </summary>
+        /// <returns><see cref="object"/></returns>
+        public object GetLast()
+        {
+            return IExecuteWithSignature("getLast", "()Ljava/lang/Object;");
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/concurrent/CopyOnWriteArrayList.html#remove(int)"/>
         /// </summary>
         /// <param name="arg0"><see cref="int"/></param>
@@ -285,6 +301,22 @@ namespace Java.Util.Concurrent
         public object Remove(int arg0)
         {
             return IExecuteWithSignature("remove", "(I)Ljava/lang/Object;", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/CopyOnWriteArrayList.html#removeFirst()"/>
+        /// </summary>
+        /// <returns><see cref="object"/></returns>
+        public object RemoveFirst()
+        {
+            return IExecuteWithSignature("removeFirst", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/CopyOnWriteArrayList.html#removeLast()"/>
+        /// </summary>
+        /// <returns><see cref="object"/></returns>
+        public object RemoveLast()
+        {
+            return IExecuteWithSignature("removeLast", "()Ljava/lang/Object;");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/concurrent/CopyOnWriteArrayList.html#set(int,java.lang.Object)"/>
@@ -368,6 +400,14 @@ namespace Java.Util.Concurrent
             return IExecuteWithSignature<Java.Util.Iterator>("iterator", "()Ljava/util/Iterator;");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/CopyOnWriteArrayList.html#reversed()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.List"/></returns>
+        public Java.Util.List Reversed()
+        {
+            return IExecuteWithSignature<Java.Util.List>("reversed", "()Ljava/util/List;");
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/concurrent/CopyOnWriteArrayList.html#subList(int,int)"/>
         /// </summary>
         /// <param name="arg0"><see cref="int"/></param>
@@ -410,6 +450,22 @@ namespace Java.Util.Concurrent
         public void Add(int arg0, object arg1)
         {
             IExecuteWithSignature("add", "(ILjava/lang/Object;)V", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/CopyOnWriteArrayList.html#addFirst(java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="object"/></param>
+        public void AddFirst(object arg0)
+        {
+            IExecuteWithSignature("addFirst", "(Ljava/lang/Object;)V", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/CopyOnWriteArrayList.html#addLast(java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="object"/></param>
+        public void AddLast(object arg0)
+        {
+            IExecuteWithSignature("addLast", "(Ljava/lang/Object;)V", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/concurrent/CopyOnWriteArrayList.html#clear()"/>
@@ -631,6 +687,22 @@ namespace Java.Util.Concurrent
             return IExecuteWithSignature<E>("get", "(I)Ljava/lang/Object;", arg0);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/CopyOnWriteArrayList.html#getFirst()"/>
+        /// </summary>
+        /// <returns><typeparamref name="E"/></returns>
+        public E GetFirst()
+        {
+            return IExecuteWithSignature<E>("getFirst", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/CopyOnWriteArrayList.html#getLast()"/>
+        /// </summary>
+        /// <returns><typeparamref name="E"/></returns>
+        public E GetLast()
+        {
+            return IExecuteWithSignature<E>("getLast", "()Ljava/lang/Object;");
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/concurrent/CopyOnWriteArrayList.html#remove(int)"/>
         /// </summary>
         /// <param name="arg0"><see cref="int"/></param>
@@ -638,6 +710,22 @@ namespace Java.Util.Concurrent
         public E Remove(int arg0)
         {
             return IExecuteWithSignature<E>("remove", "(I)Ljava/lang/Object;", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/CopyOnWriteArrayList.html#removeFirst()"/>
+        /// </summary>
+        /// <returns><typeparamref name="E"/></returns>
+        public E RemoveFirst()
+        {
+            return IExecuteWithSignature<E>("removeFirst", "()Ljava/lang/Object;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/CopyOnWriteArrayList.html#removeLast()"/>
+        /// </summary>
+        /// <returns><typeparamref name="E"/></returns>
+        public E RemoveLast()
+        {
+            return IExecuteWithSignature<E>("removeLast", "()Ljava/lang/Object;");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/concurrent/CopyOnWriteArrayList.html#set(int,java.lang.Object)"/>
@@ -722,6 +810,14 @@ namespace Java.Util.Concurrent
             return IExecuteWithSignature<Java.Util.Iterator<E>>("iterator", "()Ljava/util/Iterator;");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/CopyOnWriteArrayList.html#reversed()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.List"/></returns>
+        public Java.Util.List<E> Reversed()
+        {
+            return IExecuteWithSignature<Java.Util.List<E>>("reversed", "()Ljava/util/List;");
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/concurrent/CopyOnWriteArrayList.html#subList(int,int)"/>
         /// </summary>
         /// <param name="arg0"><see cref="int"/></param>
@@ -764,6 +860,22 @@ namespace Java.Util.Concurrent
         public void Add(int arg0, E arg1)
         {
             IExecuteWithSignature("add", "(ILjava/lang/Object;)V", arg0, arg1);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/CopyOnWriteArrayList.html#addFirst(java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><typeparamref name="E"/></param>
+        public void AddFirst(E arg0)
+        {
+            IExecuteWithSignature("addFirst", "(Ljava/lang/Object;)V", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/CopyOnWriteArrayList.html#addLast(java.lang.Object)"/>
+        /// </summary>
+        /// <param name="arg0"><typeparamref name="E"/></param>
+        public void AddLast(E arg0)
+        {
+            IExecuteWithSignature("addLast", "(Ljava/lang/Object;)V", arg0);
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/concurrent/CopyOnWriteArrayList.html#clear()"/>

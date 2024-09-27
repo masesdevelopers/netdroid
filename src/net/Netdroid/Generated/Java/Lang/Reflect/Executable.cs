@@ -109,6 +109,14 @@ namespace Java.Lang.Reflect
             return IExecuteWithSignature<int>("getModifiers", "()I");
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/reflect/Executable.html#getParameterCount()"/>
+        /// </summary>
+        /// <returns><see cref="int"/></returns>
+        public int GetParameterCount()
+        {
+            return IExecuteWithSignature<int>("getParameterCount", "()I");
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/reflect/Executable.html#getParameterAnnotations()"/>
         /// </summary>
         /// <returns><see cref="Java.Lang.Annotation.Annotation"/></returns>
@@ -181,14 +189,6 @@ namespace Java.Lang.Reflect
             return IExecuteWithSignature<bool>("isVarArgs", "()Z");
         }
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/reflect/Executable.html#getParameterCount()"/>
-        /// </summary>
-        /// <returns><see cref="int"/></returns>
-        public int GetParameterCount()
-        {
-            return IExecuteWithSignature<int>("getParameterCount", "()I");
-        }
-        /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/reflect/Executable.html#getParameters()"/>
         /// </summary>
         /// <returns><see cref="Java.Lang.Reflect.Parameter"/></returns>
@@ -211,6 +211,14 @@ namespace Java.Lang.Reflect
         public Java.Lang.Reflect.Type[] GetGenericParameterTypes()
         {
             return IExecuteWithSignatureArray<Java.Lang.Reflect.Type>("getGenericParameterTypes", "()[Ljava/lang/reflect/Type;");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/lang/reflect/Executable.html#accessFlags()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.Set"/></returns>
+        public Java.Util.Set<Java.Lang.Reflect.AccessFlag> AccessFlags()
+        {
+            return IExecuteWithSignature<Java.Util.Set<Java.Lang.Reflect.AccessFlag>>("accessFlags", "()Ljava/util/Set;");
         }
 
         #endregion

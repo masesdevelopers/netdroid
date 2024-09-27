@@ -108,14 +108,13 @@ namespace Java.Lang
 
         #region Instance methods
         /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/ThreadGroup.html#allowThreadSuspension(boolean)"/>
+        /// <see href="https://developer.android.com/reference/java/lang/ThreadGroup.html#isDestroyed()"/>
         /// </summary>
-        /// <param name="arg0"><see cref="bool"/></param>
         /// <returns><see cref="bool"/></returns>
         [global::System.Obsolete()]
-        public bool AllowThreadSuspension(bool arg0)
+        public bool IsDestroyed()
         {
-            return IExecuteWithSignature<bool>("allowThreadSuspension", "(Z)Z", arg0);
+            return IExecuteWithSignature<bool>("isDestroyed", "()Z");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/ThreadGroup.html#isDaemon()"/>
@@ -276,15 +275,6 @@ namespace Java.Lang
         public int Enumerate(Java.Lang.ThreadGroup[] arg0)
         {
             return IExecuteWithSignature<int>("enumerate", "([Ljava/lang/ThreadGroup;)I", new object[] { arg0 });
-        }
-        /// <summary>
-        /// <see href="https://developer.android.com/reference/java/lang/ThreadGroup.html#isDestroyed()"/>
-        /// </summary>
-        /// <returns><see cref="bool"/></returns>
-        [global::System.Obsolete()]
-        public bool IsDestroyed()
-        {
-            return IExecuteWithSignature<bool>("isDestroyed", "()Z");
         }
         /// <summary>
         /// <see href="https://developer.android.com/reference/java/lang/ThreadGroup.html#list()"/>

@@ -29,7 +29,7 @@ namespace Java.Util.Concurrent
     /// <summary>
     /// <see href="https://developer.android.com/reference/java/util/concurrent/ExecutorService.html"/>
     /// </summary>
-    public partial class ExecutorService : Java.Util.Concurrent.Executor
+    public partial class ExecutorService : MASES.JCOBridge.C2JBridge.JVMBridgeBase<ExecutorService>
     {
         const string _bridgeClassName = "java.util.concurrent.ExecutorService";
         /// <summary>
@@ -76,7 +76,7 @@ namespace Java.Util.Concurrent
     /// <summary>
     /// .NET interface for TO BE DEFINED FROM USER
     /// </summary>
-    public partial interface IExecutorService : Java.Util.Concurrent.IExecutor
+    public partial interface IExecutorService
     {
         #region Instance methods
 
@@ -91,13 +91,21 @@ namespace Java.Util.Concurrent
     #endregion
 
     #region ExecutorService implementation
-    public partial class ExecutorService : Java.Util.Concurrent.IExecutorService
+    public partial class ExecutorService : Java.Util.Concurrent.IExecutorService, Java.Util.Concurrent.IExecutor, Java.Lang.IAutoCloseable
     {
         #region Constructors
 
         #endregion
 
         #region Class/Interface conversion operators
+        /// <summary>
+        /// Converter from <see cref="Java.Util.Concurrent.ExecutorService"/> to <see cref="Java.Util.Concurrent.Executor"/>
+        /// </summary>
+        public static implicit operator Java.Util.Concurrent.Executor(Java.Util.Concurrent.ExecutorService t) => t.Cast<Java.Util.Concurrent.Executor>();
+        /// <summary>
+        /// Converter from <see cref="Java.Util.Concurrent.ExecutorService"/> to <see cref="Java.Lang.AutoCloseable"/>
+        /// </summary>
+        public static implicit operator Java.Lang.AutoCloseable(Java.Util.Concurrent.ExecutorService t) => t.Cast<Java.Lang.AutoCloseable>();
 
         #endregion
 
@@ -236,6 +244,13 @@ namespace Java.Util.Concurrent
         public void Shutdown()
         {
             IExecuteWithSignature("shutdown", "()V");
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/ExecutorService.html#close()"/>
+        /// </summary>
+        public void Close()
+        {
+            IExecuteWithSignature("close", "()V");
         }
 
         #endregion

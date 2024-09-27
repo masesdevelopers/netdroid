@@ -329,6 +329,14 @@ namespace Java.Util
         {
             return IExecuteWithSignature("lowerKey", "(Ljava/lang/Object;)Ljava/lang/Object;", arg0);
         }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/NavigableMap.html#reversed()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.SortedMap"/></returns>
+        public Java.Util.SortedMap Reversed()
+        {
+            return IExecuteWithSignature<Java.Util.SortedMap>("reversed", "()Ljava/util/SortedMap;");
+        }
 
         #endregion
 
@@ -569,6 +577,14 @@ namespace Java.Util
         public K LowerKey(K arg0)
         {
             return IExecuteWithSignature<K>("lowerKey", "(Ljava/lang/Object;)Ljava/lang/Object;", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/NavigableMap.html#reversed()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.SortedMap"/></returns>
+        public Java.Util.SortedMap Reversed()
+        {
+            return IExecuteWithSignature<Java.Util.SortedMap>("reversed", "()Ljava/util/SortedMap;");
         }
 
         #endregion

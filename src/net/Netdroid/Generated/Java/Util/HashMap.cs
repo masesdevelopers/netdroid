@@ -166,6 +166,15 @@ namespace Java.Util
         #endregion
 
         #region Static methods
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/HashMap.html#newHashMap(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <returns><see cref="Java.Util.HashMap"/></returns>
+        public static Java.Util.HashMap NewHashMap(int arg0)
+        {
+            return SExecuteWithSignature<Java.Util.HashMap>(LocalBridgeClazz, "newHashMap", "(I)Ljava/util/HashMap;", arg0);
+        }
 
         #endregion
 
@@ -234,6 +243,15 @@ namespace Java.Util
         #endregion
 
         #region Static methods
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/HashMap.html#newHashMap(int)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="int"/></param>
+        /// <returns><see cref="Java.Util.HashMap"/></returns>
+        public static Java.Util.HashMap<K, V> NewHashMap(int arg0)
+        {
+            return SExecuteWithSignature<Java.Util.HashMap<K, V>>(LocalBridgeClazz, "newHashMap", "(I)Ljava/util/HashMap;", arg0);
+        }
 
         #endregion
 

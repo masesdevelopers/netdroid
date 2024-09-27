@@ -200,6 +200,23 @@ namespace Java.Util.Concurrent
             return SExecuteWithSignature<Java.Util.Concurrent.ExecutorService>(LocalBridgeClazz, "newSingleThreadExecutor", "(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;", arg0);
         }
         /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/Executors.html#newThreadPerTaskExecutor(java.util.concurrent.ThreadFactory)"/>
+        /// </summary>
+        /// <param name="arg0"><see cref="Java.Util.Concurrent.ThreadFactory"/></param>
+        /// <returns><see cref="Java.Util.Concurrent.ExecutorService"/></returns>
+        public static Java.Util.Concurrent.ExecutorService NewThreadPerTaskExecutor(Java.Util.Concurrent.ThreadFactory arg0)
+        {
+            return SExecuteWithSignature<Java.Util.Concurrent.ExecutorService>(LocalBridgeClazz, "newThreadPerTaskExecutor", "(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;", arg0);
+        }
+        /// <summary>
+        /// <see href="https://developer.android.com/reference/java/util/concurrent/Executors.html#newVirtualThreadPerTaskExecutor()"/>
+        /// </summary>
+        /// <returns><see cref="Java.Util.Concurrent.ExecutorService"/></returns>
+        public static Java.Util.Concurrent.ExecutorService NewVirtualThreadPerTaskExecutor()
+        {
+            return SExecuteWithSignature<Java.Util.Concurrent.ExecutorService>(LocalBridgeClazz, "newVirtualThreadPerTaskExecutor", "()Ljava/util/concurrent/ExecutorService;");
+        }
+        /// <summary>
         /// <see href="https://developer.android.com/reference/java/util/concurrent/Executors.html#newWorkStealingPool()"/>
         /// </summary>
         /// <returns><see cref="Java.Util.Concurrent.ExecutorService"/></returns>
